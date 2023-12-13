@@ -1,7 +1,8 @@
 # HealthyHub
 
-<a href="https://annahort.github.io/HealthyHub/">HealthyHub</a> is an app designed to make tracking and improving your overall health
-easier. With HealthyHub you can:
+<a href="https://annahort.github.io/HealthyHub/">HealthyHub</a> is an app
+designed to make tracking and improving your overall health easier. With
+HealthyHub you can:
 
 - :muscle: watch your weight
 - :runner: track physical activity
@@ -106,6 +107,7 @@ Libraries and Frameworks:
 </table>
 
 Version Control Systems:
+
 <table align="center" style="margin-bottom:40px">
   <tr>
     <td align="center" style="border:none">
