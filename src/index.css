@@ -1,5 +1,13 @@
 @import 'node_modules/modern-normalize/modern-normalize.css';
 
+:root {
+  --color-primary-grey: #B6B6B6;
+  --color-primary-white: #FFF;
+  --color-primary-black: #050505;
+  --color-primary-black-2: #0F0F0F;
+  --color-primary-green-lite: #E3FFA8;
+}
+
 body {
   background-size: auto 100%;
   background-position: center center;

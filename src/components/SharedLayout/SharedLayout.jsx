@@ -1,9 +1,10 @@
+import { TitleStyled } from "./SharedLayout.styled";
 
 const SharedLayout = () => {
   return (
-    <h1>
-     Hello!!
-    </h1>
+    <TitleStyled>
+   HealthyHub
+    </TitleStyled>
   );
 };
 
