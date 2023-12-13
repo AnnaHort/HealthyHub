@@ -15,7 +15,7 @@ HealthyHub gives you tools to track your progress and prioritize your health.
 
 <div style="display: flex; flex-direction: column; ">
     <h3 style='margin-right:500px;'>Magic Made by:</h3>
-    <img src="./public/img/not-broken-team-on-transparent-background.png" alt="Logo" width="200" />
+    <img src="./src/img/readme-img/not-broken-team-on-transparent-background.png" alt="Logo" width="200" />
 </div>
 Group #10
 
