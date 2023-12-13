@@ -93,6 +93,14 @@ Libraries and Frameworks:
       </a>
     </td>
   </tr>
+    <tr>
+    <td align="center" style="border:none">
+      <a href="https://formik.org/docs/api/useFormik">
+          <img src="./src/img/readme-img/formik.png" alt="Formik Logo" width="40" height="30" style="vertical-align: middle;">
+          <span style="font-size:1.17em; margin-left:10px">Formik</span>
+      </a>
+    </td>
+  </tr>
 </table>
 Version Control Systems:
 <table align="center" style="margin-bottom:40px">
