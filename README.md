@@ -1,6 +1,6 @@
 # HealthyHub
 
-HealthyHub is an app designed to make tracking and improving your overall health
+<a href="https://annahort.github.io/HealthyHub/">HealthyHub</a> is an app designed to make tracking and improving your overall health
 easier. With HealthyHub you can:
 
 - :muscle: watch your weight
