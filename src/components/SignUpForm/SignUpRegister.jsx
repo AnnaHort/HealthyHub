@@ -6,7 +6,7 @@ import {
   RegisterForm,
   InputContainer,
   InputText,
-  InputButton,
+  Button,
   QuestionBlock,
   Question,
   Link,
@@ -45,7 +45,7 @@ const SignUpRegister = () => {
             />
           </InputContainer>
         </label>
-        <InputButton type="submit">Sign Up</InputButton>
+        <Button type="submit">Next</Button>
       </RegisterForm>
       <QuestionBlock>
         <Question>Do you already have an account?</Question>
