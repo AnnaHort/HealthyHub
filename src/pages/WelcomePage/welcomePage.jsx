@@ -2,22 +2,31 @@ import ButtonSignIn from "../../components/WelcomePage/Button/buttonSignIn";
 import ButtonSignUp from "../../components/WelcomePage/Button/buttonSignUp";
 import MainPhotoWelcomePage from "../../components/WelcomePage/MainPhoto/mainPhoto";
 import ServicesBenefits from "../../components/WelcomePage/ServicesBenefits/servicesBenefits";
+import WelcomePageTitle from "../../components/WelcomePage/Title/WelcomePageTitle";
+import {
+  WelcomePageContainer,
+  FlexContainer,
+  ButtonContainer,
+  TitleContainer,
+} from './welcomePage.styled';
 
 const WelcomePage = () => {
+  console.log('WelcomePage is rendering');
   return (
-    <div>
-    <MainPhotoWelcomePage/>
-      <div>
-        <h1>Set goals and achieve them</h1>
-        <h2>The service will help you set goals and follow them.</h2>
-      </div>
-      <div>
-        <ButtonSignUp />
-        <ButtonSignIn/>
-      </div>
+    <WelcomePageContainer>
+      <MainPhotoWelcomePage />
+      <FlexContainer>
+        <TitleContainer>
+          <WelcomePageTitle />
+        </TitleContainer>
+        <ButtonContainer>
+          <ButtonSignIn />
+          <ButtonSignUp />
+        </ButtonContainer>
 
-     <ServicesBenefits/>
-    </div>
+        <ServicesBenefits />
+      </FlexContainer>
+    </WelcomePageContainer>
   );
 };
 
