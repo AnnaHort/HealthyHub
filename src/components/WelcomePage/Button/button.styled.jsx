@@ -12,6 +12,12 @@ export const BSignIn = styled.button`
   font-weight: 500;
   line-height: 20px;
   color: var(--color-primary-black-2);
+
+  @media (min-width: 768px) {
+    width: 212px;
+  }
+  @media (min-width: 1024px) {
+  }
 `;
 
 export const BSignOut = styled.button`
@@ -27,4 +33,10 @@ export const BSignOut = styled.button`
   font-weight: 500;
   line-height: 20px;
   color: var(--color-primary-white);
+
+  @media (min-width: 768px) {
+    width: 212px;
+  }
+  @media (min-width: 1024px) {
+  }
 `;

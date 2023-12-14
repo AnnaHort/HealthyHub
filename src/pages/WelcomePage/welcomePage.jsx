@@ -5,7 +5,9 @@ import ServicesBenefits from "../../components/WelcomePage/ServicesBenefits/serv
 import WelcomePageTitle from "../../components/WelcomePage/Title/WelcomePageTitle";
 import {
   WelcomePageContainer,
+  FlexContainer,
   ButtonContainer,
+  TitleContainer,
 } from './welcomePage.styled';
 
 const WelcomePage = () => {
@@ -13,16 +15,17 @@ const WelcomePage = () => {
   return (
     <WelcomePageContainer>
       <MainPhotoWelcomePage />
-      <div>
-        <WelcomePageTitle />
-      </div>
-      <ButtonContainer>
-        <ButtonSignIn />
-        <ButtonSignUp />
-      </ButtonContainer>
-    
+      <FlexContainer>
+        <TitleContainer>
+          <WelcomePageTitle />
+        </TitleContainer>
+        <ButtonContainer>
+          <ButtonSignIn />
+          <ButtonSignUp />
+        </ButtonContainer>
+
         <ServicesBenefits />
-     
+      </FlexContainer>
     </WelcomePageContainer>
   );
 };
