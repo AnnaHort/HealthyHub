@@ -16,7 +16,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: 1024px) {
-    min-width: 1440px;
+    max-width: 1440px;
     height: 800px;
     flex-direction: row;
     gap: 104px;
