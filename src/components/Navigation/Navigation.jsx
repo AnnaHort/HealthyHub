@@ -1,4 +1,4 @@
-import UserIcon from '../user-icon-svg-component/user-icon-svg';
+import UserIcon from '../user-icon-svg-component/User-icon-svg';
 import {
   NavContainerStyled,
   SignStyled,
