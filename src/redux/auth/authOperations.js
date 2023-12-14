@@ -57,8 +57,8 @@ export const logOut = createAsyncThunk(
   );
 
   // refresh
-export const fetchCurentUser = createAsyncThunk(
-    'auth/fetchCurentUser',
+export const fetchCurrentUser = createAsyncThunk(
+    'auth/fetchCurrentUser',
     async (_, thunkAPI) => {
       const state = thunkAPI.getState();
       console.log(state)
