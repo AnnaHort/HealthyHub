@@ -1,11 +1,4 @@
-import { YourGoal } from '../YourGoal/YourGoal';
-
 const SharedLayout = () => {
-  return (
-    <header>
-      HEADER
-      <YourGoal />
-    </header>
-  );
+  return <header>HEADER</header>;
 };
 export default SharedLayout;
