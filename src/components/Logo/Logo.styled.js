@@ -6,7 +6,6 @@ export const TitleStyled = styled(NavLink)`
   font-size: 16px;
   font-weight: 700;
   line-height: 1.38;
-  text-decoration: none;
   &.active {
     color: var(--color-primary-green-lite);
   }
