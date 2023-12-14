@@ -1,23 +1,18 @@
 @import 'node_modules/modern-normalize/modern-normalize.css';
 
 :root {
-  --color-primary-grey: #B6B6B6;
-  --color-primary-white: #FFF;
+  --color-primary-grey: #b6b6b6;
+  --color-primary-white: #fff;
   --color-primary-black: #050505;
-  --color-primary-black-2: #0F0F0F;
-  --color-primary-green-lite: #E3FFA8;
+  --color-primary-black-2: #0f0f0f;
+  --color-primary-green-lite: #e3ffa8;
 }
 
 body {
-  background-size: auto 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  /* width: 100%;
-  height: 100vh; */
+  overflow-y: scroll;
   margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 h1,
@@ -28,16 +23,16 @@ h5,
 h6,
 p {
   margin-top: 0;
+  margin-bottom: 0;
+  user-select: none;
 }
 
-a {
-  text-decoration: none;
-}
-
-ul {
+ul,
+ol {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
 img {
@@ -46,4 +41,8 @@ img {
 
 button {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
