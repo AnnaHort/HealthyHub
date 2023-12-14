@@ -17,7 +17,7 @@ export const YourGoal = () => {
     <Container>
       <Img
         alt="Goal Image"
-        src="/src/components/YourGoal/img/Illustration Goals-min.svg"
+        src="/src/components/YourGoal/img/IllustrationGoals-min.svg"
       />
       <Form>
         <Title>Your goal</Title>
