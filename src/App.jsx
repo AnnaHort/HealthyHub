@@ -12,7 +12,10 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-            {/* сюди поміщаємо сторінки які рендеряться відносно - / */}
+            
+          <Route path="/signin" element={<SharedLayout />}/>
+          <Route path="/signup" element={<SharedLayout />}/>
+
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>

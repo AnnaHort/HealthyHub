@@ -1,12 +1,13 @@
-import { NavLink } from 'react-router-dom';
-import { NavContainerStyled } from './Navigation.styled';
+import UserIcon from '../user-icon-svg-component/user-icon-svg';
+import { NavContainerStyled, SignStyled, SpanStyled } from './Navigation.styled';
 
 const Navigation = () => {
   return (
     <NavContainerStyled>
-      <NavLink>Sign in </NavLink>
-      <span> / </span>
-      <NavLink>Sign up</NavLink>
+        <SignStyled to="/signin">Sign in</SignStyled>
+        <SpanStyled> / </SpanStyled>
+        <SignStyled to="/signup">Sign up</SignStyled>
+      <UserIcon />
     </NavContainerStyled>
   );
 };
