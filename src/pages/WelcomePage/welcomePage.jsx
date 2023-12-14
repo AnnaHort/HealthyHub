@@ -3,22 +3,26 @@ import ButtonSignUp from "../../components/WelcomePage/Button/buttonSignUp";
 import MainPhotoWelcomePage from "../../components/WelcomePage/MainPhoto/mainPhoto";
 import ServicesBenefits from "../../components/WelcomePage/ServicesBenefits/servicesBenefits";
 import WelcomePageTitle from "../../components/WelcomePage/Title/WelcomePageTitle";
-import {WelcomePageContainer} from "./welcomePage.styled"
+import {
+  WelcomePageContainer,
+  ButtonContainer,
+} from './welcomePage.styled';
 
 const WelcomePage = () => {
   console.log('WelcomePage is rendering');
   return (
     <WelcomePageContainer>
-    <MainPhotoWelcomePage/>
+      <MainPhotoWelcomePage />
       <div>
-        <WelcomePageTitle/>
+        <WelcomePageTitle />
       </div>
-      <div>
+      <ButtonContainer>
+        <ButtonSignIn />
         <ButtonSignUp />
-        <ButtonSignIn/>
-      </div>
-
-     <ServicesBenefits/>
+      </ButtonContainer>
+    
+        <ServicesBenefits />
+     
     </WelcomePageContainer>
   );
 };

@@ -18,12 +18,11 @@ function App() {
             <Route path="/signin" element={<SharedLayout />} />
             <Route path="/signup" element={<SharedLayout />} />
 
-            {/* Welcome Page start */}
             <Route path="/welcome" element={<WelcomePage />}>
               <Route path="signup" element={<ButtonSignUp />} />
               <Route path="signin" element={<ButtonSignIn />} />
             </Route>
-            {/* Welcome Page end */}
+            
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>

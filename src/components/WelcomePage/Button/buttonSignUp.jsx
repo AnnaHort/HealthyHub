@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
+import {BSignOut} from "./button.styled"
 
 const ButtonSignUp = () => {
     console.log('ButtonSignUp is rendering');
     return (
       <div>
-        <button>
+        <BSignOut>
           <NavLink to="signup" />
-        </button>
+          Sing Out
+        </BSignOut>
       </div>
     );
 }
