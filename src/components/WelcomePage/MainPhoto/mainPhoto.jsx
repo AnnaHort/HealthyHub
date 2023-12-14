@@ -1,9 +1,9 @@
 const MainPhotoWelcomePage = () => {
     return (
-        <div>
-            <img src="../../../img/welcomePageImg/Welcomepagemobile.png"/>
-    </div>
-)
+      <div>
+        
+      </div>
+    );
 }
 
 export default MainPhotoWelcomePage;

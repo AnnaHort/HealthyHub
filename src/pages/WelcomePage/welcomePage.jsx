@@ -2,14 +2,16 @@ import ButtonSignIn from "../../components/WelcomePage/Button/buttonSignIn";
 import ButtonSignUp from "../../components/WelcomePage/Button/buttonSignUp";
 import MainPhotoWelcomePage from "../../components/WelcomePage/MainPhoto/mainPhoto";
 import ServicesBenefits from "../../components/WelcomePage/ServicesBenefits/servicesBenefits";
+import WelcomePageTitle from "../../components/WelcomePage/Title/WelcomePageTitle";
+import {WelcomePageContainer} from "./welcomePage.styled"
 
 const WelcomePage = () => {
+  console.log('WelcomePage is rendering');
   return (
-    <div>
+    <WelcomePageContainer>
     <MainPhotoWelcomePage/>
       <div>
-        <h1>Set goals and achieve them</h1>
-        <h2>The service will help you set goals and follow them.</h2>
+        <WelcomePageTitle/>
       </div>
       <div>
         <ButtonSignUp />
@@ -17,7 +19,7 @@ const WelcomePage = () => {
       </div>
 
      <ServicesBenefits/>
-    </div>
+    </WelcomePageContainer>
   );
 };
 
