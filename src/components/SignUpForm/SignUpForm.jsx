@@ -1,9 +1,10 @@
 const SignUpForm = () => {
   return (
     <div>
-      <p> SignUpForm</p>
+      <p>SignUpForm</p>
     </div>
   );
 };
 
 export default SignUpForm;
+
