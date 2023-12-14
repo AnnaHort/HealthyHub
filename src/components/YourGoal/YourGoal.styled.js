@@ -51,6 +51,7 @@ export const Img = styled.img`
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+    margin-left: 140px;
   }
 `;
 
