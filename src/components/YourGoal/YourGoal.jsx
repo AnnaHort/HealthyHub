@@ -1,7 +1,3 @@
-import { useDispatch } from 'react-redux';
-
-import { makeTrueState, makeFalseState } from '../../redux/testSlice';
-
 import {
   BtnBack,
   BtnNext,
@@ -17,15 +13,6 @@ import {
 } from './YourGoal.styled';
 
 export const YourGoal = () => {
-  const dispatch = useDispatch();
-
-  const handleMakeTrue = () => {
-    dispatch(makeTrueState());
-  };
-
-  const handleMakeFalse = () => {
-    dispatch(makeFalseState());
-  };
   return (
     <Container>
       <Img
@@ -44,7 +31,6 @@ export const YourGoal = () => {
               id="loseFat"
               name="goal"
               value="Lose Fat"
-              onChange={handleMakeTrue}
             />
             <Label htmlFor="loseFat">Lose Fat</Label>
           </RadioItem>
@@ -54,7 +40,6 @@ export const YourGoal = () => {
               id="maintain"
               name="goal"
               value="Maintain"
-              onChange={handleMakeFalse}
             />
             <Label htmlFor="maintain">Maintain</Label>
           </RadioItem>
@@ -64,13 +49,12 @@ export const YourGoal = () => {
               id="gainMuscle"
               name="goal"
               value="Gain Muscle"
-              onChange={handleMakeFalse}
             />
             <Label htmlFor="gainMuscle">Gain Muscle</Label>
           </RadioItem>
         </List>
+        <BtnNext>Next</BtnNext>
 
-        <BtnNext type="submit">Next</BtnNext>
         <BtnBack type="button">Back</BtnBack>
       </Form>
     </Container>
