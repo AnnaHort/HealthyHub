@@ -31,8 +31,9 @@ export const YourGoal = () => {
               id="loseFat"
               name="goal"
               value="Lose Fat"
+              tabIndex={0}
             />
-            <Label htmlFor="loseFat">Lose Fat</Label>
+            <Label for="loseFat">Lose Fat</Label>
           </RadioItem>
           <RadioItem>
             <CustomRadio
@@ -40,8 +41,9 @@ export const YourGoal = () => {
               id="maintain"
               name="goal"
               value="Maintain"
+              tabIndex={0}
             />
-            <Label htmlFor="maintain">Maintain</Label>
+            <Label for="maintain">Maintain</Label>
           </RadioItem>
           <RadioItem>
             <CustomRadio
@@ -49,8 +51,9 @@ export const YourGoal = () => {
               id="gainMuscle"
               name="goal"
               value="Gain Muscle"
+              tabIndex={0}
             />
-            <Label htmlFor="gainMuscle">Gain Muscle</Label>
+            <Label for="gainMuscle">Gain Muscle</Label>
           </RadioItem>
         </List>
         <BtnNext>Next</BtnNext>
