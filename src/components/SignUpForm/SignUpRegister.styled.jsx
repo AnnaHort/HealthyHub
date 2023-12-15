@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const SignUpRegisterContainer = styled.div`
   background-color: var(--color-primary-black);
-  padding: 24px 0;
-  width: 300px;
+  width: 320px;
+  margin: 0 auto;
   padding-top: 24px;
   padding-bottom: 40px;
   padding-left: 10px;
@@ -11,7 +11,6 @@ export const SignUpRegisterContainer = styled.div`
 
   @media (min-width: 834px) {
     width: 492px;
-    margin: 0 auto;
     padding-top: 40px;
     padding-bottom: 60px;
     padding-left: 24px;
@@ -20,11 +19,11 @@ export const SignUpRegisterContainer = styled.div`
   }
   @media (min-width: 1440px) {
     width: 1440px;
-    padding-bottom: 72px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: flex-end;
     gap: 104px;
+    text-align: start;
   }
 `;
 
@@ -40,7 +39,7 @@ export const Image = styled.img`
   @media (min-width: 1440px) {
     width: 592px;
     height: 588px;
-    margin-left: 116px;
+    margin-bottom: 0;
   }
 `;
 
@@ -65,7 +64,7 @@ export const RegisterTitle = styled.h2`
 export const RegisterText = styled.p`
   color: var(--color-primary-grey);
   font-family: Poppins;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.33;
   margin-bottom: 24px;
   @media (min-width: 834px) {
@@ -75,19 +74,12 @@ export const RegisterText = styled.p`
 `;
 
 export const RegisterForm = styled.form`
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-
   @media (min-width: 834px) {
-    width: 380px;
     margin-left: auto;
     margin-right: auto;
   }
 
   @media (min-width: 1440px) {
-    width: 212px;
-    justify-content: flex-start;
     margin-left: 0;
     margin-right: 0;
   }
@@ -98,6 +90,12 @@ export const InputContainer = styled.div`
   position: relative;
   border: 1px solid var(--color-primary-green-lite);
   border-radius: 12px;
+  width: 100%;
+  margin-bottom: 20px;
+
+  @media (min-width: 1440px) {
+    width: 50%;
+  }
 `;
 
 export const Input = styled.input`
@@ -124,23 +122,21 @@ export const Button = styled.button`
   background: var(--color-primary-green-lite);
   padding: 8px 10px;
   margin-bottom: 48px;
-  margin-top: 40px;
-
+  margin-top: 20px;
   color: var(--bg-primary);
   text-align: center;
   font-family: Poppins;
   font-weight: 500;
   line-height: 1.43;
-
+  width: 100%;
   @media (min-width: 834px) {
     margin-bottom: 238px;
-    width: 380px;
     margin-bottom: 206px;
   }
 
   @media (min-width: 1440px) {
     margin-bottom: 168px;
-    width: 212px;
+    width: 50%;
   }
 `;
 
@@ -163,6 +159,7 @@ export const Question = styled.p`
   margin-bottom: 16px;
   @media (min-width: 834px) {
     margin-right: 16px;
+    margin-bottom: 0px;
   }
 `;
 
@@ -174,7 +171,3 @@ export const Link = styled.a`
   font-weight: 500;
   line-height: 1.43;
 `;
-
-
-
-
