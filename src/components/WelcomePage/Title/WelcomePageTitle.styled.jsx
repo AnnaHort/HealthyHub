@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
-    width: 444px;
+  @media (min-width: 768px) and (max-width: 1023px) {
+    max-width: 444px;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -12,7 +12,7 @@ export const TitleContainer = styled.div`
     margin-right: auto;
   }
   @media (min-width: 1024px) {
-    text-align: unset;
+
   }
 `;
 
@@ -25,35 +25,37 @@ export const MainTitle = styled.h1`
 
   margin-top: 24px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     display: flex;
     font-size: 30px;
     line-height: 36px;
-
-    margin-top: 80px;
   }
 
+  @media (min-width: 1024px) {
+    margin-top: 80px;
+  }
 `;
 
 export const Title = styled.h2`
-  // width: 290px;
+  max-width: 290px;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  color: var(--color-primary-white);
+  color: var(--color-primary-grey);
 
   margin-top: 16px;
 
-  @media (min-width: 768px) {
-    width: 410px;
+  @media (min-width: 768px) and (max-width: 1023px) {
+    max-width: 410px;
     font-size: 22px;
     line-height: 32px;
   }
 
   @media (min-width: 1024px) {
- display: flex;
- flex-wrap: wrap;
+    max-width: unset;
+    display: flex;
+    flex-wrap: wrap;
   }
 `;

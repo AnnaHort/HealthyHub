@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const BenegitsContainer = styled.div`
-  @media (min-width: 768px) {
-    width: 444px;
+  @media (min-width: 768px) and (max-width: 1023px) {
+    max-width: 444px;
     margin-left: auto;
     margin-right: auto;
   }
 
+ 
 `;
 
 export const Benefits = styled.ul`
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -37,7 +38,7 @@ export const BenefitsList = styled.li`
 
   &:before {
     content: '';
-    width: 8px; 
+    width: 8px;
     height: 8px;
     background-color: var(--color-primary-green-lite);
     border-radius: 50%;
@@ -45,9 +46,17 @@ export const BenefitsList = styled.li`
     margin-right: 6px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     margin-bottom: 0;
     display: flex;
     align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `;

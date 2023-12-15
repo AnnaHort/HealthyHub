@@ -7,7 +7,7 @@ const ButtonSignUp = () => {
       <>
         <BSignOut>
           <NavLink as={NavLink} to="/signup" />
-          Sing Out
+          Sing Up
         </BSignOut>
       </>
     );
