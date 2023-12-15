@@ -11,12 +11,12 @@ export const Container = styled.div`
   align-items: center;
 
   @media (min-width: 768px) {
-    width: 834px;
+    min-width: 834px;
     height: 1194px;
   }
 
   @media (min-width: 1024px) {
-    width: 1440px;
+    max-width: 1440px;
     height: 800px;
     flex-direction: row;
     gap: 104px;
@@ -178,11 +178,13 @@ export const BtnBack = styled.button`
   line-height: 20px;
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  margin: auto; /* Вирівнює по центру */
+  margin: 0; /* Вирівнює по центру */
+  margin-left: 44px;
   display: block;
 
   @media (min-width: 768px) {
     width: 192px;
+    margin: 0 auto;
   }
 
   @media (min-width: 1024px) {
@@ -198,7 +200,51 @@ export const RadioItem = styled.li`
   gap: 8px;
 `;
 
-export const CustomRadio = styled.input``;
+export const CustomRadio = styled.input`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  border: 1px solid #b6b6b6;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-top: 4px;
+  margin-left: 4px;
+
+  /* Стилі для внутрішнього кружка (позначки) */
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e3ffa8;
+
+    /* вирівняти по центру */
+    position: absolute;
+    top: 12%;
+    left: 12%;
+    transform: translate(12% 12%);
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+
+    transition: 0.2s ease-in;
+  }
+
+  /* Змінюємо стиль позначки при виборі */
+  &:checked {
+    background-color: transparent;
+    &::before {
+      opacity: 1;
+    }
+  }
+`;
 
 export const Label = styled.label`
   color: var(--color-primary-white);

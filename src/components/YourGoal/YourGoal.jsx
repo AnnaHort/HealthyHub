@@ -17,7 +17,7 @@ export const YourGoal = () => {
     <Container>
       <Img
         alt="Goal Image"
-        src="/src/components/YourGoal/img/Illustration Goals-min.svg"
+        src="/src/components/YourGoal/img/IllustrationGoals-min.svg"
       />
       <Form>
         <Title>Your goal</Title>
@@ -28,20 +28,11 @@ export const YourGoal = () => {
           <RadioItem>
             <CustomRadio
               type="radio"
-              id="loseFat"
-              name="goal"
-              value="Lose Fat"
-            />
-            <Label htmlFor="loseFat">Lose Fat</Label>
-          </RadioItem>
-          <RadioItem>
-            <CustomRadio
-              type="radio"
               id="maintain"
               name="goal"
               value="Maintain"
             />
-            <Label htmlFor="maintain">Maintain</Label>
+            <Label for="maintain">Maintain</Label>
           </RadioItem>
           <RadioItem>
             <CustomRadio
@@ -50,7 +41,16 @@ export const YourGoal = () => {
               name="goal"
               value="Gain Muscle"
             />
-            <Label htmlFor="gainMuscle">Gain Muscle</Label>
+            <Label for="gainMuscle">Gain Muscle</Label>
+          </RadioItem>
+          <RadioItem>
+            <CustomRadio
+              type="radio"
+              id="loseFat"
+              name="goal"
+              value="Lose Fat"
+            />
+            <Label for="loseFat">Lose Fat</Label>
           </RadioItem>
         </List>
         <BtnNext>Next</BtnNext>
