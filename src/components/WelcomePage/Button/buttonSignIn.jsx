@@ -5,8 +5,7 @@ const ButtonSignIn = () => {
      console.log('ButtonSignIn is rendering');
     return (
       <>
-        <BSignIn>
-          <NavLink to="/signin" />
+        <BSignIn as={NavLink} to="/signin">
           Sing In
         </BSignIn>
       </>

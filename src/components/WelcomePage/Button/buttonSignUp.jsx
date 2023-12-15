@@ -6,7 +6,7 @@ const ButtonSignUp = () => {
     return (
       <>
         <BSignOut>
-          <NavLink to="signup" />
+          <NavLink as={NavLink} to="/signup" />
           Sing Out
         </BSignOut>
       </>

@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const BSignIn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 142px;
   height: 36px;
   border-radius: 12px;
@@ -17,10 +20,14 @@ export const BSignIn = styled.button`
     width: 212px;
   }
   @media (min-width: 1024px) {
+   
   }
 `;
 
 export const BSignOut = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 142px;
   height: 36px;
   border-radius: 12px;
