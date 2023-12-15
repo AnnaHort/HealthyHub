@@ -32,6 +32,7 @@ export const YourGoal = () => {
               name="goal"
               value="Maintain"
             />
+            яя
             <Label for="maintain">Maintain</Label>
           </RadioItem>
           <RadioItem>
