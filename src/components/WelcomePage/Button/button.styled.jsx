@@ -19,8 +19,10 @@ export const BSignIn = styled.button`
   @media (min-width: 768px) and (max-width: 1023px) {
     width: 212px;
   }
-  @media (min-width: 1024px) {
-
+  @media (min-width: 1024px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    width: 212px;
   }
 `;
 
@@ -44,6 +46,11 @@ export const BSignOut = styled.button`
   @media (min-width: 768px) and (max-width: 1023px) {
     width: 212px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    max-width: 212px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 212px;
   }
 `;

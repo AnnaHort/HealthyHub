@@ -58,4 +58,8 @@ export const Title = styled.h2`
     display: flex;
     flex-wrap: wrap;
   }
+
+  @media (min-width: 1440px) {
+    max-width: 335px;
+  }
 `;

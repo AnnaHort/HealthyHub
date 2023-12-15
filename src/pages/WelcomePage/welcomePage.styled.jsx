@@ -8,18 +8,34 @@ export const WelcomePageContainer = styled.div`
     padding-top: 40px;
   }
 
-  @media (min-width: 1024px) and (max-width: 1200px) {
+  @media (min-width: 1024px) and (max-width: 1279px) {
     padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1439px) {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 40px 150px;
     display: flex;
     justify-content: center;
   }
 `;
 
 export const FlexContainer = styled.div`
-  @media (min-width: 1024px) and (max-width: 1200px) {
+  @media (min-width: 1024px) and (max-width: 1279px) {
     display: flex;
     flex-direction: column;
     margin-left: 40px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-left: 104px;
   }
 `;
 

@@ -50,6 +50,12 @@ export const BenefitsList = styled.li`
     margin-bottom: 0;
     display: flex;
     align-items: center;
+    margin-right: 8px;
+
+    &:nth-last-child(1),
+    &:nth-last-child(3) {
+      margin-right: 0;
+    }
   }
 
   @media (min-width: 1024px) {
