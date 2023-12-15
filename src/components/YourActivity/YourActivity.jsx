@@ -16,7 +16,7 @@ import {
 const YourActivity = () => {
   return (
     <YourActivityContainerStyled>
-      <YourActivityImgStyled src="/src/img/YourActivityImg/illustrationActivity.png" />
+      <YourActivityImgStyled src="/src/img/YourActivityImg/illustrationActivity-min.svg" />
 
       <FormContainerStyled>
         <YourActivityTitleStyled>Your Activity</YourActivityTitleStyled>

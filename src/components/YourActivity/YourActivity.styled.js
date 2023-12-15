@@ -129,6 +129,7 @@ export const RadioLabelStyle = styled.label`
     border: 1px solid #b6b6b6;
     background: #0f0f0f;
     border-radius: 50%;
+    transition: 0.2s ease-in;
   }
   &::after {
     content: '';
