@@ -1,6 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const WelcomePageContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 24px 10px 40px 10px;
   background-color: var(--color-primary-black);
 
@@ -28,6 +31,8 @@ export const WelcomePageContainer = styled.div`
 `;
 
 export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   @media (min-width: 1024px) and (max-width: 1279px) {
     display: flex;
     flex-direction: column;

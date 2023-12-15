@@ -12,7 +12,6 @@ export const TitleContainer = styled.div`
     margin-right: auto;
   }
   @media (min-width: 1024px) {
-
   }
 `;
 
@@ -46,6 +45,7 @@ export const Title = styled.h2`
   color: var(--color-primary-grey);
 
   margin-top: 16px;
+  
 
   @media (min-width: 768px) and (max-width: 1023px) {
     max-width: 410px;
