@@ -3,13 +3,43 @@ import styled from 'styled-components';
 export const YourActivityContainerStyled = styled.div`
   background-color: var(--color-primary-black);
   padding: 24px 10px;
+  @media (min-width: 768px) {
+    padding-top: 40px;
+  }
+  @media (min-width: 1024px) {
+    display: flex;
+  }
 `;
 
 export const YourActivityImgStyled = styled.img`
   margin-bottom: 24px;
+  margin-right: auto;
+  margin-left: auto;
   @media (min-width: 768px) {
-    margin-right: auto;
-    margin-left: auto;
+    width: 380px;
+    height: 384px;
+    margin-bottom: 60px;
+  }
+  @media (min-width: 1024px) {
+    width: 592px;
+    height: 598px;
+    margin-right: 35px;
+  }
+  @media (min-width: 1440px) {
+    margin-right: 104px;
+  }
+`;
+
+export const FormContainerStyled = styled.div`
+  max-width: 458px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 1024px) {
+    max-width: 308px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 80px;
   }
 `;
 
@@ -21,6 +51,9 @@ export const YourActivityTitleStyled = styled.h2`
   margin-bottom: 16px;
   @media (min-width: 768px) {
     text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.2;
   }
 `;
 
@@ -31,7 +64,25 @@ export const YourActivityText = styled.p`
   line-height: 1.33;
   margin-bottom: 24px;
   @media (min-width: 768px) {
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
+    max-width: 300px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.46;
+  }
+  @media (min-width: 1024px) {
+    text-align: start;
+  }
+`;
+
+export const YourActivityFormStyled = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 1024px) {
+    align-items: flex-start;
   }
 `;
 
@@ -62,6 +113,11 @@ export const RadioLabelStyle = styled.label`
   position: relative;
   padding-left: 16px;
   cursor: pointer;
+  color: var(--color-primary-white);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+
   &::before {
     content: '';
     position: absolute;
@@ -112,6 +168,13 @@ export const YourActivitySignUpBtnStyled = styled.button`
   width: 100%;
   padding: 8px 10px;
   margin-bottom: 16px;
+  @media (min-width: 768px) {
+    max-width: 360px;
+    margin-bottom: 20px;
+  }
+  @media (min-width: 1024px) {
+    max-width: 212px;
+  }
 `;
 
 export const YourActivityBackBtnStyled = styled.button`
@@ -123,4 +186,7 @@ export const YourActivityBackBtnStyled = styled.button`
   width: 100%;
   padding: 8px 10px;
   background-color: transparent;
+  @media (min-width: 1024px) {
+    max-width: 212px;
+  }
 `;
