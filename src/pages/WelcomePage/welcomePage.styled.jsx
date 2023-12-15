@@ -2,17 +2,21 @@ import styled from "styled-components";
 
 export const WelcomePageContainer = styled.div`
   padding: 24px 10px 40px 10px;
-  background-color: var(--color-primary-black-2);
+  background-color: var(--color-primary-black);
 
   @media (min-width: 1024px) {
+    padding: 40px 0;
     display: flex;
+   justify-content: center;
   }
 `;
 
 export const FlexContainer = styled.div`
-display: flex;
-flex-direction: column;
-margin-left: 104px;
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 104px;
+  }
 `;
 
 export const ButtonContainer = styled.div`

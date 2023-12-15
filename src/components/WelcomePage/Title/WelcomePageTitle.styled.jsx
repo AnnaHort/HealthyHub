@@ -36,7 +36,7 @@ export const MainTitle = styled.h1`
 `;
 
 export const Title = styled.h2`
-  width: 290px;
+  // width: 290px;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
@@ -53,6 +53,7 @@ export const Title = styled.h2`
   }
 
   @media (min-width: 1024px) {
- 
+ display: flex;
+ flex-wrap: wrap;
   }
 `;

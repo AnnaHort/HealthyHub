@@ -36,11 +36,12 @@ export const BenefitsList = styled.li`
   }
 
   &:before {
-    content: '•';
-    color: var(--color-primary-green-lite);
-    display: inline-block;
-    width: 8px;
+    content: '';
+    width: 8px; 
     height: 8px;
+    background-color: var(--color-primary-green-lite);
+    border-radius: 50%;
+    display: inline-block;
     margin-right: 6px;
   }
 
@@ -49,5 +50,4 @@ export const BenefitsList = styled.li`
     display: flex;
     align-items: center;
   }
-
 `;
