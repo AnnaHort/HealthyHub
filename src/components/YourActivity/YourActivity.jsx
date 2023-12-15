@@ -3,8 +3,6 @@ import {
   RadioInputStyle,
   RadioLabelStyle,
   YourActivityBackBtnStyled,
-  // RadioInputStyle,
-  // RadioLabelStyle,
   YourActivityContainerStyled,
   YourActivityImgStyled,
   YourActivityList,

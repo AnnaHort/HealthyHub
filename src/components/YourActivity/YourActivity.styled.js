@@ -7,6 +7,10 @@ export const YourActivityContainerStyled = styled.div`
 
 export const YourActivityImgStyled = styled.img`
   margin-bottom: 24px;
+  @media (min-width: 768px) {
+    margin-right: auto;
+    margin-left: auto;
+  }
 `;
 
 export const YourActivityTitleStyled = styled.h2`
@@ -15,6 +19,9 @@ export const YourActivityTitleStyled = styled.h2`
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 16px;
+  @media (min-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const YourActivityText = styled.p`
@@ -23,6 +30,9 @@ export const YourActivityText = styled.p`
   font-weight: 400;
   line-height: 1.33;
   margin-bottom: 24px;
+  @media (min-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const YourActivityList = styled.ul`
