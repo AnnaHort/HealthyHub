@@ -1,3 +1,5 @@
+import SignUpRegister from "./SignUpRegister";
+
 const SignUpForm = () => {
   return (
     <div>
