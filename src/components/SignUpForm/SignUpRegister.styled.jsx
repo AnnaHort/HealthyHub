@@ -43,6 +43,23 @@ export const Image = styled.img`
   }
 `;
 
+// const StyledImageMobile = styled.img`
+//   width: 300px;
+//   height: 296px;
+//   margin-bottom: 24px;
+// `;
+
+// const StyledImageTablet = styled.img`
+//   width: 380px;
+//   height: 376px;
+//   margin-bottom: 60px;
+// `;
+
+// const StyledImageDesktop = styled.img`
+//   width: 592px;
+//   height: 588px;
+// `;
+
 export const RegisterTitle = styled.h2`
   color: var(--color-primary-white);
   font-family: Poppins;
