@@ -38,41 +38,51 @@ export const YourActivityListEStyled = styled.li`
   align-items: center;
 `;
 
-export const InputContainerStyled = styled.div`
+// Радіо-кнопка
+export const RadioButtonContainerStyled = styled.div`
+  display: flex;
   position: relative;
-  width: 12px;
-  height: 12px;
+`;
 
-  input[type='radio'] {
-    display: none;
-  }
+export const RadioInputStyle = styled.input`
+  opacity: 0;
+`;
 
+export const RadioLabelStyle = styled.label`
+  position: relative;
+  padding-left: 16px;
+  cursor: pointer;
   &::before {
     content: '';
-    width: 12px;
-    height: 12px;
-    top: 0;
-    left: 0;
     position: absolute;
-    background: var(--color-primary-black-2);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #b6b6b6;
+    background: #0f0f0f;
     border-radius: 50%;
-    border: 1px solid var(--color-primary-grey);
   }
-
   &::after {
     content: '';
     position: absolute;
-    width: 6px;
-    height: 6px;
-    top: 3px;
-    left: 3px;
-    background: var(--color-primary-green-lite);
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #e3ffa8;
     border-radius: 50%;
+    opacity: 0;
+  }
+
+  input[type='radio']:checked + &::after {
     opacity: 1;
   }
 `;
 
-
+//
 export const YourActivityLabelStyled = styled.label`
   color: var(--color-primary-white);
   font-size: 14px;
@@ -89,4 +99,18 @@ export const YourActivitySignUpBtnStyled = styled.button`
   background: var(--color-primary-green-lite);
   outline: none;
   border: none;
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+`;
+
+export const YourActivityBackBtnStyled = styled.button`
+  color: var(--color-primary-grey);
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 8px 10px;
+  background-color: transparent;
 `;

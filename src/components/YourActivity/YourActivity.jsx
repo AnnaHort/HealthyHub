@@ -1,10 +1,13 @@
 import {
-  InputContainerStyled,
+  RadioButtonContainerStyled,
+  RadioInputStyle,
+  RadioLabelStyle,
+  YourActivityBackBtnStyled,
+  // RadioInputStyle,
+  // RadioLabelStyle,
   YourActivityContainerStyled,
   YourActivityImgStyled,
-  YourActivityLabelStyled,
   YourActivityList,
-  YourActivityListEStyled,
   YourActivitySignUpBtnStyled,
   YourActivityText,
   YourActivityTitleStyled,
@@ -21,65 +24,48 @@ const YourActivity = () => {
       </YourActivityText>
       <form action="#">
         <YourActivityList>
-          <YourActivityListEStyled>
-            
-            <InputContainerStyled>
-              <input type="radio" value="1" name="activityLevel" />
-            </InputContainerStyled>
-            
-            <YourActivityLabelStyled htmlFor="activityOption1">
+          <RadioButtonContainerStyled>
+            <RadioInputStyle type="radio" id="radio1" name="radiogroup" />
+            <RadioLabelStyle style={{ color: '#fff' }} htmlFor="radio1">
               1.2 - if you do not have physical activity and sedentary work
-            </YourActivityLabelStyled>
-          </YourActivityListEStyled>
+            </RadioLabelStyle>
+          </RadioButtonContainerStyled>
 
-          <YourActivityListEStyled>
-            <InputContainerStyled>
-              <input type="radio" value="2" name="activityLevel" />
-            </InputContainerStyled>
-
-            <YourActivityLabelStyled htmlFor="activityOption2">
+          <RadioButtonContainerStyled>
+            <RadioInputStyle type="radio" id="radio2" name="radiogroup" />
+            <RadioLabelStyle style={{ color: '#fff' }} htmlFor="radio2">
               1.375 - if you do short runs or light gymnastics 1-3 times a week
-            </YourActivityLabelStyled>
-          </YourActivityListEStyled>
+            </RadioLabelStyle>
+          </RadioButtonContainerStyled>
 
-          <YourActivityListEStyled>
-            <InputContainerStyled>
-              <input type="radio" value="3" name="activityLevel" />
-            </InputContainerStyled>
-
-            <YourActivityLabelStyled htmlFor="activityOption3">
+          <RadioButtonContainerStyled>
+            <RadioInputStyle type="radio" id="radio3" name="radiogroup" />
+            <RadioLabelStyle style={{ color: '#fff' }} htmlFor="radio3">
               1.55 - if you play sports with average loads 3-5 times a week
-            </YourActivityLabelStyled>
-          </YourActivityListEStyled>
+            </RadioLabelStyle>
+          </RadioButtonContainerStyled>
 
-          <YourActivityListEStyled>
-            <InputContainerStyled>
-              <input type="radio" value="4" name="activityLevel" />
-            </InputContainerStyled>
-
-            <YourActivityLabelStyled htmlFor="activityOption4">
+          <RadioButtonContainerStyled>
+            <RadioInputStyle type="radio" id="radio4" name="radiogroup" />
+            <RadioLabelStyle style={{ color: '#fff' }} htmlFor="radio4">
               1.725 - if you train fully 6-7 times a week
-            </YourActivityLabelStyled>
-          </YourActivityListEStyled>
+            </RadioLabelStyle>
+          </RadioButtonContainerStyled>
 
-          <YourActivityListEStyled>
-            <InputContainerStyled>
-              <input type="radio" value="5" name="activityLevel" />
-            </InputContainerStyled>
-
-            <YourActivityLabelStyled htmlFor="activityOption5">
+          <RadioButtonContainerStyled>
+            <RadioInputStyle type="radio" id="radio5" name="radiogroup" />
+            <RadioLabelStyle style={{ color: '#fff' }} htmlFor="radio5">
               1.9 - if your work is related to physical labor, you train 2 times
               a day and include strength exercises in your training program
-            </YourActivityLabelStyled>
-          </YourActivityListEStyled>
+            </RadioLabelStyle>
+          </RadioButtonContainerStyled>
         </YourActivityList>
 
         <YourActivitySignUpBtnStyled type="submit">
           Sign Up
         </YourActivitySignUpBtnStyled>
-        <YourActivitySignUpBtnStyled type="button">
-          Back
-        </YourActivitySignUpBtnStyled>
+
+        <YourActivityBackBtnStyled type="button">Back</YourActivityBackBtnStyled>
       </form>
     </YourActivityContainerStyled>
   );
