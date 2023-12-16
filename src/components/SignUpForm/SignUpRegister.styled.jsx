@@ -108,7 +108,10 @@ export const InputContainer = styled.div`
   border: 1px solid var(--color-primary-green-lite);
   border-radius: 12px;
   width: 100%;
+  max-width: 380px;
   margin-bottom: 20px;
+  margin-left:auto;
+  margin-right:auto;
 
   @media (min-width: 1440px) {
     width: 50%;
