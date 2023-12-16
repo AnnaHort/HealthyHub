@@ -1,4 +1,4 @@
-import mainPhoto from '../../../img/welcomePage/symbol-defs.svg#icon-sport';
+import mainPhoto from '/src/img/welcomePage/symbol-defs.svg';
 import styled from "styled-components";
 
 const SvgContainer = styled.svg`
