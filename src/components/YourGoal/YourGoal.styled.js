@@ -58,7 +58,6 @@ export const Img = styled.img`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 
   @media (min-width: 768px) {
     width: 404px;
@@ -96,20 +95,16 @@ export const Description = styled.p`
   color: var(--color-primary-grey);
   padding-bottom: 24px;
   margin: 0;
-  font-family: Poppins;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 133.333% */
+  line-height: 1.33;
 
   @media (min-width: 768px) {
     flex-direction: row;
     text-align: center;
-    font-family: Poppins;
     font-size: 20px; //22 має бути
-    font-style: normal;
     font-weight: 400;
-    line-height: 32px; /* 145.455% */
+    line-height: 1.45; /* 145.455% */
   }
 
   @media (min-width: 1024px) {
@@ -140,7 +135,7 @@ export const List = styled.ul`
 `;
 
 export const BtnNext = styled.button`
-  width: 280px;
+  width: 100%;
   color: var(--color-primary-black-2);
   text-align: center;
   font-family: Poppins;
@@ -168,7 +163,7 @@ export const BtnNext = styled.button`
 `;
 
 export const BtnBack = styled.button`
-  width: 192px;
+  width: 100%;
   color: var(--color-primary-grey);
   text-align: center;
   font-family: Poppins;
@@ -178,8 +173,7 @@ export const BtnBack = styled.button`
   line-height: 20px;
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  margin: 0; /* Вирівнює по центру */
-  margin-left: 44px;
+  margin: 0; 
   display: block;
 
   @media (min-width: 768px) {
@@ -189,7 +183,7 @@ export const BtnBack = styled.button`
 
   @media (min-width: 1024px) {
     width: 192px;
-    margin: 0; /* Вирівнюйте по центру */
+    margin: 0; 
     display: flex;
     justify-content: center;
   }
