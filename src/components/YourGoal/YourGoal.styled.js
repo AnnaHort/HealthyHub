@@ -58,7 +58,6 @@ export const Img = styled.img`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 
   @media (min-width: 768px) {
     width: 404px;
@@ -96,20 +95,16 @@ export const Description = styled.p`
   color: var(--color-primary-grey);
   padding-bottom: 24px;
   margin: 0;
-  font-family: Poppins;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 133.333% */
+  line-height: 1.33;
 
   @media (min-width: 768px) {
     flex-direction: row;
     text-align: center;
-    font-family: Poppins;
     font-size: 20px; //22 має бути
-    font-style: normal;
     font-weight: 400;
-    line-height: 32px; /* 145.455% */
+    line-height: 1.45; /* 145.455% */
   }
 
   @media (min-width: 1024px) {
@@ -140,7 +135,7 @@ export const List = styled.ul`
 `;
 
 export const BtnNext = styled.button`
-  width: 280px;
+  width: 100%;
   color: var(--color-primary-black-2);
   text-align: center;
   font-family: Poppins;
@@ -168,7 +163,7 @@ export const BtnNext = styled.button`
 `;
 
 export const BtnBack = styled.button`
-  width: 192px;
+  width: 100%;
   color: var(--color-primary-grey);
   text-align: center;
   font-family: Poppins;
@@ -178,8 +173,7 @@ export const BtnBack = styled.button`
   line-height: 20px;
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  margin: 0; /* Вирівнює по центру */
-  margin-left: 44px;
+  margin: 0; 
   display: block;
 
   @media (min-width: 768px) {
@@ -189,7 +183,7 @@ export const BtnBack = styled.button`
 
   @media (min-width: 1024px) {
     width: 192px;
-    margin: 0; /* Вирівнюйте по центру */
+    margin: 0; 
     display: flex;
     justify-content: center;
   }
@@ -204,46 +198,7 @@ export const CustomRadio = styled.input`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
-  position: relative;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background-color: transparent;
-  border: 1px solid #b6b6b6;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin-top: 4px;
-  margin-left: 4px;
-
-  /* Стилі для внутрішнього кружка (позначки) */
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #e3ffa8;
-
-    /* вирівняти по центру */
-    position: absolute;
-    top: 12%;
-    left: 12%;
-    transform: translate(12% 12%);
-    width: 8px;
-    height: 8px;
-    opacity: 0;
-
-    transition: 0.2s ease-in;
-  }
-
-  /* Змінюємо стиль позначки при виборі */
-  &:checked {
-    background-color: transparent;
-    &::before {
-      opacity: 1;
-    }
-  }
+  opacity: 0;
 `;
 
 export const Label = styled.label`
@@ -253,4 +208,42 @@ export const Label = styled.label`
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+
+  position: relative;
+  padding-left: 16px;
+  cursor: pointer;
+  color: var(--color-primary-white);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #b6b6b6;
+    background: #0f0f0f;
+    border-radius: 50%;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #e3ffa8;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.2s ease-in;
+  }
+
+  input[type='radio']:checked + &::after {
+    opacity: 1;
+  }
 `;
