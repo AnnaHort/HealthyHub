@@ -12,6 +12,7 @@ export const TitleContainer = styled.div`
     margin-right: auto;
   }
   @media (min-width: 1024px) {
+    
   }
 `;
 

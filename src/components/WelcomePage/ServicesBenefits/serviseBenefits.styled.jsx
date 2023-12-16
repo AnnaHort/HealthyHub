@@ -12,9 +12,12 @@ export const BenegitsContainer = styled.div`
 
 export const Benefits = styled.ul`
   @media (min-width: 768px) and (max-width: 1023px) {
-    display: grid;
+    display: flex;
+    /* display: grid; */
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   @media (min-width: 1024px) {
     display: flex;
@@ -50,7 +53,7 @@ export const BenefitsList = styled.li`
     margin-bottom: 0;
     display: flex;
     align-items: center;
-    margin-right: 8px;
+    /* margin-right: 8px; */
 
     &:nth-last-child(1),
     &:nth-last-child(3) {
