@@ -204,46 +204,7 @@ export const CustomRadio = styled.input`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
-  position: relative;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background-color: transparent;
-  border: 1px solid #b6b6b6;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin-top: 4px;
-  margin-left: 4px;
-
-  /* Стилі для внутрішнього кружка (позначки) */
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #e3ffa8;
-
-    /* вирівняти по центру */
-    position: absolute;
-    top: 12%;
-    left: 12%;
-    transform: translate(12% 12%);
-    width: 8px;
-    height: 8px;
-    opacity: 0;
-
-    transition: 0.2s ease-in;
-  }
-
-  /* Змінюємо стиль позначки при виборі */
-  &:checked {
-    background-color: transparent;
-    &::before {
-      opacity: 1;
-    }
-  }
+  opacity: 0;
 `;
 
 export const Label = styled.label`
@@ -253,4 +214,42 @@ export const Label = styled.label`
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+
+  position: relative;
+  padding-left: 16px;
+  cursor: pointer;
+  color: var(--color-primary-white);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #b6b6b6;
+    background: #0f0f0f;
+    border-radius: 50%;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #e3ffa8;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.2s ease-in;
+  }
+
+  input[type='radio']:checked + &::after {
+    opacity: 1;
+  }
 `;
