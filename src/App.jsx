@@ -11,11 +11,13 @@ function App() {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<SharedLayout />} />
+      <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            
+          <Route path="/signin" element={<SharedLayout />}/>
+          <Route path="/signup" element={<SignUpPage />}/>
 
-          <Route path="signup" element={<SignUpPage />} />
-
+          </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Suspense>

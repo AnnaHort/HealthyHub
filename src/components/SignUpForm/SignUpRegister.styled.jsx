@@ -43,23 +43,6 @@ export const Image = styled.img`
   }
 `;
 
-// const StyledImageMobile = styled.img`
-//   width: 300px;
-//   height: 296px;
-//   margin-bottom: 24px;
-// `;
-
-// const StyledImageTablet = styled.img`
-//   width: 380px;
-//   height: 376px;
-//   margin-bottom: 60px;
-// `;
-
-// const StyledImageDesktop = styled.img`
-//   width: 592px;
-//   height: 588px;
-// `;
-
 export const RegisterTitle = styled.h2`
   color: var(--color-primary-white);
   font-family: Poppins;
@@ -114,7 +97,9 @@ export const InputContainer = styled.div`
   margin-right:auto;
 
   @media (min-width: 1440px) {
-    width: 50%;
+    max-width: 212px;
+    margin-left:0;
+  margin-right:0;
   }
 `;
 
@@ -150,6 +135,7 @@ export const Button = styled.button`
   line-height: 1.43;
   width: 100%;
   @media (min-width: 834px) {
+    max-width: 380px;
     margin-bottom: 238px;
     margin-bottom: 206px;
   }
@@ -163,6 +149,7 @@ export const Button = styled.button`
 export const QuestionBlock = styled.div`
   @media (min-width: 834px) {
     display: flex;
+    justify-content: center;
   }
   @media (min-width: 1440px) {
     align-items: flex-start;
