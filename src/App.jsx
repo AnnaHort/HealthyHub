@@ -8,15 +8,17 @@ import ButtonSignIn from './components/WelcomePage/Button/buttonSignIn';
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
 );
+const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 
 function App() {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
+      <Routes>
           <Route path="/" element={<SharedLayout />}>
-            <Route path="/signin" element={<SharedLayout />} />
-            <Route path="/signup" element={<SharedLayout />} />
+ 
+          <Route path="/signin" element={<SharedLayout />}/>
+          <Route path="/signup" element={<SignUpPage />}/>
 
             <Route path="/welcome" element={<WelcomePage />}>
               <Route path="signup" element={<ButtonSignUp />} />
