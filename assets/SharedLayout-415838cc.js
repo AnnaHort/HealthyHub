@@ -1,4 +1,4 @@
-import{s as t,N as n,j as e,r,O as o}from"./index-86179fc9.js";const s=t(n)`
+import{s as t,N as n,j as e,r,O as o}from"./index-54b807a4.js";const s=t(n)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;

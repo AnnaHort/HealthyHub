@@ -1,4 +1,4 @@
-import{s as t,j as i}from"./index-86179fc9.js";const r=t.div`
+import{s as t,j as i}from"./index-54b807a4.js";const r=t.div`
   background-color: var(--color-primary-black);
   width: 320px;
   margin: 0 auto;
