@@ -25,6 +25,17 @@ export const YourGoal = () => {
           Choose a goal so that we can help you effectively
         </Description>
         <List>
+        <RadioItem>
+            <CustomRadio
+              type="radio"
+              id="loseFat"
+              name="goal"
+              value="Lose Fat"
+            />
+            <Label for="loseFat">Lose Fat</Label>
+          </RadioItem>
+
+
           <RadioItem>
             <CustomRadio
               type="radio"
@@ -34,6 +45,7 @@ export const YourGoal = () => {
             />
             <Label for="maintain">Maintain</Label>
           </RadioItem>
+
           <RadioItem>
             <CustomRadio
               type="radio"
@@ -43,15 +55,8 @@ export const YourGoal = () => {
             />
             <Label for="gainMuscle">Gain Muscle</Label>
           </RadioItem>
-          <RadioItem>
-            <CustomRadio
-              type="radio"
-              id="loseFat"
-              name="goal"
-              value="Lose Fat"
-            />
-            <Label for="loseFat">Lose Fat</Label>
-          </RadioItem>
+
+        
         </List>
         <BtnNext>Next</BtnNext>
 
