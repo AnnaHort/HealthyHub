@@ -129,7 +129,6 @@ export const RadioLabelStyle = styled.label`
     border: 1px solid #b6b6b6;
     background: #0f0f0f;
     border-radius: 50%;
-    transition: 0.2s ease-in;
   }
   &::after {
     content: '';
@@ -142,6 +141,7 @@ export const RadioLabelStyle = styled.label`
     background: #e3ffa8;
     border-radius: 50%;
     opacity: 0;
+    transition: 0.2s ease-in;
   }
 
   input[type='radio']:checked + &::after {
