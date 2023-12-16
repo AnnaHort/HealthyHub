@@ -10,13 +10,13 @@ function App() {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-      <Routes>
+        <Routes>
           <Route path="/" element={<SharedLayout />}>
- 
-          <Route path="/signin" element={<SharedLayout />}/>
-
-            </Route>
             
+          <Route path="/signin" element={<SharedLayout />}/>
+          <Route path="/signup" element={<SharedLayout />}/>
+
+          </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Suspense>
