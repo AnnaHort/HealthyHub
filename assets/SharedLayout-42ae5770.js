@@ -1,4 +1,4 @@
-import{N as r,j as e,r as n,O as o}from"./index-373a52db.js";import{s as t}from"./styled-components.browser.esm-91222cf9.js";const s=t(r)`
+import{s as t,N as n,j as e,r,O as o}from"./index-86179fc9.js";const s=t(n)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -24,7 +24,7 @@ import{N as r,j as e,r as n,O as o}from"./index-373a52db.js";import{s as t}from"
   justify-content: center;
   align-items: center;
   gap: 6px;
-`,i=t(r)`
+`,i=t(n)`
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -61,4 +61,4 @@ import{N as r,j as e,r as n,O as o}from"./index-373a52db.js";import{s as t}from"
  @media (min-width: 1024px) {
   padding: 34px 34px;
  }
-`,j=()=>e.jsxs(e.Fragment,{children:[e.jsx("header",{children:e.jsx(f,{children:e.jsx(x,{})})}),e.jsx(n.Suspense,{children:e.jsx(o,{})})]});export{j as default};
+`,m=()=>e.jsxs(e.Fragment,{children:[e.jsx("header",{children:e.jsx(f,{children:e.jsx(x,{})})}),e.jsx(r.Suspense,{children:e.jsx(o,{})})]});export{m as default};
