@@ -19,10 +19,6 @@ function App() {
             <Route path="/signin" element={<SignInPages />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
-            {/* <Route
-              path="/parameters"
-              element={<BodyParameters />}
-            ></Route> */}
           </Route>
 
           <Route path="*" element={<ErrorPage />} />
