@@ -1,4 +1,4 @@
-import{s as t,N as n,j as e,r,O as o}from"./index-7db9f7eb.js";const s=t(n)`
+import{s as t,N as n,j as e,r,O as o}from"./index-b95a53db.js";const s=t(n)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -7,14 +7,14 @@ import{s as t,N as n,j as e,r,O as o}from"./index-7db9f7eb.js";const s=t(n)`
     color: var(--color-primary-green-lite);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 22px;
     line-height: 1.46%;
   }
 `,l=()=>e.jsx(s,{to:"/welcome",children:"HealthyHub"}),a=t.svg`
   width: 26px;
   height: 26px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 28px;
     height: 28px;
   }
@@ -32,7 +32,7 @@ import{s as t,N as n,j as e,r,O as o}from"./index-7db9f7eb.js";const s=t(n)`
   &.active {
     color: var(--color-primary-green-lite);
   }
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 14px;
     line-height: 1.43;
   }
@@ -41,7 +41,7 @@ import{s as t,N as n,j as e,r,O as o}from"./index-7db9f7eb.js";const s=t(n)`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.3;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 14px;
     line-height: 1.43;
   }
@@ -53,7 +53,7 @@ import{s as t,N as n,j as e,r,O as o}from"./index-7db9f7eb.js";const s=t(n)`
   align-items: center;
 
 
- @media (min-width: 768px) {
+ @media (min-width: 834px) {
   padding: 36px 27px;
  }
 
