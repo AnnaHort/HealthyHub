@@ -10,8 +10,6 @@ const SharedLayout = lazy(() =>
 );
 const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 
-const AuthNav = lazy(() => import('./pages/AuthNav/AuthNav'));
-
 function App() {
   return (
     <>
@@ -19,7 +17,6 @@ function App() {
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route path="/signin" element={<SharedLayout />} />
-            <Route path="/signup" element={<AuthNav />} />
             <Route path="/signup" element={<SignUpPage />} />
 
             <Route path="/welcome" element={<WelcomePage />}>
