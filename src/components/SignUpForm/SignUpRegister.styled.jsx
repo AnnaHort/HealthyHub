@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Field, Form } from 'formik';
 
 export const SignUpRegisterContainer = styled.div`
   background-color: var(--color-primary-black);
@@ -80,8 +81,11 @@ export const RegisterText = styled.p`
   }
 `;
 
-export const RegisterForm = styled.form`
+
+export const RegisterForm = styled(Form)`
   @media (min-width: 834px) {
+
+
     margin-left: auto;
     margin-right: auto;
   }
@@ -93,31 +97,19 @@ export const RegisterForm = styled.form`
   }
 `;
 
-export const InputContainer = styled.div`
-  background: transparent;
+export const Input = styled(Field)`
   position: relative;
   border: 1px solid var(--color-primary-green-lite);
   border-radius: 12px;
-  width: 100%;
   max-width: 380px;
   margin-bottom: 20px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 
-  @media (min-width: 1440px) {
-    max-width: 212px;
-    margin-left:0;
-  margin-right:0;
-  }
-`;
-
-export const Input = styled.input`
   color: var(--color-primary-grey);
   font-family: Poppins;
   line-height: 1.429;
   background: transparent;
-  border-color: transparent;
-  outline: none;
   padding: 8px 10px;
   width: 100%;
   :hover {
@@ -126,6 +118,10 @@ export const Input = styled.input`
   @media (min-width: 1440px) {
     /* width: 50%; */
   }
+`;
+
+export const ErrorMessage = styled.input`
+  color: red;
 `;
 
 export const Button = styled.button`

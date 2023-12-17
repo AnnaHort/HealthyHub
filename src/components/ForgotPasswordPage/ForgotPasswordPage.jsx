@@ -6,7 +6,6 @@ import {
 import {
   Image,
   Input,
-  InputContainer,
   RegisterForm,
 } from '../SignUpForm/SignUpRegister.styled';
 import RegisterImageMobile from '../../img/register-img-mobile.png';
@@ -39,21 +38,12 @@ const ForgotPasswordPage = () => {
 
         <RegisterForm autoComplete="off">
           <label htmlFor="email">
-            <InputContainer>
-              <Input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="E-mail"
-              />
-            </InputContainer>
+            <Input type="email" id="email" name="email" placeholder="E-mail" />
           </label>
-
           <ForgotPassBtnContainer>
             <SignInBtnContainer>
               <ForgotPassBtn type="submit">Send</ForgotPassBtn>
             </SignInBtnContainer>
-
             <ForgotPassLinkContainer>
               <ForgotPassText>
                 If you don&#39;t have an account yet
