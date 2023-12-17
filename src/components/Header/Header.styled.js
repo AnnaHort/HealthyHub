@@ -8,7 +8,7 @@ export const HeaderContainerStyled = styled.div`
   align-items: center;
 
 
- @media (min-width: 768px) {
+ @media (min-width: 834px) {
   padding: 36px 27px;
  }
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const SignInPagesContainer = styled.div`
@@ -9,7 +10,7 @@ export const SignInPagesContainer = styled.div`
   padding-left: 10px;
   padding-right: 10px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 492px;
     padding-top: 40px;
     padding-bottom: 60px;
@@ -26,10 +27,10 @@ export const SignInPagesContainer = styled.div`
 `;
 
 export const RegisterTitleContainer = styled.div`
-    @media (min-width: 1440px) {
-        padding-top: 80px;
+  @media (min-width: 1440px) {
+    padding-top: 80px;
   }
-`
+`;
 
 export const ButtonSignIn = styled.button`
   border-radius: 12px;
@@ -45,34 +46,77 @@ export const ButtonSignIn = styled.button`
   font-weight: 500;
   line-height: 1.43;
   width: 100%;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     max-width: 380px;
     margin-bottom: 20px;
   }
   @media (min-width: 1440px) {
-    width: 50%;
+    max-width: 212px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+`;
+
+export const ForgotElementContainer = styled.div`
+  @media (min-width: 834px) {
+    height: 222px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @media (min-width: 1440px) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+ 
+`
+
+export const SignInBtnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 834px) {
+    max-width: 380px;
+
+  }
+  @media (min-width: 1440px) {
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 212px;
+    align-items: center;
   }
 `;
 
 export const ForgotPasswordContainer = styled.div`
-  @media (min-width: 768px) {
-    display: flex;
-    height: 222px;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  @media (min-width: 834px) {
     justify-content: space-between;
     max-width: 380px;
     margin-right: auto;
     margin-left: auto;
+    gap: 16px;
+  }
+  @media (min-width: 1440px) {
+
+    margin-right: 0;
+    margin-left: 0;
   }
 `;
-
-export const ForgotPasswordText = styled.p`
+export const ForgotPasswordLink = styled(Link)`
   color: var(--color-primary-grey);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.43;
   text-align: center;
   margin-bottom: 54px;
+  @media (min-width: 834px) {
+    margin-bottom: 0;
+}
   @media (min-width: 1440px) {
     text-align: start;
     margin-bottom: 184px;
@@ -84,7 +128,8 @@ export const SignInQuestionContainer = styled.div`
   justify-content: space-between;
   margin-right: auto;
   margin-left: auto;
-  @media (min-width: 768px) {
+  gap: 20px;
+  @media (min-width: 834px) {
     justify-content: start;
     gap: 16px;
     margin-right: 0;
@@ -99,9 +144,3 @@ export const HaveAnAccountText = styled.p`
   line-height: 1.43;
 `;
 
-// export const SignUpLink = styled(Link)`
-//   color: var(--color-primary-white);
-//   font-size: 14px;
-//   font-weight: 500;
-//   line-height: 1.43;
-// `;

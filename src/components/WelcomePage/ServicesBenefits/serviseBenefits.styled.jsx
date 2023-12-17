@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BenegitsContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     max-width: 444px;
     margin-left: auto;
     margin-right: auto;
@@ -11,7 +11,7 @@ export const BenegitsContainer = styled.div`
 `;
 
 export const Benefits = styled.ul`
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     display: flex;
     /* display: grid; */
     grid-template-columns: repeat(2, 1fr);
@@ -49,11 +49,10 @@ export const BenefitsList = styled.li`
     margin-right: 6px;
   }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     margin-bottom: 0;
     display: flex;
     align-items: center;
-    /* margin-right: 8px; */
 
     &:nth-last-child(1),
     &:nth-last-child(3) {
