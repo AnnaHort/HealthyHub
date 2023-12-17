@@ -4,6 +4,7 @@ import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import WelcomePage from './pages/WelcomePage/welcomePage';
 import ButtonSignUp from './components/WelcomePage/Button/buttonSignUp';
 import ButtonSignIn from './components/WelcomePage/Button/buttonSignIn';
+import SignInPages from './pages/SignInPages/SignInPages';
 
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
@@ -17,7 +18,7 @@ function App() {
       <Routes>
           <Route path="/" element={<SharedLayout />}>
  
-          <Route path="/signin" element={<SharedLayout />}/>
+          <Route path="/signin" element={<SignInPages />}/>
           <Route path="/signup" element={<SignUpPage />}/>
 
             <Route path="/welcome" element={<WelcomePage />}>
