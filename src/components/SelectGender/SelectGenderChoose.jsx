@@ -1,20 +1,25 @@
 import {
   SelectGenderContainer,
   Image,
-  RegisterTitle,
-  RegisterText,
-  RadioButtonText,
   Text,
   RegisterForm,
-  InputContainer,
   Input,
   Button,
   ButtonBack,
+  GenderRadioBtnContainer,
+  SelectGenderInputContainer,
+  SelectGenderRegisterTitle,
+  SelectGenderRegisterText,
 } from './SelectGender.styled';
 
 import SelectGenderImegMobile from '../../img/select_gender/gender-and-age-mobile.png';
 import SelectGenderImegTablet from '../../img/select_gender/gender-and-age-tablet.png';
 import SelectGenderImegDesktop from '../../img/select_gender/gender-and-age-desktop.png';
+import {
+  RadioButtonContainerStyled,
+  RadioInputStyle,
+  RadioLabelStyle,
+} from '../YourActivity/YourActivity.styled';
 
 const SelectGenderChoose = () => {
   return (
@@ -22,31 +27,47 @@ const SelectGenderChoose = () => {
       <Image
         src={SelectGenderImegMobile}
         srcSet={`${SelectGenderImegTablet} 834w, ${SelectGenderImegDesktop} 1440w`}
-        sizes="(max-width: 833px) 100vw, (min-width: 834px) 50vw"
+        sizes="(max-width: 833px) 100vw, (min-width: 768px) 50vw"
         alt="Responsive Image"
       />
       <div>
-        <RegisterTitle>Select gender, Age</RegisterTitle>
-        <RegisterText>
+        <SelectGenderRegisterTitle>
+          Select gender, Age
+        </SelectGenderRegisterTitle>
+        <SelectGenderRegisterText>
           Choose a goal so that we can help you effectively
-        </RegisterText>
+        </SelectGenderRegisterText>
         <RegisterForm>
-          <RadioButtonText>Gender</RadioButtonText>
-          <label className="radioButton">
-            <input type="radio" name="radio_1" />
-            <input type="radio" name="radio_2" />
-          </label>
-          <label htmlFor="password">
+          <Text>Gender</Text>
+          <GenderRadioBtnContainer>
+            <RadioButtonContainerStyled>
+              <RadioInputStyle type="radio" id="male" name="radiogroup" />
+              <RadioLabelStyle
+                style={{ width: '120px', textAlign: 'start' }}
+                htmlFor="male"
+              >
+                Male
+              </RadioLabelStyle>
+            </RadioButtonContainerStyled>
+
+            <RadioButtonContainerStyled>
+              <RadioInputStyle type="radio" id="female" name="radiogroup" />
+              <RadioLabelStyle htmlFor="female">Female</RadioLabelStyle>
+            </RadioButtonContainerStyled>
+          </GenderRadioBtnContainer>
+
+          <label htmlFor="age">
             <Text>Your age</Text>
-            <InputContainer>
+            <SelectGenderInputContainer>
               <Input
-                type="password"
-                id="password"
-                name="password"
+                type="text"
+                id="age"
+                name="age"
                 placeholder="Enter your age"
               />
-            </InputContainer>
+            </SelectGenderInputContainer>
           </label>
+
           <Button type="submit">Next</Button>
           <ButtonBack>Back</ButtonBack>
         </RegisterForm>

@@ -8,7 +8,7 @@ export const SelectGenderContainer = styled.div`
   padding-bottom: 24px;
   padding-left: 10px;
   padding-right: 10px;
-  @media (min-width: 834px) {
+  @media (min-width: 768px) {
     width: 492px;
     padding-top: 40px;
     padding-bottom: 228px;
@@ -33,7 +33,7 @@ export const Image = styled.img`
   width: 300px;
   height: 296px;
   margin-bottom: 10px;
-  @media (min-width: 834px) {
+  @media (min-width: 768px) {
     width: 380px;
     height: 376px;
     margin-bottom: 60px;
@@ -45,17 +45,15 @@ export const Image = styled.img`
   }
 `;
 
-export const RegisterTitle = styled.h2`
+export const SelectGenderRegisterTitle = styled.h2`
   color: var(--color-primary-white);
-  font-family: Poppins;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 16px;
   padding-left: 10px;
   padding-right: 10px;
-  @media (min-width: 834px) {
-    width: 444px;
+  @media (min-width: 768px) {
     font-size: 30px;
     line-height: 1.2;
     text-align: center;
@@ -67,20 +65,22 @@ export const RegisterTitle = styled.h2`
   }
 `;
 
-export const RegisterText = styled.p`
+export const SelectGenderRegisterText = styled.p`
   color: var(--color-primary-grey);
-  font-family: Poppins;
   font-size: 18px;
   line-height: 1.33;
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 24px;
-  @media (min-width: 834px) {
-    wiwidth: 444px;
+  font-weight: 400;
+  line-height: 1.33;
+  @media (min-width: 768px) {
+    text-align: center;
     font-size: 22px;
     line-height: 1.45;
-    padding-left: 52px;
-    padding-right: 52px;
+    padding-left: 0;
+    padding-right: 0;
+
     @media (min-width: 1440px) {
       text-align: left;
       padding-left: 0;
@@ -97,7 +97,7 @@ export const RadioButtonText = styled.p`
   font-weight: 500;
   line-height: 20px;
   margin-bottom: 12px;
-  @media (min-width: 834px) {
+  @media (min-width: 768px) {
     width: 444px;
     text-align: left;
     margin-left: 32px;
@@ -109,13 +109,31 @@ export const RadioButtonText = styled.p`
 `;
 
 export const RegisterForm = styled.form`
-  @media (min-width: 834px) {
+  @media (min-width: 768px) {
     margin-left: auto;
     margin-right: auto;
   }
   @media (min-width: 1440px) {
     margin-left: 0;
     margin-right: 0;
+  }
+`;
+
+export const GenderRadioBtnContainer = styled.div`
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  @media (min-width: 768px) {
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 1440px) {
+    display: flex;
+    width: 380px;
+    flex-direction: column;
+    margin-right: 0;
+    margin-left: 0;
   }
 `;
 
@@ -128,7 +146,7 @@ export const Text = styled.p`
   line-height: 20px;
   text-align: left;
   margin-bottom: 12px;
-  @media (min-width: 834px) {
+  @media (min-width: 768px) {
     width: 380px;
     margin-left: auto;
     margin-right: auto;
@@ -139,13 +157,13 @@ export const Text = styled.p`
   }
 `;
 
-export const InputContainer = styled.div`
+export const SelectGenderInputContainer = styled.div`
   background: transparent;
   position: relative;
   border: 1px solid var(--color-primary-green-lite);
   border-radius: 12px;
-  margin-bottom: 20px;
-  @media (min-width: 834px) {
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
     width: 380px;
     margin-left: auto;
     margin-right: auto;
@@ -169,7 +187,7 @@ export const Input = styled.input`
   :hover {
     color: var(--color-primary-white);
   }
-  @media (min-width: 834px) {
+  @media (min-width: 768px) {
     width: 380px;
     margin-left: auto;
     margin-right: auto;
@@ -188,14 +206,13 @@ export const Button = styled.button`
   background: var(--color-primary-green-lite);
   padding: 8px 10px;
   margin-bottom: 20px;
-  /* margin-top: 20px; */
   color: var(--bg-primary);
   text-align: center;
   font-family: Poppins;
   font-weight: 500;
   line-height: 1.43;
   width: 300px;
-  @media (min-width: 834px) {
+  @media (min-width: 768px) {
     width: 380px;
     margin-left: auto;
     margin-right: auto;
@@ -214,7 +231,7 @@ export const ButtonBack = styled.button`
   margin: 0 auto;
   display: block;
   border: none;
-  @media (min-width: 834px) {
+  @media (min-width: 768px) {
     max-width: 380px;
   }
   @media (min-width: 1440px) {

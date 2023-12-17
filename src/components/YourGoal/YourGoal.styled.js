@@ -11,7 +11,7 @@ export const Container = styled.div`
   align-items: center;
 
   @media (min-width: 768px) {
-    min-width: 834px;
+    min-width: 768px;
     height: 1194px;
   }
 
