@@ -16,6 +16,7 @@ import RegisterImageTablet from '../../img/register-img-tablet.png';
 import RegisterImageDesktop from '../../img/register-img-desktop.png';
 
 const SignUpRegister = () => {
+
   return (
     <SignUpRegisterContainer>
       <Image
