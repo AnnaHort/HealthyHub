@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import WelcomePage from './pages/WelcomePage/welcomePage';
 import SignInPages from './pages/SignInPages/SignInPages';
+import ForgotPasswordPage from './components/ForgotPasswordPage/ForgotPasswordPage';
 
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
@@ -19,7 +20,7 @@ function App() {
             <Route path="/signin" element={<SignInPages />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
-
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>

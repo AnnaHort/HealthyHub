@@ -32,6 +32,8 @@ export const Image = styled.img`
   width: 300px;
   height: 296px;
   margin-bottom: 24px;
+  margin-right: auto;
+  margin-left: auto;
   @media (min-width: 768px) {
     width: 380px;
     height: 376px;
@@ -41,6 +43,8 @@ export const Image = styled.img`
     width: 592px;
     height: 588px;
     margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 `;
 
