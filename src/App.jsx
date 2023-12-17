@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import WelcomePage from './pages/WelcomePage/welcomePage';
 import SignInPages from './pages/SignInPages/SignInPages';
-import BodyParameters from './pages/BodyParameters/bodyParameters';
+// import BodyParameters from './pages/BodyParameters/bodyParameters';
 
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
@@ -19,7 +19,10 @@ function App() {
             <Route path="/signin" element={<SignInPages />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
-            <Route path="/parameters" element={<BodyParameters />}></Route>
+            {/* <Route
+              path="/parameters"
+              element={<BodyParameters />}
+            ></Route> */}
           </Route>
 
           <Route path="*" element={<ErrorPage />} />

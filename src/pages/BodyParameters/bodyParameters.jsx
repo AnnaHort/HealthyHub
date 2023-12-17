@@ -1,10 +1,13 @@
+import FormBodyParameters from "../../components/BodyParameters/BodyForm/bodyParametersForm";
+import PhotoBodyParameters from "../../components/BodyParameters/photoBodyParameters";
 import TitleBodyParameters from "../../components/BodyParameters/title/title";
 
 const BodyParameters = () => {
     return (
         <div>
-            <BodyParameters />
-            <TitleBodyParameters/>
+            <PhotoBodyParameters/>
+            <TitleBodyParameters />
+            <FormBodyParameters/>
         </div>
     )
 };
