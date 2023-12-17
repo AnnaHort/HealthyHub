@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const SignUpRegisterContainer = styled.div`
@@ -171,7 +172,7 @@ export const Question = styled.p`
   }
 `;
 
-export const Link = styled.a`
+export const LinkStyled = styled(Link)`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;

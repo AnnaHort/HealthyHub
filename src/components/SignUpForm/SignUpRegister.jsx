@@ -9,7 +9,7 @@ import {
   Button,
   QuestionBlock,
   Question,
-  Link,
+  LinkStyled,
 } from './SignUpRegister.styled';
 import RegisterImageMobile from '../../img/register-img-mobile.png';
 import RegisterImageTablet from '../../img/register-img-tablet.png';
@@ -56,7 +56,7 @@ const SignUpRegister = () => {
           <Button type="submit">Next</Button>
           <QuestionBlock>
             <Question>Do you already have an account?</Question>
-            <Link to="/signin">Sign in</Link>
+            <LinkStyled to="/signin">Sign in</LinkStyled>
           </QuestionBlock>
         </RegisterForm>
       </div>

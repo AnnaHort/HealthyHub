@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const BSignIn = styled.button`
@@ -26,7 +27,7 @@ export const BSignIn = styled.button`
   }
 `;
 
-export const BSignOut = styled.button`
+export const BSignOut = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,9 +37,7 @@ export const BSignOut = styled.button`
   border: none;
   background-color: inherit;
 
-  font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
   line-height: 20px;
   color: var(--color-primary-white);

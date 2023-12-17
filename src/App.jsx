@@ -15,17 +15,13 @@ function App() {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-      <Routes>
+        <Routes>
           <Route path="/" element={<SharedLayout />}>
- 
-          <Route path="/signin" element={<SignInPages />}/>
-          <Route path="/signup" element={<SignUpPage />}/>
-
-            <Route path="/welcome" element={<WelcomePage />}>
-              <Route path="signup" element={<ButtonSignUp />} />
-              <Route path="signin" element={<ButtonSignIn />} />
-            </Route>
             
+            <Route path="/signin" element={<SignInPages />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/welcome" element={<WelcomePage />} />
+
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>

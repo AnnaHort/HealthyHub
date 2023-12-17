@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from '../../components/SignUpForm/SignUpRegister.styled';
 
 export const SignInPagesContainer = styled.div`
   background-color: var(--color-primary-black);
@@ -100,9 +99,9 @@ export const HaveAnAccountText = styled.p`
   line-height: 1.43;
 `;
 
-export const SignUpLink = styled(Link)`
-  color: var(--color-primary-white);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.43;
-`;
+// export const SignUpLink = styled(Link)`
+//   color: var(--color-primary-white);
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 1.43;
+// `;

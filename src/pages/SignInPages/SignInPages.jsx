@@ -1,8 +1,8 @@
-import { Image, Input, InputContainer, RegisterForm, RegisterText, RegisterTitle } from "../../components/SignUpForm/SignUpRegister.styled";
+import { Image, Input, InputContainer, LinkStyled, RegisterForm, RegisterText, RegisterTitle } from "../../components/SignUpForm/SignUpRegister.styled";
 import RegisterImageMobile from '../../img/register-img-mobile.png';
 import RegisterImageTablet from '../../img/register-img-tablet.png';
 import RegisterImageDesktop from '../../img/register-img-desktop.png';
-import { ButtonSignIn, ForgotPasswordContainer, ForgotPasswordText, HaveAnAccountText, RegisterTitleContainer, SignInPagesContainer, SignInQuestionContainer, SignUpLink } from "./SignInPages.styled";
+import { ButtonSignIn, ForgotPasswordContainer, ForgotPasswordText, HaveAnAccountText, RegisterTitleContainer, SignInPagesContainer, SignInQuestionContainer } from "./SignInPages.styled";
 const SignInPages = () => {
   return (
     <SignInPagesContainer>
@@ -46,7 +46,7 @@ const SignInPages = () => {
 
 <SignInQuestionContainer>
 <HaveAnAccountText>If you don&#39;t have an account yet</HaveAnAccountText>
-  <SignUpLink to="/signup">Sign up</SignUpLink>
+  <LinkStyled to="/signup">Sign up</LinkStyled>
 </SignInQuestionContainer>
 
 </ForgotPasswordContainer>
