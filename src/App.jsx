@@ -2,8 +2,6 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import WelcomePage from './pages/WelcomePage/welcomePage';
-import ButtonSignUp from './components/WelcomePage/Button/buttonSignUp';
-import ButtonSignIn from './components/WelcomePage/Button/buttonSignIn';
 import SignInPages from './pages/SignInPages/SignInPages';
 
 const SharedLayout = lazy(() =>
@@ -17,7 +15,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-            
+
             <Route path="/signin" element={<SignInPages />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
