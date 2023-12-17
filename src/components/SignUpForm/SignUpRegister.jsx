@@ -87,13 +87,13 @@ const SignUpRegister = () => {
                 <label htmlFor="name">
                   <Input name="name" placeholder="Name" />
                   {errors.name && touched.name ? (
-                    <div>{errors.name}</div>
+                    <div style={{ color: 'red' }}>{errors.name}</div>
                   ) : null}
                 </label>
                 <label htmlFor="email">
                   <Input name="email" type="email" placeholder="E-mail" />
                   {errors.email && touched.email ? (
-                    <div>{errors.email}</div>
+                    <div style={{ color: 'red' }}>{errors.email}</div>
                   ) : null}
                 </label>
                 <label htmlFor="password">
@@ -103,7 +103,7 @@ const SignUpRegister = () => {
                     placeholder="Password"
                   />
                   {errors.password && touched.password ? (
-                    <div>{errors.password}</div>
+                    <div style={{ color: 'red' }}>{errors.password}</div>
                   ) : null}
                 </label>
                 <Button type="submit">Next</Button>
