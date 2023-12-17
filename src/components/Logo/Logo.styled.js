@@ -10,7 +10,7 @@ export const TitleStyled = styled(NavLink)`
     color: var(--color-primary-green-lite);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 22px;
     line-height: 1.46%;
   }

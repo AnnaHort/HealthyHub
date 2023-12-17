@@ -11,7 +11,7 @@ export const SignUpRegisterContainer = styled.div`
   padding-left: 10px;
   padding-right: 10px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 492px;
     padding-top: 40px;
     padding-bottom: 60px;
@@ -33,9 +33,11 @@ export const Image = styled.img`
   width: 300px;
   height: 296px;
   margin-bottom: 24px;
+
   margin-right: auto;
   margin-left: auto;
-  @media (min-width: 768px) {
+
+  @media (min-width: 834px) {
     width: 380px;
     height: 376px;
     margin-bottom: 60px;
@@ -56,7 +58,7 @@ export const RegisterTitle = styled.h2`
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 30px;
     line-height: 1.2;
     text-align: center;
@@ -73,14 +75,17 @@ export const RegisterText = styled.p`
   font-size: 18px;
   line-height: 1.33;
   margin-bottom: 24px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 22px;
     line-height: 1.45;
   }
 `;
 
+
 export const RegisterForm = styled(Form)`
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
+
+
     margin-left: auto;
     margin-right: auto;
   }
@@ -133,7 +138,7 @@ export const Button = styled.button`
   font-weight: 500;
   line-height: 1.43;
   width: 100%;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     max-width: 380px;
     margin-bottom: 238px;
     margin-bottom: 206px;
@@ -146,7 +151,7 @@ export const Button = styled.button`
 `;
 
 export const QuestionBlock = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     display: flex;
     justify-content: center;
   }
@@ -163,7 +168,7 @@ export const Question = styled.p`
   font-weight: 400;
   line-height: 1.43;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     margin-right: 16px;
     margin-bottom: 0px;
   }

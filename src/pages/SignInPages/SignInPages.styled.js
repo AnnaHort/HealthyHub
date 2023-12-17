@@ -10,7 +10,7 @@ export const SignInPagesContainer = styled.div`
   padding-left: 10px;
   padding-right: 10px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 492px;
     padding-top: 40px;
     padding-bottom: 60px;
@@ -46,7 +46,7 @@ export const ButtonSignIn = styled.button`
   font-weight: 500;
   line-height: 1.43;
   width: 100%;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     max-width: 380px;
     margin-bottom: 20px;
   }
@@ -58,7 +58,7 @@ export const ButtonSignIn = styled.button`
 `;
 
 export const ForgotElementContainer = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     height: 222px;
     margin-right: auto;
     margin-left: auto;
@@ -77,7 +77,7 @@ export const ForgotElementContainer = styled.div`
 export const SignInBtnContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     max-width: 380px;
 
   }
@@ -94,7 +94,7 @@ export const SignInBtnContainer = styled.div`
 export const ForgotPasswordContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     justify-content: space-between;
     max-width: 380px;
     margin-right: auto;
@@ -114,7 +114,7 @@ export const ForgotPasswordLink = styled(Link)`
   line-height: 1.43;
   text-align: center;
   margin-bottom: 54px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     margin-bottom: 0;
 }
   @media (min-width: 1440px) {
@@ -129,7 +129,7 @@ export const SignInQuestionContainer = styled.div`
   margin-right: auto;
   margin-left: auto;
   gap: 20px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     justify-content: start;
     gap: 16px;
     margin-right: 0;
@@ -144,9 +144,3 @@ export const HaveAnAccountText = styled.p`
   line-height: 1.43;
 `;
 
-// export const SignUpLink = styled(Link)`
-//   color: var(--color-primary-white);
-//   font-size: 14px;
-//   font-weight: 500;
-//   line-height: 1.43;
-// `;

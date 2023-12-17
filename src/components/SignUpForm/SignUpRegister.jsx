@@ -65,12 +65,12 @@ const SignUpRegister = () => {
   return (
     <SignUpRegisterContainer>
       <Image
-        src={RegisterImageDesktop}
         alt="Responsive Image"
       />
       <div>
         <RegisterTitle>Sign up</RegisterTitle>
         <RegisterText>You need to register to use the service</RegisterText>
+
         <Formik
           onSubmit={handleSubmit}
           initialValues={initialValues}
@@ -113,6 +113,7 @@ const SignUpRegister = () => {
             );
           }}
         </Formik>
+
       </div>
     </SignUpRegisterContainer>
   );

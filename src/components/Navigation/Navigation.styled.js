@@ -17,7 +17,7 @@ export const SignStyled = styled(NavLink)`
   &.active {
     color: var(--color-primary-green-lite);
   }
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 14px;
     line-height: 1.43;
   }
@@ -28,7 +28,7 @@ export const SpanStyled = styled.span`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.3;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 14px;
     line-height: 1.43;
   }

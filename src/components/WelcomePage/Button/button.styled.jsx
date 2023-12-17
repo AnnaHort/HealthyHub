@@ -17,7 +17,7 @@ export const BSignIn = styled.button`
   line-height: 20px;
   color: var(--color-primary-black-2);
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     width: 212px;
   }
   @media (min-width: 1024px) and (max-width: 1279px) {
@@ -42,7 +42,7 @@ export const BSignOut = styled(NavLink)`
   line-height: 20px;
   color: var(--color-primary-white);
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     width: 212px;
   }
   @media (min-width: 1024px) and (max-width: 1279px) {
