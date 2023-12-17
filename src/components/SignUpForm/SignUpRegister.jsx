@@ -16,8 +16,8 @@ import {
   Question,
   LinkStyled,
 } from './SignUpRegister.styled';
-import RegisterImageMobile from '../../img/register-img-mobile.png';
-import RegisterImageTablet from '../../img/register-img-tablet.png';
+//import RegisterImageMobile from '../../img/register-img-mobile.png';
+//import RegisterImageTablet from '../../img/register-img-tablet.png';
 import RegisterImageDesktop from '../../img/register-img-desktop.png';
 
 const initialValues = {
@@ -65,9 +65,7 @@ const SignUpRegister = () => {
   return (
     <SignUpRegisterContainer>
       <Image
-        src={RegisterImageMobile}
-        srcSet={`${RegisterImageTablet} 768w, ${RegisterImageDesktop} 1440w`}
-        sizes="(max-width: 767px) 100vw, (min-width: 768px) 50vw"
+        src={RegisterImageDesktop}
         alt="Responsive Image"
       />
       <div>
@@ -115,7 +113,6 @@ const SignUpRegister = () => {
             );
           }}
         </Formik>
-
       </div>
     </SignUpRegisterContainer>
   );
