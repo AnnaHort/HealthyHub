@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const SignUpRegisterContainer = styled.div`
@@ -31,6 +32,10 @@ export const Image = styled.img`
   width: 300px;
   height: 296px;
   margin-bottom: 24px;
+
+  margin-right: auto;
+  margin-left: auto;
+
   @media (min-width: 768px) {
     width: 380px;
     height: 376px;
@@ -40,6 +45,8 @@ export const Image = styled.img`
     width: 592px;
     height: 588px;
     margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 `;
 
@@ -82,6 +89,7 @@ export const RegisterForm = styled.form`
   @media (min-width: 1440px) {
     margin-left: 0;
     margin-right: 0;
+    text-align: start;
   }
 `;
 
@@ -116,7 +124,7 @@ export const Input = styled.input`
     color: var(--color-primary-white);
   }
   @media (min-width: 1440px) {
-    width: 50%;
+    /* width: 50%; */
   }
 `;
 
@@ -170,7 +178,7 @@ export const Question = styled.p`
   }
 `;
 
-export const Link = styled.a`
+export const LinkStyled = styled(Link)`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
