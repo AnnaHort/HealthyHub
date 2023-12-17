@@ -1,17 +1,16 @@
-import { useState } from 'react';
+//import { useState } from 'react';
 import axios from 'axios';
-
- import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+
+import { Formik } from 'formik';
 
 import {
   SignUpRegisterContainer,
   Image,
   RegisterTitle,
   RegisterText,
-  RegisterForm,
-  //InputContainer,
   Input,
+  RegisterForm,
   Button,
   QuestionBlock,
   Question,
@@ -21,6 +20,11 @@ import RegisterImageMobile from '../../img/register-img-mobile.png';
 import RegisterImageTablet from '../../img/register-img-tablet.png';
 import RegisterImageDesktop from '../../img/register-img-desktop.png';
 
+const initialValues = {
+  name: '',
+  email: '',
+  password: '',
+};
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -30,21 +34,20 @@ const SignupSchema = Yup.object().shape({
     .required('Password is required'),
 });
 
-
 const SignUpRegister = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-  });
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   password: '',
+  // });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
+  //   });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,13 +55,10 @@ const SignUpRegister = () => {
     try {
       const response = await axios.post(
         'https://healthhub-backend.onrender.com/api/auth/signup',
-        formData
+        initialValues
       );
-
-      // Обработка успешного ответа от сервера
       console.log('Успешная регистрация', response.data);
     } catch (error) {
-      // Обработка ошибки
       console.error('Ошибка регистрации', error);
     }
   };
@@ -73,44 +73,48 @@ const SignUpRegister = () => {
       <div>
         <RegisterTitle>Sign up</RegisterTitle>
         <RegisterText>You need to register to use the service</RegisterText>
-          
-        <RegisterForm autoComplete="off" onSubmit={handleSubmit}>
-          <label htmlFor="name">
-            <Input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label htmlFor="email">
-            <Input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="E-mail"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label htmlFor="password">
-            <Input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              value={formData.password}
-              onChange={handleInputChange}
-            />
-          </label>
-          <Button type="submit">Next</Button>
-          <QuestionBlock>
-            <Question>Do you already have an account?</Question>
-            <Link to="/signin">Sign in</Link>
-          </QuestionBlock>
-        </RegisterForm>
+        <Formik
+          onSubmit={handleSubmit}
+          initialValues={initialValues}
+          validationSchema={SignupSchema}
+        >
+          {({ errors, touched }) => {
+            console.log('Errors:', errors);
+            console.log('Touched:', touched);
+
+            return (
+              <RegisterForm autoComplete="off">
+                <label htmlFor="name">
+                  <Input name="name" />
+                  {errors.name && touched.name ? (
+                    <div>{errors.name}</div>
+                  ) : null}
+                </label>
+                <label htmlFor="email">
+                  <Input name="email" type="email" placeholder="E-mail" />
+                  {errors.email && touched.email ? (
+                    <div>{errors.email}</div>
+                  ) : null}
+                </label>
+                <label htmlFor="password">
+                  <Input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                  />
+                  {errors.password && touched.password ? (
+                    <div>{errors.password}</div>
+                  ) : null}
+                </label>
+                <Button type="submit">Next</Button>
+                <QuestionBlock>
+                  <Question>Do you already have an account?</Question>
+                  <Link to="/signin">Sign in</Link>
+                </QuestionBlock>
+              </RegisterForm>
+            );
+          }}
+        </Formik>
       </div>
     </SignUpRegisterContainer>
   );
