@@ -1,9 +1,10 @@
+import {BodyTitleContainer, BodyParametersTitle, BodyParametersSubTitle} from "./title.styled"
 const TitleBodyParameters = () => {
     return (
-      <div>
-        <h2>Body parameters</h2>
-        <h3>Enter your parameters for correct performance tracking</h3>
-      </div>
+      <BodyTitleContainer>
+        <BodyParametersTitle>Body parameters</BodyParametersTitle>
+        <BodyParametersSubTitle>Enter your parameters for correct performance tracking</BodyParametersSubTitle>
+      </BodyTitleContainer>
     );
 }
 

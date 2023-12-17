@@ -4,7 +4,6 @@ export const WelcomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* flex-wrap: wrap; */
   align-items: center;
   padding: 24px 10px 40px 10px;
   background-color: var(--color-primary-black);
