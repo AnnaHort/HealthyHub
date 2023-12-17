@@ -29,6 +29,10 @@ export const FieldStyled = styled(Field)`
   border-radius: 12px;
   background-color: inherit;
   border: 1px solid var(--color-primary-green-lite);
+
+  @media (min-width: 1024px) {
+    max-width: 212px;
+  }
 `;
 
 export const BodyParamsNextButton = styled.button`
@@ -43,6 +47,10 @@ export const BodyParamsNextButton = styled.button`
   color: var(--color-primary-black-2);
   border-radius: 12px;
   margin-top: 40px;
+
+  @media (min-width: 1024px) {
+    max-width: 212px;
+  }
 `;
 
 export const BodyParamsBackButton = styled.button`
@@ -58,5 +66,9 @@ export const BodyParamsBackButton = styled.button`
   color: var(--color-primary-grey);
   border-radius: 12px;
   margin-top: 12px;
+
+  @media (min-width: 1024px) {
+    max-width: 212px;
+  }
 `;
 
