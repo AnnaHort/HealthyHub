@@ -5,7 +5,7 @@ export const ForgotPassBtnContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 56px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     margin-right: auto;
     margin-left: auto;
     width: 380px;
@@ -24,7 +24,7 @@ export const ForgotPassTitle = styled.h2`
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 30px;
     line-height: 1.2;
     text-align: center;
@@ -40,7 +40,7 @@ export const ForgotPassTitleText = styled.p`
   font-size: 18px;
   line-height: 1.33;
   margin-bottom: 24px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 22px;
     line-height: 1.45;
   }
@@ -60,23 +60,13 @@ export const ForgotPassBtn = styled.button`
   font-weight: 500;
   line-height: 1.43;
   width: 100%;
-  /* @media (min-width: 768px) {
-    max-width: 380px;
-    margin-bottom: 238px;
-    margin-bottom: 206px;
-  } */
-
-  /* @media (min-width: 1440px) {
-    margin-bottom: 168px;
-    width: 50%;
-  } */
 `;
 
 export const ForgotPassLinkContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     flex-direction: row;
   }
 `;

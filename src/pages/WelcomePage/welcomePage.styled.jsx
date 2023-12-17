@@ -4,12 +4,11 @@ export const WelcomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* flex-wrap: wrap; */
   align-items: center;
   padding: 24px 10px 40px 10px;
   background-color: var(--color-primary-black);
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     padding-top: 40px;
 
   }
@@ -56,7 +55,7 @@ export const ButtonContainer = styled.div`
   margin-bottom: 40px;
   gap: 16px;
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     display: flex;
     justify-content: center;
   }
@@ -66,7 +65,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     display: flex;
     flex-direction: column;
   }

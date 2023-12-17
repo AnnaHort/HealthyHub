@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     max-width: 444px;
     display: flex;
     text-align: center;
@@ -25,7 +25,7 @@ export const MainTitle = styled.h1`
 
   margin-top: 24px;
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     display: flex;
     font-size: 30px;
     line-height: 36px;
@@ -48,7 +48,7 @@ export const Title = styled.h2`
   margin-top: 16px;
   
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1023px) {
     max-width: 410px;
     font-size: 22px;
     line-height: 32px;
