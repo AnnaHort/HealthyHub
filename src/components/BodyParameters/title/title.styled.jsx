@@ -26,8 +26,10 @@ export const BodyParametersTitle = styled.h2`
 
   @media (min-width: 768px) and (max-width: 1023px) {
     display: flex;
+    justify-content: center;
     font-size: 30px;
     line-height: 36px;
+    margin-top: 60px;
   }
 
   @media (min-width: 1024px) {
