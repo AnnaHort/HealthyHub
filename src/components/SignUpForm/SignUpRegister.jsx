@@ -20,8 +20,8 @@ const SignUpRegister = () => {
     <SignUpRegisterContainer>
       <Image
         src={RegisterImageMobile}
-        srcSet={`${RegisterImageTablet} 834w, ${RegisterImageDesktop} 1440w`}
-        sizes="(max-width: 833px) 100vw, (min-width: 834px) 50vw"
+        srcSet={`${RegisterImageTablet} 768w, ${RegisterImageDesktop} 1440w`}
+        sizes="(max-width: 767px) 100vw, (min-width: 768px) 50vw"
         alt="Responsive Image"
       />
       <div>
