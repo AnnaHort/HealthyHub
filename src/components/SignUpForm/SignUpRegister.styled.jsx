@@ -32,8 +32,10 @@ export const Image = styled.img`
   width: 300px;
   height: 296px;
   margin-bottom: 24px;
+
   margin-right: auto;
   margin-left: auto;
+
   @media (min-width: 768px) {
     width: 380px;
     height: 376px;
