@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import { HeaderContainerStyled } from '../Header/Header.styled';
 import { Suspense } from 'react';
-import BodyParameters from '../../pages/BodyParameters/bodyParameters';
 
 
 const SharedLayout = () => {
@@ -13,8 +12,6 @@ const SharedLayout = () => {
           <Header />
         </HeaderContainerStyled>
       </header>
-
-        <BodyParameters/>
       <Suspense>
         <Outlet />
       </Suspense>
