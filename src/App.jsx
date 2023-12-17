@@ -10,21 +10,22 @@ const SharedLayout = lazy(() =>
 );
 const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 
+const AuthNav = lazy(() => import('./pages/AuthNav/AuthNav'));
+
 function App() {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-      <Routes>
+        <Routes>
           <Route path="/" element={<SharedLayout />}>
- 
-          <Route path="/signin" element={<SharedLayout />}/>
-          <Route path="/signup" element={<SignUpPage />}/>
+            <Route path="/signin" element={<SharedLayout />} />
+            <Route path="/signup" element={<AuthNav />} />
+            <Route path="/signup" element={<SignUpPage />} />
 
             <Route path="/welcome" element={<WelcomePage />}>
               <Route path="signup" element={<ButtonSignUp />} />
               <Route path="signin" element={<ButtonSignIn />} />
             </Route>
-            
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
