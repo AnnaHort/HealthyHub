@@ -12,7 +12,6 @@ const SharedLayout = () => {
           <Header />
         </HeaderContainerStyled>
       </header>
-
       <Suspense>
         <Outlet />
       </Suspense>

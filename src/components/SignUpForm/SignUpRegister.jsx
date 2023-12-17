@@ -30,10 +30,7 @@ const SignUpRegister = () => {
         <RegisterTitle>Sign up</RegisterTitle>
         <RegisterText>You need to register to use the service</RegisterText>
         <RegisterForm autoComplete="off">
-          <label className="radioButton">
-            <input type="radio" name="radio_1" /> Radio_1
-            <input type="radio" name="radio_2" /> Radio_2
-          </label>
+
           <label htmlFor="name">
             <InputContainer>
               <Input type="text" id="name" name="name" placeholder="Name" />
