@@ -14,7 +14,7 @@ import {
   Button,
   QuestionBlock,
   Question,
-  Link,
+  LinkStyled,
 } from './SignUpRegister.styled';
 import RegisterImageMobile from '../../img/register-img-mobile.png';
 import RegisterImageTablet from '../../img/register-img-tablet.png';
@@ -66,8 +66,8 @@ const SignUpRegister = () => {
     <SignUpRegisterContainer>
       <Image
         src={RegisterImageMobile}
-        srcSet={`${RegisterImageTablet} 834w, ${RegisterImageDesktop} 1440w`}
-        sizes="(max-width: 833px) 100vw, (min-width: 834px) 50vw"
+        srcSet={`${RegisterImageTablet} 768w, ${RegisterImageDesktop} 1440w`}
+        sizes="(max-width: 767px) 100vw, (min-width: 768px) 50vw"
         alt="Responsive Image"
       />
       <div>
@@ -109,12 +109,13 @@ const SignUpRegister = () => {
                 <Button type="submit">Next</Button>
                 <QuestionBlock>
                   <Question>Do you already have an account?</Question>
-                  <Link to="/signin">Sign in</Link>
+                  <LinkStyled to="/signin">Sign in</LinkStyled>
                 </QuestionBlock>
               </RegisterForm>
             );
           }}
         </Formik>
+
       </div>
     </SignUpRegisterContainer>
   );
