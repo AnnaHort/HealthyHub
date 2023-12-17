@@ -1,16 +1,20 @@
 @import 'node_modules/modern-normalize/modern-normalize.css';
 
 :root {
-  --color-primary-grey: #b6b6b6;
   --color-primary-white: #fff;
   --color-primary-black: #050505;
+  --color-primary-violet: #b6c3ff;
   --color-primary-black-2: #0f0f0f;
+  ----color-primary-lite-green: #45ffbc;
+  --color-primary-grey: #b6b6b6;
   --color-primary-green-lite: #e3ffa8;
-
+  --secondary-color-grey: #292928;
+  --secondary-color-pink: #ffc4f7;
+  --secondary-color-yellow: #fff3b7;
 }
 
 body {
-  background-color: var( --color-primary-black);
+  background-color: var(--color-primary-black);
   overflow-y: scroll;
   margin: 0;
   width: 100%;
