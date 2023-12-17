@@ -85,7 +85,7 @@ const SignUpRegister = () => {
             return (
               <RegisterForm autoComplete="off">
                 <label htmlFor="name">
-                  <Input name="name" />
+                  <Input name="name" placeholder="Name" />
                   {errors.name && touched.name ? (
                     <div>{errors.name}</div>
                   ) : null}
