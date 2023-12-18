@@ -32,6 +32,46 @@ export const RegisterTitleContainer = styled.div`
   }
 `;
 
+export const SignInForm = styled.form`
+  @media (min-width: 834px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 1440px) {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: start;
+  }
+`;
+
+export const InputSignIn = styled.input`
+  color: var(--color-primary-grey);
+  font-family: Poppins;
+  line-height: 1.429;
+  outline: none;
+  padding: 8px 10px;
+  width: 100%;
+  background: transparent;
+  position: relative;
+  border: 1px solid var(--color-primary-green-lite);
+  border-radius: 12px;
+  max-width: 380px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  :hover {
+    color: var(--color-primary-white);
+  }
+  @media (min-width: 1440px) {
+    display: block;
+    max-width: 212px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+`;
+
 export const ButtonSignIn = styled.button`
   border-radius: 12px;
   border: none;

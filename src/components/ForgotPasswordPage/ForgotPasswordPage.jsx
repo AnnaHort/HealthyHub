@@ -5,13 +5,14 @@ import {
 } from '../../pages/SignInPages/SignInPages.styled';
 import {
   Image,
-  Input,
-  RegisterForm,
+  
 } from '../SignUpForm/SignUpRegister.styled';
 import RegisterImageMobile from '../../img/register-img-mobile.png';
 import RegisterImageTablet from '../../img/register-img-tablet.png';
 import RegisterImageDesktop from '../../img/register-img-desktop.png';
 import {
+  InputForgot,
+  ForgotForm,
   ForgotPassBtn,
   ForgotPassBtnContainer,
   ForgotPassLinkContainer,
@@ -36,14 +37,14 @@ const ForgotPasswordPage = () => {
           We will send you an email with recovery instructions
         </ForgotPassTitleText>
 
-        <RegisterForm autoComplete="off">
+        <ForgotForm autoComplete="off">
           <label htmlFor="email">
-              <Input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="E-mail"
-              />
+            <InputForgot
+              type="email"
+              id="email"
+              name="email"
+              placeholder="E-mail"
+            />
           </label>
 
           <ForgotPassBtnContainer>
@@ -58,7 +59,7 @@ const ForgotPasswordPage = () => {
               <ForgotPassLinkSignUp to="/signup">Sign up</ForgotPassLinkSignUp>
             </ForgotPassLinkContainer>
           </ForgotPassBtnContainer>
-        </RegisterForm>
+        </ForgotForm>
       </RegisterTitleContainer>
     </SignInPagesContainer>
   );

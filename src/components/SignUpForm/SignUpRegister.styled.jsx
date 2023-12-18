@@ -93,24 +93,6 @@ export const RegisterForm = styled.form`
   }
 `;
 
-export const InputContainer = styled.div`
-  background: transparent;
-  position: relative;
-  border: 1px solid var(--color-primary-green-lite);
-  border-radius: 12px;
-  width: 100%;
-  max-width: 380px;
-  margin-bottom: 20px;
-  margin-left:auto;
-  margin-right:auto;
-
-  @media (min-width: 1440px) {
-    max-width: 212px;
-    margin-left:0;
-  margin-right:0;
-  }
-`;
-
 export const Input = styled.input`
   color: var(--color-primary-grey);
   font-family: Poppins;

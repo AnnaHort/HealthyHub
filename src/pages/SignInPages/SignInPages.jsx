@@ -1,8 +1,6 @@
 import {
   Image,
-  Input,
   LinkStyled,
-  RegisterForm,
   RegisterText,
   RegisterTitle,
 } from '../../components/SignUpForm/SignUpRegister.styled';
@@ -10,6 +8,8 @@ import RegisterImageMobile from '../../img/register-img-mobile.png';
 import RegisterImageTablet from '../../img/register-img-tablet.png';
 import RegisterImageDesktop from '../../img/register-img-desktop.png';
 import {
+  SignInForm,
+  InputSignIn,
   ButtonSignIn,
   ForgotElementContainer,
   ForgotPasswordContainer,
@@ -33,10 +33,10 @@ const SignInPages = () => {
         <RegisterTitle>Sign in</RegisterTitle>
         <RegisterText>You need to login to use the service</RegisterText>
 
-        <RegisterForm autoComplete="off">
+        <SignInForm autoComplete="off">
           <label htmlFor="email">
           
-              <Input
+              <InputSignIn
                 type="email"
                 id="email"
                 name="email"
@@ -46,7 +46,7 @@ const SignInPages = () => {
           </label>
           <label htmlFor="password">
            
-              <Input
+              <InputSignIn
                 type="password"
                 id="password"
                 name="password"
@@ -70,7 +70,7 @@ const SignInPages = () => {
               <LinkStyled to="/signup">Sign up</LinkStyled>
             </ForgotPasswordContainer>
           </ForgotElementContainer>
-        </RegisterForm>
+        </SignInForm>
       </RegisterTitleContainer>
     </SignInPagesContainer>
   );
