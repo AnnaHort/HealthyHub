@@ -71,28 +71,22 @@ const login = useSelector(selectToken);
         <RegisterTitle>Sign in</RegisterTitle>
         <RegisterText>You need to login to use the service</RegisterText>
 
-
-        <RegisterForm autoComplete="off" onSubmit={handleSubmit}>
-
+        <SignInForm autoComplete="off" onSubmit={handleSubmit}>
           <label htmlFor="email">
-          
-              <InputSignIn
-                type="email"
-                id="email"
-                name="email"
-                placeholder="E-mail"
-              />
-           
+            <InputSignIn
+              type="email"
+              id="email"
+              name="email"
+              placeholder="E-mail"
+            />
           </label>
           <label htmlFor="password">
-           
-              <InputSignIn
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Password"
-              />
-           
+            <InputSignIn
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
           </label>
 
           <ForgotElementContainer>
