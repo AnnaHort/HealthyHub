@@ -1,5 +1,4 @@
 import { Formik, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 import {
   BodyFormContainer,
   FormStyled,
@@ -9,11 +8,6 @@ import {
   BodyParamsNextButton,
 } from './bodyParametersForm.styled';
 
-const SignupSchems = Yup.object().shape({
-  weight: Yup.number().required('Required'),
-  height: Yup.number().required('Required'),
-});
-
 export const FormBodyParameters = () => {
   return (
     <BodyFormContainer>
@@ -22,7 +16,6 @@ export const FormBodyParameters = () => {
           height: '',
           weight: '',
         }}
-        validationSchema={SignupSchems}
         onSubmit={(values) => {
           // Обработка отправки формы
           console.log(values);
@@ -32,7 +25,7 @@ export const FormBodyParameters = () => {
           <LabelForm htmlFor="height">Height</LabelForm>
           <FieldStyled
             name="height"
-            type="number" // Используйте type="number" для числового ввода
+            type="number" 
             required
             placeholder="Enter your height"
           />
@@ -41,7 +34,7 @@ export const FormBodyParameters = () => {
           <LabelForm htmlFor="weight">Weight</LabelForm>
           <FieldStyled
             name="weight"
-            type="number" // Используйте type="number" для числового ввода
+            type="number"
             required
             placeholder="Enter your weight"
           />

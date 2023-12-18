@@ -2,7 +2,7 @@ import bodyParameters from '../../img/BodyParameters/symbol-defs.svg#icon-body-p
 import styled from 'styled-components';
 
 const SvgContainer = styled.svg`
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 380px;
     height: 376px;
     display: flex;
@@ -10,7 +10,11 @@ const SvgContainer = styled.svg`
     margin-right: auto;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1024px){
+   margin-top: 90px;
+  }
+
+  @media (min-width: 1440px) {
     width: 590px;
     height: 588px;
   }

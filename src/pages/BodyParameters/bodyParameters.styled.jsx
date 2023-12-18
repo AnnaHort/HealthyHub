@@ -7,22 +7,8 @@ export const BodyContainer = styled.div`
   padding: 24px 10px 40px 10px;
   background-color: var(--color-primary-black);
 
-  @media (min-width: 834px) and (max-width: 1023px) {
+  @media (min-width: 834px) {
     padding-top: 40px;
-  }
-
-  @media (min-width: 1024px) and (max-width: 1279px) {
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  }
-
-  @media (min-width: 1280px) and (max-width: 1439px) {
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
   }
 
   @media (min-width: 1440px) {
@@ -37,14 +23,7 @@ export const FlexBodyContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  @media (min-width: 1024px) and (max-width: 1279px) {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  }
-
-  @media (min-width: 1280px) {
-    padding: 40px;
+  @media (min-width: 1024px) {
     display: flex;
     justify-content: center;
     flex-direction: row;

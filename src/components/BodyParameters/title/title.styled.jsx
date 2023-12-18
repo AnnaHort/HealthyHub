@@ -3,16 +3,16 @@ import styled from "styled-components";
 export const BodyTitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 834px) and (max-width: 1023px) {
+  @media (min-width: 834px) {
     max-width: 444px;
     display: flex;
-    text-align: center;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
   }
-  @media (min-width: 1024px) {
-    
+
+  @media (min-width: 1440px) {
+   
   }
 `;
 
@@ -25,7 +25,7 @@ export const BodyParametersTitle = styled.h2`
 
   margin-top: 24px;
 
-  @media (min-width: 834px) and (max-width: 1023px) {
+  @media (min-width: 834px) and (max-width: 1439px) {
     display: flex;
     justify-content: center;
     font-size: 30px;
@@ -33,7 +33,7 @@ export const BodyParametersTitle = styled.h2`
     margin-top: 60px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     margin-top: 80px;
   }
 `;
@@ -49,19 +49,16 @@ export const BodyParametersSubTitle = styled.h3`
 
   margin-top: 16px;
 
-  @media (min-width: 834px) and (max-width: 1023px) {
-    max-width: 410px;
+  @media (min-width: 834px) and (max-width: 1439px) {
+    max-width: unset;
+    text-align: center;
     font-size: 22px;
     line-height: 32px;
   }
 
-  @media (min-width: 1024px) {
-    max-width: unset;
+  @media (min-width: 1440px) {
+    max-width: 444px;
     display: flex;
     flex-wrap: wrap;
-  }
-
-  @media (min-width: 1440px) {
-    max-width: 335px;
   }
 `;

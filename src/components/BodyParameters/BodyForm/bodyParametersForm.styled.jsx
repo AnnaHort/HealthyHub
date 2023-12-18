@@ -30,7 +30,7 @@ export const FieldStyled = styled(Field)`
   background-color: inherit;
   border: 1px solid var(--color-primary-green-lite);
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     max-width: 212px;
   }
 `;
@@ -48,7 +48,7 @@ export const BodyParamsNextButton = styled.button`
   border-radius: 12px;
   margin-top: 40px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     max-width: 212px;
   }
 `;
@@ -67,7 +67,7 @@ export const BodyParamsBackButton = styled.button`
   border-radius: 12px;
   margin-top: 12px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     max-width: 212px;
   }
 `;
