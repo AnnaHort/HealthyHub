@@ -1,7 +1,6 @@
 import {
   Image,
   Input,
-  InputContainer,
   LinkStyled,
   RegisterForm,
   RegisterText,
@@ -36,24 +35,24 @@ const SignInPages = () => {
 
         <RegisterForm autoComplete="off">
           <label htmlFor="email">
-            <InputContainer>
+          
               <Input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="E-mail"
               />
-            </InputContainer>
+           
           </label>
           <label htmlFor="password">
-            <InputContainer>
+           
               <Input
                 type="password"
                 id="password"
                 name="password"
                 placeholder="Password"
               />
-            </InputContainer>
+           
           </label>
 
           <ForgotElementContainer>

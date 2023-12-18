@@ -115,16 +115,26 @@ export const Input = styled.input`
   color: var(--color-primary-grey);
   font-family: Poppins;
   line-height: 1.429;
-  background: transparent;
-  border-color: transparent;
   outline: none;
   padding: 8px 10px;
   width: 100%;
+  background: transparent;
+  position: relative;
+  border: 1px solid var(--color-primary-green-lite);
+  border-radius: 12px;
+  max-width: 380px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
   :hover {
     color: var(--color-primary-white);
   }
   @media (min-width: 1440px) {
-    /* width: 50%; */
+    display: block;
+    max-width: 212px;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
@@ -150,7 +160,7 @@ export const Button = styled.button`
 
   @media (min-width: 1440px) {
     margin-bottom: 168px;
-    width: 50%;
+    max-width: 212px;
   }
 `;
 
@@ -161,6 +171,7 @@ export const QuestionBlock = styled.div`
   }
   @media (min-width: 1440px) {
     align-items: flex-start;
+    justify-content: start;
   }
 `;
 
