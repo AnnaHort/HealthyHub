@@ -1,3 +1,4 @@
+import { Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -80,7 +81,7 @@ export const RegisterText = styled.p`
   }
 `;
 
-export const RegisterForm = styled.form`
+export const RegisterForm = styled(Form)`
   @media (min-width: 834px) {
     margin-left: auto;
     margin-right: auto;
@@ -93,7 +94,7 @@ export const RegisterForm = styled.form`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   color: var(--color-primary-grey);
   font-family: Poppins;
   line-height: 1.429;
@@ -118,6 +119,11 @@ export const Input = styled.input`
     margin-left: 0;
     margin-right: 0;
   }
+`;
+
+export const ErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
 `;
 
 export const Button = styled.button`
