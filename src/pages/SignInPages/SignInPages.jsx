@@ -1,9 +1,6 @@
 import {
   Image,
-  Input,
-  InputContainer,
   LinkStyled,
-  RegisterForm,
   RegisterText,
   RegisterTitle,
 } from '../../components/SignUpForm/SignUpRegister.styled';
@@ -11,6 +8,8 @@ import RegisterImageMobile from '../../img/register-img-mobile.png';
 import RegisterImageTablet from '../../img/register-img-tablet.png';
 import RegisterImageDesktop from '../../img/register-img-desktop.png';
 import {
+  SignInForm,
+  InputSignIn,
   ButtonSignIn,
   ForgotElementContainer,
   ForgotPasswordContainer,
@@ -72,26 +71,22 @@ const login = useSelector(selectToken);
         <RegisterTitle>Sign in</RegisterTitle>
         <RegisterText>You need to login to use the service</RegisterText>
 
-        <RegisterForm autoComplete="off" onSubmit={handleSubmit}>
+        <SignInForm autoComplete="off" onSubmit={handleSubmit}>
           <label htmlFor="email">
-            <InputContainer>
-              <Input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="E-mail"
-              />
-            </InputContainer>
+            <InputSignIn
+              type="email"
+              id="email"
+              name="email"
+              placeholder="E-mail"
+            />
           </label>
           <label htmlFor="password">
-            <InputContainer>
-              <Input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Password"
-              />
-            </InputContainer>
+            <InputSignIn
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
           </label>
 
           <ForgotElementContainer>
@@ -109,7 +104,7 @@ const login = useSelector(selectToken);
               <LinkStyled to="/signup">Sign up</LinkStyled>
             </ForgotPasswordContainer>
           </ForgotElementContainer>
-        </RegisterForm>
+        </SignInForm>
       </RegisterTitleContainer>
     </SignInPagesContainer>
   );
