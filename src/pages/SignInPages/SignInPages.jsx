@@ -19,8 +19,46 @@ import {
   SignInBtnContainer,
   SignInPagesContainer,
 } from './SignInPages.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { logIn } from '../../redux/auth/authOperations';
+import { useNavigate } from 'react-router-dom';
+import { selectToken } from '../../redux/auth/authSelectors';
+import { useEffect } from 'react';
 
 const SignInPages = () => {
+const login = useSelector(selectToken);
+
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+ 
+  useEffect(() => {
+    login && navigate('/main');
+    console.log(login)
+  }, [login, navigate]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+
+    const userData = {
+      email: form.elements.email.value,
+      password: form.elements.password.value,
+    };
+
+    console.log(userData);
+
+    if (userData.email !== '' && userData.password !== '') {
+      dispatch(logIn(userData));
+
+      form.reset();
+      navigate('/main');
+    } else {
+      alert('please fill in all input fields');
+    }
+  };
+
   return (
     <SignInPagesContainer>
       <Image
@@ -33,7 +71,9 @@ const SignInPages = () => {
         <RegisterTitle>Sign in</RegisterTitle>
         <RegisterText>You need to login to use the service</RegisterText>
 
-        <SignInForm autoComplete="off">
+
+        <RegisterForm autoComplete="off" onSubmit={handleSubmit}>
+
           <label htmlFor="email">
           
               <InputSignIn
