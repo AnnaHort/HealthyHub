@@ -36,7 +36,6 @@ export const logIn = createAsyncThunk(
       try {
         const response = await axios.post('/api/auth/signin', userData);
         token.set(response.data.token);
-        console.log(response.data)
         return response.data;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
@@ -47,9 +46,9 @@ export const logIn = createAsyncThunk(
   // вихід з системи
 export const logOut = createAsyncThunk(
     'auth/logout',
-    async (userData, thunkAPI) => {
+    async (_ , thunkAPI) => {
       try {
-        await axios.post('/api/auth/signout', userData);
+        await axios.post('/api/auth/signout');
         token.unset();
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
@@ -62,17 +61,16 @@ export const fetchCurentUser = createAsyncThunk(
   'auth/fetchCurentUser',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    console.log(state)
-    const persistedToken = state.authReduser.token;
-    console.log(persistedToken)
+    const persistedToken = state.authReducer.token;
+
     if (persistedToken === null || persistedToken === '') {
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
-    token.set(persistedToken);
+    
     try {
-      const response = await axios.get('/users/current');
-
-      return response.data;
+      // const response = await axios.get('/users/current'); тут коменчу бо воно поки не реалізовано на бекі із-за цього помилка прилітає
+      token.set(persistedToken);
+      // return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

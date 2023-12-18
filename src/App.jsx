@@ -1,5 +1,6 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import WelcomePage from './pages/WelcomePage/welcomePage';
 import SignInPages from './pages/SignInPages/SignInPages';
@@ -7,6 +8,7 @@ import SignInPages from './pages/SignInPages/SignInPages';
 import ForgotPasswordPage from './components/ForgotPasswordPage/ForgotPasswordPage';
 import MainPage from './pages/MainPage/MainPage';
 
+import {fetchCurentUser} from './redux/auth/authOperations';
 
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
@@ -14,6 +16,14 @@ const SharedLayout = lazy(() =>
 const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCurentUser());
+  }, [dispatch]);
+
+
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>

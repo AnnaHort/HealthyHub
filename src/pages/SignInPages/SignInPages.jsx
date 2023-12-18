@@ -34,7 +34,6 @@ const login = useSelector(selectToken);
  
   useEffect(() => {
     login && navigate('/main');
-    console.log(login)
   }, [login, navigate]);
 
   const handleSubmit = async (e) => {
@@ -46,8 +45,6 @@ const login = useSelector(selectToken);
       email: form.elements.email.value,
       password: form.elements.password.value,
     };
-
-    console.log(userData);
 
     if (userData.email !== '' && userData.password !== '') {
       dispatch(logIn(userData));
