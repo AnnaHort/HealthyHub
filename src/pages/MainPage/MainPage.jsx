@@ -7,8 +7,12 @@ const MainPage = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await dispatch(logOut());
-    navigate("/signin");
+    try {
+      await dispatch(logOut());
+      navigate("/signin");
+    } catch (error) {
+      console.error("Error during logout:", error);
+    }
   };
 
   return (
