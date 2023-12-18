@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: var(--color-primary-black-2);
+  background-color: var(--color-primary-black);
   min-width: 320px;
   height: 744px;
   padding-left: 10px;
@@ -10,7 +10,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     min-width: 834px;
     height: 1194px;
   }
@@ -33,7 +33,7 @@ export const Img = styled.img`
   margin-top: 24px;
   margin-bottom: 24px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     display: flex;
     width: 380px;
     height: 368px;
@@ -59,7 +59,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 404px;
     align-items: center;
   }
@@ -80,7 +80,7 @@ export const Title = styled.h2`
   padding-bottom: 16px;
   margin: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width:834px) {
     font-size: 30px;
     line-height: 36px;
     margin: 0 auto;
@@ -99,12 +99,12 @@ export const Description = styled.p`
   font-weight: 400;
   line-height: 1.33;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     flex-direction: row;
     text-align: center;
-    font-size: 20px; //22 має бути
+    font-size: 20px; 
     font-weight: 400;
-    line-height: 1.45; /* 145.455% */
+    line-height: 1.45; 
   }
 
   @media (min-width: 1024px) {
@@ -121,7 +121,7 @@ export const List = styled.ul`
   gap: 24px;
   margin-bottom: 24px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 360px;
     flex-direction: row;
     justify-content: center;
@@ -153,7 +153,7 @@ export const BtnNext = styled.button`
   border: none;
   margin-bottom: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 360px;
   }
 
@@ -176,7 +176,7 @@ export const BtnBack = styled.button`
   margin: 0; 
   display: block;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 192px;
     margin: 0 auto;
   }

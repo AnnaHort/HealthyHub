@@ -32,7 +32,7 @@ export const YourGoal = () => {
               name="goal"
               value="Lose Fat"
             />
-            <Label for="loseFat">Lose Fat</Label>
+            <Label htmlFor="loseFat">Lose Fat</Label>
           </RadioItem>
 
 
@@ -43,7 +43,7 @@ export const YourGoal = () => {
               name="goal"
               value="Maintain"
             />
-            <Label for="maintain">Maintain</Label>
+            <Label htmlFor="maintain">Maintain</Label>
           </RadioItem>
 
           <RadioItem>
@@ -53,7 +53,7 @@ export const YourGoal = () => {
               name="goal"
               value="Gain Muscle"
             />
-            <Label for="gainMuscle">Gain Muscle</Label>
+            <Label htmlFor="gainMuscle">Gain Muscle</Label>
           </RadioItem>
 
         

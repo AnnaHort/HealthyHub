@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const YourActivityContainerStyled = styled.div`
   background-color: var(--color-primary-black);
   padding: 24px 10px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     padding-top: 40px;
   }
   @media (min-width: 1024px) {
@@ -15,7 +15,7 @@ export const YourActivityImgStyled = styled.img`
   margin-bottom: 24px;
   margin-right: auto;
   margin-left: auto;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 380px;
     height: 384px;
     margin-bottom: 60px;
@@ -49,7 +49,7 @@ export const YourActivityTitleStyled = styled.h2`
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
@@ -63,7 +63,7 @@ export const YourActivityText = styled.p`
   font-weight: 400;
   line-height: 1.33;
   margin-bottom: 24px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
@@ -169,7 +169,7 @@ export const YourActivitySignUpBtnStyled = styled.button`
   width: 100%;
   padding: 8px 10px;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     max-width: 360px;
     margin-bottom: 20px;
   }

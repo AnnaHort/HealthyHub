@@ -21,14 +21,17 @@ const SignUpRegister = () => {
     <SignUpRegisterContainer>
       <Image
         src={RegisterImageMobile}
-        srcSet={`${RegisterImageTablet} 768w, ${RegisterImageDesktop} 1440w`}
-        sizes="(max-width: 767px) 100vw, (min-width: 768px) 50vw"
+
+        srcSet={`${RegisterImageTablet} 834w, ${RegisterImageDesktop} 1440w`}
+        sizes="(max-width: 833px) 100vw, (min-width: 834px) 50vw"
+
         alt="Responsive Image"
       />
       <div>
         <RegisterTitle>Sign up</RegisterTitle>
         <RegisterText>You need to register to use the service</RegisterText>
         <RegisterForm autoComplete="off">
+
           <label htmlFor="name">
             <InputContainer>
               <Input type="text" id="name" name="name" placeholder="Name" />

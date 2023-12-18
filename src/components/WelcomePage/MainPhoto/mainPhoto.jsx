@@ -2,7 +2,7 @@ import mainPhoto from '/src/img/welcomePage/symbol-defs.svg';
 import styled from "styled-components";
 
 const SvgContainer = styled.svg`
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 380px;
     height: 376px;
     display: flex;
