@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+
 import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authSlice';
 
+
 const authPersistConfig = {
   key: 'auth',
   storage,
@@ -23,7 +24,7 @@ export const store = configureStore({
   reducer: {
     authReducer: persistReducer(authPersistConfig, authReducer),
   },
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
