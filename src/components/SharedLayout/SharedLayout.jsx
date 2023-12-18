@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 
 const SharedLayout = () => {
   return (
-    <>
+    <div>
       <header>
         <HeaderContainerStyled>
           <Header />
@@ -15,7 +15,7 @@ const SharedLayout = () => {
       <Suspense>
         <Outlet />
       </Suspense>
-    </>
+    </div>
   );
 };
 export default SharedLayout;

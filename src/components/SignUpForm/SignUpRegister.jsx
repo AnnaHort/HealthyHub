@@ -19,6 +19,7 @@ import { register } from '../../redux/auth/authOperations';
 import { useNavigate } from 'react-router-dom';
 
 const SignUpRegister = () => {
+
   const navigate = useNavigate()
 
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ const SignUpRegister = () => {
       alert('please fill in all input fields');
     }
   };
+
 
   return (
     <SignUpRegisterContainer>
