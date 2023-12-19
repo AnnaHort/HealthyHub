@@ -1,36 +1,57 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 338px;
-  height: 280px;
+  width: 300px;
+  height: 266px;
   border-radius: 12px;
-  background: var(--Color-Primary-Black-2, #0f0f0f);
+  background: var(--color-primary-black-2);
+  padding: 16px 12px 24px 12px;
+
+  @media (min-width: 834px) {
+    width: 338px;
+    height: 280px;
+    padding: 24px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+export const FormBox = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Title = styled.h3`
-  color: var(--Color-Primary-White, #fff);
+  color: var(--color-primary-white);
   font-family: Poppins;
-  font-size: 30px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 36px; /* 120% */
+  line-height: 30px; /* 125% */
+  margin-bottom: 24px;
+
+  @media (min-width: 834px) {
+    font-size: 30px;
+    line-height: 36px; /* 120% */
+  }
 `;
 
 export const Text = styled.p`
-  width: 212px;
-  color: var(--Color-Primary-White, #fff);
+  color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px; /* 142.857% */
+  margin-bottom: 12px;
 
   @media (min-width: 834px) {
   }
 `;
 
 export const Input = styled.input`
-  width: 300px;
+  width: 276px;
   height: 36px;
   padding: 8px 10px;
   font-family: Poppins;
@@ -44,15 +65,15 @@ export const Input = styled.input`
   color: var(--color-primary-grey);
   margin-bottom: 12px;
   outline: none;
+  margin-bottom: 32px;
 
   @media (min-width: 834px) {
-    width: 166px;
-    margin-bottom: 0px;
+    width: 212px;
   }
 `;
 
 export const BtnConfirm = styled.button`
-  width: 300px;
+  width: 276px;
   height: 36px;
   color: var(--color-primary-black-2);
   text-align: center;
@@ -67,13 +88,11 @@ export const BtnConfirm = styled.button`
   padding: 8px 10px;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   border: none;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 
   @media (min-width: 834px) {
-    width: 166px;
-    margin-bottom: 0px;
+    width: 212px;
   }
 
   @media (min-width: 1440px) {
@@ -81,7 +100,7 @@ export const BtnConfirm = styled.button`
 `;
 
 export const BtnCancel = styled.button`
-  width: 300px;
+  width: 276px;
   margin: 0;
   color: var(--color-primary-grey);
   text-align: center;
@@ -95,6 +114,6 @@ export const BtnCancel = styled.button`
   display: block;
 
   @media (min-width: 834px) {
-    display: none;
+    width: 212px;
   }
 `;

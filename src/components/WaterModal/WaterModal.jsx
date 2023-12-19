@@ -2,6 +2,7 @@ import {
   BtnCancel,
   BtnConfirm,
   Container,
+  FormBox,
   Input,
   Text,
   Title,
@@ -11,10 +12,12 @@ const WaterModal = () => {
   return (
     <Container>
       <Title>Add water intake</Title>
-      <Text>How much water</Text>
-      <Input type="text" placeholder="Enter your weight" />
-      <BtnConfirm>Confirm</BtnConfirm>
-      <BtnCancel>Cancel</BtnCancel>
+      <FormBox>
+        <Text>How much water</Text>
+        <Input type="text" placeholder="Enter your weight" />
+        <BtnConfirm>Confirm</BtnConfirm>
+        <BtnCancel>Cancel</BtnCancel>
+      </FormBox>
     </Container>
   );
 };
