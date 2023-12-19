@@ -31,6 +31,11 @@ const SignInPages = () => {
   const dispatch = useDispatch();
  
 
+  useEffect(() => {
+    login && navigate('/main');
+  }, [login, navigate]);
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -40,8 +45,6 @@ const SignInPages = () => {
       email: form.elements.email.value,
       password: form.elements.password.value,
     };
-
-    console.log(userData);
 
     if (userData.email !== '' && userData.password !== '') {
       dispatch(logIn(userData));
