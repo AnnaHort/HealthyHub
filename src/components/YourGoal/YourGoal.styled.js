@@ -248,3 +248,8 @@ export const GoalLabel = styled.label`
     opacity: 1;
   }
 `;
+
+export const GoalErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
+`;
