@@ -10,8 +10,9 @@ import {
   BtnConfirm,
   BtnBack,
   CloseButton,
-  Img,
+  // Img,
   Div,
+  StyledIcon,
 } from './TargetSelectionModal.styled';
 
 export const TargetSelectionModal = () => {
@@ -19,10 +20,14 @@ export const TargetSelectionModal = () => {
     <Container>
       <Div>
         <CloseButton>
-          <Img
+          {/* <Img
             src="/src/components/TargetSelectionModal/img/close-circle-min.svg"
             alt="CloseButton"
-          />
+          /> */}
+
+          <StyledIcon>
+            <use href="/src/Sprites/icons/symbol-defs.svg#icon-close-circle"></use>
+          </StyledIcon>
         </CloseButton>
       </Div>
 
@@ -40,10 +45,7 @@ export const TargetSelectionModal = () => {
               value="Lose Fat"
             />
             <Label htmlFor="loseFat">
-              <img
-                src="/src/components/TargetSelectionModal/img/LoseFatImageMen-min.svg"
-                alt="Lose Fat"
-              />
+              <img src="/src/Emoji/LoseFatMen.svg" alt="Lose Fat" />
               Lose Fat
             </Label>
           </RadioItem>
@@ -56,10 +58,7 @@ export const TargetSelectionModal = () => {
               value="Maintain"
             />
             <Label htmlFor="maintain">
-              <img
-                src="/src/components/TargetSelectionModal/img/LoseFatImageMen-min.svg"
-                alt="Lose Fat"
-              />
+              <img src="/src/Emoji/MaintakeMen.svg" alt="Lose Fat" />
               Maintain
             </Label>
           </RadioItem>
@@ -72,10 +71,7 @@ export const TargetSelectionModal = () => {
               value="Gain Muscle"
             />
             <Label htmlFor="gainMuscle">
-              <img
-                src="/src/components/TargetSelectionModal/img/LoseFatImageMen-min.svg"
-                alt="Lose Fat"
-              />
+              <img src="/src/Emoji/GainMuscle.svg" alt="Lose Fat" />
               Gain Muscle
             </Label>
           </RadioItem>

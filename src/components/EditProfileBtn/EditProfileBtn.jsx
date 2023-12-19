@@ -1,4 +1,8 @@
-import { ButtonLogout, Div, StyledIcon } from '../LogoutBtn/LogoutBtn.styled';
+import {
+  ButtonLogout,
+  Div,
+  StyledIcon,
+} from '../EditProfileBtn/EditProfileBtn.styled';
 
 const EditProfileBtn = () => {
   return (
