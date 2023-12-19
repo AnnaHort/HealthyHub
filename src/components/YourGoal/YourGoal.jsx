@@ -82,7 +82,7 @@ export const YourGoal = ({ onNext, onBack, onSubmit }) => {
                 </GoalRadioItem>
               </GoalList>
               <GoalErrorMessage>{errors.goal}</GoalErrorMessage>
-              <GoalBtnNext>Next</GoalBtnNext>
+              <GoalBtnNext type="submit">Next</GoalBtnNext>
               <GoalBtnBack type="button" onClick={onBack}>
                 Back
               </GoalBtnBack>
