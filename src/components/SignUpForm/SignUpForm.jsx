@@ -7,7 +7,7 @@ import { register } from '../../redux/auth/authOperations';
 import SignUpRegister from './SignUpRegister';
 import { YourGoal } from '../YourGoal/YourGoal';
 import SelectGender from "../SelectGender/SelectGender";
-import BodyParameters from "../BodyParameters/photoBodyParameters";
+import BodyParameters from"../../pages/BodyParameters/bodyParameters";
 import YourActivity from "../YourActivity/YourActivity";
 
 const SignUpForm = () => {
@@ -24,9 +24,7 @@ const SignUpForm = () => {
   const handleRegisterSubmit = async (values) => {
     try {
       const response = await dispatch(register(values));
-
       console.log('Response from Redux:', response);
-
       if (response.type === 'auth/register/fulfilled') {
         toast.success('Successful registration');
         setLocalData(values);
