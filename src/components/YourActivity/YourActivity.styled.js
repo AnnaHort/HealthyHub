@@ -192,3 +192,8 @@ export const YourActivityBackBtnStyled = styled.button`
     max-width: 212px;
   }
 `;
+
+export const ActivityErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
+`;
