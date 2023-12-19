@@ -14,6 +14,7 @@ const SignUpForm = () => {
 
   const dispatch = useDispatch();
   
+  const [currentStep, setCurrentStep] = useState(1);
   const [, setLocalData] = useState({
     name: '',
     email: '',
@@ -25,10 +26,11 @@ const SignUpForm = () => {
     age: '',
     gender: '',
   });
+  const [dataBodyParams, setDataBodyParams] = useState('');
   console.log(dataGoal, "local state dataGoal");
   console.log(dataAgeGender, 'local state dataAgeGender');
-  //const [isRegistered, setIsRegistered] = useState(false);
-  const [currentStep, setCurrentStep] = useState(1);
+  console.log(dataBodyParams, 'local state dataBodyParams');
+  
 
   const handleRegisterSubmit = async (values) => {
     try {
@@ -52,6 +54,7 @@ const SignUpForm = () => {
   const SelectData = (data) => {
     setDataGoal(data);
     setDataAgeGender(data);
+    setDataBodyParams(data);
   };
 
   const handleNext = () => {
@@ -63,7 +66,8 @@ const SignUpForm = () => {
   };
 
   return (
-    <div>
+   
+    <div> <YourActivity/>
       {currentStep === 1 && (
         <SignUpRegister onSubmit={handleRegisterSubmit} onNext={handleNext} />
       )}
@@ -82,7 +86,11 @@ const SignUpForm = () => {
         />
       )}
       {currentStep === 4 && (
-        <BodyParameters onNext={handleNext} onBack={handlePrev} />
+        <BodyParameters
+          onNext={handleNext}
+          onBack={handlePrev}
+          onSubmit={SelectData}
+        />
       )}
       {currentStep === 5 && (
         <YourActivity onNext={handleNext} onBack={handlePrev} />
