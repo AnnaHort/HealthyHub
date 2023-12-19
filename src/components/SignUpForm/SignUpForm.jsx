@@ -11,9 +11,8 @@ import BodyParameters from '../../pages/BodyParameters/bodyParameters';
 import YourActivity from '../YourActivity/YourActivity';
 
 const SignUpForm = () => {
-
   const dispatch = useDispatch();
-  
+
   const [currentStep, setCurrentStep] = useState(1);
   const [, setLocalData] = useState({
     name: '',
@@ -26,11 +25,15 @@ const SignUpForm = () => {
     age: '',
     gender: '',
   });
-  const [dataBodyParams, setDataBodyParams] = useState('');
-  console.log(dataGoal, "local state dataGoal");
+  const [dataBodyParams, setDataBodyParams] = useState({
+    height: '',
+    weight: '',
+  });
+  const [dataActivity, setDataActivity] = useState('');
+  console.log(dataGoal, 'local state dataGoal');
   console.log(dataAgeGender, 'local state dataAgeGender');
   console.log(dataBodyParams, 'local state dataBodyParams');
-  
+  console.log(dataActivity, 'local state dataActivity');
 
   const handleRegisterSubmit = async (values) => {
     try {
@@ -55,6 +58,7 @@ const SignUpForm = () => {
     setDataGoal(data);
     setDataAgeGender(data);
     setDataBodyParams(data);
+    setDataActivity(data);
   };
 
   const handleNext = () => {
@@ -66,8 +70,7 @@ const SignUpForm = () => {
   };
 
   return (
-   
-    <div> <YourActivity/>
+    <div>
       {currentStep === 1 && (
         <SignUpRegister onSubmit={handleRegisterSubmit} onNext={handleNext} />
       )}
@@ -93,7 +96,11 @@ const SignUpForm = () => {
         />
       )}
       {currentStep === 5 && (
-        <YourActivity onNext={handleNext} onBack={handlePrev} />
+        <YourActivity
+          onNext={handleNext}
+          onBack={handlePrev}
+          onSubmit={SelectData}
+        />
       )}
       <ToastContainer />
     </div>
