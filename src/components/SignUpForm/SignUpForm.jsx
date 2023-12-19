@@ -21,7 +21,12 @@ const SignUpForm = () => {
   });
   const [, setError] = useState('');
   const [dataGoal, setDataGoal] = useState('');
+  const [dataAgeGender, setDataAgeGender] = useState({
+    age: '',
+    gender: '',
+  });
   console.log(dataGoal, "local state dataGoal");
+  console.log(dataAgeGender, 'local state dataAgeGender');
   //const [isRegistered, setIsRegistered] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -46,6 +51,7 @@ const SignUpForm = () => {
 
   const SelectData = (data) => {
     setDataGoal(data);
+    setDataAgeGender(data);
   };
 
   const handleNext = () => {
@@ -69,7 +75,11 @@ const SignUpForm = () => {
         />
       )}
       {currentStep === 3 && (
-        <SelectGender onNext={handleNext} onBack={handlePrev} />
+        <SelectGender
+          onNext={handleNext}
+          onBack={handlePrev}
+          onSubmit={SelectData}
+        />
       )}
       {currentStep === 4 && (
         <BodyParameters onNext={handleNext} onBack={handlePrev} />

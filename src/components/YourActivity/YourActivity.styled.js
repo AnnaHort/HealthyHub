@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Field, Form } from 'formik';
 
 export const YourActivityContainerStyled = styled.div`
   background-color: var(--color-primary-black);
@@ -77,7 +78,7 @@ export const YourActivityText = styled.p`
   }
 `;
 
-export const YourActivityFormStyled = styled.form`
+export const YourActivityFormStyled = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,7 +106,7 @@ export const RadioButtonContainerStyled = styled.div`
   position: relative;
 `;
 
-export const RadioInputStyle = styled.input`
+export const RadioInputStyle = styled(Field)`
   opacity: 0;
 `;
 
