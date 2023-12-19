@@ -18,7 +18,8 @@ import {
   RegisterTitleContainer,
   SignInBtnContainer,
   SignInPagesContainer,
-  FormikContainser,
+  FormikEmailContainer,
+  FormikPasswordContainer,
 } from './SignInPages.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from '../../redux/auth/authOperations';
@@ -117,41 +118,42 @@ const SignInPages = () => {
         <RegisterText>You need to login to use the service</RegisterText>
 
         <SignInForm autoComplete="off" onSubmit={formik.handleSubmit}>
-          <div style={{position:"relative"}}>
-          <label htmlFor="email">
-            <InputSignIn
-              type="email"
-              id="email"
-              name="email"
-              placeholder="E-mail"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-            />
-          </label>
-          {formik.touched.email && formik.errors.email && (
-            <FormikContainser>{formik.errors.email}</FormikContainser>
-          )}
+          <div style={{ position: 'relative' }}>
+            <label htmlFor="email">
+              <InputSignIn
+                style={{ position: 'relative' }}
+                type="email"
+                id="email"
+                name="email"
+                placeholder="E-mail"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+              />
+            </label>
+            {formik.touched.email && formik.errors.email && (
+              <FormikEmailContainer>{formik.errors.email}</FormikEmailContainer>
+            )}
           </div>
-          
 
-          <div style={{position:"relative"}}>
-          <label htmlFor="password">
-            <InputSignIn
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.password}
-            />
-          </label>
-          {formik.touched.password && formik.errors.password && (
-            <FormikContainser style={{ color: 'red' }}>{formik.errors.password}</FormikContainser>
-          )}
+          <div style={{ position: 'relative' }}>
+            <label htmlFor="password">
+              <InputSignIn
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.password}
+              />
+            </label>
+            {formik.touched.password && formik.errors.password && (
+              <FormikPasswordContainer style={{ color: 'red' }}>
+                {formik.errors.password}
+              </FormikPasswordContainer>
+            )}
           </div>
-       
 
           <ForgotElementContainer>
             <SignInBtnContainer>
