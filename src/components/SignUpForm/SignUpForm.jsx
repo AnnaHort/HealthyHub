@@ -11,7 +11,9 @@ import BodyParameters from"../../pages/BodyParameters/bodyParameters";
 import YourActivity from "../YourActivity/YourActivity";
 
 const SignUpForm = () => {
+
   const dispatch = useDispatch();
+  
   const [, setLocalData] = useState({
     name: '',
     email: '',
