@@ -99,7 +99,7 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
                   <Text>Your age</Text>
                   <SelectGenderInputContainer>
                     <Input
-                      type="text"
+                      type="number"
                       id="age"
                       name="age"
                       placeholder="Enter your age"
