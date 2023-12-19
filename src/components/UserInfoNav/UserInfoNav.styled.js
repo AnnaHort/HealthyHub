@@ -24,6 +24,7 @@ export const ImgContainer = styled.div`
   height: 28px;
   border-radius: 28px;
   background: lightgray 50%;
+  margin-right: 4px;
 `;
 
 export const IconButton = styled.button`
@@ -32,6 +33,7 @@ export const IconButton = styled.button`
   align-items: center;
   border: none;
   background: none;
+  padding: 0;
 `;
 
 export const ImgArrowDown = styled.img`
