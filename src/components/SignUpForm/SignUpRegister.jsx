@@ -38,9 +38,7 @@ const SignupSchema = Yup.object().shape({
     .required('Password is required'),
 });
 
-const SignUpRegister = ({ onSubmit }) => {
- 
-
+const SignUpRegister = ({ onSubmit, onNext }) => {
   return (
     <SignUpRegisterContainer>
       <Image src={RegisterImageDesktop} alt="Responsive Image" />
@@ -51,7 +49,8 @@ const SignUpRegister = ({ onSubmit }) => {
           initialValues={initialValues}
           validationSchema={SignupSchema}
           onSubmit={(values, { setSubmitting }) => {
-            onSubmit(values); // Передача данных формы наверх через onSubmit
+            onSubmit(values);
+            onNext();
             setSubmitting(false); // Разблокировка формы после отправки
           }}
         >
