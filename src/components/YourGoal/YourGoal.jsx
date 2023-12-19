@@ -12,20 +12,30 @@ import {
   Title,
 } from './YourGoal.styled';
 
-export const YourGoal = () => {
+
+
+
+
+export const YourGoal = ({ onNext, onBack }) => {
+  
+  
+  const handleSubmit = () => {
+    onNext();
+  };
+  
   return (
     <Container>
       <Img
         alt="Goal Image"
         src="/src/components/YourGoal/img/IllustrationGoals-min.svg"
       />
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Title>Your goal</Title>
         <Description>
           Choose a goal so that we can help you effectively
         </Description>
         <List>
-        <RadioItem>
+          <RadioItem>
             <CustomRadio
               type="radio"
               id="loseFat"
@@ -34,7 +44,6 @@ export const YourGoal = () => {
             />
             <Label htmlFor="loseFat">Lose Fat</Label>
           </RadioItem>
-
 
           <RadioItem>
             <CustomRadio
@@ -55,12 +64,10 @@ export const YourGoal = () => {
             />
             <Label htmlFor="gainMuscle">Gain Muscle</Label>
           </RadioItem>
-
-        
         </List>
         <BtnNext>Next</BtnNext>
 
-        <BtnBack type="button">Back</BtnBack>
+        <BtnBack type="button" onClick={onBack}>Back</BtnBack>
       </Form>
     </Container>
   );

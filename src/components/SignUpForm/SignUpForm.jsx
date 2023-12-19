@@ -5,23 +5,26 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { register } from '../../redux/auth/authOperations';
 import SignUpRegister from './SignUpRegister';
+import { YourGoal } from '../YourGoal/YourGoal';
+import SelectGender from "../SelectGender/SelectGender";
+import BodyParameters from "../BodyParameters/photoBodyParameters";
+import YourActivity from "../YourActivity/YourActivity";
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
-  const [localData, setLocalData] = useState({
+  const [, setLocalData] = useState({
     name: '',
     email: '',
     password: '',
   });
-  const [error, setError] = useState("");
-  console.log(localData);
-  console.log(error);
+  const [, setError] = useState('');
+  //const [isRegistered, setIsRegistered] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
 
   const handleRegisterSubmit = async (values) => {
     try {
-      console.log('Before dispatching register');
       const response = await dispatch(register(values));
-      console.log('After dispatching register');
+
       console.log('Response from Redux:', response);
 
       if (response.type === 'auth/register/fulfilled') {
@@ -39,9 +42,33 @@ const SignUpForm = () => {
     }
   };
 
+
+
+  const handleNext = () => {
+    setCurrentStep(currentStep + 1);
+  };
+
+    const handlePrev = () => {
+      setCurrentStep(currentStep - 1);
+    };
+
   return (
     <div>
-      <SignUpRegister onSubmit={handleRegisterSubmit} />
+      {currentStep === 1 && (
+        <SignUpRegister onSubmit={handleRegisterSubmit} onNext={handleNext} />
+      )}
+      {currentStep === 2 && (
+        <YourGoal onNext={handleNext} onBack={handlePrev} />
+      )}
+      {currentStep === 3 && (
+        <SelectGender onNext={handleNext} onBack={handlePrev} />
+      )}
+      {currentStep === 4 && (
+        <BodyParameters onNext={handleNext} onBack={handlePrev} />
+      )}
+      {currentStep === 5 && (
+        <YourActivity onNext={handleNext} onBack={handlePrev} />
+      )}
       <ToastContainer />
     </div>
   );

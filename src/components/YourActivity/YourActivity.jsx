@@ -13,8 +13,9 @@ import {
   YourActivityTitleStyled,
 } from './YourActivity.styled';
 
-const YourActivity = () => {
-  return (
+const YourActivity = ({  onBack }) => {
+
+   return (
     <YourActivityContainerStyled>
       <YourActivityImgStyled src="/src/img/YourActivityImg/illustrationActivity-min.svg" />
 
@@ -69,7 +70,7 @@ const YourActivity = () => {
             Sign Up
           </YourActivitySignUpBtnStyled>
 
-          <YourActivityBackBtnStyled type="button">
+          <YourActivityBackBtnStyled type="button" onClick={onBack}>
             Back
           </YourActivityBackBtnStyled>
         </YourActivityFormStyled>
