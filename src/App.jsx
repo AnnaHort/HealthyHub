@@ -6,6 +6,7 @@ import SignInPages from './pages/SignInPages/SignInPages';
 
 import ForgotPasswordPage from './components/ForgotPasswordPage/ForgotPasswordPage';
 import MainPage from './pages/MainPage/MainPage';
+import DashboardPage from './pages/DashboardPage/dashboardPage';
 
 
 const SharedLayout = lazy(() =>
@@ -19,12 +20,13 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-
             <Route path="/signin" element={<SignInPages />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="main" element={<MainPage />} />
+
+            <Route path="/dashboard" element={<DashboardPage/> } />
           </Route>
 
           <Route path="*" element={<ErrorPage />} />
