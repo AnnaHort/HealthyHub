@@ -65,10 +65,7 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
             setSubmitting(false);
           }}
         >
-          {({ errors, values }) => {
-            console.log('Form Values:', values);
-            console.log('Form Errors:', errors);
-
+          {({ errors }) => {
             return (
               <RegisterForm>
                 <Text>Gender</Text>
