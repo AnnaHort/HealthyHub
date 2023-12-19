@@ -184,3 +184,14 @@ export const HaveAnAccountText = styled.p`
   line-height: 1.43;
 `;
 
+// export const LabelFormContainer = styled.div`
+// position: relative;
+// `
+
+export const FormikContainser = styled.div`
+position: absolute;
+top: 0;
+left: 95%;
+color: red;
+`
+
