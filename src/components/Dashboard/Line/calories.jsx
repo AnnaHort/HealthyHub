@@ -24,8 +24,8 @@ ChartJS.register(
 import styled from 'styled-components';
 
 const Container = styled.div`
-  max-width: 1200px;
-  padding: 0 34px;
+overflow-y: auto;
+ margin-bottom: 27px;
 `;
 
 
@@ -53,6 +53,16 @@ const CaloriesDesc = styled.p`
   font-weight: 400;
   line-height: 20px;
   color: var(--color-primary-white);
+`;
+
+const ChartsContainer = styled.div`
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  min-width: 676px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
 `;
 
 const CaloriesDashboard = () => {
@@ -94,14 +104,11 @@ const CaloriesDashboard = () => {
     datasets: [
       {
         label: 'Calories',
-        data: labels.map(() =>
-          faker.datatype.number({ min: 0, max: 3000 })
-        ),
+        data: labels.map(() => faker.datatype.number({ min: 0, max: 3000 })),
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
     ],
-   
   };
   return (
     <Container>
@@ -109,9 +116,10 @@ const CaloriesDashboard = () => {
         <CaloriesTitle>Calories</CaloriesTitle>
         <CaloriesDesc>Average value: 1700 cal</CaloriesDesc>
       </TitleContainer>
-      
+
+      <ChartsContainer>
         <Line options={options} data={data} />
-     
+      </ChartsContainer>
     </Container>
   );
 };

@@ -24,8 +24,8 @@ ChartJS.register(
 import styled from 'styled-components';
 
 const Container = styled.div`
-  max-width: 1200px;
-  padding: 0 34px;
+  overflow-x: auto;
+  margin-bottom: 40px;
 `;
 
 const TitleContainer = styled.div`
@@ -54,7 +54,19 @@ const WaterDesc = styled.p`
   color: var(--color-primary-white);
 `;
 
+const ChartsContainer = styled.div`
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  min-width: 676px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+`;
+
+
 const WaterDashboar = () => {
+  
    const options = {
      responsive: true,
      plugins: {
@@ -64,11 +76,13 @@ const WaterDashboar = () => {
      },
      scales: {
        x: {
-         beginAtZero: true, // Начинать отсчет с 0 на оси X
+         
+         beginAtZero: true,
        },
 
        y: {
          ticks: {
+          
            beginAtZero: true,
            stepSize: 1000,
            callback: function (value) {
@@ -92,14 +106,12 @@ const WaterDashboar = () => {
        datasets: [
          {
            label: 'Calories',
-           data: labels.map(() =>
-             faker.datatype.number({ min: 0, max: 3000 })
-           ),
+           data: labels.map(() => faker.datatype.number({ min: 0, max: 3000 })),
            borderColor: 'rgb(255, 99, 132)',
            backgroundColor: 'rgba(255, 99, 132, 0.5)',
          },
        ],
-    };
+     };
     
     return (
       <Container>
@@ -108,7 +120,11 @@ const WaterDashboar = () => {
           <WaterDesc>Average value: 1700 ml</WaterDesc>
         </TitleContainer>
 
-        <Line options={options} data={data} />
+        <ChartsContainer >
+         
+            <Line options={options} data={data} />
+     
+        </ChartsContainer>
       </Container>
     );
 };
