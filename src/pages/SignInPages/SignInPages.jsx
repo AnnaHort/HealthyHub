@@ -19,35 +19,44 @@ import {
   SignInBtnContainer,
   SignInPagesContainer,
 } from './SignInPages.styled';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from '../../redux/auth/authOperations';
 import { useNavigate } from 'react-router-dom';
-
+import isLoggedIn from '/src/redux/auth/authSelectors.js';
+import { toast, Toaster } from 'react-hot-toast';
 
 const SignInPages = () => {
-
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
-
+  const isComponentLoggedIn = useSelector(isLoggedIn);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const form = e.currentTarget;
-
     const userData = {
       email: form.elements.email.value,
       password: form.elements.password.value,
     };
+    try {
+      const response = await dispatch(logIn(userData));
+      console.log('Response from Redux:', response);
 
-    if (userData.email !== '' && userData.password !== '') {
-      dispatch(logIn(userData));
+      if (response.type === 'auth/login/fulfilled' || isComponentLoggedIn) {
+        console.log('Successful login');
+        navigate('/main');
+      }
 
-      form.reset();
-      navigate('/main');
-    } else {
-      alert('please fill in all input fields');
+      if (
+        response.payload &&
+        response.payload === 'Request failed with status code 500'
+      ) {
+        toast.error('Email or password is wrong');
+      }
+    } catch (error) {
+      console.error('Login Error:', error.message);
+      if (error?.response?.status === 401) {
+        toast.error('Invalid email or password');
+      }
     }
   };
 
@@ -84,6 +93,7 @@ const SignInPages = () => {
           <ForgotElementContainer>
             <SignInBtnContainer>
               <ButtonSignIn type="submit">Sign In</ButtonSignIn>
+
               <ForgotPasswordLink to="/forgot-password">
                 Forgot your password?
               </ForgotPasswordLink>
@@ -95,6 +105,7 @@ const SignInPages = () => {
               </HaveAnAccountText>
               <LinkStyled to="/signup">Sign up</LinkStyled>
             </ForgotPasswordContainer>
+            <Toaster position="top-right" />
           </ForgotElementContainer>
         </SignInForm>
       </RegisterTitleContainer>
