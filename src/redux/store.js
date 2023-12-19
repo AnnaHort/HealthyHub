@@ -21,6 +21,7 @@ const authPersistConfig = {
 };
 
 export const store = configureStore({
+  // стейт з властивістю authReducer (authSlice.reducer)
   reducer: {
     authReducer: persistReducer(authPersistConfig, authReducer),
   },

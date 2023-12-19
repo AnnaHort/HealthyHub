@@ -19,22 +19,22 @@ import {
   SignInBtnContainer,
   SignInPagesContainer,
 } from './SignInPages.styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/authOperations';
 import { useNavigate } from 'react-router-dom';
-import { selectToken } from '../../redux/auth/authSelectors';
-import { useEffect } from 'react';
+
 
 const SignInPages = () => {
-const login = useSelector(selectToken);
 
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
  
+
   useEffect(() => {
     login && navigate('/main');
   }, [login, navigate]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();

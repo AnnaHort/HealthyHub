@@ -7,18 +7,18 @@ import {
   WrappBodyContainer,
 } from './bodyParameters.styled';
 
-const BodyParameters = () => {
-    return (
-      <BodyContainer>
-        <FlexBodyContainer>
-          <PhotoBodyParameters />
-          <WrappBodyContainer>
-            <TitleBodyParameters />
-            <FormBodyParameters />
-          </WrappBodyContainer>
-        </FlexBodyContainer>
-      </BodyContainer>
-    );
+const BodyParameters = ({ onNext, onBack }) => {
+  return (
+    <BodyContainer>
+      <FlexBodyContainer>
+        <PhotoBodyParameters />
+        <WrappBodyContainer>
+          <TitleBodyParameters />
+          <FormBodyParameters onBack={onBack} onNext={onNext} />
+        </WrappBodyContainer>
+      </FlexBodyContainer>
+    </BodyContainer>
+  );
 };
 
 export default BodyParameters;

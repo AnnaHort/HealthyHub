@@ -1,9 +1,9 @@
 import SelectGenderChoose from './SelectGenderChoose';
 
-const SelectGender = () => {
+const SelectGender = ({ onNext, onBack }) => {
   return (
     <div>
-      <SelectGenderChoose />
+      <SelectGenderChoose onBack={onBack} onNext={onNext} />
     </div>
   );
 };

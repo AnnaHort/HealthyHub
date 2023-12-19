@@ -1,5 +1,5 @@
 //import { useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import * as Yup from 'yup';
 
 import { Formik } from 'formik';
@@ -38,34 +38,7 @@ const SignupSchema = Yup.object().shape({
     .required('Password is required'),
 });
 
-const SignUpRegister = () => {
-  // const [formData, setFormData] = useState({
-  //   name: '',
-  //   email: '',
-  //   password: '',
-  // });
-
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({
-  //     ...formData,
-  //     [name]: value,
-  //   });
-  // };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await axios.post(
-        'https://healthhub-backend.onrender.com/api/auth/signup',
-        initialValues
-      );
-      console.log('Успешная регистрация', response.data);
-    } catch (error) {
-      console.error('Ошибка регистрации', error);
-    }
-  };
+const SignUpRegister = ({ onSubmit, onNext }) => {
   return (
     <SignUpRegisterContainer>
       <Image src={RegisterImageDesktop} alt="Responsive Image" />
@@ -73,9 +46,13 @@ const SignUpRegister = () => {
         <RegisterTitle>Sign up</RegisterTitle>
         <RegisterText>You need to register to use the service</RegisterText>
         <Formik
-          onSubmit={handleSubmit}
           initialValues={initialValues}
           validationSchema={SignupSchema}
+          onSubmit={(values, { setSubmitting }) => {
+            onSubmit(values);
+            onNext();
+            setSubmitting(false); // Разблокировка формы после отправки
+          }}
         >
           {({ errors, touched }) => {
             return (

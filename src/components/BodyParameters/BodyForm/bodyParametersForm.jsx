@@ -8,7 +8,8 @@ import {
   BodyParamsNextButton,
 } from './bodyParametersForm.styled';
 
-export const FormBodyParameters = () => {
+export const FormBodyParameters = ({ onBack, onNext }) => {
+
   return (
     <BodyFormContainer>
       <Formik
@@ -19,13 +20,14 @@ export const FormBodyParameters = () => {
         onSubmit={(values) => {
           // Обработка отправки формы
           console.log(values);
+          onNext();
         }}
       >
-        <FormStyled>
+        <FormStyled >
           <LabelForm htmlFor="height">Height</LabelForm>
           <FieldStyled
             name="height"
-            type="number" 
+            type="number"
             required
             placeholder="Enter your height"
           />
@@ -42,7 +44,9 @@ export const FormBodyParameters = () => {
 
           <div>
             <BodyParamsNextButton type="submit">Next</BodyParamsNextButton>
-            <BodyParamsBackButton type="button">Back</BodyParamsBackButton>
+            <BodyParamsBackButton type="button" onClick={onBack}>
+              Back
+            </BodyParamsBackButton>
           </div>
         </FormStyled>
       </Formik>

@@ -21,7 +21,13 @@ import {
   RadioLabelStyle,
 } from '../YourActivity/YourActivity.styled';
 
-const SelectGenderChoose = () => {
+const SelectGenderChoose = ({ onNext, onBack }) => {
+
+  const handleSubmit = () => {
+    onNext();
+  };
+  
+
   return (
     <SelectGenderContainer>
       <Image
@@ -37,7 +43,7 @@ const SelectGenderChoose = () => {
         <SelectGenderRegisterText>
           Choose a goal so that we can help you effectively
         </SelectGenderRegisterText>
-        <RegisterForm>
+        <RegisterForm onSubmit={handleSubmit}>
           <Text>Gender</Text>
           <GenderRadioBtnContainer>
             <RadioButtonContainerStyled>
@@ -69,7 +75,7 @@ const SelectGenderChoose = () => {
           </label>
 
           <Button type="submit">Next</Button>
-          <ButtonBack>Back</ButtonBack>
+          <ButtonBack onClick={onBack}>Back</ButtonBack>
         </RegisterForm>
       </div>
     </SelectGenderContainer>

@@ -21,7 +21,6 @@ export const TargetSelectionModal = () => {
         <CloseButton>
           <Img
             src="/src/components/TargetSelectionModal/img/close-circle-min.svg"
-            f
             alt="CloseButton"
           />
         </CloseButton>
