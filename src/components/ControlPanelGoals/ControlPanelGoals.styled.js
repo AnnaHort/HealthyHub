@@ -51,9 +51,9 @@ export const IconButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 14px;
-  height: 14px;
-  margin-left: 12px;
+  /* width: 14px;
+  height: 14px; */
+  margin-left: 7px;
   border: none;
   background: none;
 `;
@@ -67,6 +67,25 @@ export const ImgArrowDown = styled.img`
 `;
 
 export const ImgArrowRight = styled.img`
+  @media (min-width: 834px) {
+    display: none;
+  }
+`;
+
+export const StyledArrowDown = styled.svg`
+  display: none;
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-green-lite);
+  @media (min-width: 834px) {
+    display: block;
+  }
+`;
+
+export const StyledArrowRight = styled.svg`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-green-lite);
   @media (min-width: 834px) {
     display: none;
   }

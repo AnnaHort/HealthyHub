@@ -21,7 +21,7 @@ export const Title = styled.h3`
   font-weight: 500;
   line-height: 24px; /* 133.333% */
   margin-bottom: 8px;
-  margin-right: 92px;
+  margin-right: 80px;
 `;
 
 export const Description = styled.p`
@@ -159,12 +159,16 @@ export const CloseButton = styled.button`
 
   @media (min-width: 834px) {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
     background: none;
     border: none;
     cursor: pointer;
   }
+`;
+
+export const StyledIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-grey);
+  margin-right: 8px;
 `;

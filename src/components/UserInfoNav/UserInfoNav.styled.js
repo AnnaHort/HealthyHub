@@ -5,7 +5,6 @@ export const UserInfoContainer = styled.div`
   height: 28px;
   display: flex;
   align-items: center;
-  gap: 6px;
 `;
 
 export const Text = styled.p`
@@ -17,6 +16,7 @@ export const Text = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
+  margin-right: 6px;
 `;
 
 export const ImgContainer = styled.div`
@@ -30,8 +30,6 @@ export const IconButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 14px;
-  height: 14px;
   border: none;
   background: none;
 `;
@@ -42,4 +40,10 @@ export const ImgArrowDown = styled.img`
   @media (min-width: 834px) {
     display: block;
   }
+`;
+
+export const StyledIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-green-lite);
 `;
