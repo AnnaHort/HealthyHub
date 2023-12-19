@@ -1,74 +1,73 @@
+//import * as Yup from 'yup';
+//import { Formik } from 'formik';
+
 import {
-  BtnBack,
-  BtnNext,
-  Container,
-  CustomRadio,
-  Description,
-  Form,
-  Img,
-  Label,
-  List,
-  RadioItem,
-  Title,
+  GoalBtnBack,
+  GoalBtnNext,
+  GoalContainer,
+  GoalCustomRadio,
+  GoalDescription,
+  GoalForm,
+  GoalImg,
+  GoalLabel,
+  GoalList,
+  GoalRadioItem,
+  GoalTitle,
 } from './YourGoal.styled';
 
-
-
-
-
 export const YourGoal = ({ onNext, onBack }) => {
-  
-  
   const handleSubmit = () => {
     onNext();
   };
-  
+
   return (
-    <Container>
-      <Img
+    <GoalContainer>
+      <GoalImg
         alt="Goal Image"
         src="/src/components/YourGoal/img/IllustrationGoals-min.svg"
       />
-      <Form onSubmit={handleSubmit}>
-        <Title>Your goal</Title>
-        <Description>
+      <GoalForm onSubmit={handleSubmit}>
+        <GoalTitle>Your goal</GoalTitle>
+        <GoalDescription>
           Choose a goal so that we can help you effectively
-        </Description>
-        <List>
-          <RadioItem>
-            <CustomRadio
+        </GoalDescription>
+        <GoalList>
+          <GoalRadioItem>
+            <GoalCustomRadio
               type="radio"
               id="loseFat"
               name="goal"
               value="Lose Fat"
             />
-            <Label htmlFor="loseFat">Lose Fat</Label>
-          </RadioItem>
+            <GoalLabel htmlFor="loseFat">Lose Fat</GoalLabel>
+          </GoalRadioItem>
 
-          <RadioItem>
-            <CustomRadio
+          <GoalRadioItem>
+            <GoalCustomRadio
               type="radio"
               id="maintain"
               name="goal"
               value="Maintain"
             />
-            <Label htmlFor="maintain">Maintain</Label>
-          </RadioItem>
+            <GoalLabel htmlFor="maintain">Maintain</GoalLabel>
+          </GoalRadioItem>
 
-          <RadioItem>
-            <CustomRadio
+          <GoalRadioItem>
+            <GoalCustomRadio
               type="radio"
               id="gainMuscle"
               name="goal"
               value="Gain Muscle"
             />
-            <Label htmlFor="gainMuscle">Gain Muscle</Label>
-          </RadioItem>
-        </List>
-        <BtnNext>Next</BtnNext>
+            <GoalLabel htmlFor="gainMuscle">Gain Muscle</GoalLabel>
+          </GoalRadioItem>
+        </GoalList>
+        <GoalBtnNext>Next</GoalBtnNext>
 
-        <BtnBack type="button" onClick={onBack}>Back</BtnBack>
-      </Form>
-    </Container>
+        <GoalBtnBack type="button" onClick={onBack}>
+          Back
+        </GoalBtnBack>
+      </GoalForm>
+    </GoalContainer>
   );
 };
