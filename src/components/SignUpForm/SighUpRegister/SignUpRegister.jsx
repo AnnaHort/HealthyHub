@@ -1,5 +1,3 @@
-//import { useState } from 'react';
-//import axios from 'axios';
 import * as Yup from 'yup';
 
 import { Formik } from 'formik';
@@ -18,7 +16,7 @@ import {
   ErrorMessage,
 } from './SignUpRegister.styled';
 
-import RegisterImageDesktop from '../../img/register-img-desktop.png';
+import RegisterImageDesktop from '../../../img/register-img-desktop.png';
 
 const initialValues = {
   name: '',
