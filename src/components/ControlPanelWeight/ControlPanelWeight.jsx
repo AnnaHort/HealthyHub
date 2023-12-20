@@ -13,7 +13,8 @@ const ControlPanelWeight = () => {
   return (
     <Container>
       <ImgBox>
-        <Img src="/src/Emoji/WaightImage.svg" alt="Waiting image" />
+        {/* <Img src="/src/Emoji/WaightImage.svg" alt="Waiting image" /> */}
+        <Img src="../../Emoji/WaightImage.svg" alt="Waiting image" />
       </ImgBox>
       <SelectPanel>
         <Title>Weight</Title>
