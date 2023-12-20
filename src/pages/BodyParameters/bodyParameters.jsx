@@ -1,6 +1,6 @@
-import { FormBodyParameters } from './BodyParameters/BodyForm/bodyParametersForm';
-import PhotoBodyParameters from "./BodyParameters/photoBodyParameters";
-import TitleBodyParameters from "./BodyParameters/title/title";
+import { FormBodyParameters } from '../../components/BodyParameters/BodyForm/bodyParametersForm';
+import PhotoBodyParameters from "../../components/BodyParameters/photoBodyParameters";
+import TitleBodyParameters from "../../components/BodyParameters/title/title";
 import {
   BodyContainer,
   FlexBodyContainer,
