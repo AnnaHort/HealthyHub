@@ -12,7 +12,7 @@ import {
   StyledIcon,
   Text,
   Title,
-} from './СurrentWeightModal.styled';
+} from './CurrentWeightModal.styled';
 
 const CurrentWeightModal = ({ onCloseButtonClick }) => {
   const currentDate = new Date().toLocaleDateString();

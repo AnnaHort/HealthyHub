@@ -15,7 +15,7 @@ import {
 } from './ControlPanelGoals.styled';
 import { TargetSelectionModal } from '../TargetSelectionModal/TargetSelectioModal';
 
-import { ReactComponent as LoseFatMen } from '../../Emoji/LoseFatMen.svg';
+import { ReactComponent as GainMuscle } from '../../Emoji/GainMuscle.svg';
 
 const ControlPanelGoals = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -30,9 +30,7 @@ const ControlPanelGoals = () => {
   return (
     <Container>
       <ImgBox>
-
-        <LoseFatMen />
-
+        <GainMuscle />
       </ImgBox>
       <SelectPanel>
         <Title>Goal</Title>
