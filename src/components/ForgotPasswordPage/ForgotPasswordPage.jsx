@@ -3,10 +3,7 @@ import {
   SignInBtnContainer,
   SignInPagesContainer,
 } from '../../pages/SignInPages/SignInPages.styled';
-import {
-  Image,
-  
-} from '../SignUpForm/SignUpRegister.styled';
+import { Image } from '../SignUpForm/SighUpRegister/SignUpRegister.styled';
 import RegisterImageMobile from '../../img/register-img-mobile.png';
 import RegisterImageTablet from '../../img/register-img-tablet.png';
 import RegisterImageDesktop from '../../img/register-img-desktop.png';

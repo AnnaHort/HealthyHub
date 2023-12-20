@@ -4,11 +4,11 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { register } from '../../redux/auth/authOperations';
-import SignUpRegister from './SignUpRegister';
-import { YourGoal } from '../YourGoal/YourGoal';
-import SelectGender from '../SelectGender/SelectGender';
-import BodyParameters from '../../pages/BodyParameters/bodyParameters';
-import YourActivity from '../YourActivity/YourActivity';
+import SignUpRegister from './SighUpRegister/SignUpRegister';
+import { YourGoal } from './YourGoal/YourGoal';
+import SelectGender from './SelectGender/SelectGender';
+import BodyParameters from './BodyParameters/bodyParameters';
+import YourActivity from './YourActivity/YourActivity';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();

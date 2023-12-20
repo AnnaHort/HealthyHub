@@ -17,9 +17,7 @@ import {
   AgeErrorMessage,
 } from './SelectGender.styled';
 
-import SelectGenderImegMobile from '../../img/select_gender/gender-and-age-mobile.png';
-import SelectGenderImegTablet from '../../img/select_gender/gender-and-age-tablet.png';
-import SelectGenderImegDesktop from '../../img/select_gender/gender-and-age-desktop.png';
+import SelectGenderImegDesktop from '../../../img/select_gender/gender-and-age-desktop.png';
 import {
   RadioButtonContainerStyled,
   RadioInputStyle,
@@ -43,12 +41,7 @@ const genderAgeSchema = Yup.object().shape({
 const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
   return (
     <SelectGenderContainer>
-      <Image
-        src={SelectGenderImegMobile}
-        srcSet={`${SelectGenderImegTablet} 834w, ${SelectGenderImegDesktop} 1440w`}
-        sizes="(max-width: 833px) 100vw, (min-width: 834px) 50vw"
-        alt="Responsive Image"
-      />
+      <Image src={SelectGenderImegDesktop} alt="Responsive Image" />
       <div>
         <SelectGenderRegisterTitle>
           Select gender, Age
