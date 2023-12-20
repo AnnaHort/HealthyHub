@@ -9,7 +9,6 @@ const SharedLayout = () => {
     <div>
       <header>
         <HeaderContainerStyled>
-
           <Header />
         </HeaderContainerStyled>
       </header>
