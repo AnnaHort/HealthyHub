@@ -24,7 +24,7 @@ ChartJS.register(
 import styled from 'styled-components';
 
 const Container = styled.div`
-padding-left: 10px;
+  margin-left: 10px;
   overflow-y: auto;
 `;
 
@@ -56,14 +56,14 @@ const CaloriesDesc = styled.p`
 `;
 
 const ChartsContainer = styled.div`
+  display: flex;
+  min-width: 676px;
+  width: 100%;
+  margin: 0 auto;
   border-radius: 12px;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  min-width: 676px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
 `;
 
 const CaloriesDashboard = () => {
@@ -78,14 +78,15 @@ const CaloriesDashboard = () => {
     scales: {
       x: {
         beginAtZero: true,
-      grid: {
-        display: true, // Отображение сетки по оси X
-        color: 'rgba(0, 0, 0, 0.1)', // Цвет сетки по оси X
-        borderColor: 'rgba(0, 0, 0, 0.1)', // Цвет линий сетки по оси X
+        grid: {
+          display: true,
+          color: '#292928',
+          borderColor: '#292928',
+        },
+       
       },
-      },
-
       y: {
+        position: 'left',
         ticks: {
           beginAtZero: true,
           stepSize: 1000,
@@ -96,10 +97,23 @@ const CaloriesDashboard = () => {
             return value;
           },
         },
+        grid: {
+          display: true,
+          color: '#292928',
+          borderColor: '#292928',
+        },
+      
+      },
+    },
+    layout: {
+      padding: {
+        left: 14,
+        right: 14,
+        top: 25,
+        bottom: 40,
       },
     },
   };
-
 
   const labels = [];
   for (let i = 1; i <= 31; i++) {
@@ -112,23 +126,13 @@ const CaloriesDashboard = () => {
       {
         label: 'Calories',
         data: labels.map(() => faker.datatype.number({ min: 0, max: 3000 })),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: '#e3ffa8',
+        backgroundColor: '#0F0F0F',
+        pointBackgroundColor: '#e3ffa8',
+        borderWidth: 1, 
+    
       },
     ],
-
-    element: {
-      point: {
-        layout: {
-          padding: {
-            left: 10, // Внутренний отступ слева
-            right: 10, // Внутренний отступ справа
-            top: 10, // Внутренний отступ сверху
-            bottom: 10, // Внутренний отступ снизу
-          },
-        },
-      },
-    },
   };
   return (
     <Container>
@@ -138,7 +142,11 @@ const CaloriesDashboard = () => {
       </TitleContainer>
 
       <ChartsContainer>
-        <Line options={options} data={data} />
+        <Line
+          options={options}
+          data={data}
+          style={{ backgroundColor: '#0F0F0F', borderRadius: '12px', }}
+        />
       </ChartsContainer>
     </Container>
   );

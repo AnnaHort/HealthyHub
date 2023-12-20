@@ -24,9 +24,9 @@ ChartJS.register(
 import styled from 'styled-components';
 
 const Container = styled.div`
-  padding-left: 10px;
-  overflow-x: auto;
+  margin-left: 10px;
   margin-bottom: 40px;
+  overflow-x: auto;
 `;
 
 const TitleContainer = styled.div`
@@ -56,14 +56,14 @@ const WaterDesc = styled.p`
 `;
 
 const ChartsContainer = styled.div`
+  display: flex;
+  min-width: 676px;
+  width: 100%;
+  margin: 0 auto;
   border-radius: 12px;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  min-width: 676px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
 `;
 
 
@@ -80,9 +80,14 @@ const WaterDashboar = () => {
      scales: {
        x: {
          beginAtZero: true,
+         grid: {
+           display: true,
+           color: '#292928',
+           borderColor: '#292928',
+         },
        },
-
        y: {
+         position: 'left',
          ticks: {
            beginAtZero: true,
            stepSize: 1000,
@@ -93,6 +98,19 @@ const WaterDashboar = () => {
              return value;
            },
          },
+         grid: {
+           display: true,
+           color: '#292928',
+           borderColor: '#292928',
+         },
+       },
+     },
+     layout: {
+       padding: {
+         left: 14,
+         right: 14,
+         top: 25,
+         bottom: 40,
        },
      },
    };
@@ -108,8 +126,10 @@ const WaterDashboar = () => {
          {
            label: 'Calories',
            data: labels.map(() => faker.datatype.number({ min: 0, max: 3000 })),
-           borderColor: 'rgb(255, 99, 132)',
-           backgroundColor: 'rgba(255, 99, 132, 0.5)',
+           borderColor: '#e3ffa8',
+           backgroundColor: '#0F0F0F',
+           pointBackgroundColor: '#e3ffa8',
+           borderWidth: 1,
          },
        ],
      };
@@ -121,10 +141,12 @@ const WaterDashboar = () => {
           <WaterDesc>Average value: 1700 ml</WaterDesc>
         </TitleContainer>
 
-        <ChartsContainer >
-         
-            <Line options={options} data={data} />
-     
+        <ChartsContainer>
+          <Line
+            options={options}
+            data={data}
+            style={{ backgroundColor: '#0F0F0F', borderRadius: "12px", }}
+          />
         </ChartsContainer>
       </Container>
     );
