@@ -29,11 +29,6 @@ const SignInPages = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
- 
-
-  useEffect(() => {
-    login && navigate('/main');
-  }, [login, navigate]);
 
 
   const handleSubmit = async (e) => {

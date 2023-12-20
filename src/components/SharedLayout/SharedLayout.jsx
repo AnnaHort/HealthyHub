@@ -1,21 +1,24 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
-import { HeaderContainerStyled } from '../Header/Header.styled';
+import { HeaderBg, HeaderContainerStyled } from '../Header/Header.styled';
 import { Suspense } from 'react';
+
+import { Container } from './SharedLayout.styled';
 
 const SharedLayout = () => {
   return (
-    <div>
-      <header>
+    <>
+      <HeaderBg>
         <HeaderContainerStyled>
           <Header />
         </HeaderContainerStyled>
-      </header>
-
+      </HeaderBg>
+    <Container>
       <Suspense>
         <Outlet />
       </Suspense>
-    </div>
+    </Container>
+    </>
   );
 };
 export default SharedLayout;
