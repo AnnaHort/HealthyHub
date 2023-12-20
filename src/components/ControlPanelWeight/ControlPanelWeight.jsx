@@ -2,19 +2,21 @@ import {
   Container,
   Description,
   IconButton,
-  Img,
+  // Img,
   ImgBox,
   SelectPanel,
   StyledIcon,
   Title,
 } from './ControlPanelWeight.styled';
 
+import { ReactComponent as WaightImage } from '../../Emoji/WaightImage.svg';
+
+
 const ControlPanelWeight = () => {
   return (
     <Container>
       <ImgBox>
-        {/* <Img src="/src/Emoji/WaightImage.svg" alt="Waiting image" /> */}
-        <Img src="../../Emoji/WaightImage.svg" alt="Waiting image" />
+        <WaightImage />
       </ImgBox>
       <SelectPanel>
         <Title>Weight</Title>
