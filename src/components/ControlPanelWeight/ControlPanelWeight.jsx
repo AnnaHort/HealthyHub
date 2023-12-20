@@ -12,7 +12,6 @@ import {
 } from './ControlPanelWeight.styled';
 import CurrentWeightModal from '../CurrentWeightModal/CurrentWeightModal';
 
-// import { ReactComponent as MaintakeMen } from '../../Emoji/MaintakeMen.svg';
 import MaintakeMen from '../../Emoji/WaightImage.svg';
 
 const ControlPanelWeight = () => {
@@ -41,7 +40,7 @@ const ControlPanelWeight = () => {
             /> */}
 
             <StyledIcon>
-              <use href="/src/Sprites/icons/symbol-defs.svg#icon-edit-2"></use>
+              <use href="../../../src/Sprites/icons/symbol-defs.svg#icon-edit-2"></use>
             </StyledIcon>
           </IconButton>
         </Description>
