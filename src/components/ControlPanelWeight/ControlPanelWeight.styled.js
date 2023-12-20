@@ -70,3 +70,15 @@ export const StyledIcon = styled.svg`
   height: 16px;
   stroke: var(--color-primary-green-lite);
 `;
+
+export const ModalContainer = styled.div`
+  position: absolute;
+  z-index: 1;
+  padding-top: 74px; //реголює висоту модалки
+  padding-right: 157px;
+  right: 0;
+
+  @media (min-width: 1280px) {
+    padding-right: 258px;
+  }
+`;

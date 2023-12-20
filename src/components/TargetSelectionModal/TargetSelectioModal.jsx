@@ -15,11 +15,11 @@ import {
   StyledIcon,
 } from './TargetSelectionModal.styled';
 
-export const TargetSelectionModal = () => {
+export const TargetSelectionModal = ({ onCloseButtonClick }) => {
   return (
     <Container>
       <Div>
-        <CloseButton>
+        <CloseButton onClick={onCloseButtonClick}>
           {/* <Img
             src="/src/components/TargetSelectionModal/img/close-circle-min.svg"
             alt="CloseButton"

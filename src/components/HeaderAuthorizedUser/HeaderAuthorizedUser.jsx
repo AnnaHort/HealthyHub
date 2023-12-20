@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import Logo from '../Logo/Logo';
 import ControlPanelGoals from '../ControlPanelGoals/ControlPanelGoals';
 import ControlPanelWeight from '../ControlPanelWeight/ControlPanelWeight';
 import UserInfoNav from '../UserInfoNav/UserInfoNav';
@@ -14,6 +13,7 @@ import {
   UserInfoContainer,
 } from './HeaderAuthorizedUser.styled';
 import GoalAndWeighModal from '../GoalAndWeighModal/GoalAndWeighModal';
+import LogoAuthorizedUser from '../LogoAuthorizedUser/LogoAuthorizedUser';
 
 const HeaderAuthorizedUser = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -29,7 +29,7 @@ const HeaderAuthorizedUser = () => {
   return (
     <Container>
       <LogoContainer>
-        <Logo />
+        <LogoAuthorizedUser />
       </LogoContainer>
 
       <IconButton onClick={handleIconButtonClick}>

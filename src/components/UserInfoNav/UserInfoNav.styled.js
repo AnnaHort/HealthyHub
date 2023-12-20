@@ -49,3 +49,16 @@ export const StyledIcon = styled.svg`
   height: 16px;
   stroke: var(--color-primary-green-lite);
 `;
+
+export const ModalContainer = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  padding-top: 80px; //реголює висоту модалки
+  padding-right: 27px;
+  right: 0;
+
+  @media (min-width: 1280px) {
+    padding-right: 34px;
+  }
+`;
