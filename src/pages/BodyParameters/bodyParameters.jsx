@@ -7,14 +7,18 @@ import {
   WrappBodyContainer,
 } from './bodyParameters.styled';
 
-const BodyParameters = ({ onNext, onBack }) => {
+const BodyParameters = ({ onNext, onBack, onSubmit }) => {
   return (
     <BodyContainer>
       <FlexBodyContainer>
         <PhotoBodyParameters />
         <WrappBodyContainer>
           <TitleBodyParameters />
-          <FormBodyParameters onBack={onBack} onNext={onNext} />
+          <FormBodyParameters
+            onBack={onBack}
+            onNext={onNext}
+            onSubmit={onSubmit}
+          />
         </WrappBodyContainer>
       </FlexBodyContainer>
     </BodyContainer>

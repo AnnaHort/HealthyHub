@@ -341,10 +341,15 @@ export const CloseButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
     background: none;
     border: none;
     cursor: pointer;
   }
+`;
+
+export const StyledIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-grey);
+  margin-right: 8px;
 `;
