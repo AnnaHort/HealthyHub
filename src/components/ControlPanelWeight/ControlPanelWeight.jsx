@@ -13,6 +13,7 @@ import {
 import CurrentWeightModal from '../CurrentWeightModal/CurrentWeightModal';
 
 import MaintakeMen from '../../Emoji/WaightImage.svg';
+import IconsEditTwo from '../../Icons/IconEditTwo';
 
 const ControlPanelWeight = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -40,7 +41,7 @@ const ControlPanelWeight = () => {
             /> */}
 
             <StyledIcon>
-              <use href="../../../src/Sprites/icons/symbol-defs.svg#icon-edit-2"></use>
+              <IconsEditTwo />
             </StyledIcon>
           </IconButton>
         </Description>
