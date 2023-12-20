@@ -28,6 +28,7 @@ export const FieldStyled = styled(Field)`
   padding-left: 10px;
   border-radius: 12px;
   background-color: inherit;
+  color: var(--color-primary-grey);
   border: 1px solid var(--color-primary-green-lite);
 
   @media (min-width: 1440px) {
@@ -70,5 +71,17 @@ export const BodyParamsBackButton = styled.button`
   @media (min-width: 1440px) {
     max-width: 212px;
   }
+`;
+
+export const WeightErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
+  margin-top: 20px;
+`;
+
+export const HeightErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
+  margin-top: 20px;
 `;
 

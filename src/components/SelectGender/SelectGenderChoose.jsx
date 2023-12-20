@@ -65,10 +65,7 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
             setSubmitting(false);
           }}
         >
-          {({ errors, values }) => {
-            console.log('Form Values:', values);
-            console.log('Form Errors:', errors);
-
+          {({ errors }) => {
             return (
               <RegisterForm>
                 <Text>Gender</Text>
@@ -102,7 +99,7 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
                   <Text>Your age</Text>
                   <SelectGenderInputContainer>
                     <Input
-                      type="text"
+                      type="number"
                       id="age"
                       name="age"
                       placeholder="Enter your age"

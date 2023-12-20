@@ -3,7 +3,7 @@ import {
   Container,
   Description,
   IconButton,
-  Img,
+  // Img,
   ImgBox,
   ModalContainer,
   SelectPanel,
@@ -11,6 +11,9 @@ import {
   Title,
 } from './ControlPanelWeight.styled';
 import CurrentWeightModal from '../СurrentWeightModal/СurrentWeightModal';
+
+import { ReactComponent as WaightImage } from '../../Emoji/WaightImage.svg';
+
 
 const ControlPanelWeight = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -25,7 +28,7 @@ const ControlPanelWeight = () => {
   return (
     <Container>
       <ImgBox>
-        <Img src="/src/Emoji/WaightImage.svg" alt="Waiting image" />
+        <WaightImage />
       </ImgBox>
       <SelectPanel>
         <Title>Weight</Title>
