@@ -29,6 +29,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
+
             <Route
               path="/signin"
               element={
@@ -48,6 +49,7 @@ function App() {
                 />
               }
             />
+
 
             <Route path="/welcome" element={<WelcomePage />} />
 
