@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Field, Form } from 'formik';
 
 export const SelectGenderContainer = styled.div`
   background-color: var(--color-primary-black);
@@ -108,7 +109,7 @@ export const RadioButtonText = styled.p`
   }
 `;
 
-export const RegisterForm = styled.form`
+export const RegisterForm = styled(Form)`
   @media (min-width: 834px) {
     margin-left: auto;
     margin-right: auto;
@@ -175,7 +176,7 @@ export const SelectGenderInputContainer = styled.div`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   color: var(--color-primary-grey);
   font-family: Poppins;
   line-height: 1.429;
@@ -238,4 +239,14 @@ export const ButtonBack = styled.button`
     margin: 0;
     width: 212px;
   }
+`;
+
+export const GenderErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
+`;
+
+export const AgeErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
 `;

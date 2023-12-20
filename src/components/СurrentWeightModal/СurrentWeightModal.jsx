@@ -6,9 +6,10 @@ import {
   Description,
   Div,
   FormContainer,
-  Img,
+  // Img,
   Input,
   SpanData,
+  StyledIcon,
   Text,
   Title,
 } from './СurrentWeightModal.styled';
@@ -20,10 +21,14 @@ const СurrentWeightModal = () => {
       <Div>
         <Title>Enter your current weight</Title>
         <CloseButton>
-          <Img
+          {/* <Img
             src="/src/components/СurrentWeightModal/close-circle-min.svg"
             alt="CloseButton"
-          />
+          /> */}
+
+          <StyledIcon>
+            <use href="/src/Sprites/icons/symbol-defs.svg#icon-close-circle"></use>
+          </StyledIcon>
         </CloseButton>
       </Div>
       <Description>You can record your weight once a day</Description>

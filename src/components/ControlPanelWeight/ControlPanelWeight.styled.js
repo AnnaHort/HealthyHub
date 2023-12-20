@@ -60,9 +60,13 @@ export const IconButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 14px;
-  height: 14px;
-  margin-left: 12px;
   border: none;
   background: none;
+  margin-left: 7px;
+`;
+
+export const StyledIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-green-lite);
 `;

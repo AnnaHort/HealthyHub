@@ -6,20 +6,34 @@ import 'react-toastify/dist/ReactToastify.css';
 import { register } from '../../redux/auth/authOperations';
 import SignUpRegister from './SignUpRegister';
 import { YourGoal } from '../YourGoal/YourGoal';
-import SelectGender from "../SelectGender/SelectGender";
-import BodyParameters from"../../pages/BodyParameters/bodyParameters";
-import YourActivity from "../YourActivity/YourActivity";
+import SelectGender from '../SelectGender/SelectGender';
+import BodyParameters from '../../pages/BodyParameters/bodyParameters';
+import YourActivity from '../YourActivity/YourActivity';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
+
+  const [currentStep, setCurrentStep] = useState(1);
   const [, setLocalData] = useState({
     name: '',
     email: '',
     password: '',
   });
   const [, setError] = useState('');
-  //const [isRegistered, setIsRegistered] = useState(false);
-  const [currentStep, setCurrentStep] = useState(1);
+  const [dataGoal, setDataGoal] = useState('');
+  const [dataAgeGender, setDataAgeGender] = useState({
+    age: '',
+    gender: '',
+  });
+  const [dataBodyParams, setDataBodyParams] = useState({
+    height: '',
+    weight: '',
+  });
+  const [dataActivity, setDataActivity] = useState('');
+  console.log(dataGoal, 'local state dataGoal');
+  console.log(dataAgeGender, 'local state dataAgeGender');
+  console.log(dataBodyParams, 'local state dataBodyParams');
+  console.log(dataActivity, 'local state dataActivity');
 
   const handleRegisterSubmit = async (values) => {
     try {
@@ -40,15 +54,20 @@ const SignUpForm = () => {
     }
   };
 
-
+  const SelectData = (data) => {
+    setDataGoal(data);
+    setDataAgeGender(data);
+    setDataBodyParams(data);
+    setDataActivity(data);
+  };
 
   const handleNext = () => {
     setCurrentStep(currentStep + 1);
   };
 
-    const handlePrev = () => {
-      setCurrentStep(currentStep - 1);
-    };
+  const handlePrev = () => {
+    setCurrentStep(currentStep - 1);
+  };
 
   return (
     <div>
@@ -56,16 +75,32 @@ const SignUpForm = () => {
         <SignUpRegister onSubmit={handleRegisterSubmit} onNext={handleNext} />
       )}
       {currentStep === 2 && (
-        <YourGoal onNext={handleNext} onBack={handlePrev} />
+        <YourGoal
+          onNext={handleNext}
+          onBack={handlePrev}
+          onSubmit={SelectData}
+        />
       )}
       {currentStep === 3 && (
-        <SelectGender onNext={handleNext} onBack={handlePrev} />
+        <SelectGender
+          onNext={handleNext}
+          onBack={handlePrev}
+          onSubmit={SelectData}
+        />
       )}
       {currentStep === 4 && (
-        <BodyParameters onNext={handleNext} onBack={handlePrev} />
+        <BodyParameters
+          onNext={handleNext}
+          onBack={handlePrev}
+          onSubmit={SelectData}
+        />
       )}
       {currentStep === 5 && (
-        <YourActivity onNext={handleNext} onBack={handlePrev} />
+        <YourActivity
+          onNext={handleNext}
+          onBack={handlePrev}
+          onSubmit={SelectData}
+        />
       )}
       <ToastContainer />
     </div>
