@@ -31,7 +31,7 @@ export const YourGoal = ({ onNext, onBack, onSubmit }) => {
     <GoalContainer>
       <GoalImg
         alt="Goal Image"
-        src="/src/components/SignUpForm/YourGoal/img/IllustrationGoals-min.svg"
+        src="/src/components/YourGoal/img/IllustrationGoals-min.svg"
       />
 
       <Formik

@@ -1,4 +1,4 @@
-import bodyParameters from '../../../../img/BodyParameters/symbol-defs.svg#icon-body-parameters';
+import bodyParameters from '../../img/BodyParameters/symbol-defs.svg#icon-body-parameters';
 import styled from 'styled-components';
 
 const SvgContainer = styled.svg`
