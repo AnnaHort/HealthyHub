@@ -14,13 +14,13 @@ import {
   Title,
 } from './СurrentWeightModal.styled';
 
-const СurrentWeightModal = () => {
+const CurrentWeightModal = ({ onCloseButtonClick }) => {
   const currentDate = new Date().toLocaleDateString();
   return (
     <Container>
       <Div>
         <Title>Enter your current weight</Title>
-        <CloseButton>
+        <CloseButton onClick={onCloseButtonClick}>
           {/* <Img
             src="/src/components/СurrentWeightModal/close-circle-min.svg"
             alt="CloseButton"
@@ -46,4 +46,4 @@ const СurrentWeightModal = () => {
   );
 };
 
-export default СurrentWeightModal;
+export default CurrentWeightModal;

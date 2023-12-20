@@ -90,3 +90,9 @@ export const StyledArrowRight = styled.svg`
     display: none;
   }
 `;
+
+export const ModalContainer = styled.div`
+  position: absolute;
+  z-index: 1;
+  padding-top: 74px; //реголює висоту модалки
+`;

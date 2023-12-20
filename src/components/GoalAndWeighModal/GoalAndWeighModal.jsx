@@ -8,7 +8,7 @@ import {
   ButtonContainer,
 } from './GoalAndWeighModal.styled';
 
-const GoalAndWeighModal = () => {
+const GoalAndWeighModal = ({ onCloseButtonClick }) => {
   return (
     <Container>
       <Div>
@@ -16,7 +16,7 @@ const GoalAndWeighModal = () => {
         <ControlPanelWeight />
       </Div>
       <ButtonContainer>
-        <CloseButton>
+        <CloseButton onClick={onCloseButtonClick}>
           <Img
             src="/src/components/TargetSelectionModal/img/close-circle-min.svg"
             alt="CloseButton"

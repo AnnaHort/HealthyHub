@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  position: relative;
   height: 60px;
   background: var(--color-primary-black-2);
   display: flex;
@@ -36,6 +37,7 @@ export const IconButton = styled.button`
   border: none;
   padding: 0;
   margin-left: 8px;
+  display: flex;
 
   @media (min-width: 834px) {
     display: flex;
@@ -65,9 +67,18 @@ export const ControlPanelContainer = styled.div`
 export const StyledIcon = styled.svg`
   width: 16px;
   height: 16px;
-  stroke: var(--color-primary-green-lite);
+  stroke: ${({ isModalOpen }) =>
+    isModalOpen
+      ? 'var(--color-primary-grey)'
+      : 'var(--color-primary-green-lite)'};
 
   @media (min-width: 834px) {
     display: none;
   }
+`;
+
+export const ModalContainer = styled.div`
+  position: absolute;
+  z-index: 1;
+  padding-top: 250px;
 `;

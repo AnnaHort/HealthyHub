@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Container,
   Description,
@@ -6,19 +7,32 @@ import {
   // ImgArrowDown,
   // ImgArrowRight,
   ImgBox,
+  ModalContainer,
   SelectPanel,
   StyledArrowDown,
   StyledArrowRight,
   Title,
 } from './ControlPanelGoals.styled';
+import { TargetSelectionModal } from '../TargetSelectionModal/TargetSelectioModal';
 
 import { ReactComponent as LoseFatMen } from '../../Emoji/LoseFatMen.svg';
 
 const ControlPanelGoals = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleIconButtonClick = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseButtonClick = () => {
+    setModalOpen(false);
+  };
   return (
     <Container>
       <ImgBox>
+
         <LoseFatMen />
+
       </ImgBox>
       <SelectPanel>
         <Title>Goal</Title>
@@ -34,15 +48,21 @@ const ControlPanelGoals = () => {
               alt="Arrow right"
             /> */}
 
-            <StyledArrowDown>
+            <StyledArrowDown onClick={handleIconButtonClick}>
               <use href="/src/Sprites/icons/symbol-defs.svg#icon-arrow-down"></use>
             </StyledArrowDown>
-            <StyledArrowRight>
+            <StyledArrowRight onClick={handleIconButtonClick}>
               <use href="/src/Sprites/icons/symbol-defs.svg#icon-arrow-right-2"></use>
             </StyledArrowRight>
           </IconButton>
         </Description>
       </SelectPanel>
+
+      {isModalOpen && (
+        <ModalContainer>
+          <TargetSelectionModal onCloseButtonClick={handleCloseButtonClick} />
+        </ModalContainer>
+      )}
     </Container>
   );
 };

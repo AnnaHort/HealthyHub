@@ -1,18 +1,30 @@
+import { useState } from 'react';
 import {
   Container,
   Description,
   IconButton,
   // Img,
   ImgBox,
+  ModalContainer,
   SelectPanel,
   StyledIcon,
   Title,
 } from './ControlPanelWeight.styled';
+import CurrentWeightModal from '../СurrentWeightModal/СurrentWeightModal';
 
 import { ReactComponent as WaightImage } from '../../Emoji/WaightImage.svg';
 
 
 const ControlPanelWeight = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleIconButtonClick = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseButtonClick = () => {
+    setModalOpen(false);
+  };
   return (
     <Container>
       <ImgBox>
@@ -22,7 +34,7 @@ const ControlPanelWeight = () => {
         <Title>Weight</Title>
         <Description>
           48 <span>kg</span>
-          <IconButton>
+          <IconButton onClick={handleIconButtonClick}>
             {/* <img
               src="/src/components/ControlPanelWeight/img/edit-2-min.svg"
               alt="Edit"
@@ -34,6 +46,12 @@ const ControlPanelWeight = () => {
           </IconButton>
         </Description>
       </SelectPanel>
+
+      {isModalOpen && (
+        <ModalContainer>
+          <CurrentWeightModal onCloseButtonClick={handleCloseButtonClick} />
+        </ModalContainer>
+      )}
     </Container>
   );
 };
