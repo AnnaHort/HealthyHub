@@ -10,10 +10,10 @@ import {
   StyledIcon,
   Title,
 } from './ControlPanelWeight.styled';
-import CurrentWeightModal from '../СurrentWeightModal/СurrentWeightModal';
+import CurrentWeightModal from '../CurrentWeightModal/CurrentWeightModal';
 
-import { ReactComponent as WaightImage } from '../../Emoji/WaightImage.svg';
-
+// import { ReactComponent as MaintakeMen } from '../../Emoji/MaintakeMen.svg';
+import MaintakeMen from '../../Emoji/WaightImage.svg';
 
 const ControlPanelWeight = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -28,7 +28,7 @@ const ControlPanelWeight = () => {
   return (
     <Container>
       <ImgBox>
-        <WaightImage />
+        <img src={MaintakeMen} alt="MaintakeMen" />
       </ImgBox>
       <SelectPanel>
         <Title>Weight</Title>
