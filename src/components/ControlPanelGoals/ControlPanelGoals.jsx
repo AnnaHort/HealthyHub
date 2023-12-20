@@ -2,7 +2,7 @@ import {
   Container,
   Description,
   IconButton,
-  Img,
+  // Img,
   // ImgArrowDown,
   // ImgArrowRight,
   ImgBox,
@@ -12,12 +12,13 @@ import {
   Title,
 } from './ControlPanelGoals.styled';
 
+import { ReactComponent as LoseFatMen } from '../../Emoji/LoseFatMen.svg';
+
 const ControlPanelGoals = () => {
   return (
     <Container>
       <ImgBox>
-        {/* <Img src="/src/Emoji/LoseFatMen.svg" alt="Arrow right" /> */}
-        <Img src="../../Emoji/LoseFatMen.svg" alt="Arrow right" />
+        <LoseFatMen />
       </ImgBox>
       <SelectPanel>
         <Title>Goal</Title>
