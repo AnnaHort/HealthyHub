@@ -7,8 +7,9 @@ import { register } from '../../redux/auth/authOperations';
 import SignUpRegister from './SignUpRegister';
 import { YourGoal } from '../YourGoal/YourGoal';
 import SelectGender from '../SelectGender/SelectGender';
-import BodyParameters from '../../pages/BodyParameters/bodyParameters';
+
 import YourActivity from '../YourActivity/YourActivity';
+import BodyParameters from '../BodyParameters/bodyParameters';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
