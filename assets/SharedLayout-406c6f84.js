@@ -1,4 +1,4 @@
-import{s as e,N as t,j as i,u as s,a,r as d,O as l}from"./index-b2f1dde3.js";const p=e(t)`
+import{s as e,N as t,j as i,u as s,a,r as d,O as l}from"./index-c51b2d59.js";const p=e(t)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -62,7 +62,7 @@ import{s as e,N as t,j as i,u as s,a,r as d,O as l}from"./index-b2f1dde3.js";con
  }
 
 
- @media (min-width: 1024px) {
+ @media (min-width: 1440px) {
   width: 1440px;
 
   padding: 34px 34px;
