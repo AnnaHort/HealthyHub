@@ -16,7 +16,8 @@ const ControlPanelGoals = () => {
   return (
     <Container>
       <ImgBox>
-        <Img src="/src/Emoji/LoseFatMen.svg" alt="Arrow right" />
+        {/* <Img src="/src/Emoji/LoseFatMen.svg" alt="Arrow right" /> */}
+        <Img src="../../Emoji/LoseFatMen.svg" alt="Arrow right" />
       </ImgBox>
       <SelectPanel>
         <Title>Goal</Title>

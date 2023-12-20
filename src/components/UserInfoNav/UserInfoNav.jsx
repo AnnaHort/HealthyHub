@@ -12,7 +12,8 @@ const UserInfoNav = () => {
     <UserInfoContainer>
       <Text>Konstantin</Text>
       <ImgContainer>
-        <img src="/src/components/UserInfoNav/Avatar.svg" alt="Avatar" />
+        {/* <img src="/src/components/UserInfoNav/Avatar.svg" alt="Avatar" /> */}
+        <img src="../../components/UserInfoNav/Avatar.svg" alt="Avatar" />
       </ImgContainer>
 
       <IconButton>
