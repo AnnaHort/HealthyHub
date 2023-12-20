@@ -15,7 +15,9 @@ import {
 } from './ControlPanelGoals.styled';
 import { TargetSelectionModal } from '../TargetSelectionModal/TargetSelectioModal';
 
-import { ReactComponent as GainMuscle } from '../../Emoji/GainMuscle.svg';
+import sprite from '../../iconSpite';
+
+import GainMuscle from '../../Emoji/GainMuscle.svg';
 
 const ControlPanelGoals = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -30,7 +32,7 @@ const ControlPanelGoals = () => {
   return (
     <Container>
       <ImgBox>
-        <GainMuscle />
+        <img src={GainMuscle} alt="GainMuscle" />
       </ImgBox>
       <SelectPanel>
         <Title>Goal</Title>
@@ -40,8 +42,8 @@ const ControlPanelGoals = () => {
             {/* <ImgArrowDown
               src="/src/components/ControlPanelGoals/Img/arrow-down-min.svg"
               alt="Arrow bown"
-            />
-            <ImgArrowRight
+              />
+              <ImgArrowRight
               src="/src/components/ControlPanelGoals/Img/arrow-right-min.svg"
               alt="Arrow right"
             /> */}
@@ -50,7 +52,7 @@ const ControlPanelGoals = () => {
               <use href="/src/Sprites/icons/symbol-defs.svg#icon-arrow-down"></use>
             </StyledArrowDown>
             <StyledArrowRight onClick={handleIconButtonClick}>
-              <use href="/src/Sprites/icons/symbol-defs.svg#icon-arrow-right-2"></use>
+              <use href={`${sprite}#icon-arrow-right-2`}></use>
             </StyledArrowRight>
           </IconButton>
         </Description>
