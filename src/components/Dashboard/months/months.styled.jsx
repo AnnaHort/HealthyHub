@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const DashboardForm = styled(Form)`
- 
+
 `;
 
 export const LabelDashboard = styled.label`
@@ -20,18 +20,37 @@ export const LabelDashboard = styled.label`
 `;
 
 export const FieldStyled = styled(Field)`
-  -webkit-appearance: none;
+  width: 212px;
+  overflow-y: auto;
   border: none;
-  width: 16px;
-  height: 16px;
   margin-left: 6px;
   background-color: inherit;
   color: var(--color-primary-green-lite);
 
-  &::-ms-expand {
-    display: none;
+  &::-webkit-scrollbar {
+    width: 8px;
   }
 
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-grey);
+    border-radius: 12px;
+  }
+
+  /* Стили для галочки */
+  input[type='checkbox'] {
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    transform: translateY(-50%);
+  }
+
+  /* Стили для текста опции */
+  span {
+    position: absolute;
+    top: 50%;
+    left: 32px; /* Расстояние от галочки до текста */
+    transform: translateY(-50%);
+  }
 `;
 
 export const OptionStyled = styled.option`

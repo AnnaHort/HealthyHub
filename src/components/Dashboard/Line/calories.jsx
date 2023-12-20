@@ -24,8 +24,8 @@ ChartJS.register(
 import styled from 'styled-components';
 
 const Container = styled.div`
-overflow-y: auto;
- margin-bottom: 27px;
+padding-left: 10px;
+  overflow-y: auto;
 `;
 
 
@@ -56,6 +56,7 @@ const CaloriesDesc = styled.p`
 `;
 
 const ChartsContainer = styled.div`
+  border-radius: 12px;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
@@ -71,11 +72,17 @@ const CaloriesDashboard = () => {
     plugins: {
       legend: {
         position: false,
+        display: false,
       },
     },
     scales: {
       x: {
-        beginAtZero: true, // Начинать отсчет с 0 на оси X
+        beginAtZero: true,
+      grid: {
+        display: true, // Отображение сетки по оси X
+        color: 'rgba(0, 0, 0, 0.1)', // Цвет сетки по оси X
+        borderColor: 'rgba(0, 0, 0, 0.1)', // Цвет линий сетки по оси X
+      },
       },
 
       y: {
@@ -109,6 +116,19 @@ const CaloriesDashboard = () => {
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
     ],
+
+    element: {
+      point: {
+        layout: {
+          padding: {
+            left: 10, // Внутренний отступ слева
+            right: 10, // Внутренний отступ справа
+            top: 10, // Внутренний отступ сверху
+            bottom: 10, // Внутренний отступ снизу
+          },
+        },
+      },
+    },
   };
   return (
     <Container>

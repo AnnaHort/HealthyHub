@@ -24,6 +24,7 @@ ChartJS.register(
 import styled from 'styled-components';
 
 const Container = styled.div`
+  padding-left: 10px;
   overflow-x: auto;
   margin-bottom: 40px;
 `;
@@ -55,6 +56,7 @@ const WaterDesc = styled.p`
 `;
 
 const ChartsContainer = styled.div`
+  border-radius: 12px;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
@@ -72,17 +74,16 @@ const WaterDashboar = () => {
      plugins: {
        legend: {
          position: false,
+         display: false,
        },
      },
      scales: {
        x: {
-         
          beginAtZero: true,
        },
 
        y: {
          ticks: {
-          
            beginAtZero: true,
            stepSize: 1000,
            callback: function (value) {

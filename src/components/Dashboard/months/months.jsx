@@ -1,4 +1,3 @@
-
 import { Formik, ErrorMessage } from 'formik';
 import {
   Container,
@@ -15,12 +14,23 @@ const MonthsDashboard = () => {
     }
 
     const getLastYearMonths = () => {
-        const months = [];
-        for (let i = 0; i <= 12; i++){
-            months.push(i)
-        }
+        const months = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December',
+        ];
         return months;
-    }
+  }
+  
     return (
       <Container>
         <Formik
@@ -34,16 +44,14 @@ const MonthsDashboard = () => {
           <DashboardForm>
             <LabelDashboard htmlFor="selectedMonth">Months</LabelDashboard>
             <FieldStyled as="select" name="selectedMonths">
-              {getLastYearMonths().map((month) => {
+              {getLastYearMonths().map((month) => (
                 <OptionStyled key={month} value={month}>
                   {month}
-                </OptionStyled>;
-              })}
+                </OptionStyled>
+              ))}
             </FieldStyled>
             <ErrorMessage name="height" component="div" />
-            <svg width="16" height="16" fill='white'>
-              <use href="../../../img/dashboard/symbol-defs.svg#icon-arrow-right"></use>
-            </svg>
+
             <div>
               <h3>{getCurrentMonths()}</h3>
             </div>
