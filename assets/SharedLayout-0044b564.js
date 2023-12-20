@@ -1,4 +1,4 @@
-import{s as e,N as t,j as i,u as s,a,r as d,O as l}from"./index-c51b2d59.js";const p=e(t)`
+import{s as e,N as t,j as i,u as s,a,r as d,O as l}from"./index-ff3b6ca2.js";const p=e(t)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -138,7 +138,7 @@ import{s as e,N as t,j as i,u as s,a,r as d,O as l}from"./index-c51b2d59.js";con
   @media (min-width: 834px) {
     display: none;
   }
-`,C=()=>i.jsxs(w,{children:[i.jsx(u,{children:i.jsx(v,{src:"/src/Emoji/LoseFatMen.svg",alt:"Arrow right"})}),i.jsxs(k,{children:[i.jsx(b,{children:"Goal"}),i.jsxs(S,{children:["Lose fat",i.jsxs(I,{children:[i.jsx(z,{children:i.jsx("use",{href:"/src/Sprites/icons/symbol-defs.svg#icon-arrow-down"})}),i.jsx(L,{children:i.jsx("use",{href:"/src/Sprites/icons/symbol-defs.svg#icon-arrow-right-2"})})]})]})]})]}),$=e.div`
+`,C=()=>i.jsxs(w,{children:[i.jsx(u,{children:i.jsx(v,{src:"../../Emoji/LoseFatMen.svg",alt:"Arrow right"})}),i.jsxs(k,{children:[i.jsx(b,{children:"Goal"}),i.jsxs(S,{children:["Lose fat",i.jsxs(I,{children:[i.jsx(z,{children:i.jsx("use",{href:"/src/Sprites/icons/symbol-defs.svg#icon-arrow-down"})}),i.jsx(L,{children:i.jsx("use",{href:"/src/Sprites/icons/symbol-defs.svg#icon-arrow-right-2"})})]})]})]})]}),$=e.div`
   display: flex;
   gap: 12px;
 `,P=e.div`
@@ -191,7 +191,7 @@ import{s as e,N as t,j as i,u as s,a,r as d,O as l}from"./index-c51b2d59.js";con
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-green-lite);
-`,N=()=>i.jsxs($,{children:[i.jsx(P,{children:i.jsx(B,{src:"/src/Emoji/WaightImage.svg",alt:"Waiting image"})}),i.jsxs(U,{children:[i.jsx(M,{children:"Weight"}),i.jsxs(W,{children:["48 ",i.jsx("span",{children:"kg"}),i.jsx(A,{children:i.jsx(H,{children:i.jsx("use",{href:"/src/Sprites/icons/symbol-defs.svg#icon-edit-2"})})})]})]})]}),E=e.div`
+`,N=()=>i.jsxs($,{children:[i.jsx(P,{children:i.jsx(B,{src:"../../Emoji/WaightImage.svg",alt:"Waiting image"})}),i.jsxs(U,{children:[i.jsx(M,{children:"Weight"}),i.jsxs(W,{children:["48 ",i.jsx("span",{children:"kg"}),i.jsx(A,{children:i.jsx(H,{children:i.jsx("use",{href:"/src/Sprites/icons/symbol-defs.svg#icon-edit-2"})})})]})]})]}),E=e.div`
   width: 130px;
   height: 28px;
   display: flex;
@@ -227,7 +227,7 @@ import{s as e,N as t,j as i,u as s,a,r as d,O as l}from"./index-c51b2d59.js";con
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-green-lite);
-`,O=()=>i.jsxs(E,{children:[i.jsx(T,{children:"Konstantin"}),i.jsx(D,{children:i.jsx("img",{src:"/src/components/UserInfoNav/Avatar.svg",alt:"Avatar"})}),i.jsx(F,{children:i.jsx(G,{children:i.jsx("use",{href:"/src/Sprites/icons/symbol-defs.svg#icon-arrow-down"})})})]}),R=e.div`
+`,O=()=>i.jsxs(E,{children:[i.jsx(T,{children:"Konstantin"}),i.jsx(D,{children:i.jsx("img",{src:"../../components/UserInfoNav/Avatar.svg",alt:"Avatar"})}),i.jsx(F,{children:i.jsx(G,{children:i.jsx("use",{href:"/src/Sprites/icons/symbol-defs.svg#icon-arrow-down"})})})]}),R=e.div`
   height: 60px;
   background: var(--color-primary-black-2);
   display: flex;
