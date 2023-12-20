@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: relative;
   height: 60px;
-  background: var(--color-primary-black-2);
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,8 +14,9 @@ export const Container = styled.div`
     padding: 0 27px 0 27px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     padding: 0 36px 0 34px;
+    max-width: 1440px;
   }
 `;
 
