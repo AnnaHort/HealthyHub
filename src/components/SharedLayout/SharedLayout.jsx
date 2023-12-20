@@ -4,10 +4,12 @@ import { HeaderContainerStyled } from '../Header/Header.styled';
 import { Suspense } from 'react';
 
 const SharedLayout = () => {
+ 
   return (
     <div>
       <header>
         <HeaderContainerStyled>
+
           <Header />
         </HeaderContainerStyled>
       </header>
