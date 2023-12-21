@@ -24,6 +24,7 @@ export const ImgContainer = styled.div`
   height: 28px;
   border-radius: 28px;
   background: lightgray 50%;
+  margin-right: 4px;
 `;
 
 export const IconButton = styled.button`
@@ -32,6 +33,7 @@ export const IconButton = styled.button`
   align-items: center;
   border: none;
   background: none;
+  padding: 0;
 `;
 
 export const ImgArrowDown = styled.img`
@@ -46,4 +48,22 @@ export const StyledIcon = styled.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-green-lite);
+`;
+
+export const ModalContainer = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  padding-top: 60px; //реголює висоту модалки
+  padding-right: 10px;
+  right: 0;
+
+  @media (min-width: 834px) {
+    padding-right: 27px;
+    padding-top: 80px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-right: 34px;
+  }
 `;

@@ -1,30 +1,45 @@
+import { useState } from 'react';
 import {
   IconButton,
-  // ImgArrowDown,
   ImgContainer,
+  ModalContainer,
   StyledIcon,
   Text,
   UserInfoContainer,
 } from './UserInfoNav.styled';
+import UserInfoModal from '../UserInfoModal/UserInfoModal';
+import { ReactComponent as ArrowDown } from '../../img/Header/arrow-down.svg';
+import Avatar from '../../Emoji/Avatar.svg';
 
 const UserInfoNav = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleIconButtonClick = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseButtonClick = () => {
+    setModalOpen(false);
+  };
+
   return (
     <UserInfoContainer>
       <Text>Konstantin</Text>
       <ImgContainer>
-        {/* <img src="/src/components/UserInfoNav/Avatar.svg" alt="Avatar" /> */}
-        <img src="../../components/UserInfoNav/Avatar.svg" alt="Avatar" />
+        <img src={Avatar} alt="Avatar" />
       </ImgContainer>
 
-      <IconButton>
-        {/* <ImgArrowDown
-          src="/src/components/ControlPanelGoals/Img/arrow-down-min.svg"
-          alt="Arrow bown"
-        /> */}
-        <StyledIcon>
-          <use href="/src/Sprites/icons/symbol-defs.svg#icon-arrow-down"></use>
+      <IconButton onClick={handleIconButtonClick}>
+        <StyledIcon onClick={handleCloseButtonClick}>
+          <ArrowDown />
         </StyledIcon>
       </IconButton>
+
+      {isModalOpen && (
+        <ModalContainer onClick={handleCloseButtonClick}>
+          <UserInfoModal />
+        </ModalContainer>
+      )}
     </UserInfoContainer>
   );
 };

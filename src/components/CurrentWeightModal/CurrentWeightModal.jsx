@@ -6,28 +6,23 @@ import {
   Description,
   Div,
   FormContainer,
-  // Img,
   Input,
   SpanData,
   StyledIcon,
   Text,
   Title,
-} from './СurrentWeightModal.styled';
+} from './CurrentWeightModal.styled';
+import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg';
 
-const СurrentWeightModal = () => {
+const CurrentWeightModal = ({ onCloseButtonClick }) => {
   const currentDate = new Date().toLocaleDateString();
   return (
     <Container>
       <Div>
         <Title>Enter your current weight</Title>
-        <CloseButton>
-          {/* <Img
-            src="/src/components/СurrentWeightModal/close-circle-min.svg"
-            alt="CloseButton"
-          /> */}
-
+        <CloseButton onClick={onCloseButtonClick}>
           <StyledIcon>
-            <use href="/src/Sprites/icons/symbol-defs.svg#icon-close-circle"></use>
+            <CloseCircle />
           </StyledIcon>
         </CloseButton>
       </Div>
@@ -40,10 +35,10 @@ const СurrentWeightModal = () => {
       <FormContainer>
         <Input type="text" placeholder="Enter your weight" />
         <BtnConfirm>Confirm</BtnConfirm>
-        <BtnCancel>Cancel</BtnCancel>
+        <BtnCancel onClick={onCloseButtonClick}>Cancel</BtnCancel>
       </FormContainer>
     </Container>
   );
 };
 
-export default СurrentWeightModal;
+export default CurrentWeightModal;

@@ -3,12 +3,13 @@ import ControlPanelWeight from '../ControlPanelWeight/ControlPanelWeight';
 import {
   CloseButton,
   Container,
-  Img,
   Div,
   ButtonContainer,
+  StyledIcon,
 } from './GoalAndWeighModal.styled';
+import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg';
 
-const GoalAndWeighModal = () => {
+const GoalAndWeighModal = ({ onCloseButtonClick }) => {
   return (
     <Container>
       <Div>
@@ -16,11 +17,10 @@ const GoalAndWeighModal = () => {
         <ControlPanelWeight />
       </Div>
       <ButtonContainer>
-        <CloseButton>
-          <Img
-            src="/src/components/TargetSelectionModal/img/close-circle-min.svg"
-            alt="CloseButton"
-          />
+        <CloseButton onClick={onCloseButtonClick}>
+          <StyledIcon>
+            <CloseCircle />
+          </StyledIcon>
         </CloseButton>
       </ButtonContainer>
     </Container>

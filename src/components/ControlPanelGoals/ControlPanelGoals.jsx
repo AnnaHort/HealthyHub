@@ -1,48 +1,57 @@
+import { useState } from 'react';
 import {
   Container,
   Description,
   IconButton,
-  // Img,
-  // ImgArrowDown,
-  // ImgArrowRight,
   ImgBox,
+  ModalContainer,
   SelectPanel,
   StyledArrowDown,
   StyledArrowRight,
   Title,
 } from './ControlPanelGoals.styled';
+import { TargetSelectionModal } from '../TargetSelectionModal/TargetSelectioModal';
+import { ReactComponent as ArrowRigth } from '../../img/Header/arrow-right.svg';
+import { ReactComponent as ArrowDown } from '../../img/Header/arrow-down.svg';
 
-import { ReactComponent as LoseFatMen } from '../../Emoji/LoseFatMen.svg';
+import GainMuscle from '../../Emoji/GainMuscle.svg';
 
 const ControlPanelGoals = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleIconButtonClick = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseButtonClick = () => {
+    setModalOpen(false);
+  };
   return (
     <Container>
       <ImgBox>
-        <LoseFatMen />
+        <img src={GainMuscle} alt="GainMuscle" />
       </ImgBox>
       <SelectPanel>
         <Title>Goal</Title>
         <Description>
           Lose fat
           <IconButton>
-            {/* <ImgArrowDown
-              src="/src/components/ControlPanelGoals/Img/arrow-down-min.svg"
-              alt="Arrow bown"
-            />
-            <ImgArrowRight
-              src="/src/components/ControlPanelGoals/Img/arrow-right-min.svg"
-              alt="Arrow right"
-            /> */}
-
-            <StyledArrowDown>
-              <use href="/src/Sprites/icons/symbol-defs.svg#icon-arrow-down"></use>
+            <StyledArrowDown onClick={handleIconButtonClick}>
+              <ArrowDown />
             </StyledArrowDown>
-            <StyledArrowRight>
-              <use href="/src/Sprites/icons/symbol-defs.svg#icon-arrow-right-2"></use>
+
+            <StyledArrowRight onClick={handleIconButtonClick}>
+              <ArrowRigth />
             </StyledArrowRight>
           </IconButton>
         </Description>
       </SelectPanel>
+
+      {isModalOpen && (
+        <ModalContainer>
+          <TargetSelectionModal onCloseButtonClick={handleCloseButtonClick} />
+        </ModalContainer>
+      )}
     </Container>
   );
 };
