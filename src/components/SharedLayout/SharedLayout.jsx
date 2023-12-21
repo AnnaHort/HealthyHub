@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import selectIsLoggedIn from '../../redux/auth/authSelectors';
 
 import { Container } from './SharedLayout.styled';
-import ProfileSettingsPage from '../../pages/ProfileSettingsPage/ProfileSettingsPage';
+
 
 const SharedLayout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -19,7 +19,7 @@ const SharedLayout = () => {
           {isLoggedIn ? <HeaderAuthorizedUser /> : <Header />}
         </HeaderContainerStyled>
       </HeaderBg>
-    <ProfileSettingsPage/>
+
     <Container>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
