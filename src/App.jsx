@@ -62,11 +62,11 @@ function App() {
                 <PrivateRoute redirectTo="/welcome" component={<MainPage />} />
               }
             />
+
+            <Route path="/settings" element={<ProfileSettingsPage />} />
           </Route>
 
           <Route path="/dashboard" element={<DashboardPage />} />
-
-          <Route path="/settings" element={<ProfileSettingsPage />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
