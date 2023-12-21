@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ProfileSettingsPageContainer = styled.div`
-  padding: 16px 10px;
+  padding: 16px 10px 40px 10px;
   max-width: 320px;
   margin-right: auto;
   margin-left: auto;
@@ -10,6 +10,7 @@ export const ProfileSettingsPageContainer = styled.div`
     max-width: 840px;
   }
   @media (min-width: 1440px) {
+    display: flex;
     padding: 20px 34px;
     max-width: 1440px;
   }
@@ -25,6 +26,9 @@ export const ProfileSettingsPageTitle = styled.h2`
     line-height: 1.2;
     margin-bottom: 20px;
   }
+  @media (min-width: 1440px) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const ProfileSettingsPageImg = styled.img`
@@ -33,12 +37,15 @@ export const ProfileSettingsPageImg = styled.img`
   margin-right: auto;
   margin-left: auto;
   @media (min-width: 834px) {
+    max-height:374px;
     width: 380px;
     margin-bottom: 24px;
   }
   @media (min-width: 1440px) {
+    max-height:528px;
     margin-right: 0;
     margin-left: 0;
     width: 536px;
+    margin-left: 130px;
   }
 `;

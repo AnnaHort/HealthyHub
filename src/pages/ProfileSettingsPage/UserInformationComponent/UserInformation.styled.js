@@ -14,12 +14,15 @@ export const UserInformationForm = styled.form`
     margin-right: auto;
     margin-left: auto;
   }
+  @media (min-width: 1440px) {
+    margin-top: 52px;
+    margin-bottom: 52px;
+  }
 `;
 
 export const UserInformationContainer = styled.div`
   display: flex;
   flex-direction: column;
-
 `;
 
 export const UserInformationLabel = styled.label`
@@ -91,10 +94,10 @@ export const UserInformationRadioInput = styled.input`
 `;
 
 export const UserInformationActivityContainer = styled.div`
-display: flex;
-flex-direction: column;
-gap: 24px;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
 
 export const UserInformationLabelRadio = styled.label`
   padding-left: 14px;

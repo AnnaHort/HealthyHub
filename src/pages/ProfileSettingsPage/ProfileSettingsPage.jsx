@@ -1,3 +1,4 @@
+// import ProfileSettingImg from './ProfileSettingImg';
 import {
   ProfileSettingsPageContainer,
   ProfileSettingsPageImg,
@@ -7,15 +8,14 @@ import UserInformation from './UserInformationComponent/UserInformation';
 
 const ProfileSettingsPage = () => {
   return (
-
-      <ProfileSettingsPageContainer>
+    <ProfileSettingsPageContainer>
+      <div>
         <ProfileSettingsPageTitle>Profile setting</ProfileSettingsPageTitle>
+        <ProfileSettingsPageImg src="/src/img/ProfileSettingPagesImg/Illustration.png" />
+      </div>
 
-        <ProfileSettingsPageImg src="/src/img/ProfileSettings/ProfileSettings.svg" />
-
-        <UserInformation />
-      </ProfileSettingsPageContainer>
-
+      <UserInformation />
+    </ProfileSettingsPageContainer>
   );
 };
 export default ProfileSettingsPage;
