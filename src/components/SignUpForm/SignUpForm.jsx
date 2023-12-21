@@ -14,7 +14,7 @@ const SignUpForm = () => {
   const dispatch = useDispatch();
 
   const [currentStep, setCurrentStep] = useState(1);
-  const [, setLocalData] = useState({
+  const [, setPersonalData] = useState({
     name: '',
     email: '',
     password: '',
@@ -30,6 +30,8 @@ const SignUpForm = () => {
     weight: '',
   });
   const [dataActivity, setDataActivity] = useState('');
+  const [canProceed, setCanProceed] = useState(false); // Доданий новий стан
+
   console.log(dataGoal, 'local state dataGoal');
   console.log(dataAgeGender, 'local state dataAgeGender');
   console.log(dataBodyParams, 'local state dataBodyParams');
@@ -39,18 +41,35 @@ const SignUpForm = () => {
     try {
       const response = await dispatch(register(values));
       console.log('Response from Redux:', response);
+
       if (response.type === 'auth/register/fulfilled') {
         toast.success('Successful registration');
-        setLocalData(values);
+        setPersonalData(values);
+        setCurrentStep(currentStep + 1); 
+      }
+
+      if (response.type === 'auth/register/rejected') {
+        if (response.payload === 'Request failed with status code 500') {
+          setError('Invalid Email');
+          toast.error('Invalid Email');
+        } else {
+          setError(
+            response.payload || 'Registration failed. Please try again later.'
+          );
+          toast.error('Registration failed. Please try again later.');
+        }
       }
     } catch (err) {
       console.error('Registration Error:', err.message);
-      if (err?.response?.status === 500) {
-        toast.error('Invalid Email');
-      } else {
-        toast.error('Registration failed. Please try again later.');
-      }
-      setError(err);
+    }
+  };
+
+
+
+  const handleRegisterNext = () => {
+    if (canProceed === true) {
+      setCanProceed(true);
+      setCurrentStep(currentStep + 1);
     }
   };
 
@@ -72,7 +91,10 @@ const SignUpForm = () => {
   return (
     <div>
       {currentStep === 1 && (
-        <SignUpRegister onSubmit={handleRegisterSubmit} onNext={handleNext} />
+        <SignUpRegister
+          onSubmit={handleRegisterSubmit}
+          onNext={handleRegisterNext}
+        />
       )}
       {currentStep === 2 && (
         <YourGoal
