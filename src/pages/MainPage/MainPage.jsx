@@ -7,6 +7,7 @@ import { ReactComponent as ArrowRigth } from '../../img/MainPages/arrow-right.sv
 
 import { DailyGoal } from './DailyGoal';
 import { Water } from './Water/Water';
+import DiaryPage  from './DiaryPage/DiaryPage';
 
 import {
   MainContainer,
@@ -52,7 +53,8 @@ const MainPage = () => {
         </MainWrapperTitle>
         <MainElementsWrapper>
           <DailyGoal dailyCalories={dailyCalories}/>
-          <Water handleModal={toggleIsOpenModal} waterConsumtion={waterConsumtion}/>
+          <Water handleModal={toggleIsOpenModal} waterConsumtion={waterConsumtion} />
+          <DiaryPage/>
         </MainElementsWrapper>
         <DARFWrap></DARFWrap>
       </MainContainer>
