@@ -1,4 +1,4 @@
-import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";const j=e(d)`
+import{s as e,N as p,j as t,r as n,u,a as y,O as w}from"./index-72ee031d.js";const k=e(p)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -11,7 +11,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
     font-size: 22px;
     line-height: 1.46%;
   }
-`,k=()=>t.jsx(j,{to:"/welcome",children:"HealthyHub"}),b=e.svg`
+`,j=()=>t.jsx(k,{to:"/welcome",children:"HealthyHub"}),b=e.svg`
   width: 26px;
   height: 26px;
   @media (min-width: 834px) {
@@ -24,7 +24,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   justify-content: center;
   align-items: center;
   gap: 6px;
-`,x=e(d)`
+`,c=e(p)`
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -45,7 +45,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
     font-size: 14px;
     line-height: 1.43;
   }
-`,L=()=>t.jsxs(C,{children:[t.jsx(x,{to:"/signin",children:"Sign in"}),t.jsx(M,{children:" / "}),t.jsx(x,{to:"/signup",children:"Sign up"}),t.jsx(v,{})]}),B=e.div`
+`,L=()=>t.jsxs(C,{children:[t.jsx(c,{to:"/signin",children:"Sign in"}),t.jsx(M,{children:" / "}),t.jsx(c,{to:"/signup",children:"Sign up"}),t.jsx(v,{})]}),B=e.div`
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -74,7 +74,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   @media (min-width: 1440px) {
     max-width: 1440px;
   }
-`;const S=()=>t.jsxs(B,{children:[t.jsx(k,{}),t.jsx(L,{})]}),z=e.div`
+`;const S=()=>t.jsxs(B,{children:[t.jsx(j,{}),t.jsx(L,{})]}),z=e.div`
   display: flex;
   gap: 12px;
 `,$=e.div`
@@ -132,13 +132,20 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
 `,D=e.div`
   position: absolute;
   z-index: 1;
-  padding-top: 74px; //реголює висоту модалки
-`,A=e.div`
-  padding: 24px 10px 40px 10px;
+  padding-top: 247px; //реголює висоту модалки
+  display: flex;
+  left: -8px;
+  top: 0;
 
   @media (min-width: 834px) {
-    max-width: 392px;
-    mah-height: 352px;
+    padding-top: 101px;
+    left: auto;
+  }
+`,A=e.div`
+  padding: 24px 10px 40px 10px;
+  background-color: var(--color-primary-black);
+
+  @media (min-width: 834px) {
     flex-shrink: 0;
     padding: 20px 32px 40px 24px;
     border-radius: 12px;
@@ -229,7 +236,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   @media (min-width: 1440px) {
     gap: 10px;
   }
-`,p=e.label`
+`,d=e.label`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -388,7 +395,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
-`,c=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M9.16992 14.83L14.8299 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M14.8299 14.83L9.16992 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),Y="/HealthyHub/assets/LoseFatMen-7b8fee89.svg",q="/HealthyHub/assets/MaintakeGirl-28454b53.svg",h="/HealthyHub/assets/GainMuscle-be81eda0.svg",J=({onCloseButtonClick:i})=>t.jsxs(A,{children:[t.jsx(G,{children:t.jsx(V,{onClick:i,children:t.jsx(K,{children:t.jsx(c,{})})})}),t.jsx(T,{children:"Target selection"}),t.jsx(O,{children:"The service will adjust your calorie intake to your goal"}),t.jsx(U,{children:t.jsxs(Z,{children:[t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat"}),t.jsxs(p,{htmlFor:"loseFat",children:[t.jsx("img",{src:Y,alt:"LooseFatMen"}),"Lose Fat"]})]}),t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),t.jsxs(p,{htmlFor:"maintain",children:[t.jsx("img",{src:q,alt:"MaintakeGirl"}),"Maintain"]})]}),t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),t.jsxs(p,{htmlFor:"gainMuscle",children:[t.jsx("img",{src:h,alt:"GainMuscle"}),"Gain Muscle"]})]})]})}),t.jsx(N,{children:"Submit"}),t.jsx(R,{children:"Back"})]}),Q=i=>n.createElement("svg",{width:16,height:16,viewBox:"0 0 16 16",fill:"none",xmlns:"http://www.w3.org/2000/svg",...i},n.createElement("path",{d:"M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2.33301 8H13.553",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),g=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995",stroke:"#E3FFA8",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),m=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(z,{children:[t.jsx($,{children:t.jsx("img",{src:h,alt:"GainMuscle"})}),t.jsxs(P,{children:[t.jsx(I,{children:"Goal"}),t.jsxs(E,{children:["Lose fat",t.jsxs(F,{children:[t.jsx(H,{onClick:r,children:t.jsx(g,{})}),t.jsx(W,{onClick:r,children:t.jsx(Q,{})})]})]})]}),i&&t.jsx(D,{children:t.jsx(J,{onCloseButtonClick:s})})]})},X=e.div`
+`,x=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M9.16992 14.83L14.8299 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M14.8299 14.83L9.16992 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),Y="/HealthyHub/assets/LoseFatMen-7b8fee89.svg",q="/HealthyHub/assets/MaintakeGirl-28454b53.svg",h="/HealthyHub/assets/GainMuscle-be81eda0.svg",J=({onCloseButtonClick:i})=>t.jsxs(A,{children:[t.jsx(G,{children:t.jsx(V,{onClick:i,children:t.jsx(K,{children:t.jsx(x,{})})})}),t.jsx(T,{children:"Target selection"}),t.jsx(O,{children:"The service will adjust your calorie intake to your goal"}),t.jsx(U,{children:t.jsxs(Z,{children:[t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat"}),t.jsxs(d,{htmlFor:"loseFat",children:[t.jsx("img",{src:Y,alt:"LooseFatMen"}),"Lose Fat"]})]}),t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),t.jsxs(d,{htmlFor:"maintain",children:[t.jsx("img",{src:q,alt:"MaintakeGirl"}),"Maintain"]})]}),t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),t.jsxs(d,{htmlFor:"gainMuscle",children:[t.jsx("img",{src:h,alt:"GainMuscle"}),"Gain Muscle"]})]})]})}),t.jsx(N,{children:"Submit"}),t.jsx(R,{children:"Back"})]}),Q=i=>n.createElement("svg",{width:16,height:16,viewBox:"0 0 16 16",fill:"none",xmlns:"http://www.w3.org/2000/svg",...i},n.createElement("path",{d:"M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2.33301 8H13.553",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),g=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995",stroke:"#E3FFA8",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),m=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(z,{children:[t.jsx($,{children:t.jsx("img",{src:h,alt:"GainMuscle"})}),t.jsxs(P,{children:[t.jsx(I,{children:"Goal"}),t.jsxs(E,{children:["Lose fat",t.jsxs(F,{children:[t.jsx(H,{onClick:r,children:t.jsx(g,{})}),t.jsx(W,{onClick:r,children:t.jsx(Q,{})})]})]})]}),i&&t.jsx(D,{children:t.jsx(J,{onCloseButtonClick:s})})]})},X=e.div`
   display: flex;
   gap: 12px;
 `,_=e.div`
@@ -451,6 +458,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   }
 `,st=e.div`
   padding: 24px 10px 40px 10px;
+  background: var(--color-primary-black-2);
 
   @media (min-width: 834px) {
     width: 392px;
@@ -478,7 +486,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   margin-bottom: 16px;
-`,pt=e.p`
+`,dt=e.p`
   display: flex;
   gap: 6px;
   width: 44px;
@@ -493,7 +501,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   @media (min-width: 834px) {
     margin-bottom: 16px;
   }
-`,dt=e.span`
+`,pt=e.span`
   width: 88px;
   color: var(--color-primary-grey);
   font-family: Poppins;
@@ -574,14 +582,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   }
 `,mt=e.div`
   display: flex;
-`;e.img`
-  width: 16px;
-  height: 16px;
-
-  &:hover,
-  &:focus {
-  }
-`;const ft=e.button`
+`,ft=e.button`
   display: none;
 
   @media (min-width: 834px) {
@@ -596,7 +597,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   height: 16px;
   stroke: var(--color-primary-grey);
   margin-right: 8px;
-`,yt=({onCloseButtonClick:i})=>{const o=new Date().toLocaleDateString();return t.jsxs(st,{children:[t.jsxs(mt,{children:[t.jsx(at,{children:"Enter your current weight"}),t.jsx(ft,{onClick:i,children:t.jsx(ut,{children:t.jsx(c,{})})})]}),t.jsx(lt,{children:"You can record your weight once a day"}),t.jsxs(pt,{children:["Today: ",t.jsx(dt,{children:o})]}),t.jsxs(xt,{children:[t.jsx(ct,{type:"text",placeholder:"Enter your weight"}),t.jsx(ht,{children:"Confirm"}),t.jsx(gt,{children:"Cancel"})]})]})},wt="/HealthyHub/assets/WaightImage-833d9f56.svg",jt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]}),f=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(X,{children:[t.jsx(_,{children:t.jsx("img",{src:wt,alt:"MaintakeMen"})}),t.jsxs(et,{children:[t.jsx(tt,{children:"Weight"}),t.jsxs(it,{children:["48 ",t.jsx("span",{children:"kg"}),t.jsx(nt,{onClick:r,children:t.jsx(ot,{children:t.jsx(jt,{})})})]})]}),i&&t.jsx(rt,{children:t.jsx(yt,{onCloseButtonClick:s})})]})},kt=e.div`
+`,yt=({onCloseButtonClick:i})=>{const o=new Date().toLocaleDateString();return t.jsxs(st,{children:[t.jsxs(mt,{children:[t.jsx(at,{children:"Enter your current weight"}),t.jsx(ft,{onClick:i,children:t.jsx(ut,{children:t.jsx(x,{})})})]}),t.jsx(lt,{children:"You can record your weight once a day"}),t.jsxs(dt,{children:["Today: ",t.jsx(pt,{children:o})]}),t.jsxs(xt,{children:[t.jsx(ct,{type:"text",placeholder:"Enter your weight"}),t.jsx(ht,{children:"Confirm"}),t.jsx(gt,{children:"Cancel"})]})]})},wt="/HealthyHub/assets/WaightImage-833d9f56.svg",kt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]}),f=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(X,{children:[t.jsx(_,{children:t.jsx("img",{src:wt,alt:"MaintakeMen"})}),t.jsxs(et,{children:[t.jsx(tt,{children:"Weight"}),t.jsxs(it,{children:["48 ",t.jsx("span",{children:"kg"}),t.jsx(nt,{onClick:r,children:t.jsx(ot,{children:t.jsx(kt,{})})})]})]}),i&&t.jsx(rt,{children:t.jsx(yt,{onCloseButtonClick:s})})]})},jt=e.div`
   width: 130px;
   height: 28px;
   display: flex;
@@ -688,7 +689,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-`,Dt=()=>t.jsx(Ht,{children:t.jsxs(Wt,{children:[t.jsx($t,{}),t.jsx(Ft,{})]})}),At="/HealthyHub/assets/Avatar-4908aace.svg",Gt=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(kt,{children:[t.jsx(bt,{children:"Konstantin"}),t.jsx(vt,{children:t.jsx("img",{src:At,alt:"Avatar"})}),t.jsx(Ct,{onClick:r,children:t.jsx(Mt,{onClick:s,children:t.jsx(g,{})})}),i&&t.jsx(Lt,{onClick:s,children:t.jsx(Dt,{})})]})},Tt=e.div`
+`,Dt=()=>t.jsx(Ht,{children:t.jsxs(Wt,{children:[t.jsx($t,{}),t.jsx(Ft,{})]})}),At="/HealthyHub/assets/Avatar-4908aace.svg",Gt=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(jt,{children:[t.jsx(bt,{children:"Konstantin"}),t.jsx(vt,{children:t.jsx("img",{src:At,alt:"Avatar"})}),t.jsx(Ct,{onClick:r,children:t.jsx(Mt,{onClick:s,children:t.jsx(g,{})})}),i&&t.jsx(Lt,{onClick:s,children:t.jsx(Dt,{})})]})},Tt=e.div`
   position: relative;
   height: 60px;
   margin: 0 auto;
@@ -770,27 +771,30 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7e46fd07.js";con
   flex-direction: column;
   gap: 40px;
   margin-top: 8px;
-`,Jt=e.img`
+`;e.img`
   width: 16px;
   height: 16px;
 
   &:hover,
   &:focus {
   }
-`,Qt=e.button`
+`;const Jt=e.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0px;
 
   @media (min-width: 834px) {
     display: none;
   }
-`,Xt=({onCloseButtonClick:i})=>t.jsxs(Kt,{children:[t.jsxs(qt,{children:[t.jsx(m,{}),t.jsx(f,{})]}),t.jsx(Yt,{children:t.jsx(Qt,{onClick:i,children:t.jsx(Jt,{src:"/src/components/TargetSelectionModal/img/close-circle-min.svg",alt:"CloseButton"})})})]}),_t=e(d)`
+`,Qt=e.svg`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-grey);
+`,Xt=({onCloseButtonClick:i})=>t.jsxs(Kt,{children:[t.jsxs(qt,{children:[t.jsx(m,{}),t.jsx(f,{})]}),t.jsx(Yt,{children:t.jsx(Jt,{onClick:i,children:t.jsx(Qt,{children:t.jsx(x,{})})})})]}),_t=e(p)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
