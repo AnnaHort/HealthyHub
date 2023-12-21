@@ -74,5 +74,13 @@ export const StyledArrowRight = styled.svg`
 export const ModalContainer = styled.div`
   position: absolute;
   z-index: 1;
-  padding-top: 74px; //реголює висоту модалки
+  padding-top: 247px; //реголює висоту модалки
+  display: flex;
+  left: -8px;
+  top: 0;
+
+  @media (min-width: 834px) {
+    padding-top: 101px;
+    left: auto;
+  }
 `;

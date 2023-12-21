@@ -2,10 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 24px 10px 40px 10px;
+  background-color: var(--color-primary-black);
 
   @media (min-width: 834px) {
-    max-width: 392px;
-    mah-height: 352px;
     flex-shrink: 0;
     padding: 20px 32px 40px 24px;
     border-radius: 12px;

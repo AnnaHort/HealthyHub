@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 24px 10px 40px 10px;
+  background: var(--color-primary-black-2);
 
   @media (min-width: 834px) {
     width: 392px;
@@ -143,15 +144,6 @@ export const BtnCancel = styled.button`
 
 export const Div = styled.div`
   display: flex;
-`;
-
-export const Img = styled.img`
-  width: 16px;
-  height: 16px;
-
-  &:hover,
-  &:focus {
-  }
 `;
 
 export const CloseButton = styled.button`

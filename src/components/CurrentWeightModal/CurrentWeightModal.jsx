@@ -6,7 +6,6 @@ import {
   Description,
   Div,
   FormContainer,
-  // Img,
   Input,
   SpanData,
   StyledIcon,
