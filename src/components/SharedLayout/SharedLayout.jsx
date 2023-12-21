@@ -1,23 +1,27 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
-import { HeaderContainerStyled } from '../Header/Header.styled';
 import { Suspense } from 'react';
-import DashboardPage from '../../pages/DashboardPage/dashboardPage';
+import HeaderAuthorizedUser from '../HeaderAuthorizedUser/HeaderAuthorizedUser';
+import { useSelector } from 'react-redux';
+import selectIsLoggedIn from '../../redux/auth/authSelectors';
+
+import { Container, ContainerHeader } from './SharedLayout.styled';
 
 const SharedLayout = () => {
-  return (
-    <div>
-      <header>
-        <HeaderContainerStyled>
-          <Header />
-        </HeaderContainerStyled>
-      </header>
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
-      <DashboardPage/>
-      <Suspense>
-        <Outlet />
-      </Suspense>
-    </div>
+  return (
+    <>
+      <ContainerHeader>
+        {isLoggedIn ? <HeaderAuthorizedUser /> : <Header />}
+      </ContainerHeader>
+
+      <Container>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
+      </Container>
+    </>
   );
 };
 export default SharedLayout;

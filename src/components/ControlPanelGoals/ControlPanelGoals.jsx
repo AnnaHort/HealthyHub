@@ -1,40 +1,57 @@
+import { useState } from 'react';
 import {
   Container,
   Description,
   IconButton,
-  Img,
-  ImgArrowDown,
-  ImgArrowRight,
   ImgBox,
+  ModalContainer,
   SelectPanel,
+  StyledArrowDown,
+  StyledArrowRight,
   Title,
 } from './ControlPanelGoals.styled';
+import { TargetSelectionModal } from '../TargetSelectionModal/TargetSelectioModal';
+import { ReactComponent as ArrowRigth } from '../../img/Header/arrow-right.svg';
+import { ReactComponent as ArrowDown } from '../../img/Header/arrow-down.svg';
+
+import GainMuscle from '../../Emoji/GainMuscle.svg';
 
 const ControlPanelGoals = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleIconButtonClick = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseButtonClick = () => {
+    setModalOpen(false);
+  };
   return (
     <Container>
       <ImgBox>
-        <Img
-          src="/src/components/ControlPanelGoals/Img/LoseFatImageMen-min.svg"
-          alt="Arrow right"
-        />
+        <img src={GainMuscle} alt="GainMuscle" />
       </ImgBox>
       <SelectPanel>
         <Title>Goal</Title>
         <Description>
           Lose fat
           <IconButton>
-            <ImgArrowDown
-              src="/src/components/ControlPanelGoals/Img/arrow-down-min.svg"
-              alt="Arrow bown"
-            />
-            <ImgArrowRight
-              src="/src/components/ControlPanelGoals/Img/arrow-right-min.svg"
-              alt="Arrow right"
-            />
+            <StyledArrowDown onClick={handleIconButtonClick}>
+              <ArrowDown />
+            </StyledArrowDown>
+
+            <StyledArrowRight onClick={handleIconButtonClick}>
+              <ArrowRigth />
+            </StyledArrowRight>
           </IconButton>
         </Description>
       </SelectPanel>
+
+      {isModalOpen && (
+        <ModalContainer>
+          <TargetSelectionModal onCloseButtonClick={handleCloseButtonClick} />
+        </ModalContainer>
+      )}
     </Container>
   );
 };

@@ -16,10 +16,10 @@ export const ImgBox = styled.div`
   align-items: center;
 `;
 
-export const Img = styled.img`
-  width: 28px;
-  height: 28px;
-`;
+// export const Img = styled.img`
+//   width: 28px;
+//   height: 28px;
+// `;
 
 export const Title = styled.h3`
   color: var(--color-primary-white);
@@ -60,9 +60,26 @@ export const IconButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 14px;
-  height: 14px;
-  margin-left: 12px;
   border: none;
   background: none;
+  margin-left: 7px;
+  padding: 0;
+`;
+
+export const StyledIcon = styled.div`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-green-lite);
+`;
+
+export const ModalContainer = styled.div`
+  position: absolute;
+  z-index: 1;
+  padding-top: 74px; //реголює висоту модалки
+  padding-right: 157px;
+  right: 0;
+
+  @media (min-width: 1280px) {
+    padding-right: 258px;
+  }
 `;

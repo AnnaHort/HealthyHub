@@ -34,7 +34,7 @@ const SignupSchema = Yup.object().shape({
     .matches(emailRegexp, 'Invalid email')
     .required('Email is required'),
   password: Yup.string()
-    .min(6, 'Password must be at least 8 characters')
+    .min(6, 'Password must be at least 6 characters')
     .required('Password is required'),
 });
 

@@ -336,15 +336,23 @@ export const Img = styled.img`
 
 export const CloseButton = styled.button`
   display: none;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
 
   @media (min-width: 834px) {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
     background: none;
     border: none;
     cursor: pointer;
   }
+`;
+
+export const StyledIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-grey);
 `;

@@ -10,20 +10,22 @@ import {
   BtnConfirm,
   BtnBack,
   CloseButton,
-  Img,
   Div,
+  StyledIcon,
 } from './TargetSelectionModal.styled';
+import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg';
+import LooseFatMen from '../../Emoji/LoseFatMen.svg';
+import MaintakeGirl from '../../Emoji/MaintakeGirl.svg';
+import GainMuscle from '../../Emoji/GainMuscle.svg';
 
-export const TargetSelectionModal = () => {
+export const TargetSelectionModal = ({ onCloseButtonClick }) => {
   return (
     <Container>
       <Div>
-        <CloseButton>
-          <Img
-            src="/src/components/TargetSelectionModal/img/close-circle-min.svg"
-            f
-            alt="CloseButton"
-          />
+        <CloseButton onClick={onCloseButtonClick}>
+          <StyledIcon>
+            <CloseCircle />
+          </StyledIcon>
         </CloseButton>
       </Div>
 
@@ -41,10 +43,7 @@ export const TargetSelectionModal = () => {
               value="Lose Fat"
             />
             <Label htmlFor="loseFat">
-              <img
-                src="/src/components/TargetSelectionModal/img/LoseFatImageMen-min.svg"
-                alt="Lose Fat"
-              />
+              <img src={LooseFatMen} alt="LooseFatMen" />
               Lose Fat
             </Label>
           </RadioItem>
@@ -57,10 +56,7 @@ export const TargetSelectionModal = () => {
               value="Maintain"
             />
             <Label htmlFor="maintain">
-              <img
-                src="/src/components/TargetSelectionModal/img/LoseFatImageMen-min.svg"
-                alt="Lose Fat"
-              />
+              <img src={MaintakeGirl} alt="MaintakeGirl" />
               Maintain
             </Label>
           </RadioItem>
@@ -73,10 +69,7 @@ export const TargetSelectionModal = () => {
               value="Gain Muscle"
             />
             <Label htmlFor="gainMuscle">
-              <img
-                src="/src/components/TargetSelectionModal/img/LoseFatImageMen-min.svg"
-                alt="Lose Fat"
-              />
+              <img src={GainMuscle} alt="GainMuscle" />
               Gain Muscle
             </Label>
           </RadioItem>
