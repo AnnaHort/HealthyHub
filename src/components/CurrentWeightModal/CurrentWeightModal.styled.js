@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 24px 10px 40px 10px;
   background: var(--color-primary-black);
-  height: 100vw;
+  height: 100vh;
 
   @media (min-width: 834px) {
     width: 392px;
