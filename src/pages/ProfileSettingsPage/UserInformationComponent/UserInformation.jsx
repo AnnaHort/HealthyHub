@@ -7,8 +7,10 @@ import {
   UserInformationInput,
   UserInformationLabel,
   UserInformationPhotoContainer,
+  UserInformationTitle,
 } from './UserInformation.styled';
 import { ImgContainer } from '../../../components/UserInfoNav/UserInfoNav.styled';
+import { GenderRadioBtnContainer } from '../../../components/SelectGender/SelectGender.styled';
 
 const UserInformation = () => {
   return (
@@ -57,11 +59,11 @@ const UserInformation = () => {
       </UserInformationContainer>
 
       <UserInformationContainer>
-        <h3>Gender</h3>
+        <UserInformationTitle>Gender</UserInformationTitle>
         <div>
-          <label htmlFor="male">Male</label>
+          <label htmlFor="male" style={{color:"red"}}>Male</label>
           <input type="radio" id="male" name="gender" value="male" />
-          <label htmlFor="female">Female</label>
+          <label htmlFor="female" style={{color:"red"}}>Female</label>
           <input type="radio" id="female" name="gender" value="female" />
         </div>
       </UserInformationContainer>

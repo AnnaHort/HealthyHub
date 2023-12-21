@@ -21,7 +21,6 @@ export const UserInformationLabel = styled.label`
 
 export const UserInformationInput = styled.input`
   max-width: 300px;
-  height: 36px;
   border-radius: 12px;
   border: 1px solid var(--color-primary-grey);
   background: var(--color-primary-black-2);
@@ -44,3 +43,10 @@ export const UserInformationDownloadLabel = styled.label`
   font-weight: 400;
   line-height: 1.42;
 `;
+
+export const UserInformationTitle = styled.h3`
+color: var(--color-primary-white);
+font-size: 14px;
+font-weight: 500;
+line-height: 1.43;
+`
