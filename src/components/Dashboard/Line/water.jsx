@@ -27,6 +27,15 @@ const Container = styled.div`
   margin-left: 10px;
   margin-bottom: 40px;
   overflow-x: auto;
+
+  @media (min-width: 834px) {
+    margin-left: unset;
+    overflow-y: unset;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 0;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -34,6 +43,14 @@ const TitleContainer = styled.div`
   align-items: center;
   margin-top: 16px;
   margin-bottom: 9px;
+
+  @media (min-width: 834px) {
+    margin-top: 40px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 0;
+  }
 `;
 
 const WaterTitle = styled.h2`
@@ -57,7 +74,6 @@ const WaterDesc = styled.p`
 
 const ChartsContainer = styled.div`
   display: flex;
-  justify-content: center;
   min-width: 676px;
   width: 100%;
   margin: 0 auto;
@@ -65,6 +81,16 @@ const ChartsContainer = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+
+  @media (min-width: 834px) {
+    min-width: 780px;
+    overflow-x: unset;
+    overflow-y: unset;
+  }
+
+  @media (min-width: 1440px) {
+    min-width: 676px;
+  }
 `;
 
 
@@ -109,7 +135,7 @@ const WaterDashboar = () => {
      layout: {
        padding: {
          left: 14,
-         right: 14,
+         right: 31,
          top: 25,
          bottom: 40,
        },
