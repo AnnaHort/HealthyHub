@@ -1,4 +1,5 @@
 import {
+  UserInformationActivityContainer,
   UserInformationBtnContainer,
   UserInformationContainer,
   UserInformationDownloadLabel,
@@ -118,7 +119,7 @@ const UserInformation = () => {
 
       <UserInformationContainer>
         <UserInformationTitle>Your Activity</UserInformationTitle>
-        <div>
+        <UserInformationActivityContainer>
           <UserInformationRadioContainer style={{ position: 'relative' }}>
             <UserInformationRadioInput
               type="radio"
@@ -179,7 +180,7 @@ const UserInformation = () => {
               a day and include strength exercises in your training program
             </UserInformationLabelRadio>
           </UserInformationRadioContainer>
-        </div>
+        </UserInformationActivityContainer>
       </UserInformationContainer>
 
       <UserInformationBtnContainer>

@@ -5,11 +5,21 @@ export const UserInformationForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  @media (min-width: 834px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px 60px;
+    max-width: 491px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 `;
 
 export const UserInformationContainer = styled.div`
   display: flex;
   flex-direction: column;
+
 `;
 
 export const UserInformationLabel = styled.label`
@@ -38,6 +48,9 @@ export const UserInformationInput = styled.input`
     font-size: 14px;
     font-weight: 400;
     line-height: 1.43%;
+  }
+  @media (min-width: 834px) {
+    min-width: 212px;
   }
 `;
 
@@ -76,6 +89,13 @@ export const UserInformationRadioInput = styled.input`
   opacity: 0;
   position: absolute;
 `;
+
+export const UserInformationActivityContainer = styled.div`
+display: flex;
+flex-direction: column;
+gap: 24px;
+`
+
 export const UserInformationLabelRadio = styled.label`
   padding-left: 14px;
   font-family: Poppins;
@@ -122,6 +142,11 @@ export const UserInformationBtnContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  @media (min-width: 834px) {
+    flex-direction: row;
+    gap: 22px;
+    align-items: center;
+  }
 `;
 export const UserInformationSaveBtn = styled.button`
   border-radius: 12px;
@@ -133,6 +158,9 @@ export const UserInformationSaveBtn = styled.button`
   font-weight: 500;
   line-height: 1.43;
   font-family: Poppins;
+  @media (min-width: 834px) {
+    width: 212px;
+  }
 `;
 
 export const UserInformationLinkCancel = styled(Link)`
@@ -143,4 +171,7 @@ export const UserInformationLinkCancel = styled(Link)`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42;
+  @media (min-width: 834px) {
+    width: 212px;
+  }
 `;
