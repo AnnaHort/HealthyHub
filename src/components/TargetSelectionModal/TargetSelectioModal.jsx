@@ -76,7 +76,7 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
         </List>
       </Form>
       <BtnConfirm>Submit</BtnConfirm>
-      <BtnBack>Back</BtnBack>
+      <BtnBack onClick={onCloseButtonClick}>Back</BtnBack>
     </Container>
   );
 };

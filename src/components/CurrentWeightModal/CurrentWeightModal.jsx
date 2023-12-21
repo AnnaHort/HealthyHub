@@ -35,7 +35,7 @@ const CurrentWeightModal = ({ onCloseButtonClick }) => {
       <FormContainer>
         <Input type="text" placeholder="Enter your weight" />
         <BtnConfirm>Confirm</BtnConfirm>
-        <BtnCancel>Cancel</BtnCancel>
+        <BtnCancel onClick={onCloseButtonClick}>Cancel</BtnCancel>
       </FormContainer>
     </Container>
   );

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 24px 10px 40px 10px;
   background-color: var(--color-primary-black);
+  height: 100vw;
 
   @media (min-width: 834px) {
     flex-shrink: 0;
