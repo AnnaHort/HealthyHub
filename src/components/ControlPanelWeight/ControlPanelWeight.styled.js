@@ -72,14 +72,32 @@ export const StyledIcon = styled.div`
   stroke: var(--color-primary-green-lite);
 `;
 
+// export const ModalContainer = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   z-index: 1;
+//   padding-top: 247px; //реголює висоту модалки
+//   display: flex;
+//   left: -8px;
+//   top: 0;
+
+//   @media (min-width: 834px) {
+//     padding-top: 101px;
+//     left: auto;
+//   }
+// `;
+
 export const ModalContainer = styled.div`
   position: absolute;
   z-index: 1;
-  padding-top: 74px; //реголює висоту модалки
-  padding-right: 157px;
-  right: 0;
+  padding-top: 247px; //реголює висоту модалки
+  display: flex;
+  left: -8px;
+  top: 0;
 
-  @media (min-width: 1280px) {
-    padding-right: 258px;
+  @media (min-width: 834px) {
+    padding-top: 101px;
+    left: auto;
   }
 `;
