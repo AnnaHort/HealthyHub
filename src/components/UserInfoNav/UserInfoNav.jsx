@@ -36,7 +36,7 @@ const UserInfoNav = () => {
       </IconButton>
 
       {isModalOpen && (
-        <ModalContainer onClick={handleCloseButtonClick}>
+        <ModalContainer>
           <UserInfoModal />
         </ModalContainer>
       )}

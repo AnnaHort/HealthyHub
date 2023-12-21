@@ -1,16 +1,12 @@
 import { ButtonLogout, Div, StyledIcon } from './LogoutBtn.styled';
-import IconLogout from '../../Sprites/icons/symbol-defs.svg#icon-logout';
+import { ReactComponent as Logout } from '../../img/Header/logout.svg';
 
 const LogoutBtn = () => {
   return (
     <Div>
       <ButtonLogout>
         <StyledIcon>
-          <use
-            xlinkHref={`${IconLogout}#icon-logout`}
-            width="100%"
-            height="100%"
-          ></use>
+          <Logout />
         </StyledIcon>
         Log out
       </ButtonLogout>
