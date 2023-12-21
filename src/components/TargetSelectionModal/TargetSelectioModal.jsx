@@ -10,23 +10,21 @@ import {
   BtnConfirm,
   BtnBack,
   CloseButton,
-  // Img,
   Div,
   StyledIcon,
 } from './TargetSelectionModal.styled';
+import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg';
+import LooseFatMen from '../../Emoji/LoseFatMen.svg';
+import MaintakeGirl from '../../Emoji/MaintakeGirl.svg';
+import GainMuscle from '../../Emoji/GainMuscle.svg';
 
 export const TargetSelectionModal = ({ onCloseButtonClick }) => {
   return (
     <Container>
       <Div>
         <CloseButton onClick={onCloseButtonClick}>
-          {/* <Img
-            src="/src/components/TargetSelectionModal/img/close-circle-min.svg"
-            alt="CloseButton"
-          /> */}
-
           <StyledIcon>
-            <use href="/src/Sprites/icons/symbol-defs.svg#icon-close-circle"></use>
+            <CloseCircle />
           </StyledIcon>
         </CloseButton>
       </Div>
@@ -45,7 +43,7 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
               value="Lose Fat"
             />
             <Label htmlFor="loseFat">
-              <img src="/src/Emoji/LoseFatMen.svg" alt="Lose Fat" />
+              <img src={LooseFatMen} alt="LooseFatMen" />
               Lose Fat
             </Label>
           </RadioItem>
@@ -58,7 +56,7 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
               value="Maintain"
             />
             <Label htmlFor="maintain">
-              <img src="/src/Emoji/MaintakeMen.svg" alt="Lose Fat" />
+              <img src={MaintakeGirl} alt="MaintakeGirl" />
               Maintain
             </Label>
           </RadioItem>
@@ -71,7 +69,7 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
               value="Gain Muscle"
             />
             <Label htmlFor="gainMuscle">
-              <img src="/src/Emoji/GainMuscle.svg" alt="Lose Fat" />
+              <img src={GainMuscle} alt="GainMuscle" />
               Gain Muscle
             </Label>
           </RadioItem>

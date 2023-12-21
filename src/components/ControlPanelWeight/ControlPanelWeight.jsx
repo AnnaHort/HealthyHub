@@ -3,7 +3,6 @@ import {
   Container,
   Description,
   IconButton,
-  // Img,
   ImgBox,
   ModalContainer,
   SelectPanel,
@@ -35,11 +34,6 @@ const ControlPanelWeight = () => {
         <Description>
           48 <span>kg</span>
           <IconButton onClick={handleIconButtonClick}>
-            {/* <img
-              src="/src/components/ControlPanelWeight/img/edit-2-min.svg"
-              alt="Edit"
-            /> */}
-
             <StyledIcon>
               <IconsEditTwo />
             </StyledIcon>
