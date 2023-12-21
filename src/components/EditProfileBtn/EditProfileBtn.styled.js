@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonLogout = styled.button`
+export const ButtonSetting = styled.button`
   border: none;
   background: none;
   color: var(--color-primary-white);
