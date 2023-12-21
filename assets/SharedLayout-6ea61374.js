@@ -1,4 +1,4 @@
-import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";const k=e(d)`
+import{s as e,N as p,j as t,r as n,u,a as y,O as w}from"./index-b0efe594.js";const k=e(p)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -11,20 +11,20 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
     font-size: 22px;
     line-height: 1.46%;
   }
-`,j=()=>t.jsx(k,{to:"/welcome",children:"HealthyHub"}),b=e.svg`
+`,j=()=>t.jsx(k,{to:"/welcome",children:"HealthyHub"}),v=e.svg`
   width: 26px;
   height: 26px;
   @media (min-width: 834px) {
     width: 28px;
     height: 28px;
   }
-`,v=()=>t.jsxs(b,{id:"icon-profile-circle",viewBox:"0 0 32 32",children:[t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M16.16 17.040c-0.093-0.013-0.213-0.013-0.32 0-2.347-0.080-4.213-2-4.213-4.36 0-2.413 1.947-4.373 4.373-4.373 2.413 0 4.373 1.96 4.373 4.373-0.013 2.36-1.867 4.28-4.213 4.36z"}),t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M24.987 25.84c-2.373 2.173-5.52 3.493-8.987 3.493s-6.613-1.32-8.987-3.493c0.133-1.253 0.933-2.48 2.36-3.44 3.653-2.427 9.627-2.427 13.253 0 1.427 0.96 2.227 2.187 2.36 3.44z"}),t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M16 29.333c7.364 0 13.333-5.969 13.333-13.333s-5.97-13.333-13.333-13.333c-7.364 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333z"})]}),C=e.nav`
+`,b=()=>t.jsxs(v,{id:"icon-profile-circle",viewBox:"0 0 32 32",children:[t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M16.16 17.040c-0.093-0.013-0.213-0.013-0.32 0-2.347-0.080-4.213-2-4.213-4.36 0-2.413 1.947-4.373 4.373-4.373 2.413 0 4.373 1.96 4.373 4.373-0.013 2.36-1.867 4.28-4.213 4.36z"}),t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M24.987 25.84c-2.373 2.173-5.52 3.493-8.987 3.493s-6.613-1.32-8.987-3.493c0.133-1.253 0.933-2.48 2.36-3.44 3.653-2.427 9.627-2.427 13.253 0 1.427 0.96 2.227 2.187 2.36 3.44z"}),t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M16 29.333c7.364 0 13.333-5.969 13.333-13.333s-5.97-13.333-13.333-13.333c-7.364 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333z"})]}),C=e.nav`
   display: flex;
   align-content: center;
   justify-content: center;
   align-items: center;
   gap: 6px;
-`,c=e(d)`
+`,c=e(p)`
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -36,7 +36,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
     font-size: 14px;
     line-height: 1.43;
   }
-`,M=e.span`
+`,L=e.span`
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -45,7 +45,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
     font-size: 14px;
     line-height: 1.43;
   }
-`,L=()=>t.jsxs(C,{children:[t.jsx(c,{to:"/signin",children:"Sign in"}),t.jsx(M,{children:" / "}),t.jsx(c,{to:"/signup",children:"Sign up"}),t.jsx(v,{})]}),B=e.div`
+`,M=()=>t.jsxs(C,{children:[t.jsx(c,{to:"/signin",children:"Sign in"}),t.jsx(L,{children:" / "}),t.jsx(c,{to:"/signup",children:"Sign up"}),t.jsx(b,{})]}),B=e.div`
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -74,10 +74,10 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   @media (min-width: 1440px) {
     max-width: 1440px;
   }
-`;const S=()=>t.jsxs(B,{children:[t.jsx(j,{}),t.jsx(L,{})]}),$=e.div`
+`;const S=()=>t.jsxs(B,{children:[t.jsx(j,{}),t.jsx(M,{})]}),z=e.div`
   display: flex;
   gap: 12px;
-`,z=e.div`
+`,$=e.div`
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -94,10 +94,10 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   font-weight: 600;
   line-height: 20px; /* 142.857% */
   margin-bottom: 2px;
-`,P=e.div`
+`,E=e.div`
   padding-top: 3px;
   padding-bottom: 3px;
-`,H=e.p`
+`,P=e.p`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -106,14 +106,14 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   line-height: 20px; /* 142.857% */
   display: flex;
   align-items: center;
-`,E=e.button`
+`,W=e.button`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 7px;
   border: none;
   background: none;
-`,F=e.svg`
+`,H=e.svg`
   display: none;
   width: 16px;
   height: 16px;
@@ -121,7 +121,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   @media (min-width: 834px) {
     display: block;
   }
-`,W=e.svg`
+`,F=e.svg`
   display: block;
   width: 16px;
   height: 16px;
@@ -226,7 +226,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   -moz-appearance: none;
   appearance: none;
   opacity: 0;
-`,l=e.li`
+`,d=e.li`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -238,7 +238,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   @media (min-width: 1440px) {
     gap: 10px;
   }
-`,p=e.label`
+`,l=e.label`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -397,7 +397,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
-`,x=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M9.16992 14.83L14.8299 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M14.8299 14.83L9.16992 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),Y="/HealthyHub/assets/LoseFatMen-7b8fee89.svg",q="/HealthyHub/assets/MaintakeGirl-28454b53.svg",h="/HealthyHub/assets/GainMuscle-be81eda0.svg",J=({onCloseButtonClick:i})=>t.jsxs(A,{children:[t.jsxs(G,{children:[t.jsx(T,{children:"Target selection"}),t.jsx(V,{onClick:i,children:t.jsx(K,{children:t.jsx(x,{})})})]}),t.jsx(O,{children:"The service will adjust your calorie intake to your goal"}),t.jsx(U,{children:t.jsxs(Z,{children:[t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat"}),t.jsxs(p,{htmlFor:"loseFat",children:[t.jsx("img",{src:Y,alt:"LooseFatMen"}),"Lose Fat"]})]}),t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),t.jsxs(p,{htmlFor:"maintain",children:[t.jsx("img",{src:q,alt:"MaintakeGirl"}),"Maintain"]})]}),t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),t.jsxs(p,{htmlFor:"gainMuscle",children:[t.jsx("img",{src:h,alt:"GainMuscle"}),"Gain Muscle"]})]})]})}),t.jsx(N,{children:"Submit"}),t.jsx(R,{onClick:i,children:"Back"})]}),Q=i=>n.createElement("svg",{width:16,height:16,viewBox:"0 0 16 16",fill:"none",xmlns:"http://www.w3.org/2000/svg",...i},n.createElement("path",{d:"M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2.33301 8H13.553",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),g=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995",stroke:"#E3FFA8",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),m=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs($,{children:[t.jsx(z,{children:t.jsx("img",{src:h,alt:"GainMuscle"})}),t.jsxs(P,{children:[t.jsx(I,{children:"Goal"}),t.jsxs(H,{children:["Lose fat",t.jsxs(E,{children:[t.jsx(F,{onClick:r,children:t.jsx(g,{})}),t.jsx(W,{onClick:r,children:t.jsx(Q,{})})]})]})]}),i&&t.jsx(D,{children:t.jsx(J,{onCloseButtonClick:s})})]})},X=e.div`
+`,x=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M9.16992 14.83L14.8299 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M14.8299 14.83L9.16992 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),Y="/HealthyHub/assets/LoseFatMen-7b8fee89.svg",q="/HealthyHub/assets/MaintakeGirl-28454b53.svg",h="/HealthyHub/assets/GainMuscle-be81eda0.svg",J=({onCloseButtonClick:i})=>t.jsxs(A,{children:[t.jsxs(G,{children:[t.jsx(T,{children:"Target selection"}),t.jsx(V,{onClick:i,children:t.jsx(K,{children:t.jsx(x,{})})})]}),t.jsx(O,{children:"The service will adjust your calorie intake to your goal"}),t.jsx(U,{children:t.jsxs(Z,{children:[t.jsxs(d,{children:[t.jsx(a,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat"}),t.jsxs(l,{htmlFor:"loseFat",children:[t.jsx("img",{src:Y,alt:"LooseFatMen"}),"Lose Fat"]})]}),t.jsxs(d,{children:[t.jsx(a,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),t.jsxs(l,{htmlFor:"maintain",children:[t.jsx("img",{src:q,alt:"MaintakeGirl"}),"Maintain"]})]}),t.jsxs(d,{children:[t.jsx(a,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),t.jsxs(l,{htmlFor:"gainMuscle",children:[t.jsx("img",{src:h,alt:"GainMuscle"}),"Gain Muscle"]})]})]})}),t.jsx(N,{children:"Submit"}),t.jsx(R,{onClick:i,children:"Back"})]}),Q=i=>n.createElement("svg",{width:16,height:16,viewBox:"0 0 16 16",fill:"none",xmlns:"http://www.w3.org/2000/svg",...i},n.createElement("path",{d:"M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2.33301 8H13.553",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),g=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995",stroke:"#E3FFA8",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),m=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(z,{children:[t.jsx($,{children:t.jsx("img",{src:h,alt:"GainMuscle"})}),t.jsxs(E,{children:[t.jsx(I,{children:"Goal"}),t.jsxs(P,{children:["Lose fat",t.jsxs(W,{children:[t.jsx(H,{onClick:r,children:t.jsx(g,{})}),t.jsx(F,{onClick:r,children:t.jsx(Q,{})})]})]})]}),i&&t.jsx(D,{children:t.jsx(J,{onCloseButtonClick:s})})]})},X=e.div`
   display: flex;
   gap: 12px;
 `,_=e.div`
@@ -482,7 +482,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   line-height: 24px; /* 133.333% */
   margin-bottom: 8px;
   margin-right: 80px;
-`,lt=e.p`
+`,dt=e.p`
   color: var(--color-primary-grey);
   /* Body text/1 */
   font-family: Poppins;
@@ -491,7 +491,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   margin-bottom: 16px;
-`,pt=e.p`
+`,lt=e.p`
   display: flex;
   gap: 6px;
   width: 44px;
@@ -506,7 +506,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   @media (min-width: 834px) {
     margin-bottom: 16px;
   }
-`,dt=e.span`
+`,pt=e.span`
   width: 88px;
   color: var(--color-primary-grey);
   font-family: Poppins;
@@ -602,12 +602,12 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   height: 16px;
   stroke: var(--color-primary-grey);
   margin-right: 8px;
-`,yt=({onCloseButtonClick:i})=>{const o=new Date().toLocaleDateString();return t.jsxs(st,{children:[t.jsxs(mt,{children:[t.jsx(at,{children:"Enter your current weight"}),t.jsx(ft,{onClick:i,children:t.jsx(ut,{children:t.jsx(x,{})})})]}),t.jsx(lt,{children:"You can record your weight once a day"}),t.jsxs(pt,{children:["Today: ",t.jsx(dt,{children:o})]}),t.jsxs(xt,{children:[t.jsx(ct,{type:"text",placeholder:"Enter your weight"}),t.jsx(ht,{children:"Confirm"}),t.jsx(gt,{onClick:i,children:"Cancel"})]})]})},wt="/HealthyHub/assets/WaightImage-833d9f56.svg",kt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]}),f=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(X,{children:[t.jsx(_,{children:t.jsx("img",{src:wt,alt:"MaintakeMen"})}),t.jsxs(et,{children:[t.jsx(tt,{children:"Weight"}),t.jsxs(it,{children:["48 ",t.jsx("span",{children:"kg"}),t.jsx(nt,{onClick:r,children:t.jsx(ot,{children:t.jsx(kt,{})})})]})]}),i&&t.jsx(rt,{children:t.jsx(yt,{onCloseButtonClick:s})})]})},jt=e.div`
+`,yt=({onCloseButtonClick:i})=>{const o=new Date().toLocaleDateString();return t.jsxs(st,{children:[t.jsxs(mt,{children:[t.jsx(at,{children:"Enter your current weight"}),t.jsx(ft,{onClick:i,children:t.jsx(ut,{children:t.jsx(x,{})})})]}),t.jsx(dt,{children:"You can record your weight once a day"}),t.jsxs(lt,{children:["Today: ",t.jsx(pt,{children:o})]}),t.jsxs(xt,{children:[t.jsx(ct,{type:"text",placeholder:"Enter your weight"}),t.jsx(ht,{children:"Confirm"}),t.jsx(gt,{onClick:i,children:"Cancel"})]})]})},wt="/HealthyHub/assets/WaightImage-833d9f56.svg",kt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]}),f=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(X,{children:[t.jsx(_,{children:t.jsx("img",{src:wt,alt:"MaintakeMen"})}),t.jsxs(et,{children:[t.jsx(tt,{children:"Weight"}),t.jsxs(it,{children:["48 ",t.jsx("span",{children:"kg"}),t.jsx(nt,{onClick:r,children:t.jsx(ot,{children:t.jsx(kt,{})})})]})]}),i&&t.jsx(rt,{children:t.jsx(yt,{onCloseButtonClick:s})})]})},jt=e.div`
   width: 130px;
   height: 28px;
   display: flex;
   align-items: center;
-`,bt=e.p`
+`,vt=e.p`
   width: 78px;
   color: var(--color-primary-white);
   text-align: right;
@@ -617,7 +617,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   margin-right: 6px;
-`,vt=e.div`
+`,bt=e.div`
   width: 28px;
   height: 28px;
   border-radius: 28px;
@@ -636,11 +636,11 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   @media (min-width: 834px) {
     display: block;
   }
-`;const Mt=e.svg`
+`;const Lt=e.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-green-lite);
-`,Lt=e.div`
+`,Mt=e.div`
   position: absolute;
   z-index: 1;
   top: 0;
@@ -667,12 +667,13 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   line-height: 20px; /* 142.857% */
   display: flex;
   align-items: center;
-`,St=e.div``,$t=e.svg`
+  padding: 0;
+`,St=e.div``,zt=e.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-white);
   margin-right: 8px;
-`,zt="/HealthyHub/assets/symbol-defs-2ae3e6ff.svg#icon-setting-2",It=()=>t.jsx(St,{children:t.jsxs(Bt,{children:[t.jsx($t,{children:t.jsx("use",{xlinkHref:`${zt}#icon-setting-2`,width:"100%",height:"100%"})}),"Setting"]})}),Pt=e.button`
+`,$t=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2 12.8801V11.1201C2 10.0801 2.85 9.22006 3.9 9.22006C5.71 9.22006 6.45 7.94006 5.54 6.37006C5.02 5.47006 5.33 4.30006 6.24 3.78006L7.97 2.79006C8.76 2.32006 9.78 2.60006 10.25 3.39006L10.36 3.58006C11.26 5.15006 12.74 5.15006 13.65 3.58006L13.76 3.39006C14.23 2.60006 15.25 2.32006 16.04 2.79006L17.77 3.78006C18.68 4.30006 18.99 5.47006 18.47 6.37006C17.56 7.94006 18.3 9.22006 20.11 9.22006C21.15 9.22006 22.01 10.0701 22.01 11.1201V12.8801C22.01 13.9201 21.16 14.7801 20.11 14.7801C18.3 14.7801 17.56 16.0601 18.47 17.6301C18.99 18.5401 18.68 19.7001 17.77 20.2201L16.04 21.2101C15.25 21.6801 14.23 21.4001 13.76 20.6101L13.65 20.4201C12.75 18.8501 11.27 18.8501 10.36 20.4201L10.25 20.6101C9.78 21.4001 8.76 21.6801 7.97 21.2101L6.24 20.2201C5.33 19.7001 5.02 18.5301 5.54 17.6301C6.45 16.0601 5.71 14.7801 3.9 14.7801C2.85 14.7801 2 13.9201 2 12.8801Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),It=()=>t.jsx(St,{children:t.jsxs(Bt,{children:[t.jsx(zt,{children:t.jsx($t,{})}),"Setting"]})}),Et=e.button`
   border: none;
   background: none;
   color: var(--color-primary-white);
@@ -683,12 +684,13 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   line-height: 20px; /* 142.857% */
   display: flex;
   align-items: center;
-`,Ht=e.div``,Et=e.svg`
+  padding: 0;
+`,Pt=e.div``,Wt=e.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-white);
   margin-right: 8px;
-`,Ft="/HealthyHub/assets/symbol-defs-2ae3e6ff.svg#icon-logout",Wt=()=>t.jsx(Ht,{children:t.jsxs(Pt,{children:[t.jsx(Et,{children:t.jsx("use",{xlinkHref:`${Ft}#icon-logout`,width:"100%",height:"100%"})}),"Log out"]})}),Dt=e.div`
+`,Ht=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:23,height:23,stroke:"",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M8.8999 7.55999C9.2099 3.95999 11.0599 2.48999 15.1099 2.48999H15.2399C19.7099 2.48999 21.4999 4.27999 21.4999 8.74999V15.27C21.4999 19.74 19.7099 21.53 15.2399 21.53H15.1099C11.0899 21.53 9.2399 20.08 8.9099 16.54",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M15.0001 12H3.62012",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M5.85 8.65002L2.5 12L5.85 15.35",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),Ft=()=>t.jsx(Pt,{children:t.jsxs(Et,{children:[t.jsx(Wt,{children:t.jsx(Ht,{})}),"Log out"]})}),Dt=e.div`
   width: 158px;
   height: 112px;
   padding: 24px;
@@ -699,7 +701,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-`,Gt=()=>t.jsx(Dt,{children:t.jsxs(At,{children:[t.jsx(It,{}),t.jsx(Wt,{})]})}),Tt="/HealthyHub/assets/Avatar-4908aace.svg",Ot=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(jt,{children:[t.jsx(bt,{children:"Konstantin"}),t.jsx(vt,{children:t.jsx("img",{src:Tt,alt:"Avatar"})}),t.jsx(Ct,{onClick:r,children:t.jsx(Mt,{onClick:s,children:t.jsx(g,{})})}),i&&t.jsx(Lt,{onClick:s,children:t.jsx(Gt,{})})]})},Ut=e.div`
+`,Gt=()=>t.jsx(Dt,{children:t.jsxs(At,{children:[t.jsx(It,{}),t.jsx(Ft,{})]})}),Tt="/HealthyHub/assets/Avatar-4908aace.svg",Ot=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(jt,{children:[t.jsx(vt,{children:"Konstantin"}),t.jsx(bt,{children:t.jsx("img",{src:Tt,alt:"Avatar"})}),t.jsx(Ct,{onClick:r,children:t.jsx(Lt,{onClick:s,children:t.jsx(g,{})})}),i&&t.jsx(Mt,{children:t.jsx(Gt,{})})]})},Ut=e.div`
   width: 320px;
   position: relative;
   height: 60px;
@@ -807,7 +809,7 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
-`,te=({onCloseButtonClick:i})=>t.jsxs(qt,{children:[t.jsxs(Qt,{children:[t.jsx(m,{}),t.jsx(f,{})]}),t.jsx(Jt,{children:t.jsx(Xt,{onClick:i,children:t.jsx(_t,{children:t.jsx(x,{})})})})]}),ee=e(d)`
+`,te=({onCloseButtonClick:i})=>t.jsxs(qt,{children:[t.jsxs(Qt,{children:[t.jsx(m,{}),t.jsx(f,{})]}),t.jsx(Jt,{children:t.jsx(Xt,{onClick:i,children:t.jsx(_t,{children:t.jsx(x,{})})})})]}),ee=e(p)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -837,4 +839,4 @@ import{s as e,N as d,j as t,r as n,u,a as y,O as w}from"./index-7be39659.js";con
     padding-left: 34px;
     padding-right: 34px;
   }
-`,le=()=>{const i=u(y);return t.jsxs(t.Fragment,{children:[t.jsx(re,{children:i?t.jsx(oe,{}):t.jsx(S,{})}),t.jsx(se,{children:t.jsx(n.Suspense,{fallback:t.jsx("div",{children:"Loading..."}),children:t.jsx(w,{})})})]})};export{le as default};
+`,de=()=>{const i=u(y);return t.jsxs(t.Fragment,{children:[t.jsx(re,{children:i?t.jsx(oe,{}):t.jsx(S,{})}),t.jsx(se,{children:t.jsx(n.Suspense,{fallback:t.jsx("div",{children:"Loading..."}),children:t.jsx(w,{})})})]})};export{de as default};
