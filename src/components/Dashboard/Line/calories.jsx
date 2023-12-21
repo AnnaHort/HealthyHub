@@ -57,6 +57,7 @@ const CaloriesDesc = styled.p`
 
 const ChartsContainer = styled.div`
   display: flex;
+  justify-content: center;
   min-width: 676px;
   width: 100%;
   margin: 0 auto;
