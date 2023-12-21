@@ -14,6 +14,7 @@ import {
 } from './HeaderAuthorizedUser.styled';
 import GoalAndWeighModal from '../GoalAndWeighModal/GoalAndWeighModal';
 import LogoAuthorizedUser from '../LogoAuthorizedUser/LogoAuthorizedUser';
+import { ReactComponent as IconMenu } from '../../img/Header/icon-menu.svg';
 
 const HeaderAuthorizedUser = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -33,8 +34,8 @@ const HeaderAuthorizedUser = () => {
       </LogoContainer>
 
       <IconButton onClick={handleIconButtonClick}>
-        <StyledIcon isModalOpen={isModalOpen}>
-          <use href="/src/Sprites/icons/symbol-defs.svg#icon-menu"></use>
+        <StyledIcon>
+          <IconMenu style={{ stroke: isModalOpen ? '#E3FFA8' : '#B6B6B6' }} />
         </StyledIcon>
       </IconButton>
 

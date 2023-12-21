@@ -336,6 +336,10 @@ export const Img = styled.img`
 
 export const CloseButton = styled.button`
   display: none;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
 
   @media (min-width: 834px) {
     display: flex;
@@ -351,5 +355,4 @@ export const StyledIcon = styled.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
-  margin-right: 8px;
 `;

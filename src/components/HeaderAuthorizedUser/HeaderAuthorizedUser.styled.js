@@ -68,11 +68,6 @@ export const ControlPanelContainer = styled.div`
 export const StyledIcon = styled.svg`
   width: 16px;
   height: 16px;
-  stroke: ${({ isModalOpen }) =>
-    isModalOpen
-      ? 'var(--color-primary-grey)'
-      : 'var(--color-primary-green-lite)'};
-
   @media (min-width: 834px) {
     display: none;
   }

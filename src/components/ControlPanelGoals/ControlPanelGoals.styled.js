@@ -16,11 +16,6 @@ export const ImgBox = styled.div`
   align-items: center;
 `;
 
-export const Img = styled.img`
-  width: 28px;
-  height: 28px;
-`;
-
 export const Title = styled.h3`
   color: var(--color-primary-white);
   font-family: Poppins;
@@ -51,25 +46,9 @@ export const IconButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 14px;
-  height: 14px; */
   margin-left: 7px;
   border: none;
   background: none;
-`;
-
-export const ImgArrowDown = styled.img`
-  display: none;
-
-  @media (min-width: 834px) {
-    display: block;
-  }
-`;
-
-export const ImgArrowRight = styled.img`
-  @media (min-width: 834px) {
-    display: none;
-  }
 `;
 
 export const StyledArrowDown = styled.svg`
@@ -83,6 +62,7 @@ export const StyledArrowDown = styled.svg`
 `;
 
 export const StyledArrowRight = styled.svg`
+  display: block;
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-green-lite);

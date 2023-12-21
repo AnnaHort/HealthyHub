@@ -3,9 +3,6 @@ import {
   Container,
   Description,
   IconButton,
-  // Img,
-  // ImgArrowDown,
-  // ImgArrowRight,
   ImgBox,
   ModalContainer,
   SelectPanel,
@@ -14,8 +11,8 @@ import {
   Title,
 } from './ControlPanelGoals.styled';
 import { TargetSelectionModal } from '../TargetSelectionModal/TargetSelectioModal';
-
-import sprite from '../../iconSpite';
+import { ReactComponent as ArrowRigth } from '../../img/Header/arrow-right.svg';
+import { ReactComponent as ArrowDown } from '../../img/Header/arrow-down.svg';
 
 import GainMuscle from '../../Emoji/GainMuscle.svg';
 
@@ -39,20 +36,12 @@ const ControlPanelGoals = () => {
         <Description>
           Lose fat
           <IconButton>
-            {/* <ImgArrowDown
-              src="/src/components/ControlPanelGoals/Img/arrow-down-min.svg"
-              alt="Arrow bown"
-              />
-              <ImgArrowRight
-              src="/src/components/ControlPanelGoals/Img/arrow-right-min.svg"
-              alt="Arrow right"
-            /> */}
-
             <StyledArrowDown onClick={handleIconButtonClick}>
-              <use href="/src/Sprites/icons/symbol-defs.svg#icon-arrow-down"></use>
+              <ArrowDown />
             </StyledArrowDown>
+
             <StyledArrowRight onClick={handleIconButtonClick}>
-              <use href={`${sprite}#icon-arrow-right-2`}></use>
+              <ArrowRigth />
             </StyledArrowRight>
           </IconButton>
         </Description>
