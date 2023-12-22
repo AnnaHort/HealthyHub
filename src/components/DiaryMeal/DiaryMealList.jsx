@@ -1,7 +1,9 @@
+import DiaryMealItem from "./DiaryMealItem";
+
 const DiaryMealList = () => {
     return (
       <div>
-        <p>DiaryMealList</p>
+        <DiaryMealItem/>
       </div>
     );
 };
