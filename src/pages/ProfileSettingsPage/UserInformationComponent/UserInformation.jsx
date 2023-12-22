@@ -25,14 +25,12 @@ axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 const UserInformation = () => {
   const [userData, setUserData] = useState(null);
-
-  const [name, setName] = useState(userData.name);
-  const [photo, setPhoto] = useState(userData.avatarURL);
-  const [age, setAge] = useState(userData.age);
-  const [gender, setGender] = useState(userData.gender);
-  const [height, setHeight] = useState(userData.height);
-  const [weight, setWeight] = useState(userData.weight);
-  // const [activity, setActivity] = useState(userData.userActivity);
+  // const [name, setName] = useState('');
+  const [age, setAge] = useState(1);
+  const [gender, setGender] = useState();
+  const [height, setHeight] = useState(1);
+  const [weight, setWeight] = useState(1);
+  const [userActivity,setUserActivity] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,6 +38,9 @@ const UserInformation = () => {
         const response = await axios.get('api/user/current');
         setUserData(response.data);
         console.log(response.data);
+
+        setGender(response.data.gender);
+        setUserActivity(response.data.userActivity);
       } catch (error) {
         console.error('Data error', error.message);
       }
@@ -47,26 +48,23 @@ const UserInformation = () => {
     fetchData();
   }, []);
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newUserData = {
-      name,
-      avatarURL: photo,
+      // name,
       age,
       gender,
       height,
       weight,
-      // userActivity: activity,
+      userActivity
     };
-
-      try {
-        const response = await axios.put('/api/user/update', newUserData);
-        console.log(response.data);
-      } catch (error) {
-        console.error('Data error', error.message);
-      }
-
+    try {
+      const response = await axios.put('/api/user/update', newUserData);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Data error', error.message);
+    }
   };
 
   if (!userData) {
@@ -80,7 +78,7 @@ const UserInformation = () => {
           type="text"
           id="name"
           placeholder={`${userData.name}`}
-          onChange={(e) => setName(e.target.value)}
+          // onChange={(e) => setName(e.target.value)}
         />
       </UserInformationContainer>
 
@@ -93,7 +91,6 @@ const UserInformation = () => {
             <img
               style={{ width: '36px', height: '36px' }}
               src={`${userData.avatarURL}`}
-              onChange={(e) => setPhoto(e.target.value)}
               alt="Avatar"
             />
           </ImgContainer>
@@ -125,7 +122,6 @@ const UserInformation = () => {
           min="1"
           max="100"
           onChange={(e) => setAge(e.target.value)}
-
         />
       </UserInformationContainer>
 
@@ -138,7 +134,7 @@ const UserInformation = () => {
               id="male"
               name="gender"
               value="male"
-              checked={userData.gender === 'Male'}
+              checked={gender === 'Male'}
               onChange={() => setGender('Male')}
             />
             <UserInformationLabelRadio htmlFor="male">
@@ -152,7 +148,7 @@ const UserInformation = () => {
               id="female"
               name="gender"
               value="female"
-              checked={userData.gender === 'Female'}
+              checked={gender === 'Female'}
               onChange={() => setGender('Female')}
             />
             <UserInformationLabelRadio htmlFor="female">
@@ -197,8 +193,8 @@ const UserInformation = () => {
               id="low 1.2-1.3"
               value="low 1.2-1.3"
               name="activity"
-              // checked={userData.userActivity === 1.25}
-              // onChange={formik.handleChange}
+              checked={userActivity === "1.25"}
+              onChange={() => setUserActivity("1.25")}            
             />
             <UserInformationLabelRadio htmlFor="low 1.2-1.3">
               1.2-1.3 - if you do not have physical activity and sedentary work
@@ -211,6 +207,8 @@ const UserInformation = () => {
               id="light 1.4-1.5"
               value="light 1.4-1.5"
               name="activity"
+              checked={userActivity === "1.45"}
+              onChange={() => setUserActivity("1.45")}
             />
             <UserInformationLabelRadio htmlFor="light 1.4-1.5">
               1.4-1.5 - if you do short runs or light gymnastics 1-3 times a
@@ -224,6 +222,8 @@ const UserInformation = () => {
               id="average 1.6-1.7"
               value="average 1.6-1.7"
               name="activity"
+              checked={userActivity === "1.65"}
+              onChange={() => setUserActivity("1.65")}
             />
             <UserInformationLabelRadio htmlFor="average 1.6-1.7">
               1.6-1.7 - if you play sports with average loads 3-5 times a week
@@ -236,6 +236,8 @@ const UserInformation = () => {
               id="high 1.8-1.9"
               value="high 1.8-1.9"
               name="activity"
+              checked={userActivity === "1.85"}
+              onChange={() => setUserActivity("1.85")}
             />
             <UserInformationLabelRadio htmlFor="high 1.8-1.9">
               1.8-1.9 - if you train fully 6-7 times a week
@@ -248,6 +250,8 @@ const UserInformation = () => {
               id="hard 2.0"
               value="hard 2.0"
               name="activity"
+              checked={userActivity === "2"}
+              onChange={() => setUserActivity("2")}
             />
             <UserInformationLabelRadio htmlFor="hard 2.0">
               2.0 - if your work is related to physical labor, you train 2 times
