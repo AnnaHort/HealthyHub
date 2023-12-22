@@ -36,13 +36,18 @@ export const CloseButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0px;
 
   @media (min-width: 834px) {
     display: none;
   }
+`;
+
+export const StyledIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-grey);
 `;

@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 24px 10px 40px 10px;
+  background-color: var(--color-primary-black);
+  height: 100vh;
 
   @media (min-width: 834px) {
-    max-width: 392px;
-    mah-height: 352px;
-    flex-shrink: 0;
+    width: 392px;
+    height: 352px;
+    /* flex-shrink: 0; */
     padding: 20px 32px 40px 24px;
     border-radius: 12px;
     background: var(--Color-Primary-Black-2, #0f0f0f);
@@ -16,7 +18,7 @@ export const Container = styled.div`
 
 export const Div = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
 
 export const Title = styled.h3`
@@ -32,7 +34,6 @@ export const Title = styled.h3`
   @media (min-width: 834px) {
     font-size: 30px;
     line-height: 36px;
-    margin: 0 auto;
   }
 
   @media (min-width: 1440px) {
@@ -336,6 +337,10 @@ export const Img = styled.img`
 
 export const CloseButton = styled.button`
   display: none;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
 
   @media (min-width: 834px) {
     display: flex;
@@ -351,5 +356,4 @@ export const StyledIcon = styled.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
-  margin-right: 8px;
 `;

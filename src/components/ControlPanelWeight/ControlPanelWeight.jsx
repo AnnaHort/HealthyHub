@@ -3,17 +3,16 @@ import {
   Container,
   Description,
   IconButton,
-  // Img,
   ImgBox,
   ModalContainer,
   SelectPanel,
   StyledIcon,
   Title,
 } from './ControlPanelWeight.styled';
-import CurrentWeightModal from '../СurrentWeightModal/СurrentWeightModal';
+import CurrentWeightModal from '../CurrentWeightModal/CurrentWeightModal';
 
-import { ReactComponent as WaightImage } from '../../Emoji/WaightImage.svg';
-
+import MaintakeMen from '../../Emoji/WaightImage.svg';
+import IconsEditTwo from '../../Icons/IconEditTwo';
 
 const ControlPanelWeight = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -28,20 +27,15 @@ const ControlPanelWeight = () => {
   return (
     <Container>
       <ImgBox>
-        <WaightImage />
+        <img src={MaintakeMen} alt="MaintakeMen" />
       </ImgBox>
       <SelectPanel>
         <Title>Weight</Title>
         <Description>
           48 <span>kg</span>
           <IconButton onClick={handleIconButtonClick}>
-            {/* <img
-              src="/src/components/ControlPanelWeight/img/edit-2-min.svg"
-              alt="Edit"
-            /> */}
-
             <StyledIcon>
-              <use href="/src/Sprites/icons/symbol-defs.svg#icon-edit-2"></use>
+              <IconsEditTwo />
             </StyledIcon>
           </IconButton>
         </Description>
