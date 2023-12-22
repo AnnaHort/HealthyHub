@@ -7,6 +7,7 @@ import SignInPages from './pages/SignInPages/SignInPages';
 
 import ForgotPasswordPage from './components/ForgotPasswordPage/ForgotPasswordPage';
 import MainPage from './pages/MainPage/MainPage';
+import DiaryPage from './pages/DiaryPage/DiaryPage';
 
 import { fetchCurentUser } from './redux/auth/authOperations';
 import PrivateRoute from '/src/components/PrivateRoute';
@@ -29,7 +30,6 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-
             <Route
               path="/signin"
               element={
@@ -50,7 +50,6 @@ function App() {
               }
             />
 
-
             <Route path="/welcome" element={<WelcomePage />} />
 
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
@@ -61,6 +60,7 @@ function App() {
                 <PrivateRoute redirectTo="/welcome" component={<MainPage />} />
               }
             />
+            <Route path="/main/diary" element={<DiaryPage />} />
           </Route>
 
           <Route path="*" element={<ErrorPage />} />

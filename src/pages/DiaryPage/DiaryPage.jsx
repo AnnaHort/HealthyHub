@@ -1,7 +1,7 @@
-import DiaryMealList from '../../../components/DiaryMeal/DiaryMealList';
+import DiaryMealList from '../../components/DiaryMeal/DiaryMealList';
 import { NavLink } from 'react-router-dom';
 import { DiaryContainer, DiaryTitle, DiaryHeader } from './DiaryPage.styled';
-import { ReactComponent as ArrowBack } from '../../../img/DiaryPage/arrow-back.svg';
+import { ReactComponent as ArrowBack } from '../../img/DiaryPage/arrow-back.svg';
 
 
 const DiaryPage = () => {
