@@ -1,4 +1,3 @@
-import * as Yup from 'yup';
 import axios from 'axios';
 import {
   UserInformationActivityContainer,
@@ -19,48 +18,69 @@ import {
   UserInformationTitle,
 } from './UserInformation.styled';
 import { ImgContainer } from '../../../components/UserInfoNav/UserInfoNav.styled';
-import { useFormik } from 'formik';
+
+import { useEffect, useState } from 'react';
 
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
-const validationSchema = Yup.object().shape({
-  name: Yup.string(),
-  age: Yup.number().positive().integer(),
-  height: Yup.number().positive(),
-  weight: Yup.number().positive(),
-});
-
 const UserInformation = () => {
-  // Початкові дані мають прийти з бази!!!!
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      age: '',
-      height: '',
-      weight: '',
-    },
-    validationSchema: validationSchema,
-    onSubmit: async (userData) => {
+  const [userData, setUserData] = useState(null);
+
+  const [name, setName] = useState(userData.name);
+  const [photo, setPhoto] = useState(userData.avatarURL);
+  const [age, setAge] = useState(userData.age);
+  const [gender, setGender] = useState(userData.gender);
+  const [height, setHeight] = useState(userData.height);
+  const [weight, setWeight] = useState(userData.weight);
+  // const [activity, setActivity] = useState(userData.userActivity);
+
+  useEffect(() => {
+    const fetchData = async () => {
       try {
-        const response = await axios.put('/api/user/update', userData);
+        const response = await axios.get('api/user/current');
+        setUserData(response.data);
         console.log(response.data);
       } catch (error) {
-        console.error('Update setting error', error.message);
+        console.error('Data error', error.message);
       }
-    },
-  });
+    };
+    fetchData();
+  }, []);
 
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    const newUserData = {
+      name,
+      avatarURL: photo,
+      age,
+      gender,
+      height,
+      weight,
+      // userActivity: activity,
+    };
+
+      try {
+        const response = await axios.put('/api/user/update', newUserData);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Data error', error.message);
+      }
+
+  };
+
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
   return (
-    <UserInformationForm onSubmit={formik.handleSubmit}>
+    <UserInformationForm onSubmit={handleSubmit}>
       <UserInformationContainer>
         <UserInformationLabel htmlFor="name">Your name</UserInformationLabel>
         <UserInformationInput
           type="text"
           id="name"
-          placeholder="тут має бути імя користувача"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.name}
+          placeholder={`${userData.name}`}
+          onChange={(e) => setName(e.target.value)}
         />
       </UserInformationContainer>
 
@@ -72,7 +92,8 @@ const UserInformation = () => {
           >
             <img
               style={{ width: '36px', height: '36px' }}
-              src="/src/components/UserInfoNav/Avatar.svg"
+              src={`${userData.avatarURL}`}
+              onChange={(e) => setPhoto(e.target.value)}
               alt="Avatar"
             />
           </ImgContainer>
@@ -97,15 +118,14 @@ const UserInformation = () => {
       <UserInformationContainer>
         <UserInformationLabel htmlFor="age">Your age</UserInformationLabel>
         <UserInformationInput
-          placeholder="вік користувача"
+          placeholder={`${userData.age}`}
           type="number"
           id="age"
           name="quantity"
           min="1"
           max="100"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.age}
+          onChange={(e) => setAge(e.target.value)}
+
         />
       </UserInformationContainer>
 
@@ -118,6 +138,8 @@ const UserInformation = () => {
               id="male"
               name="gender"
               value="male"
+              checked={userData.gender === 'Male'}
+              onChange={() => setGender('Male')}
             />
             <UserInformationLabelRadio htmlFor="male">
               Male
@@ -130,6 +152,8 @@ const UserInformation = () => {
               id="female"
               name="gender"
               value="female"
+              checked={userData.gender === 'Female'}
+              onChange={() => setGender('Female')}
             />
             <UserInformationLabelRadio htmlFor="female">
               Female
@@ -141,30 +165,26 @@ const UserInformation = () => {
       <UserInformationContainer>
         <UserInformationLabel htmlFor="height">Height</UserInformationLabel>
         <UserInformationInput
-          placeholder="ріст користувача"
+          placeholder={`${userData.height}`}
           type="number"
           id="height"
           name="quantity"
           min="1"
           max="300"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.height}
+          onChange={(e) => setHeight(e.target.value)}
         />
       </UserInformationContainer>
 
       <UserInformationContainer>
         <UserInformationLabel htmlFor="weight">Weight</UserInformationLabel>
         <UserInformationInput
-          placeholder="вага користувача"
+          placeholder={`${userData.weight}`}
           type="number"
           id="weight"
           name="quantity"
           min="1"
           max="300"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.weight}
+          onChange={(e) => setWeight(e.target.value)}
         />
       </UserInformationContainer>
 
@@ -174,60 +194,63 @@ const UserInformation = () => {
           <UserInformationRadioContainer style={{ position: 'relative' }}>
             <UserInformationRadioInput
               type="radio"
-              id="low 1.2"
-              value="low 1.2"
+              id="low 1.2-1.3"
+              value="low 1.2-1.3"
               name="activity"
+              // checked={userData.userActivity === 1.25}
+              // onChange={formik.handleChange}
             />
-            <UserInformationLabelRadio htmlFor="low 1.2">
-              1.2 - if you do not have physical activity and sedentary work
+            <UserInformationLabelRadio htmlFor="low 1.2-1.3">
+              1.2-1.3 - if you do not have physical activity and sedentary work
             </UserInformationLabelRadio>
           </UserInformationRadioContainer>
 
           <UserInformationRadioContainer style={{ position: 'relative' }}>
             <UserInformationRadioInput
               type="radio"
-              id="light 1.375"
-              value="light 1.375"
+              id="light 1.4-1.5"
+              value="light 1.4-1.5"
               name="activity"
             />
-            <UserInformationLabelRadio htmlFor="light 1.375">
-              1.375 - if you do short runs or light gymnastics 1-3 times a week
+            <UserInformationLabelRadio htmlFor="light 1.4-1.5">
+              1.4-1.5 - if you do short runs or light gymnastics 1-3 times a
+              week
             </UserInformationLabelRadio>
           </UserInformationRadioContainer>
 
           <UserInformationRadioContainer style={{ position: 'relative' }}>
             <UserInformationRadioInput
               type="radio"
-              id="average 1.55"
-              value="average 1.55"
+              id="average 1.6-1.7"
+              value="average 1.6-1.7"
               name="activity"
             />
-            <UserInformationLabelRadio htmlFor="average 1.55">
-              1.55 - if you play sports with average loads 3-5 times a week
+            <UserInformationLabelRadio htmlFor="average 1.6-1.7">
+              1.6-1.7 - if you play sports with average loads 3-5 times a week
             </UserInformationLabelRadio>
           </UserInformationRadioContainer>
 
           <UserInformationRadioContainer style={{ position: 'relative' }}>
             <UserInformationRadioInput
               type="radio"
-              id="high 1.725"
-              value="high 1.725"
+              id="high 1.8-1.9"
+              value="high 1.8-1.9"
               name="activity"
             />
-            <UserInformationLabelRadio htmlFor="high 1.725">
-              1.725 - if you train fully 6-7 times a week
+            <UserInformationLabelRadio htmlFor="high 1.8-1.9">
+              1.8-1.9 - if you train fully 6-7 times a week
             </UserInformationLabelRadio>
           </UserInformationRadioContainer>
 
           <UserInformationRadioContainer style={{ position: 'relative' }}>
             <UserInformationRadioInput
               type="radio"
-              id="hard 1.9"
-              value="hard 1.9"
+              id="hard 2.0"
+              value="hard 2.0"
               name="activity"
             />
-            <UserInformationLabelRadio htmlFor="hard 1.9">
-              1.9 - if your work is related to physical labor, you train 2 times
+            <UserInformationLabelRadio htmlFor="hard 2.0">
+              2.0 - if your work is related to physical labor, you train 2 times
               a day and include strength exercises in your training program
             </UserInformationLabelRadio>
           </UserInformationRadioContainer>
@@ -235,7 +258,9 @@ const UserInformation = () => {
       </UserInformationContainer>
 
       <UserInformationBtnContainer>
-        <UserInformationSaveBtn type="submit">Save</UserInformationSaveBtn>
+        <UserInformationSaveBtn type="submit" onSubmit={handleSubmit}>
+          Save
+        </UserInformationSaveBtn>
         <UserInformationLinkCancel to={'/main'}>
           Cancel
         </UserInformationLinkCancel>

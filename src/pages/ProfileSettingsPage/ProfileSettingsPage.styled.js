@@ -50,18 +50,18 @@ export const ProfileSettingsPageImg = styled.img`
   }
 `;
 
-export const Img = styled.div`
-  margin: 0 auto;
-  width: 300px;
-  height: 296px;
+// export const Img = styled.div`
+//   margin: 0 auto;
+//   width: 300px;
+//   height: 296px;
 
-  @media (min-width: 834px) {
-    width: 380px;
-    height: 374px;
-  }
+//   @media (min-width: 834px) {
+//     width: 380px;
+//     height: 374px;
+//   }
 
-  @media (min-width: 834px) {
-    width: 536px;
-    height: 528px;
-  }
-`;
+//   @media (min-width: 834px) {
+//     width: 536px;
+//     height: 528px;
+//   }
+// `;
