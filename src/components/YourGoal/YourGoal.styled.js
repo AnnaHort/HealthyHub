@@ -1,7 +1,8 @@
+import { Field, Form } from 'formik';
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  background-color: var(--color-primary-black-2);
+export const GoalContainer = styled.div`
+  background-color: var(--color-primary-black);
   min-width: 320px;
   height: 744px;
   padding-left: 10px;
@@ -10,8 +11,8 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 768px) {
-    min-width: 768px;
+  @media (min-width: 834px) {
+    min-width: 834px;
     height: 1194px;
   }
 
@@ -23,7 +24,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Img = styled.img`
+export const GoalImg = styled.img`
   display: flex;
   width: 300px;
   height: 290px;
@@ -33,7 +34,7 @@ export const Img = styled.img`
   margin-top: 24px;
   margin-bottom: 24px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     display: flex;
     width: 380px;
     height: 368px;
@@ -55,11 +56,11 @@ export const Img = styled.img`
   }
 `;
 
-export const Form = styled.form`
+export const GoalForm = styled(Form)`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 404px;
     align-items: center;
   }
@@ -70,7 +71,7 @@ export const Form = styled.form`
   }
 `;
 
-export const Title = styled.h2`
+export const GoalTitle = styled.h2`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 24px;
@@ -80,7 +81,7 @@ export const Title = styled.h2`
   padding-bottom: 16px;
   margin: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 30px;
     line-height: 36px;
     margin: 0 auto;
@@ -91,7 +92,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const Description = styled.p`
+export const GoalDescription = styled.p`
   color: var(--color-primary-grey);
   padding-bottom: 24px;
   margin: 0;
@@ -99,12 +100,12 @@ export const Description = styled.p`
   font-weight: 400;
   line-height: 1.33;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     flex-direction: row;
     text-align: center;
-    font-size: 20px; //22 має бути
+    font-size: 20px;
     font-weight: 400;
-    line-height: 1.45; /* 145.455% */
+    line-height: 1.45;
   }
 
   @media (min-width: 1024px) {
@@ -114,14 +115,14 @@ export const Description = styled.p`
   }
 `;
 
-export const List = styled.ul`
+export const GoalList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
   margin-bottom: 24px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 360px;
     flex-direction: row;
     justify-content: center;
@@ -134,7 +135,7 @@ export const List = styled.ul`
   }
 `;
 
-export const BtnNext = styled.button`
+export const GoalBtnNext = styled.button`
   width: 100%;
   color: var(--color-primary-black-2);
   text-align: center;
@@ -153,7 +154,7 @@ export const BtnNext = styled.button`
   border: none;
   margin-bottom: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 360px;
   }
 
@@ -162,7 +163,7 @@ export const BtnNext = styled.button`
   }
 `;
 
-export const BtnBack = styled.button`
+export const GoalBtnBack = styled.button`
   width: 100%;
   color: var(--color-primary-grey);
   text-align: center;
@@ -173,35 +174,35 @@ export const BtnBack = styled.button`
   line-height: 20px;
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  margin: 0; 
+  margin: 0;
   display: block;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 192px;
     margin: 0 auto;
   }
 
   @media (min-width: 1024px) {
     width: 192px;
-    margin: 0; 
+    margin: 0;
     display: flex;
     justify-content: center;
   }
 `;
 
-export const RadioItem = styled.li`
+export const GoalRadioItem = styled.li`
   display: flex;
   gap: 8px;
 `;
 
-export const CustomRadio = styled.input`
+export const GoalCustomRadio = styled(Field)`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   opacity: 0;
 `;
 
-export const Label = styled.label`
+export const GoalLabel = styled.label`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -246,4 +247,9 @@ export const Label = styled.label`
   input[type='radio']:checked + &::after {
     opacity: 1;
   }
+`;
+
+export const GoalErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
 `;

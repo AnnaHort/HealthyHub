@@ -1,21 +1,28 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
-import { HeaderContainerStyled } from '../Header/Header.styled';
 import { Suspense } from 'react';
+import HeaderAuthorizedUser from '../HeaderAuthorizedUser/HeaderAuthorizedUser';
+import { useSelector } from 'react-redux';
+import selectIsLoggedIn from '../../redux/auth/authSelectors';
+
+import { Container, ContainerHeader } from './SharedLayout.styled';
 
 
 const SharedLayout = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
     <>
-      <header>
-        <HeaderContainerStyled>
-          <Header />
-        </HeaderContainerStyled>
-      </header>
+      <ContainerHeader>
+        {isLoggedIn ? <HeaderAuthorizedUser /> : <Header />}
+      </ContainerHeader>
 
-      <Suspense>
-        <Outlet />
-      </Suspense>
+
+      <Container>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
+      </Container>
     </>
   );
 };

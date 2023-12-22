@@ -1,6 +1,6 @@
 import SelectGender from '../../components/SelectGender/SelectGender';
 
-const SignUpPage = () => {
+const AuthNav = () => {
   return (
     <div>
       <SelectGender />
@@ -8,4 +8,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default AuthNav;

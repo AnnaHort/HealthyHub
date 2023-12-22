@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Field, Form } from 'formik';
 
 export const YourActivityContainerStyled = styled.div`
   background-color: var(--color-primary-black);
   padding: 24px 10px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     padding-top: 40px;
   }
   @media (min-width: 1024px) {
@@ -15,7 +16,7 @@ export const YourActivityImgStyled = styled.img`
   margin-bottom: 24px;
   margin-right: auto;
   margin-left: auto;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 380px;
     height: 384px;
     margin-bottom: 60px;
@@ -49,7 +50,7 @@ export const YourActivityTitleStyled = styled.h2`
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
@@ -63,7 +64,7 @@ export const YourActivityText = styled.p`
   font-weight: 400;
   line-height: 1.33;
   margin-bottom: 24px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
@@ -77,7 +78,7 @@ export const YourActivityText = styled.p`
   }
 `;
 
-export const YourActivityFormStyled = styled.form`
+export const YourActivityFormStyled = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,7 +106,7 @@ export const RadioButtonContainerStyled = styled.div`
   position: relative;
 `;
 
-export const RadioInputStyle = styled.input`
+export const RadioInputStyle = styled(Field)`
   opacity: 0;
 `;
 
@@ -169,7 +170,7 @@ export const YourActivitySignUpBtnStyled = styled.button`
   width: 100%;
   padding: 8px 10px;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     max-width: 360px;
     margin-bottom: 20px;
   }
@@ -190,4 +191,9 @@ export const YourActivityBackBtnStyled = styled.button`
   @media (min-width: 1024px) {
     max-width: 212px;
   }
+`;
+
+export const ActivityErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
 `;

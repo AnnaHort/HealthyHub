@@ -10,7 +10,7 @@ export const SignInPagesContainer = styled.div`
   padding-left: 10px;
   padding-right: 10px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 492px;
     padding-top: 40px;
     padding-bottom: 60px;
@@ -32,6 +32,47 @@ export const RegisterTitleContainer = styled.div`
   }
 `;
 
+export const SignInForm = styled.form`
+  @media (min-width: 834px) {
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 1440px) {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: start;
+  }
+`;
+
+export const InputSignIn = styled.input`
+  color: var(--color-primary-grey);
+  font-family: Poppins;
+  line-height: 1.429;
+  outline: none;
+  padding: 8px 10px;
+  width: 100%;
+  background: transparent;
+  position: relative;
+  border: 1px solid var(--color-primary-green-lite);
+  border-radius: 12px;
+  max-width: 380px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  :hover {
+    color: var(--color-primary-white);
+  }
+  @media (min-width: 1440px) {
+    display: block;
+    max-width: 212px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+`;
+
 export const ButtonSignIn = styled.button`
   border-radius: 12px;
   border: none;
@@ -46,7 +87,7 @@ export const ButtonSignIn = styled.button`
   font-weight: 500;
   line-height: 1.43;
   width: 100%;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     max-width: 380px;
     margin-bottom: 20px;
   }
@@ -58,7 +99,7 @@ export const ButtonSignIn = styled.button`
 `;
 
 export const ForgotElementContainer = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     height: 222px;
     margin-right: auto;
     margin-left: auto;
@@ -71,15 +112,13 @@ export const ForgotElementContainer = styled.div`
     margin-right: 0;
     margin-left: 0;
   }
- 
-`
+`;
 
 export const SignInBtnContainer = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     max-width: 380px;
-
   }
   @media (min-width: 1440px) {
     margin-right: 0;
@@ -94,7 +133,7 @@ export const SignInBtnContainer = styled.div`
 export const ForgotPasswordContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     justify-content: space-between;
     max-width: 380px;
     margin-right: auto;
@@ -102,7 +141,6 @@ export const ForgotPasswordContainer = styled.div`
     gap: 16px;
   }
   @media (min-width: 1440px) {
-
     margin-right: 0;
     margin-left: 0;
   }
@@ -114,9 +152,9 @@ export const ForgotPasswordLink = styled(Link)`
   line-height: 1.43;
   text-align: center;
   margin-bottom: 54px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     margin-bottom: 0;
-}
+  }
   @media (min-width: 1440px) {
     text-align: start;
     margin-bottom: 184px;
@@ -129,7 +167,7 @@ export const SignInQuestionContainer = styled.div`
   margin-right: auto;
   margin-left: auto;
   gap: 20px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     justify-content: start;
     gap: 16px;
     margin-right: 0;
@@ -144,9 +182,18 @@ export const HaveAnAccountText = styled.p`
   line-height: 1.43;
 `;
 
-// export const SignUpLink = styled(Link)`
-//   color: var(--color-primary-white);
-//   font-size: 14px;
-//   font-weight: 500;
-//   line-height: 1.43;
-// `;
+export const FormikEmailContainer = styled.div`
+  position: absolute;
+  top: 40px;
+  color: red;
+  @media (min-width: 834px) {
+  }
+`;
+
+export const FormikPasswordContainer = styled.div`
+   position: absolute;
+  top: 44px;
+  color: red;
+  @media (min-width: 834px) {
+  }
+`;

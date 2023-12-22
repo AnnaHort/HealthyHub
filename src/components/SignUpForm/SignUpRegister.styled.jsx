@@ -1,3 +1,4 @@
+import { Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -10,7 +11,7 @@ export const SignUpRegisterContainer = styled.div`
   padding-left: 10px;
   padding-right: 10px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 492px;
     padding-top: 40px;
     padding-bottom: 60px;
@@ -36,7 +37,7 @@ export const Image = styled.img`
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     width: 380px;
     height: 376px;
     margin-bottom: 60px;
@@ -57,7 +58,7 @@ export const RegisterTitle = styled.h2`
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 30px;
     line-height: 1.2;
     text-align: center;
@@ -74,14 +75,14 @@ export const RegisterText = styled.p`
   font-size: 18px;
   line-height: 1.33;
   margin-bottom: 24px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     font-size: 22px;
     line-height: 1.45;
   }
 `;
 
-export const RegisterForm = styled.form`
-  @media (min-width: 768px) {
+export const RegisterForm = styled(Form)`
+  @media (min-width: 834px) {
     margin-left: auto;
     margin-right: auto;
   }
@@ -93,39 +94,36 @@ export const RegisterForm = styled.form`
   }
 `;
 
-export const InputContainer = styled.div`
+export const Input = styled(Field)`
+  color: var(--color-primary-grey);
+  font-family: Poppins;
+  line-height: 1.429;
+  outline: none;
+  padding: 8px 10px;
+  width: 100%;
   background: transparent;
   position: relative;
   border: 1px solid var(--color-primary-green-lite);
   border-radius: 12px;
-  width: 100%;
   max-width: 380px;
   margin-bottom: 20px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 
-  @media (min-width: 1440px) {
-    max-width: 212px;
-    margin-left:0;
-  margin-right:0;
-  }
-`;
-
-export const Input = styled.input`
-  color: var(--color-primary-grey);
-  font-family: Poppins;
-  line-height: 1.429;
-  background: transparent;
-  border-color: transparent;
-  outline: none;
-  padding: 8px 10px;
-  width: 100%;
   :hover {
     color: var(--color-primary-white);
   }
   @media (min-width: 1440px) {
-    /* width: 50%; */
+    display: block;
+    max-width: 212px;
+    margin-left: 0;
+    margin-right: 0;
   }
+`;
+
+export const ErrorMessage = styled.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
 `;
 
 export const Button = styled.button`
@@ -142,7 +140,7 @@ export const Button = styled.button`
   font-weight: 500;
   line-height: 1.43;
   width: 100%;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     max-width: 380px;
     margin-bottom: 238px;
     margin-bottom: 206px;
@@ -150,17 +148,18 @@ export const Button = styled.button`
 
   @media (min-width: 1440px) {
     margin-bottom: 168px;
-    width: 50%;
+    max-width: 212px;
   }
 `;
 
 export const QuestionBlock = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     display: flex;
     justify-content: center;
   }
   @media (min-width: 1440px) {
     align-items: flex-start;
+    justify-content: start;
   }
 `;
 
@@ -172,7 +171,7 @@ export const Question = styled.p`
   font-weight: 400;
   line-height: 1.43;
   margin-bottom: 16px;
-  @media (min-width: 768px) {
+  @media (min-width: 834px) {
     margin-right: 16px;
     margin-bottom: 0px;
   }
