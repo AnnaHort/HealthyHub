@@ -13,6 +13,7 @@ import PrivateRoute from '/src/components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
 import DashboardPage from './pages/DashboardPage/dashboardPage';
 import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsPage';
+import DiaryPage from './pages/DiaryPage/DiaryPage';
 <pages></pages>;
 
 const SharedLayout = lazy(() =>
@@ -62,7 +63,7 @@ function App() {
                 <PrivateRoute redirectTo="/welcome" component={<MainPage />} />
               }
             />
-
+            <Route path="/main/diary" element={<DiaryPage />} />
             <Route path="/settings" element={<ProfileSettingsPage />} />
           </Route>
 
