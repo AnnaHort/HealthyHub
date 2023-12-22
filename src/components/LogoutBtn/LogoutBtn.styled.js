@@ -11,6 +11,7 @@ export const ButtonLogout = styled.button`
   line-height: 20px; /* 142.857% */
   display: flex;
   align-items: center;
+  padding: 0;
 `;
 
 export const Div = styled.div``;

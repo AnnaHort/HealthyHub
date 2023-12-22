@@ -54,11 +54,16 @@ export const ModalContainer = styled.div`
   position: absolute;
   z-index: 1;
   top: 0;
-  padding-top: 80px; //реголює висоту модалки
-  padding-right: 27px;
+  padding-top: 60px; //реголює висоту модалки
+  padding-right: 10px;
   right: 0;
 
-  @media (min-width: 1280px) {
+  @media (min-width: 834px) {
+    padding-right: 27px;
+    padding-top: 80px;
+  }
+
+  @media (min-width: 1440px) {
     padding-right: 34px;
   }
 `;

@@ -12,6 +12,8 @@ import DiaryPage from './pages/DiaryPage/DiaryPage';
 import { fetchCurentUser } from './redux/auth/authOperations';
 import PrivateRoute from '/src/components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
+import DashboardPage from './pages/DashboardPage/dashboardPage';
+import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsPage';
 
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
@@ -61,7 +63,10 @@ function App() {
               }
             />
             <Route path="/main/diary" element={<DiaryPage />} />
+            <Route path="/settings" element={<ProfileSettingsPage />} />
           </Route>
+
+          <Route path="/dashboard" element={<DashboardPage />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
