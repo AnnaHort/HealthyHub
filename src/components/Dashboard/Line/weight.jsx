@@ -15,8 +15,10 @@ const StyledTableContainer = styled(TableContainer)({
   '@media (min-width: 834px)': {
     minWidth: 780,
     marginLeft: 'unset',
-    // overflowX: 'unset',
   },
+    '@media (min-width: 1440px)': {
+    minWidth: 1372,
+  }
 });
 
 const StyledTable = styled(Table)({
@@ -62,6 +64,17 @@ const StyledTable = styled(Table)({
         paddingRight: '0',
       },
     },
+
+    '@media (min-width: 1440px)': {
+      paddingLeft: '21px',
+    },
+    '&:not(:first-of-type)': {
+      paddingLeft: '23px',
+      paddingRight: '41px',
+    },
+    '&:not(:last-of-type)': {
+      paddingRight: '0',
+    },
   },
 
   '& tbody tr:first-of-type td': {
@@ -84,6 +97,19 @@ const StyledTable = styled(Table)({
         paddingRight: '0',
       },
     },
+
+    '@media (min-width: 1440px)': {
+      paddingTop: '16px',
+      paddingBottom: '36px',
+      paddingLeft: '44px',
+      paddingRight: '24px',
+    },
+    '&:not(:first-of-type)': {
+      paddingLeft: '29px', // отступ между цифрами
+    },
+    '&:not(:last-of-type)': {
+      paddingRight: '0',
+    },
   },
 });
 
@@ -93,6 +119,10 @@ const WeightTitleContainer = styled('div')({
   marginBottom: '9px',
   justifyContent: 'space-between',
   alignItems: 'center',
+
+  '@media (min-width: 1440px)': {
+    justifyContent: 'start',
+  },
 });
 
 const WeightTitleStyled = styled('h2')({
@@ -102,6 +132,12 @@ const WeightTitleStyled = styled('h2')({
   fontWeight: '400',
   lineHeight: '26px',
   color: 'var(--color-primary-white)',
+
+  '@media (min-width: 1440px)': {
+    fontSize: '22px',
+    marginRight: '40px',
+    lineHeight: '32px',
+  },
 });
 
 const AverageValueStyled = styled('p')({
@@ -112,6 +148,10 @@ const AverageValueStyled = styled('p')({
   lineHeight: '20px',
   color: 'var(--color-primary-white)',
   marginRight: '10px',
+
+  '@media (min-width: 1440px)': {
+   
+  },
 });
 
 const WeightCharts = () => {
