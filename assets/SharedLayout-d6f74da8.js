@@ -1,4 +1,4 @@
-import{s as e,N as p,j as t,r as n,L as u,u as y,a as w,O as k}from"./index-75a63d9a.js";const j=e(p)`
+import{s as e,N as p,j as t,r as n,L as u,u as y,a as w,O as k}from"./index-6b7d8c69.js";const j=e(p)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
