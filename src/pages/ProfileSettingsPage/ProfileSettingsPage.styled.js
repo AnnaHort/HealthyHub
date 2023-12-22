@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const ProfileSettingsPageContainer = styled.div`
-  padding: 16px 10px 40px 10px;
+  /* padding: 16px 10px 40px 10px; */
+  padding-top: 16px;
+  padding-bottom: 40px;
   max-width: 320px;
   margin-right: auto;
   margin-left: auto;
@@ -21,6 +23,7 @@ export const ProfileSettingsPageTitle = styled.h2`
   font-size: 24px;
   font-weight: 500;
   line-height: 1.26;
+  margin-bottom: 16px;
   @media (min-width: 834px) {
     font-size: 30px;
     line-height: 1.2;
@@ -46,7 +49,7 @@ export const ProfileSettingsPageImg = styled.img`
     margin-right: 0;
     margin-left: 0;
     width: 536px;
-    margin-left: 130px;
+
   }
 `;
 
