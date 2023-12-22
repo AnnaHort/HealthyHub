@@ -34,9 +34,11 @@ const SignUpForm = () => {
   const [dataActivity, setDataActivity] = useState('');
   console.log(dataActivity, 'dataActivity');
  
-  const handleRegisterSubmit = async () => {
+  const handleRegisterSubmit = async (data) => {
     try {
-      const valuesToSend = {
+      setDataActivity(data.activity)
+      console.log(dataActivity, 'in function dataActivity');
+        const valuesToSend = {
         name: personalData.name,
         password: personalData.password,
         email: personalData.email,
@@ -79,10 +81,7 @@ const SelectData = (data) => {
     password: data.password || prevData.password,
   }));
 
-  setDataGoal((prevData) => ({
-    ...prevData,
-    ...data.goal,
-  }));
+  setDataGoal(data.goal || dataGoal);
 
   setDataAgeGender((prevData) => ({
     ...prevData,
@@ -95,12 +94,8 @@ const SelectData = (data) => {
     height: data.height || prevData.height,
     weight: data.weight || prevData.weight,
   }));
-
-  setDataActivity((prevData) => ({
-    ...prevData,
-    ...data.userActivity,
-  }));
 };
+
 
 
   const handleNext = () => {
