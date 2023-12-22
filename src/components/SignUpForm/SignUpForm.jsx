@@ -21,8 +21,7 @@ const SignUpForm = () => {
   });
   const [, setError] = useState('');
   const [dataGoal, setDataGoal] = useState('');
-  console.log(dataGoal, 'dataGoal');
-  
+
   const [dataAgeGender, setDataAgeGender] = useState({
     age: '',
     gender: '',
@@ -32,13 +31,12 @@ const SignUpForm = () => {
     weight: '',
   });
   const [dataActivity, setDataActivity] = useState('');
-  console.log(dataActivity, 'dataActivity');
- 
+
   const handleRegisterSubmit = async (data) => {
     try {
-      setDataActivity(data.activity)
+      setDataActivity(data.activity);
       console.log(dataActivity, 'in function dataActivity');
-        const valuesToSend = {
+      const valuesToSend = {
         name: personalData.name,
         password: personalData.password,
         email: personalData.email,
@@ -49,7 +47,7 @@ const SignUpForm = () => {
         weight: dataBodyParams.weight,
         userActivity: dataActivity,
       };
-      console.log('Local state', valuesToSend);
+
       const response = await dispatch(register(valuesToSend));
       console.log('Response from Redux:', response);
 
@@ -73,30 +71,28 @@ const SignUpForm = () => {
     }
   };
 
-const SelectData = (data) => {
-  setPersonalData((prevData) => ({
-    ...prevData,
-    name: data.name || prevData.name,
-    email: data.email || prevData.email,
-    password: data.password || prevData.password,
-  }));
+  const SelectData = (data) => {
+    setPersonalData((prevData) => ({
+      ...prevData,
+      name: data.name || prevData.name,
+      email: data.email || prevData.email,
+      password: data.password || prevData.password,
+    }));
 
-  setDataGoal(data.goal || dataGoal);
+    setDataGoal(data.goal || dataGoal);
 
-  setDataAgeGender((prevData) => ({
-    ...prevData,
-    age: data.age || prevData.age,
-    gender: data.gender || prevData.gender,
-  }));
+    setDataAgeGender((prevData) => ({
+      ...prevData,
+      age: data.age || prevData.age,
+      gender: data.gender || prevData.gender,
+    }));
 
-  setDataBodyParams((prevData) => ({
-    ...prevData,
-    height: data.height || prevData.height,
-    weight: data.weight || prevData.weight,
-  }));
-};
-
-
+    setDataBodyParams((prevData) => ({
+      ...prevData,
+      height: data.height || prevData.height,
+      weight: data.weight || prevData.weight,
+    }));
+  };
 
   const handleNext = () => {
     setCurrentStep(currentStep + 1);
@@ -133,10 +129,7 @@ const SelectData = (data) => {
         />
       )}
       {currentStep === 5 && (
-        <YourActivity
-          onBack={handlePrev}
-          onSubmit={handleRegisterSubmit}
-        />
+        <YourActivity onBack={handlePrev} onSubmit={handleRegisterSubmit} />
       )}
       <ToastContainer />
     </div>
