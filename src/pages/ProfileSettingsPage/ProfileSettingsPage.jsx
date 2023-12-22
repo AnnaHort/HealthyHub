@@ -3,20 +3,21 @@ import {
   // Img,
   ProfileSettingsPageContainer,
   ProfileSettingsPageImg,
+  // ProfileSettingsPageImg,
   ProfileSettingsPageTitle,
 } from './ProfileSettingsPage.styled';
 import UserInformation from './UserInformationComponent/UserInformation';
-// import { ReactComponent as Images } from '../../img/YourActivityImg/Illustration.svg';
+import { ReactComponent as Images } from '../../img/YourActivityImg/Illustration.svg';
 
 const ProfileSettingsPage = () => {
   return (
     <ProfileSettingsPageContainer>
       <div>
         <ProfileSettingsPageTitle>Profile setting</ProfileSettingsPageTitle>
-        <ProfileSettingsPageImg src="/src/img/ProfileSettingPagesImg/Illustration.png" />
-        {/* <Img>
+        {/* <ProfileSettingsPageImg src="/src/img/ProfileSettingPagesImg/Illustration.png" /> */}
+        <ProfileSettingsPageImg>
           <Images />
-        </Img> */}
+        </ProfileSettingsPageImg>
       </div>
 
       <UserInformation />
