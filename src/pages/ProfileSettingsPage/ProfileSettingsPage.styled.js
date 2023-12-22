@@ -34,7 +34,7 @@ export const ProfileSettingsPageTitle = styled.h2`
   }
 `;
 
-export const ProfileSettingsPageImg = styled.img`
+export const ProfileSettingsPageImg = styled.div`
   width: 300px;
   max-height: 296px;
   margin-right: auto;
