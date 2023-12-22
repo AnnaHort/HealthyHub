@@ -30,7 +30,7 @@ const UserInfoNav = () => {
       </ImgContainer>
 
       <IconButton onClick={handleIconButtonClick}>
-        <StyledIcon onClick={handleCloseButtonClick}>
+        <StyledIcon>
           <ArrowDown />
         </StyledIcon>
       </IconButton>

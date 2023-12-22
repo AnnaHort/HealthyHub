@@ -1,11 +1,12 @@
 import { ButtonLogout, Div, StyledIcon } from './LogoutBtn.styled';
+import { ReactComponent as Logout } from '../../img/Header/logout.svg';
 
 const LogoutBtn = () => {
   return (
     <Div>
       <ButtonLogout>
         <StyledIcon>
-          <use href="/src/Sprites/icons/symbol-defs.svg#icon-logout"></use>
+          <Logout />
         </StyledIcon>
         Log out
       </ButtonLogout>

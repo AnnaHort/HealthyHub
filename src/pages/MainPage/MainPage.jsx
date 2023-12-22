@@ -7,6 +7,7 @@ import { ReactComponent as ArrowRigth } from '../../img/MainPages/arrow-right.sv
 
 import { DailyGoal } from './DailyGoal';
 import { Water } from './Water/Water';
+import DiaryBlock from './DiaryBlock/DiaryBlock';
 
 import {
   MainContainer,
@@ -17,16 +18,17 @@ import {
   MainElementsWrapper,
   DARFWrap,
 } from './MainPage.styled';
+import RecommendedFoodMain from '../../components/RecommendedFood.jsx/RecommendedFoodMain';
 
 const MainPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  
+
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const toggleIsOpenModal = () => {
-    setIsOpenModal(isOpenModal => !isOpenModal);
+    setIsOpenModal((isOpenModal) => !isOpenModal);
   };
 
   let dailyCalories = 1700;
@@ -51,10 +53,15 @@ const MainPage = () => {
           </MainLinkToGoal>
         </MainWrapperTitle>
         <MainElementsWrapper>
-          <DailyGoal dailyCalories={dailyCalories}/>
-          <Water handleModal={toggleIsOpenModal} waterConsumtion={waterConsumtion}/>
+          <DailyGoal dailyCalories={dailyCalories} />
+          <Water
+            handleModal={toggleIsOpenModal}
+            waterConsumtion={waterConsumtion}
+          />
+          <DiaryBlock />
         </MainElementsWrapper>
         <DARFWrap></DARFWrap>
+        <RecommendedFoodMain />
       </MainContainer>
       <Link to="/signin" onClick={handleLogout}>
         Logout

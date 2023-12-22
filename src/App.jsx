@@ -6,12 +6,17 @@ import WelcomePage from './pages/WelcomePage/welcomePage';
 import SignInPages from './pages/SignInPages/SignInPages';
 
 import ForgotPasswordPage from './components/ForgotPasswordPage/ForgotPasswordPage';
+
 import MainPage from './pages/MainPage/MainPage';
 
 import { fetchCurentUser } from './redux/auth/authOperations';
 import PrivateRoute from '/src/components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
 import DashboardPage from './pages/DashboardPage/dashboardPage';
+import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsPage';
+import DiaryPage from './pages/DiaryPage/DiaryPage';
+<pages></pages>;
+
 
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
@@ -30,6 +35,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
+
             <Route
               path="/signin"
               element={
@@ -54,15 +60,20 @@ function App() {
 
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
+
             <Route
               path="/main"
               element={
                 <PrivateRoute redirectTo="/welcome" component={<MainPage />} />
               }
             />
+
+            <Route path="/settings" element={<ProfileSettingsPage />} />
+            <Route path="/main/diary" element={<DiaryPage/>} />
+
           </Route>
 
-          <Route path="/dashboard" element={ <DashboardPage/>}/>
+          <Route path="/dashboard" element={<DashboardPage />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

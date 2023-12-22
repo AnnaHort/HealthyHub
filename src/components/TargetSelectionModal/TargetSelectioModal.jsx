@@ -22,6 +22,7 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
   return (
     <Container>
       <Div>
+        <Title>Target selection</Title>
         <CloseButton onClick={onCloseButtonClick}>
           <StyledIcon>
             <CloseCircle />
@@ -29,7 +30,6 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
         </CloseButton>
       </Div>
 
-      <Title>Target selection</Title>
       <Description>
         The service will adjust your calorie intake to your goal
       </Description>
@@ -76,7 +76,7 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
         </List>
       </Form>
       <BtnConfirm>Submit</BtnConfirm>
-      <BtnBack>Back</BtnBack>
+      <BtnBack onClick={onCloseButtonClick}>Back</BtnBack>
     </Container>
   );
 };

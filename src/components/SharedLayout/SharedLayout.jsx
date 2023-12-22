@@ -15,7 +15,6 @@ const SharedLayout = () => {
       <ContainerHeader>
         {isLoggedIn ? <HeaderAuthorizedUser /> : <Header />}
       </ContainerHeader>
-
       <Container>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
