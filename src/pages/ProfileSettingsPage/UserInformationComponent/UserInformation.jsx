@@ -7,6 +7,8 @@ import {
   UserInformationDownloadLabel,
   UserInformationForm,
   UserInformationIconDirect,
+  UserInformationImg,
+  UserInformationImgContainer,
   UserInformationInput,
   UserInformationLabel,
   UserInformationLabelRadio,
@@ -18,7 +20,6 @@ import {
   UserInformationSaveBtn,
   UserInformationTitle,
 } from './UserInformation.styled';
-import { ImgContainer } from '../../../components/UserInfoNav/UserInfoNav.styled';
 
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
@@ -88,15 +89,13 @@ const UserInformation = () => {
       <UserInformationContainer>
         <UserInformationLabel htmlFor="photo">Your photo</UserInformationLabel>
         <UserInformationPhotoContainer>
-          <ImgContainer
-            style={{ marginRight: '12px', width: '36px', height: '36px' }}
-          >
-            <img
-              style={{ width: '36px', height: '36px' }}
+          <UserInformationImgContainer>
+            <UserInformationImg
+              style={{ width: '36px', height: '36px', borderRadius:"50%" }}
               src={`${userData.avatarURL}`}
               alt="Avatar"
             />
-          </ImgContainer>
+          </UserInformationImgContainer>
           <UserInformationIconDirect>
             <use
               href="/src/Sprites/icons/symbol-defs.svg#icon-direct-inbox"

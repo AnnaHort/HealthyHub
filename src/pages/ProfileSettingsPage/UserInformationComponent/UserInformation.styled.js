@@ -61,6 +61,19 @@ export const UserInformationPhotoContainer = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export const UserInformationImgContainer = styled.div`
+  margin-right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+`;
+export const UserInformationImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
 export const UserInformationIconDirect = styled.svg`
   margin-right: 6px;
   width: 16px;
