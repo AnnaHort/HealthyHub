@@ -1,4 +1,4 @@
-import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M as b,u as C,b as L,O as M}from"./index-a46f9046.js";const B=e(p)`
+import{s as e,N as p,j as t,r as n,L as u,u as y,a as w,O as k}from"./index-8ed0db88.js";const j=e(p)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -11,20 +11,20 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     font-size: 22px;
     line-height: 1.46%;
   }
-`,S=()=>t.jsx(B,{to:"/welcome",children:"HealthyHub"}),$=e.svg`
+`,v=()=>t.jsx(j,{to:"/welcome",children:"HealthyHub"}),b=e.svg`
   width: 26px;
   height: 26px;
   @media (min-width: 834px) {
     width: 28px;
     height: 28px;
   }
-`,z=()=>t.jsxs($,{id:"icon-profile-circle",viewBox:"0 0 32 32",children:[t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M16.16 17.040c-0.093-0.013-0.213-0.013-0.32 0-2.347-0.080-4.213-2-4.213-4.36 0-2.413 1.947-4.373 4.373-4.373 2.413 0 4.373 1.96 4.373 4.373-0.013 2.36-1.867 4.28-4.213 4.36z"}),t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M24.987 25.84c-2.373 2.173-5.52 3.493-8.987 3.493s-6.613-1.32-8.987-3.493c0.133-1.253 0.933-2.48 2.36-3.44 3.653-2.427 9.627-2.427 13.253 0 1.427 0.96 2.227 2.187 2.36 3.44z"}),t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M16 29.333c7.364 0 13.333-5.969 13.333-13.333s-5.97-13.333-13.333-13.333c-7.364 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333z"})]}),I=e.nav`
+`,C=()=>t.jsxs(b,{id:"icon-profile-circle",viewBox:"0 0 32 32",children:[t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M16.16 17.040c-0.093-0.013-0.213-0.013-0.32 0-2.347-0.080-4.213-2-4.213-4.36 0-2.413 1.947-4.373 4.373-4.373 2.413 0 4.373 1.96 4.373 4.373-0.013 2.36-1.867 4.28-4.213 4.36z"}),t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M24.987 25.84c-2.373 2.173-5.52 3.493-8.987 3.493s-6.613-1.32-8.987-3.493c0.133-1.253 0.933-2.48 2.36-3.44 3.653-2.427 9.627-2.427 13.253 0 1.427 0.96 2.227 2.187 2.36 3.44z"}),t.jsx("path",{fill:"none",stroke:"#fff",style:{stroke:"var(--color1, #fff)"},strokeLinejoin:"round",strokeLinecap:"round",strokeMiterlimit:"4",strokeWidth:"1.8462",d:"M16 29.333c7.364 0 13.333-5.969 13.333-13.333s-5.97-13.333-13.333-13.333c-7.364 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333z"})]}),L=e.nav`
   display: flex;
   align-content: center;
   justify-content: center;
   align-items: center;
   gap: 6px;
-`,x=e(p)`
+`,c=e(p)`
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -36,7 +36,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     font-size: 14px;
     line-height: 1.43;
   }
-`,E=e.span`
+`,M=e.span`
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -45,7 +45,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     font-size: 14px;
     line-height: 1.43;
   }
-`,P=()=>t.jsxs(I,{children:[t.jsx(x,{to:"/signin",children:"Sign in"}),t.jsx(E,{children:" / "}),t.jsx(x,{to:"/signup",children:"Sign up"}),t.jsx(z,{})]}),W=e.div`
+`,B=()=>t.jsxs(L,{children:[t.jsx(c,{to:"/signin",children:"Sign in"}),t.jsx(M,{children:" / "}),t.jsx(c,{to:"/signup",children:"Sign up"}),t.jsx(C,{})]}),S=e.div`
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -74,10 +74,10 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   @media (min-width: 1440px) {
     max-width: 1440px;
   }
-`;const H=()=>t.jsxs(W,{children:[t.jsx(S,{}),t.jsx(P,{})]}),F=e.div`
+`;const z=()=>t.jsxs(S,{children:[t.jsx(v,{}),t.jsx(B,{})]}),$=e.div`
   display: flex;
   gap: 12px;
-`,D=e.div`
+`,I=e.div`
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -86,7 +86,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   display: flex;
   justify-content: center;
   align-items: center;
-`,A=e.h3`
+`,E=e.h3`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -94,10 +94,10 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   font-weight: 600;
   line-height: 20px; /* 142.857% */
   margin-bottom: 2px;
-`,G=e.div`
+`,P=e.div`
   padding-top: 3px;
   padding-bottom: 3px;
-`,T=e.p`
+`,W=e.p`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -106,14 +106,14 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   line-height: 20px; /* 142.857% */
   display: flex;
   align-items: center;
-`,O=e.button`
+`,H=e.button`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 7px;
   border: none;
   background: none;
-`,U=e.svg`
+`,F=e.svg`
   display: none;
   width: 16px;
   height: 16px;
@@ -121,7 +121,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   @media (min-width: 834px) {
     display: block;
   }
-`,Z=e.svg`
+`,D=e.svg`
   display: block;
   width: 16px;
   height: 16px;
@@ -129,7 +129,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   @media (min-width: 834px) {
     display: none;
   }
-`,N=e.div`
+`,A=e.div`
   position: absolute;
   z-index: 1;
   padding-top: 247px; //реголює висоту модалки
@@ -141,7 +141,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     padding-top: 101px;
     left: auto;
   }
-`,R=e.div`
+`,G=e.div`
   padding: 24px 10px 40px 10px;
   background-color: var(--color-primary-black);
   height: 100vh;
@@ -155,10 +155,10 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     background: var(--Color-Primary-Black-2, #0f0f0f);
     box-shadow: 0px 4px 14px 0px rgba(227, 255, 168, 0.2);
   }
-`,V=e.div`
+`,T=e.div`
   display: flex;
   justify-content: space-between;
-`,K=e.h3`
+`,O=e.h3`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 18px;
@@ -176,7 +176,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   @media (min-width: 1440px) {
     margin: 0;
   }
-`,Y=e.p`
+`,U=e.p`
   color: var(--color-primary-grey);
   padding-bottom: 24px;
   font-size: 14px;
@@ -191,7 +191,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   @media (min-width: 1440px) {
     text-align: start;
   }
-`,q=e.form`
+`,Z=e.form`
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -204,7 +204,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     display: flex;
     align-items: flex-start;
   }
-`,J=e.ul`
+`,N=e.ul`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -226,7 +226,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   -moz-appearance: none;
   appearance: none;
   opacity: 0;
-`,l=e.li`
+`,d=e.li`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -238,7 +238,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   @media (min-width: 1440px) {
     gap: 10px;
   }
-`,d=e.label`
+`,l=e.label`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -327,7 +327,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     width: 20px; /* Set the width of your SVG */
     height: 20px; /* Set the height of your SVG */
   }
-`,Q=e.button`
+`,R=e.button`
   width: 300px;
   height: 36px;
   color: var(--color-primary-black-2);
@@ -354,7 +354,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
 
   @media (min-width: 1440px) {
   }
-`,X=e.button`
+`,V=e.button`
   width: 300px;
   margin: 0;
   color: var(--color-primary-grey);
@@ -378,7 +378,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   &:hover,
   &:focus {
   }
-`;const _=e.button`
+`;const K=e.button`
   display: none;
   padding: 0;
   width: 16px;
@@ -393,14 +393,14 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     border: none;
     cursor: pointer;
   }
-`,tt=e.svg`
+`,Y=e.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
-`,c=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M9.16992 14.83L14.8299 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M14.8299 14.83L9.16992 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),et="/HealthyHub/assets/LoseFatMen-7b8fee89.svg",it="/HealthyHub/assets/MaintakeGirl-28454b53.svg",h="/HealthyHub/assets/GainMuscle-be81eda0.svg",nt=({onCloseButtonClick:i})=>t.jsxs(R,{children:[t.jsxs(V,{children:[t.jsx(K,{children:"Target selection"}),t.jsx(_,{onClick:i,children:t.jsx(tt,{children:t.jsx(c,{})})})]}),t.jsx(Y,{children:"The service will adjust your calorie intake to your goal"}),t.jsx(q,{children:t.jsxs(J,{children:[t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat"}),t.jsxs(d,{htmlFor:"loseFat",children:[t.jsx("img",{src:et,alt:"LooseFatMen"}),"Lose Fat"]})]}),t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),t.jsxs(d,{htmlFor:"maintain",children:[t.jsx("img",{src:it,alt:"MaintakeGirl"}),"Maintain"]})]}),t.jsxs(l,{children:[t.jsx(a,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),t.jsxs(d,{htmlFor:"gainMuscle",children:[t.jsx("img",{src:h,alt:"GainMuscle"}),"Gain Muscle"]})]})]})}),t.jsx(Q,{children:"Submit"}),t.jsx(X,{onClick:i,children:"Back"})]}),ot=i=>n.createElement("svg",{width:16,height:16,viewBox:"0 0 16 16",fill:"none",xmlns:"http://www.w3.org/2000/svg",...i},n.createElement("path",{d:"M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2.33301 8H13.553",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),g=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995",stroke:"#E3FFA8",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),m=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(F,{children:[t.jsx(D,{children:t.jsx("img",{src:h,alt:"GainMuscle"})}),t.jsxs(G,{children:[t.jsx(A,{children:"Goal"}),t.jsxs(T,{children:["Lose fat",t.jsxs(O,{children:[t.jsx(U,{onClick:r,children:t.jsx(g,{})}),t.jsx(Z,{onClick:r,children:t.jsx(ot,{})})]})]})]}),i&&t.jsx(N,{children:t.jsx(nt,{onCloseButtonClick:s})})]})},rt=e.div`
+`,x=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M9.16992 14.83L14.8299 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M14.8299 14.83L9.16992 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),q="/HealthyHub/assets/LoseFatMen-7b8fee89.svg",J="/HealthyHub/assets/MaintakeGirl-28454b53.svg",h="/HealthyHub/assets/GainMuscle-be81eda0.svg",Q=({onCloseButtonClick:i})=>t.jsxs(G,{children:[t.jsxs(T,{children:[t.jsx(O,{children:"Target selection"}),t.jsx(K,{onClick:i,children:t.jsx(Y,{children:t.jsx(x,{})})})]}),t.jsx(U,{children:"The service will adjust your calorie intake to your goal"}),t.jsx(Z,{children:t.jsxs(N,{children:[t.jsxs(d,{children:[t.jsx(a,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat"}),t.jsxs(l,{htmlFor:"loseFat",children:[t.jsx("img",{src:q,alt:"LooseFatMen"}),"Lose Fat"]})]}),t.jsxs(d,{children:[t.jsx(a,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),t.jsxs(l,{htmlFor:"maintain",children:[t.jsx("img",{src:J,alt:"MaintakeGirl"}),"Maintain"]})]}),t.jsxs(d,{children:[t.jsx(a,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),t.jsxs(l,{htmlFor:"gainMuscle",children:[t.jsx("img",{src:h,alt:"GainMuscle"}),"Gain Muscle"]})]})]})}),t.jsx(R,{children:"Submit"}),t.jsx(V,{onClick:i,children:"Back"})]}),X=i=>n.createElement("svg",{width:16,height:16,viewBox:"0 0 16 16",fill:"none",xmlns:"http://www.w3.org/2000/svg",...i},n.createElement("path",{d:"M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2.33301 8H13.553",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),g=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995",stroke:"#E3FFA8",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),m=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs($,{children:[t.jsx(I,{children:t.jsx("img",{src:h,alt:"GainMuscle"})}),t.jsxs(P,{children:[t.jsx(E,{children:"Goal"}),t.jsxs(W,{children:["Lose fat",t.jsxs(H,{children:[t.jsx(F,{onClick:r,children:t.jsx(g,{})}),t.jsx(D,{onClick:r,children:t.jsx(X,{})})]})]})]}),i&&t.jsx(A,{children:t.jsx(Q,{onCloseButtonClick:s})})]})},_=e.div`
   display: flex;
   gap: 12px;
-`,st=e.div`
+`,tt=e.div`
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -409,7 +409,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   display: flex;
   justify-content: center;
   align-items: center;
-`,at=e.h3`
+`,et=e.h3`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -417,10 +417,10 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   font-weight: 600;
   line-height: 20px; /* 142.857% */
   margin-bottom: 2px;
-`,lt=e.div`
+`,it=e.div`
   padding-top: 3px;
   padding-bottom: 3px;
-`,dt=e.p`
+`,nt=e.p`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -436,7 +436,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
-`;const pt=e.button`
+`;const ot=e.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -444,11 +444,11 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   background: none;
   margin-left: 7px;
   padding: 0;
-`,ct=e.div`
+`,rt=e.div`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-green-lite);
-`,xt=e.div`
+`,st=e.div`
   position: absolute;
   z-index: 1;
   padding-top: 247px; //реголює висоту модалки
@@ -460,7 +460,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     padding-top: 101px;
     left: auto;
   }
-`,ht=e.div`
+`,at=e.div`
   padding: 24px 10px 40px 10px;
   background: var(--color-primary-black);
   height: 100vh;
@@ -473,7 +473,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     box-shadow: 0px 4px 14px 0px rgba(227, 255, 168, 0.2);
     padding: 20px 24px 40px 24px;
   }
-`,gt=e.h3`
+`,dt=e.h3`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 18px;
@@ -482,7 +482,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   line-height: 24px; /* 133.333% */
   margin-bottom: 8px;
   margin-right: 80px;
-`,mt=e.p`
+`,lt=e.p`
   color: var(--color-primary-grey);
   /* Body text/1 */
   font-family: Poppins;
@@ -491,7 +491,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   margin-bottom: 16px;
-`,ft=e.p`
+`,pt=e.p`
   display: flex;
   gap: 6px;
   width: 44px;
@@ -506,7 +506,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   @media (min-width: 834px) {
     margin-bottom: 16px;
   }
-`,ut=e.span`
+`,xt=e.span`
   width: 88px;
   color: var(--color-primary-grey);
   font-family: Poppins;
@@ -514,14 +514,14 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   font-style: normal;
   font-weight: 500;
   line-height: 20px; /* 142.857% */
-`,wt=e.div`
+`,ct=e.div`
   display: block;
 
   @media (min-width: 834px) {
     display: flex;
     gap: 12px;
   }
-`,yt=e.input`
+`,ht=e.input`
   width: 300px;
   height: 36px;
   padding: 8px 10px;
@@ -541,7 +541,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     width: 166px;
     margin-bottom: 0px;
   }
-`,kt=e.button`
+`,gt=e.button`
   width: 300px;
   height: 36px;
   color: var(--color-primary-black-2);
@@ -568,7 +568,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
 
   @media (min-width: 1440px) {
   }
-`,jt=e.button`
+`,mt=e.button`
   width: 300px;
   margin: 0;
   color: var(--color-primary-grey);
@@ -585,9 +585,9 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   @media (min-width: 834px) {
     display: none;
   }
-`,vt=e.div`
+`,ft=e.div`
   display: flex;
-`,bt=e.button`
+`,ut=e.button`
   display: none;
 
   @media (min-width: 834px) {
@@ -597,12 +597,66 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     border: none;
     cursor: pointer;
   }
-`,Ct=e.svg`
+`,yt=e.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
   margin-right: 8px;
-`,Lt=({onCloseButtonClick:i})=>{const o=new Date().toLocaleDateString();return t.jsxs(ht,{children:[t.jsxs(vt,{children:[t.jsx(gt,{children:"Enter your current weight"}),t.jsx(bt,{onClick:i,children:t.jsx(Ct,{children:t.jsx(c,{})})})]}),t.jsx(mt,{children:"You can record your weight once a day"}),t.jsxs(ft,{children:["Today: ",t.jsx(ut,{children:o})]}),t.jsxs(wt,{children:[t.jsx(yt,{type:"text",placeholder:"Enter your weight"}),t.jsx(kt,{children:"Confirm"}),t.jsx(jt,{onClick:i,children:"Cancel"})]})]})},Mt="/HealthyHub/assets/WaightImage-833d9f56.svg",Bt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]}),f=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(rt,{children:[t.jsx(st,{children:t.jsx("img",{src:Mt,alt:"MaintakeMen"})}),t.jsxs(lt,{children:[t.jsx(at,{children:"Weight"}),t.jsxs(dt,{children:["48 ",t.jsx("span",{children:"kg"}),t.jsx(pt,{onClick:r,children:t.jsx(ct,{children:t.jsx(Bt,{})})})]})]}),i&&t.jsx(xt,{children:t.jsx(Lt,{onCloseButtonClick:s})})]})},St=e.button`
+`,wt=({onCloseButtonClick:i})=>{const o=new Date().toLocaleDateString();return t.jsxs(at,{children:[t.jsxs(ft,{children:[t.jsx(dt,{children:"Enter your current weight"}),t.jsx(ut,{onClick:i,children:t.jsx(yt,{children:t.jsx(x,{})})})]}),t.jsx(lt,{children:"You can record your weight once a day"}),t.jsxs(pt,{children:["Today: ",t.jsx(xt,{children:o})]}),t.jsxs(ct,{children:[t.jsx(ht,{type:"text",placeholder:"Enter your weight"}),t.jsx(gt,{children:"Confirm"}),t.jsx(mt,{onClick:i,children:"Cancel"})]})]})},kt="/HealthyHub/assets/WaightImage-833d9f56.svg",jt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]}),f=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(_,{children:[t.jsx(tt,{children:t.jsx("img",{src:kt,alt:"MaintakeMen"})}),t.jsxs(it,{children:[t.jsx(et,{children:"Weight"}),t.jsxs(nt,{children:["48 ",t.jsx("span",{children:"kg"}),t.jsx(ot,{onClick:r,children:t.jsx(rt,{children:t.jsx(jt,{})})})]})]}),i&&t.jsx(st,{children:t.jsx(wt,{onCloseButtonClick:s})})]})},vt=e.div`
+  width: 130px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+`,bt=e.p`
+  width: 78px;
+  color: var(--color-primary-white);
+  text-align: right;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  margin-right: 6px;
+`,Ct=e.div`
+  width: 28px;
+  height: 28px;
+  border-radius: 28px;
+  background: lightgray 50%;
+  margin-right: 4px;
+`,Lt=e.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+  padding: 0;
+`;e.img`
+  display: block;
+
+  @media (min-width: 834px) {
+    display: block;
+  }
+`;const Mt=e.svg`
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary-green-lite);
+`,Bt=e.div`
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  padding-top: 60px; //реголює висоту модалки
+  padding-right: 10px;
+  right: 0;
+
+  @media (min-width: 834px) {
+    padding-right: 27px;
+    padding-top: 80px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-right: 34px;
+  }
+`,St=e.button`
   border: none;
   background: none;
   color: var(--color-primary-white);
@@ -614,12 +668,12 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   display: flex;
   align-items: center;
   padding: 0;
-`,$t=e.div``,zt=e.svg`
+`,zt=e.div``,$t=e.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-white);
   margin-right: 8px;
-`,It=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2 12.8801V11.1201C2 10.0801 2.85 9.22006 3.9 9.22006C5.71 9.22006 6.45 7.94006 5.54 6.37006C5.02 5.47006 5.33 4.30006 6.24 3.78006L7.97 2.79006C8.76 2.32006 9.78 2.60006 10.25 3.39006L10.36 3.58006C11.26 5.15006 12.74 5.15006 13.65 3.58006L13.76 3.39006C14.23 2.60006 15.25 2.32006 16.04 2.79006L17.77 3.78006C18.68 4.30006 18.99 5.47006 18.47 6.37006C17.56 7.94006 18.3 9.22006 20.11 9.22006C21.15 9.22006 22.01 10.0701 22.01 11.1201V12.8801C22.01 13.9201 21.16 14.7801 20.11 14.7801C18.3 14.7801 17.56 16.0601 18.47 17.6301C18.99 18.5401 18.68 19.7001 17.77 20.2201L16.04 21.2101C15.25 21.6801 14.23 21.4001 13.76 20.6101L13.65 20.4201C12.75 18.8501 11.27 18.8501 10.36 20.4201L10.25 20.6101C9.78 21.4001 8.76 21.6801 7.97 21.2101L6.24 20.2201C5.33 19.7001 5.02 18.5301 5.54 17.6301C6.45 16.0601 5.71 14.7801 3.9 14.7801C2.85 14.7801 2 13.9201 2 12.8801Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),Et=()=>t.jsx($t,{children:t.jsx(u,{to:"/settings",children:t.jsxs(St,{children:[t.jsx(zt,{children:t.jsx(It,{})}),"Setting"]})})}),Pt=e.button`
+`,It=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2 12.8801V11.1201C2 10.0801 2.85 9.22006 3.9 9.22006C5.71 9.22006 6.45 7.94006 5.54 6.37006C5.02 5.47006 5.33 4.30006 6.24 3.78006L7.97 2.79006C8.76 2.32006 9.78 2.60006 10.25 3.39006L10.36 3.58006C11.26 5.15006 12.74 5.15006 13.65 3.58006L13.76 3.39006C14.23 2.60006 15.25 2.32006 16.04 2.79006L17.77 3.78006C18.68 4.30006 18.99 5.47006 18.47 6.37006C17.56 7.94006 18.3 9.22006 20.11 9.22006C21.15 9.22006 22.01 10.0701 22.01 11.1201V12.8801C22.01 13.9201 21.16 14.7801 20.11 14.7801C18.3 14.7801 17.56 16.0601 18.47 17.6301C18.99 18.5401 18.68 19.7001 17.77 20.2201L16.04 21.2101C15.25 21.6801 14.23 21.4001 13.76 20.6101L13.65 20.4201C12.75 18.8501 11.27 18.8501 10.36 20.4201L10.25 20.6101C9.78 21.4001 8.76 21.6801 7.97 21.2101L6.24 20.2201C5.33 19.7001 5.02 18.5301 5.54 17.6301C6.45 16.0601 5.71 14.7801 3.9 14.7801C2.85 14.7801 2 13.9201 2 12.8801Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),Et=()=>t.jsx(zt,{children:t.jsx(u,{to:"/settings",children:t.jsxs(St,{children:[t.jsx($t,{children:t.jsx(It,{})}),"Setting"]})})}),Pt=e.button`
   border: none;
   background: none;
   color: var(--color-primary-white);
@@ -647,7 +701,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-`,Tt=()=>t.jsx(At,{children:t.jsxs(Gt,{children:[t.jsx(Et,{}),t.jsx(Dt,{})]})}),Ot="/HealthyHub/assets/Avatar-4908aace.svg",Ut=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(w,{children:[t.jsx(y,{children:"Konstantin"}),t.jsx(k,{children:t.jsx("img",{src:Ot,alt:"Avatar"})}),t.jsx(j,{onClick:r,children:t.jsx(v,{children:t.jsx(g,{})})}),i&&t.jsx(b,{onClick:s,children:t.jsx(Tt,{})})]})},Zt=e.div`
+`,Tt=()=>t.jsx(At,{children:t.jsxs(Gt,{children:[t.jsx(Et,{}),t.jsx(Dt,{})]})}),Ot="/HealthyHub/assets/Avatar-4908aace.svg",Ut=()=>{const[i,o]=n.useState(!1),r=()=>{o(!0)},s=()=>{o(!1)};return t.jsxs(vt,{children:[t.jsx(bt,{children:"Konstantin"}),t.jsx(Ct,{children:t.jsx("img",{src:Ot,alt:"Avatar"})}),t.jsx(Lt,{onClick:r,children:t.jsx(Mt,{children:t.jsx(g,{})})}),i&&t.jsx(Bt,{onClick:s,children:t.jsx(Tt,{})})]})},Zt=e.div`
   width: 320px;
   position: relative;
   height: 60px;
@@ -755,7 +809,7 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
-`,ee=({onCloseButtonClick:i})=>t.jsxs(Jt,{children:[t.jsxs(Xt,{children:[t.jsx(m,{}),t.jsx(f,{})]}),t.jsx(Qt,{children:t.jsx(_t,{onClick:i,children:t.jsx(te,{children:t.jsx(c,{})})})})]}),ie=e(p)`
+`,ee=({onCloseButtonClick:i})=>t.jsxs(Jt,{children:[t.jsxs(Xt,{children:[t.jsx(m,{}),t.jsx(f,{})]}),t.jsx(Qt,{children:t.jsx(_t,{onClick:i,children:t.jsx(te,{children:t.jsx(x,{})})})})]}),ie=e(p)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -785,4 +839,4 @@ import{s as e,N as p,j as t,r as n,L as u,U as w,T as y,I as k,a as j,S as v,M a
     padding-left: 34px;
     padding-right: 34px;
   }
-`,de=()=>{const i=C(L);return t.jsxs(t.Fragment,{children:[t.jsx(se,{children:i?t.jsx(re,{}):t.jsx(H,{})}),t.jsx(ae,{children:t.jsx(n.Suspense,{fallback:t.jsx("div",{children:"Loading..."}),children:t.jsx(M,{})})})]})};export{de as default};
+`,le=()=>{const i=y(w);return t.jsxs(t.Fragment,{children:[t.jsx(se,{children:i?t.jsx(re,{}):t.jsx(z,{})}),t.jsx(ae,{children:t.jsx(n.Suspense,{fallback:t.jsx("div",{children:"Loading..."}),children:t.jsx(k,{})})})]})};export{le as default};
