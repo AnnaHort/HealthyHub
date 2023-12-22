@@ -14,13 +14,15 @@ const SignUpForm = () => {
   const dispatch = useDispatch();
 
   const [currentStep, setCurrentStep] = useState(1);
-  const [, setPersonalData] = useState({
+  const [personalData, setPersonalData] = useState({
     name: '',
     email: '',
     password: '',
   });
   const [, setError] = useState('');
   const [dataGoal, setDataGoal] = useState('');
+  console.log(dataGoal, 'dataGoal');
+  
   const [dataAgeGender, setDataAgeGender] = useState({
     age: '',
     gender: '',
@@ -30,16 +32,23 @@ const SignUpForm = () => {
     weight: '',
   });
   const [dataActivity, setDataActivity] = useState('');
-  //const [canProceed, setCanProceed] = useState(false); // Доданий новий стан
-
-  console.log(dataGoal, 'local state dataGoal');
-  console.log(dataAgeGender, 'local state dataAgeGender');
-  console.log(dataBodyParams, 'local state dataBodyParams');
-  console.log(dataActivity, 'local state dataActivity');
-
-  const handleRegisterSubmit = async (values) => {
+  console.log(dataActivity, 'dataActivity');
+ 
+  const handleRegisterSubmit = async () => {
     try {
-      const response = await dispatch(register(values));
+      const valuesToSend = {
+        name: personalData.name,
+        password: personalData.password,
+        email: personalData.email,
+        goal: dataGoal,
+        gender: dataAgeGender.gender,
+        age: dataAgeGender.age,
+        height: dataBodyParams.height,
+        weight: dataBodyParams.weight,
+        userActivity: dataActivity,
+      };
+      console.log('Local state', valuesToSend);
+      const response = await dispatch(register(valuesToSend));
       console.log('Response from Redux:', response);
 
       if (response.type === 'auth/register/fulfilled') {
@@ -62,21 +71,37 @@ const SignUpForm = () => {
     }
   };
 
+const SelectData = (data) => {
+  setPersonalData((prevData) => ({
+    ...prevData,
+    name: data.name || prevData.name,
+    email: data.email || prevData.email,
+    password: data.password || prevData.password,
+  }));
 
+  setDataGoal((prevData) => ({
+    ...prevData,
+    ...data.goal,
+  }));
 
-  // const handleRegisterNext = () => {
-  //   if (canProceed === true) {
-  //     setCanProceed(true);
-  //     setCurrentStep(currentStep + 1);
-  //   }
-  // };
+  setDataAgeGender((prevData) => ({
+    ...prevData,
+    age: data.age || prevData.age,
+    gender: data.gender || prevData.gender,
+  }));
 
-  const SelectData = (data) => {
-    setDataGoal(data);
-    setDataAgeGender(data);
-    setDataBodyParams(data);
-    setDataActivity(data);
-  };
+  setDataBodyParams((prevData) => ({
+    ...prevData,
+    height: data.height || prevData.height,
+    weight: data.weight || prevData.weight,
+  }));
+
+  setDataActivity((prevData) => ({
+    ...prevData,
+    ...data.userActivity,
+  }));
+};
+
 
   const handleNext = () => {
     setCurrentStep(currentStep + 1);
@@ -114,7 +139,6 @@ const SignUpForm = () => {
       )}
       {currentStep === 5 && (
         <YourActivity
-          onNext={handleNext}
           onBack={handlePrev}
           onSubmit={handleRegisterSubmit}
         />
