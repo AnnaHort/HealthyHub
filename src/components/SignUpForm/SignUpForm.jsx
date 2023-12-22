@@ -44,8 +44,6 @@ const SignUpForm = () => {
 
       if (response.type === 'auth/register/fulfilled') {
         toast.success('Successful registration');
-        setPersonalData(values);
-        setCurrentStep(currentStep + 1); 
       }
 
       if (response.type === 'auth/register/rejected') {
@@ -91,10 +89,7 @@ const SignUpForm = () => {
   return (
     <div>
       {currentStep === 1 && (
-        <SignUpRegister
-          onSubmit={handleRegisterSubmit}
-          onNext={handleRegisterNext}
-        />
+        <SignUpRegister onSubmit={SelectData} onNext={handleRegisterNext} />
       )}
       {currentStep === 2 && (
         <YourGoal
@@ -121,7 +116,7 @@ const SignUpForm = () => {
         <YourActivity
           onNext={handleNext}
           onBack={handlePrev}
-          onSubmit={SelectData}
+          onSubmit={handleRegisterSubmit}
         />
       )}
       <ToastContainer />
