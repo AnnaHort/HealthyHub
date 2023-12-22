@@ -54,7 +54,6 @@ const MainPage = () => {
         <MainElementsWrapper>
           <DailyGoal dailyCalories={dailyCalories}/>
           <Water handleModal={toggleIsOpenModal} waterConsumtion={waterConsumtion} />
-          <DiaryPage/>
         </MainElementsWrapper>
         <DARFWrap></DARFWrap>
       </MainContainer>
