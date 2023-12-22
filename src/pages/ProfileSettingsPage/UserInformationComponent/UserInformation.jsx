@@ -35,6 +35,7 @@ const UserInformation = () => {
   const [height, setHeight] = useState();
   const [weight, setWeight] = useState();
   const [userActivity,setUserActivity] = useState("");
+  // const [avatarURL, setAvatarURL] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,6 +45,7 @@ const UserInformation = () => {
         console.log(response.data);
         setGender(response.data.gender);
         setUserActivity(response.data.userActivity);
+        // setAvatarURL(response.data.avatarURL);
       } catch (error) {
         console.error('Data error', error.message);
       }
@@ -59,7 +61,8 @@ const UserInformation = () => {
       gender,
       height,
       weight,
-      userActivity
+      userActivity,
+      // avatarURL
     };
     try {
       const response = await axios.put('/api/user/update', newUserData);
@@ -93,6 +96,7 @@ const UserInformation = () => {
             <UserInformationImg
               style={{ width: '36px', height: '36px', borderRadius:"50%" }}
               src={`${userData.avatarURL}`}
+              // onChange={(e) => setAvatarURL(e.target.value)}
               alt="Avatar"
             />
           </UserInformationImgContainer>
