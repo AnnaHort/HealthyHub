@@ -1,11 +1,11 @@
-import DiaryMealItem from "./DiaryMealItem";
+import DiaryMealItem from './DiaryMealItem';
 
 const DiaryMealList = () => {
-    return (
-      <div>
-        <DiaryMealItem/>
-      </div>
-    );
+  return (
+    <div>
+      <DiaryMealItem />
+    </div>
+  );
 };
 
 export default DiaryMealList;

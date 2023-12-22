@@ -1,5 +1,5 @@
 import {
-MealTitle,
+  MealTitle,
   MealImageWrapper,
   MealStatistic,
   StatisticItem,
@@ -11,11 +11,10 @@ import { ReactComponent as BreakfastImg } from '../../img/DiaryPage/breakfast.sv
 const DiaryMealItem = () => {
   return (
     <div>
-     
-        <MealImageWrapper>
-          <BreakfastImg/>
+      <MealImageWrapper>
+        <BreakfastImg />
         <MealTitle>Breakfast</MealTitle>
- </MealImageWrapper>
+      </MealImageWrapper>
       <MealStatistic>
         <StatisticItem>
           Carbonohidrates:
