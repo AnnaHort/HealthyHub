@@ -12,6 +12,8 @@ import { fetchCurentUser } from './redux/auth/authOperations';
 import PrivateRoute from '/src/components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
 import DashboardPage from './pages/DashboardPage/dashboardPage';
+import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsPage';
+<pages></pages>;
 
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
@@ -60,9 +62,11 @@ function App() {
                 <PrivateRoute redirectTo="/welcome" component={<MainPage />} />
               }
             />
+
+            <Route path="/settings" element={<ProfileSettingsPage />} />
           </Route>
 
-          <Route path="/dashboard" element={ <DashboardPage/>}/>
+          <Route path="/dashboard" element={<DashboardPage />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

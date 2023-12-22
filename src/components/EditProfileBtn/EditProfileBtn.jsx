@@ -1,19 +1,22 @@
 import {
-  ButtonLogout,
+  ButtonSetting,
   Div,
   StyledIcon,
 } from '../EditProfileBtn/EditProfileBtn.styled';
 import { ReactComponent as Settings } from '../../img/Header/setting-2.svg';
+import { Link } from 'react-router-dom';
 
 const EditProfileBtn = () => {
   return (
     <Div>
-      <ButtonLogout>
-        <StyledIcon>
-          <Settings />
-        </StyledIcon>
-        Setting
-      </ButtonLogout>
+      <Link to="/settings">
+        <ButtonSetting>
+          <StyledIcon>
+            <Settings />
+          </StyledIcon>
+          Setting
+        </ButtonSetting>
+      </Link>
     </Div>
   );
 };

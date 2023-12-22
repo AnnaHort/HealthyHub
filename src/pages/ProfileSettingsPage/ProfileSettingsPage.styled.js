@@ -37,15 +37,31 @@ export const ProfileSettingsPageImg = styled.img`
   margin-right: auto;
   margin-left: auto;
   @media (min-width: 834px) {
-    max-height:374px;
+    max-height: 374px;
     width: 380px;
     margin-bottom: 24px;
   }
   @media (min-width: 1440px) {
-    max-height:528px;
+    max-height: 528px;
     margin-right: 0;
     margin-left: 0;
     width: 536px;
     margin-left: 130px;
+  }
+`;
+
+export const Img = styled.div`
+  margin: 0 auto;
+  width: 300px;
+  height: 296px;
+
+  @media (min-width: 834px) {
+    width: 380px;
+    height: 374px;
+  }
+
+  @media (min-width: 834px) {
+    width: 536px;
+    height: 528px;
   }
 `;
