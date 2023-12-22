@@ -6,7 +6,7 @@ import {
   StatisticValue,
 } from './DiaryMealItem.styled';
 
-import { ReactComponent as BreakfastImg } from '../../img/DiaryPage/breakfast.svg';
+import { ReactComponent as BreakfastImg } from '../../img/Diary/breakfast.svg';
 
 const DiaryMealItem = () => {
   return (
