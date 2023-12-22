@@ -1,3 +1,5 @@
+import * as Yup from 'yup';
+import axios from 'axios';
 import {
   UserInformationActivityContainer,
   UserInformationBtnContainer,
@@ -17,17 +19,48 @@ import {
   UserInformationTitle,
 } from './UserInformation.styled';
 import { ImgContainer } from '../../../components/UserInfoNav/UserInfoNav.styled';
+import { useFormik } from 'formik';
+
+axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
+
+const validationSchema = Yup.object().shape({
+  name: Yup.string(),
+  age: Yup.number().positive().integer(),
+  height: Yup.number().positive(),
+  weight: Yup.number().positive(),
+});
 
 const UserInformation = () => {
+  // Початкові дані мають прийти з бази!!!!
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      age: '',
+      height: '',
+      weight: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: async (userData) => {
+      try {
+        const response = await axios.put('/api/user/update', userData);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Update setting error', error.message);
+      }
+    },
+  });
+
   return (
-    <UserInformationForm>
+    <UserInformationForm onSubmit={formik.handleSubmit}>
       <UserInformationContainer>
         <UserInformationLabel htmlFor="name">Your name</UserInformationLabel>
         <UserInformationInput
           type="text"
           id="name"
           placeholder="тут має бути імя користувача"
-          
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.name}
         />
       </UserInformationContainer>
 
@@ -64,12 +97,15 @@ const UserInformation = () => {
       <UserInformationContainer>
         <UserInformationLabel htmlFor="age">Your age</UserInformationLabel>
         <UserInformationInput
-         placeholder="вік користувача"
+          placeholder="вік користувача"
           type="number"
           id="age"
           name="quantity"
           min="1"
           max="100"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.age}
         />
       </UserInformationContainer>
 
@@ -77,8 +113,15 @@ const UserInformation = () => {
         <UserInformationTitle>Gender</UserInformationTitle>
         <UserInformationRadioBtnContainer>
           <UserInformationRadioContainer>
-            <UserInformationRadioInput type="radio" id="male" name="gender" value="male" />
-            <UserInformationLabelRadio htmlFor="male">Male</UserInformationLabelRadio>
+            <UserInformationRadioInput
+              type="radio"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            <UserInformationLabelRadio htmlFor="male">
+              Male
+            </UserInformationLabelRadio>
           </UserInformationRadioContainer>
 
           <UserInformationRadioContainer>
@@ -88,7 +131,9 @@ const UserInformation = () => {
               name="gender"
               value="female"
             />
-            <UserInformationLabelRadio htmlFor="female">Female</UserInformationLabelRadio>
+            <UserInformationLabelRadio htmlFor="female">
+              Female
+            </UserInformationLabelRadio>
           </UserInformationRadioContainer>
         </UserInformationRadioBtnContainer>
       </UserInformationContainer>
@@ -96,24 +141,30 @@ const UserInformation = () => {
       <UserInformationContainer>
         <UserInformationLabel htmlFor="height">Height</UserInformationLabel>
         <UserInformationInput
-        placeholder="ріст користувача"
+          placeholder="ріст користувача"
           type="number"
           id="height"
           name="quantity"
           min="1"
           max="300"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.height}
         />
       </UserInformationContainer>
 
       <UserInformationContainer>
         <UserInformationLabel htmlFor="weight">Weight</UserInformationLabel>
         <UserInformationInput
-        placeholder="вага користувача"
+          placeholder="вага користувача"
           type="number"
           id="weight"
           name="quantity"
           min="1"
           max="300"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.weight}
         />
       </UserInformationContainer>
 
@@ -185,7 +236,9 @@ const UserInformation = () => {
 
       <UserInformationBtnContainer>
         <UserInformationSaveBtn type="submit">Save</UserInformationSaveBtn>
-        <UserInformationLinkCancel to={'/main'}>Cancel</UserInformationLinkCancel>
+        <UserInformationLinkCancel to={'/main'}>
+          Cancel
+        </UserInformationLinkCancel>
       </UserInformationBtnContainer>
     </UserInformationForm>
   );
