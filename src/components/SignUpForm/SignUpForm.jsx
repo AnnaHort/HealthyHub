@@ -89,7 +89,7 @@ const SignUpForm = () => {
   return (
     <div>
       {currentStep === 1 && (
-        <SignUpRegister onSubmit={SelectData} onNext={handleRegisterNext} />
+        <SignUpRegister onSubmit={SelectData} onNext={handleNext} />
       )}
       {currentStep === 2 && (
         <YourGoal
