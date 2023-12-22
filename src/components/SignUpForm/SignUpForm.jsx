@@ -30,7 +30,7 @@ const SignUpForm = () => {
     weight: '',
   });
   const [dataActivity, setDataActivity] = useState('');
-  const [canProceed, setCanProceed] = useState(false); // Доданий новий стан
+  //const [canProceed, setCanProceed] = useState(false); // Доданий новий стан
 
   console.log(dataGoal, 'local state dataGoal');
   console.log(dataAgeGender, 'local state dataAgeGender');
@@ -64,12 +64,12 @@ const SignUpForm = () => {
 
 
 
-  const handleRegisterNext = () => {
-    if (canProceed === true) {
-      setCanProceed(true);
-      setCurrentStep(currentStep + 1);
-    }
-  };
+  // const handleRegisterNext = () => {
+  //   if (canProceed === true) {
+  //     setCanProceed(true);
+  //     setCurrentStep(currentStep + 1);
+  //   }
+  // };
 
   const SelectData = (data) => {
     setDataGoal(data);
