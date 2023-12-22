@@ -33,6 +33,8 @@ const MainPage = () => {
 
   let dailyCalories = 1700;
   let waterConsumtion = 800;
+
+  
   const handleLogout = async () => {
     try {
       await dispatch(logOut());
