@@ -20,16 +20,15 @@ import {
   UserInformationSaveBtn,
   UserInformationTitle,
 } from './UserInformation.styled';
-
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
-// import { fetchUserInfo } from '../../../redux/userCurrentInfo/operations';
+import { useDispatch, useSelector } from 'react-redux';
 import {
+  getCurrentUser,
   setUpdateUserFalse,
   updateUser,
 } from '../../../redux/updateUser/updateOperations';
-// import { Toaster } from 'react-hot-toast';
+import { selectUpdateUserStatus } from '../../../redux/updateUser/updateSelectors';
 
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
@@ -43,23 +42,44 @@ const UserInformation = () => {
   const [height, setHeight] = useState();
   const [weight, setWeight] = useState();
   const [userActivity, setUserActivity] = useState('');
-  // const [avatarURL, setAvatarURL] = useState("");
+  const [fileAvatar, setFileAvatar] = useState();
+
+  const userUpdate = useSelector(selectUpdateUserStatus);
+
+  // аватар
+  const uploadAvatar = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('avatar', fileAvatar);
+
+      const response = await axios.post('api/user/avatars', formData);
+      return response.data;
+    } catch (error) {
+      console.error('Error uploading avatar', error.message);
+      toast.error('Error uploading avatar');
+    }
+  };
+
+  useEffect(() => {
+    if (userUpdate) {
+      dispatch(getCurrentUser());
+    }
+  }, [userUpdate, dispatch]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('api/user/current');
         setUserData(response.data);
-        console.log(response.data);
         setGender(response.data.gender);
         setUserActivity(response.data.userActivity);
-        // setAvatarURL(response.data.avatarURL);
+        dispatch(setUpdateUserFalse());
       } catch (error) {
         console.error('Data error', error.message);
       }
     };
     fetchData();
-  }, []);
+  }, [userUpdate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -70,15 +90,20 @@ const UserInformation = () => {
       height,
       weight,
       userActivity,
-      // avatarURL
     };
     try {
       const response = await axios.put('/api/user/update', newUserData);
       console.log(response.data);
+
+      await uploadAvatar();
+
+
+
       dispatch(updateUser(newUserData));
-      toast.success(response.data.message);
+  
 
       dispatch(setUpdateUserFalse());
+      toast.success(response.data.message, { autoClose: 2000 });
     } catch (error) {
       console.error('Data error', error.message);
       toast.error('Error updating user information');
@@ -88,6 +113,10 @@ const UserInformation = () => {
   if (!userData) {
     return <div>Loading...</div>;
   }
+
+
+  const { avatarURL } = userData;
+
   return (
     <UserInformationForm onSubmit={handleSubmit}>
       <UserInformationContainer>
@@ -106,8 +135,7 @@ const UserInformation = () => {
           <UserInformationImgContainer>
             <UserInformationImg
               style={{ width: '36px', height: '36px', borderRadius: '50%' }}
-              src={`${userData.avatarURL}`}
-              // onChange={(e) => setAvatarURL(e.target.value)}
+              src={`${avatarURL}`}
               alt="Avatar"
             />
           </UserInformationImgContainer>
@@ -121,6 +149,7 @@ const UserInformation = () => {
             type="file"
             id="photo"
             name="fileUpload"
+            onChange={(e) => setFileAvatar(e.target.files[0])}
             style={{ position: 'absolute', opacity: '0' }}
           />
           <UserInformationDownloadLabel htmlFor="photo">
