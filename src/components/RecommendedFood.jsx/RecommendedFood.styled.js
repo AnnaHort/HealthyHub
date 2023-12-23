@@ -58,11 +58,14 @@ export const RecommendedFoodUnitName = styled.h2`
   line-height: 1.33;
   margin-top: 20px;
   margin-bottom: 16px;
+
   @media (min-width: 834px) {
     color: var(--color-primary-white);
     font-size: 22px;
     font-weight: 400;
     line-height: 1.45;
+  }
+  @media (min-width: 1440px) {
     margin-left: 696px;
   }
 `;
