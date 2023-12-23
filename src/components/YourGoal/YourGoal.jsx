@@ -23,7 +23,7 @@ const initialValues = {
 const goalSchema = Yup.object({
   goal: Yup.string()
     .required('Choose one of the options')
-    .oneOf(['Lose Fat', 'Maintain', 'Gain Muscle']),
+    .oneOf(['Lose fat', 'Maintain', 'Gain Muscle']),
 });
 
 export const YourGoal = ({ onNext, onBack, onSubmit }) => {
@@ -56,7 +56,7 @@ export const YourGoal = ({ onNext, onBack, onSubmit }) => {
                     type="radio"
                     id="loseFat"
                     name="goal"
-                    value="Lose Fat"
+                    value="Lose fat"
                   />
                   <GoalLabel htmlFor="loseFat">Lose Fat</GoalLabel>
                 </GoalRadioItem>
