@@ -13,9 +13,34 @@ import {
   Title,
 } from './CurrentWeightModal.styled';
 import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg';
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import {fetchCurentUser} from "/src/redux/auth/authOperations.js"
 
 const CurrentWeightModal = ({ onCloseButtonClick }) => {
+  const [weight, setWeight] = useState();
+  const dispatch = useDispatch()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newUserData = {
+      weight,
+    };
+    try {
+      const response = await axios.put('/api/user/update', newUserData);
+      console.log(response.data);
+      toast.success(response.data.message);
+      dispatch(fetchCurentUser())
+    } catch (error) {
+      console.error('Data error', error.message);
+      toast.error('Error updating user information');
+    }
+  };
+
   const currentDate = new Date().toLocaleDateString();
+  
   return (
     <Container>
       <Div>
@@ -32,11 +57,21 @@ const CurrentWeightModal = ({ onCloseButtonClick }) => {
         Today: <SpanData>{currentDate}</SpanData>
       </Text>
 
-      <FormContainer>
-        <Input type="text" placeholder="Enter your weight" />
-        <BtnConfirm>Confirm</BtnConfirm>
+      <FormContainer onSubmit={handleSubmit}>
+        <Input
+          type="number"
+          placeholder="Enter your weight"
+          min="1"
+          max="300"
+          value={weight}
+          onChange={(e) => setWeight(e.target.value)}
+        />
+        <BtnConfirm type='submit' >
+          Confirm
+        </BtnConfirm>
         <BtnCancel onClick={onCloseButtonClick}>Cancel</BtnCancel>
       </FormContainer>
+      <ToastContainer position="top-right"/>
     </Container>
   );
 };

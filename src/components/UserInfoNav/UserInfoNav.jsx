@@ -12,11 +12,23 @@ import { ReactComponent as ArrowDown } from '../../img/Header/arrow-down.svg';
 // import Avatar from '../../Emoji/Avatar.svg';
 import axios from 'axios';
 import { UserInformationImg } from '../../pages/ProfileSettingsPage/UserInformationComponent/UserInformation.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
+import { getCurrentUser } from '../../redux/updateUser/updateOperations';
 
 const UserInfoNav = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [userData, setUserData] = useState();
+  const userUpdate = useSelector(selectUpdateUserStatus);
+  const dispatch = useDispatch()
 
+
+  useEffect(() => {
+    if (userUpdate) {
+      dispatch(getCurrentUser());
+    }
+  }, [userUpdate, dispatch]);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,7 +40,9 @@ const UserInfoNav = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [userUpdate]); 
+  
+
 
   const handleIconButtonClick = () => {
     setModalOpen(true);
