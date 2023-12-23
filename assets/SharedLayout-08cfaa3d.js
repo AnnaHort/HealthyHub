@@ -1,4 +1,4 @@
-import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e as B,f as I,g as C,k as U,L as P,h as W,l as F,U as H,i as G,O as A}from"./index-53235ad8.js";const T=e(v)`
+import{s as e,N as C,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e as B,f as I,g as L,k as U,L as P,h as W,l as F,U as H,i as G,O as A}from"./index-e118028e.js";const T=e(C)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -24,7 +24,7 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   justify-content: center;
   align-items: center;
   gap: 6px;
-`,M=e(v)`
+`,M=e(C)`
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -221,12 +221,12 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
     width: 192px;
     flex-direction: column;
   }
-`,k=e.input`
+`,j=e.input`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   opacity: 0;
-`,j=e.li`
+`,b=e.li`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -238,7 +238,7 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   @media (min-width: 1440px) {
     gap: 10px;
   }
-`,b=e.label`
+`,v=e.label`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -397,7 +397,7 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
-`,L=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M9.16992 14.83L14.8299 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M14.8299 14.83L9.16992 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),mt="/HealthyHub/assets/LoseFatMen-7b8fee89.svg",ft="/HealthyHub/assets/MaintakeGirl-28454b53.svg",D="/HealthyHub/assets/GainMuscle-be81eda0.svg";h.defaults.baseURL="https://healthhub-backend.onrender.com";const ut=({onCloseButtonClick:i})=>{const[o,a]=n.useState(""),[d,s]=n.useState(),l=f(w),c=u(),g=async m=>{m.preventDefault();const r={goal:o};try{const p=await h.put("/api/user/update",r);y.success(p.data.message),c(S(r)),c(B())}catch(p){console.error("Data error",p.message),y.error("Error updating user information")}};return n.useEffect(()=>{(async()=>{try{const r=await h.get("api/user/current");console.log(r.data.goal),a(r.data.goal),s(r.data)}catch(r){console.error("Data error",r.message)}})()},[l]),d?t.jsxs(rt,{children:[t.jsxs(at,{children:[t.jsx(st,{children:"Target selection"}),t.jsx(ht,{onClick:i,children:t.jsx(gt,{children:t.jsx(L,{})})})]}),t.jsx(dt,{children:"The service will adjust your calorie intake to your goal"}),t.jsxs(lt,{onSubmit:g,children:[t.jsxs(pt,{children:[t.jsxs(j,{children:[t.jsx(k,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat",checked:o==="Lose fat",onChange:()=>a("Lose fat")}),t.jsxs(b,{htmlFor:"loseFat",children:[t.jsx("img",{src:mt,alt:"LooseFatMen"}),"Lose Fat"]})]}),t.jsxs(j,{children:[t.jsx(k,{type:"radio",id:"maintain",name:"goal",value:"Maintain",checked:o==="Maintain",onChange:()=>a("Maintain")}),t.jsxs(b,{htmlFor:"maintain",children:[t.jsx("img",{src:ft,alt:"MaintakeGirl"}),"Maintain"]})]}),t.jsxs(j,{children:[t.jsx(k,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle",checked:o==="Gain Muscle",onChange:()=>a("Gain Muscle")}),t.jsxs(b,{htmlFor:"gainMuscle",children:[t.jsx("img",{src:D,alt:"GainMuscle"}),"Gain Muscle"]})]})]}),t.jsx(ct,{type:"submit",children:"Submit"})]}),t.jsx(xt,{onClick:i,children:"Back"})]}):t.jsx("div",{children:"Loading..."})},yt=i=>n.createElement("svg",{width:16,height:16,viewBox:"0 0 16 16",fill:"none",xmlns:"http://www.w3.org/2000/svg",...i},n.createElement("path",{d:"M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2.33301 8H13.553",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),E=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995",stroke:"#E3FFA8",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),z=()=>{const[i,o]=n.useState(!1),a=u(),d=f(I);n.useEffect(()=>{a(C())},[a]);const s=()=>{o(!0)},l=()=>{o(!1)};return t.jsxs(J,{children:[t.jsx(K,{children:t.jsx("img",{src:D,alt:"GainMuscle"})}),t.jsxs(_,{children:[t.jsx(X,{children:"Goal"}),t.jsxs(tt,{children:[d,t.jsxs(et,{children:[t.jsx(nt,{onClick:s,children:t.jsx(E,{})}),t.jsx(it,{onClick:s,children:t.jsx(yt,{})})]})]})]}),i&&t.jsx(ot,{children:t.jsx(ut,{onCloseButtonClick:l})})]})},wt=e.div`
+`,k=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M9.16992 14.83L14.8299 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M14.8299 14.83L9.16992 9.17004",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),mt="/HealthyHub/assets/LoseFatMen-7b8fee89.svg",ft="/HealthyHub/assets/MaintakeGirl-28454b53.svg",D="/HealthyHub/assets/GainMuscle-be81eda0.svg";h.defaults.baseURL="https://healthhub-backend.onrender.com";const ut=({onCloseButtonClick:i})=>{const[o,a]=n.useState(""),[d,s]=n.useState(),l=f(w),c=u(),g=async m=>{m.preventDefault();const r={goal:o};try{const p=await h.put("/api/user/update",r);y.success(p.data.message),c(S(r)),c(B())}catch(p){console.error("Data error",p.message),y.error("Error updating user information")}};return n.useEffect(()=>{(async()=>{try{const r=await h.get("api/user/current");console.log(r.data.goal),a(r.data.goal),s(r.data)}catch(r){console.error("Data error",r.message)}})()},[l]),d?t.jsxs(rt,{children:[t.jsxs(at,{children:[t.jsx(st,{children:"Target selection"}),t.jsx(ht,{onClick:i,children:t.jsx(gt,{children:t.jsx(k,{})})})]}),t.jsx(dt,{children:"The service will adjust your calorie intake to your goal"}),t.jsxs(lt,{onSubmit:g,children:[t.jsxs(pt,{children:[t.jsxs(b,{children:[t.jsx(j,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat",checked:o==="Lose fat",onChange:()=>a("Lose fat")}),t.jsxs(v,{htmlFor:"loseFat",children:[t.jsx("img",{src:mt,alt:"LooseFatMen"}),"Lose Fat"]})]}),t.jsxs(b,{children:[t.jsx(j,{type:"radio",id:"maintain",name:"goal",value:"Maintain",checked:o==="Maintain",onChange:()=>a("Maintain")}),t.jsxs(v,{htmlFor:"maintain",children:[t.jsx("img",{src:ft,alt:"MaintakeGirl"}),"Maintain"]})]}),t.jsxs(b,{children:[t.jsx(j,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle",checked:o==="Gain Muscle",onChange:()=>a("Gain Muscle")}),t.jsxs(v,{htmlFor:"gainMuscle",children:[t.jsx("img",{src:D,alt:"GainMuscle"}),"Gain Muscle"]})]})]}),t.jsx(ct,{type:"submit",children:"Submit"})]}),t.jsx(xt,{onClick:i,children:"Back"})]}):t.jsx("div",{children:"Loading..."})},yt=i=>n.createElement("svg",{width:16,height:16,viewBox:"0 0 16 16",fill:"none",xmlns:"http://www.w3.org/2000/svg",...i},n.createElement("path",{d:"M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2.33301 8H13.553",stroke:"#E3FFA8",strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),E=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995",stroke:"#E3FFA8",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),z=()=>{const[i,o]=n.useState(!1),a=u(),d=f(I);n.useEffect(()=>{a(L())},[a]);const s=()=>{o(!0)},l=()=>{o(!1)};return t.jsxs(J,{children:[t.jsx(K,{children:t.jsx("img",{src:D,alt:"GainMuscle"})}),t.jsxs(_,{children:[t.jsx(X,{children:"Goal"}),t.jsxs(tt,{children:[d,t.jsxs(et,{children:[t.jsx(nt,{onClick:s,children:t.jsx(E,{})}),t.jsx(it,{onClick:s,children:t.jsx(yt,{})})]})]})]}),i&&t.jsx(ot,{children:t.jsx(ut,{onCloseButtonClick:l})})]})},wt=e.div`
   display: flex;
   gap: 12px;
 `,kt=e.div`
@@ -602,7 +602,7 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   height: 16px;
   stroke: var(--color-primary-grey);
   margin-right: 8px;
-`,Gt=({onCloseButtonClick:i})=>{const[o,a]=n.useState(""),[d,s]=n.useState(),l=f(w),c=u(),g=async r=>{r.preventDefault();const p={weight:o};try{const x=await h.put("/api/user/update",p);y.success(x.data.message),c(S(p)),c(B())}catch(x){console.error("Data error",x.message),y.error("Error updating user information")}};n.useEffect(()=>{(async()=>{try{const p=await h.get("api/user/current");s(p.data)}catch(p){console.error("Data error",p.message)}})()},[l]);const m=new Date().toLocaleDateString();return d?t.jsxs(St,{children:[t.jsxs(Wt,{children:[t.jsx(Bt,{children:"Enter your current weight"}),t.jsx(Ft,{onClick:i,children:t.jsx(Ht,{children:t.jsx(L,{})})})]}),t.jsx(Dt,{children:"You can record your weight once a day"}),t.jsxs(Et,{children:["Today: ",t.jsx(zt,{children:m})]}),t.jsxs($t,{onSubmit:g,children:[t.jsx(It,{type:"number",placeholder:"Enter your weight",min:"1",max:"300",value:o,onChange:r=>a(r.target.value)}),t.jsx(Ut,{type:"submit",children:"Confirm"}),t.jsx(Pt,{onClick:i,children:"Cancel"})]}),t.jsx(U,{position:"top-right"})]}):t.jsx("div",{children:"Loading..."})},At="/HealthyHub/assets/WaightImage-833d9f56.svg",Tt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]});h.defaults.baseURL="https://healthhub-backend.onrender.com";const $=()=>{const[i,o]=n.useState(!1),[a,d]=n.useState(null),s=f(w),l=u();n.useEffect(()=>{s&&l(C())},[s,l]),n.useEffect(()=>{(async()=>{try{const r=await h.get("api/user/current");d(r.data),console.log(r.data)}catch(r){console.error("Data error",r.message)}})()},[s]);const c=()=>{o(!0)},g=()=>{o(!1)};return a?t.jsxs(wt,{children:[t.jsx(kt,{children:t.jsx("img",{src:At,alt:"MaintakeMen"})}),t.jsxs(bt,{children:[t.jsx(jt,{children:"Weight"}),t.jsxs(vt,{children:[a.weight," ",t.jsx("span",{children:"kg"}),t.jsx(Ct,{onClick:c,children:t.jsx(Lt,{children:t.jsx(Tt,{})})})]})]}),i&&t.jsx(Mt,{children:t.jsx(Gt,{onCloseButtonClick:g})})]}):t.jsx("div",{children:"Loading..."})},Ot=e.div`
+`,Gt=({onCloseButtonClick:i})=>{const[o,a]=n.useState(""),[d,s]=n.useState(),l=f(w),c=u(),g=async r=>{r.preventDefault();const p={weight:o};try{const x=await h.put("/api/user/update",p);y.success(x.data.message),c(S(p)),c(B())}catch(x){console.error("Data error",x.message),y.error("Error updating user information")}};n.useEffect(()=>{(async()=>{try{const p=await h.get("api/user/current");s(p.data)}catch(p){console.error("Data error",p.message)}})()},[l]);const m=new Date().toLocaleDateString();return d?t.jsxs(St,{children:[t.jsxs(Wt,{children:[t.jsx(Bt,{children:"Enter your current weight"}),t.jsx(Ft,{onClick:i,children:t.jsx(Ht,{children:t.jsx(k,{})})})]}),t.jsx(Dt,{children:"You can record your weight once a day"}),t.jsxs(Et,{children:["Today: ",t.jsx(zt,{children:m})]}),t.jsxs($t,{onSubmit:g,children:[t.jsx(It,{type:"number",placeholder:"Enter your weight",min:"1",max:"300",value:o,onChange:r=>a(r.target.value)}),t.jsx(Ut,{type:"submit",children:"Confirm"}),t.jsx(Pt,{onClick:i,children:"Cancel"})]}),t.jsx(U,{position:"top-right"})]}):t.jsx("div",{children:"Loading..."})},At="/HealthyHub/assets/WaightImage-833d9f56.svg",Tt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]});h.defaults.baseURL="https://healthhub-backend.onrender.com";const $=()=>{const[i,o]=n.useState(!1),[a,d]=n.useState(null),s=f(w),l=u();n.useEffect(()=>{s&&l(L())},[s,l]),n.useEffect(()=>{(async()=>{try{const r=await h.get("api/user/current");d(r.data),console.log(r.data)}catch(r){console.error("Data error",r.message)}})()},[s]);const c=()=>{o(!0)},g=()=>{o(!1)};return a?t.jsxs(wt,{children:[t.jsx(kt,{children:t.jsx("img",{src:At,alt:"MaintakeMen"})}),t.jsxs(bt,{children:[t.jsx(jt,{children:"Weight"}),t.jsxs(vt,{children:[a.weight," ",t.jsx("span",{children:"kg"}),t.jsx(Ct,{onClick:c,children:t.jsx(Lt,{children:t.jsx(Tt,{})})})]})]}),i&&t.jsx(Mt,{children:t.jsx(Gt,{onCloseButtonClick:g})})]}):t.jsx("div",{children:"Loading..."})},Ot=e.div`
   width: 130px;
   height: 28px;
   display: flex;
@@ -692,8 +692,7 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   margin-right: 8px;
 `,ne=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:23,height:23,stroke:"",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M8.8999 7.55999C9.2099 3.95999 11.0599 2.48999 15.1099 2.48999H15.2399C19.7099 2.48999 21.4999 4.27999 21.4999 8.74999V15.27C21.4999 19.74 19.7099 21.53 15.2399 21.53H15.1099C11.0899 21.53 9.2399 20.08 8.9099 16.54",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M15.0001 12H3.62012",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M5.85 8.65002L2.5 12L5.85 15.35",strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"})),ie=()=>{const i=u(),o=W(),a=async()=>{try{await i(F()),o("/signin")}catch(d){console.error("Error during logout:",d)}};return t.jsx(te,{children:t.jsxs(_t,{onClick:a,children:[t.jsx(ee,{children:t.jsx(ne,{})}),"Log out"]})})},oe=e.div`
   width: 158px;
-  height: 112px;
-  padding: 24px;
+  padding: 12px 12px 24px 24px;
   border-radius: 12px;
   background: var(--Color-Primary-Black-2, #0f0f0f);
   box-shadow: 0px 4px 14px 0px rgba(227, 255, 168, 0.2);
@@ -701,7 +700,19 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-`,ae=()=>t.jsx(oe,{children:t.jsxs(re,{children:[t.jsx(Xt,{}),t.jsx(ie,{})]})}),se=()=>{const[i,o]=n.useState(!1),[a,d]=n.useState(),s=f(w),l=u();n.useEffect(()=>{s&&l(C())},[s,l]),n.useEffect(()=>{(async()=>{try{const x=await h.get("api/user/current");d(x.data),console.log(x.data)}catch(x){console.error("Data error",x.message)}})()},[s]);const c=()=>{o(!0)},g=()=>{o(!1)};if(!a)return t.jsx("div",{children:"Loading..."});const{name:m,avatarURL:r}=a;return t.jsxs(Ot,{children:[t.jsx(Rt,{children:m}),t.jsx(Zt,{children:t.jsx(H,{src:r,alt:"Avatar",style:{borderRadius:"50%"}})}),t.jsx(Nt,{onClick:c,children:t.jsx(Vt,{children:t.jsx(E,{})})}),i&&t.jsx(Qt,{onClick:g,children:t.jsx(ae,{})})]})},de=e.div`
+`,ae=e.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0;
+
+  @media (min-width: 834px) {
+  }
+`,se=({onClick:i})=>t.jsxs(oe,{children:[t.jsx(ae,{children:t.jsx(k,{onClick:i})}),t.jsxs(re,{children:[t.jsx(Xt,{}),t.jsx(ie,{})]})]}),de=()=>{const[i,o]=n.useState(!1),[a,d]=n.useState(),s=f(w),l=u();n.useEffect(()=>{s&&l(L())},[s,l]),n.useEffect(()=>{(async()=>{try{const x=await h.get("api/user/current");d(x.data),console.log(x.data)}catch(x){console.error("Data error",x.message)}})()},[s]);const c=()=>{o(!0)},g=()=>{o(!1)};if(!a)return t.jsx("div",{children:"Loading..."});const{name:m,avatarURL:r}=a;return t.jsxs(Ot,{children:[t.jsx(Rt,{children:m}),t.jsx(Zt,{children:t.jsx(H,{src:r,alt:"Avatar",style:{borderRadius:"50%"}})}),t.jsx(Nt,{onClick:c,children:t.jsx(Vt,{children:t.jsx(E,{})})}),i&&t.jsx(Qt,{children:t.jsx(se,{onClick:g})})]})},le=e.div`
   width: 320px;
   position: relative;
   height: 60px;
@@ -722,7 +733,7 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
     padding: 0 36px 0 34px;
     max-width: 1440px;
   }
-`,le=e.div`
+`,pe=e.div`
   margin-left: auto;
   @media (min-width: 834px) {
     margin-left: 73px;
@@ -731,7 +742,7 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   @media (min-width: 1440px) {
     margin-left: 124px;
   }
-`,pe=e.div``,ce=e.button`
+`,ce=e.div``,xe=e.button`
   background: none;
   border: none;
   padding: 0;
@@ -747,7 +758,7 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
     padding: 0;
     margin-left: 8px;
   }
-`,xe=e.div`
+`,he=e.div`
   display: none;
 
   @media (min-width: 834px) {
@@ -759,17 +770,17 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   @media (min-width: 1440px) {
     gap: 80px;
   }
-`,he=e.svg`
+`,ge=e.svg`
   width: 16px;
   height: 16px;
   @media (min-width: 834px) {
     display: none;
   }
-`,ge=e.div`
+`,me=e.div`
   position: absolute;
   z-index: 1;
   padding-top: 250px;
-`,me=e.div`
+`,fe=e.div`
   width: 300px;
   height: 184px;
   padding: 16px 16px 24px 24px;
@@ -778,10 +789,10 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   box-shadow: 0px 4px 14px 0px rgba(227, 255, 168, 0.2);
   display: flex;
   justify-content: space-between;
-`,fe=e.div`
+`,ue=e.div`
   width: 16px;
   height: 16px;
-`,ue=e.div`
+`,ye=e.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -793,7 +804,7 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   &:hover,
   &:focus {
   }
-`;const ye=e.button`
+`;const we=e.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -805,11 +816,11 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   @media (min-width: 834px) {
     display: none;
   }
-`,we=e.svg`
+`,ke=e.svg`
   width: 16px;
   height: 16px;
   stroke: var(--color-primary-grey);
-`,ke=({onCloseButtonClick:i})=>t.jsxs(me,{children:[t.jsxs(ue,{children:[t.jsx(z,{}),t.jsx($,{})]}),t.jsx(fe,{children:t.jsx(ye,{onClick:i,children:t.jsx(we,{children:t.jsx(L,{})})})})]}),je=e(v)`
+`,je=({onCloseButtonClick:i})=>t.jsxs(fe,{children:[t.jsxs(ye,{children:[t.jsx(z,{}),t.jsx($,{})]}),t.jsx(ue,{children:t.jsx(we,{onClick:i,children:t.jsx(ke,{children:t.jsx(k,{})})})})]}),be=e(C)`
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -819,9 +830,9 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
     font-size: 22px;
     line-height: 1.46%;
   }
-`,be=()=>t.jsx(je,{to:"/main",children:"HealthyHub"}),ve=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:23,height:23,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"",...i},n.createElement("path",{d:"M17.5401 8.31001C18.8987 8.31001 20.0001 7.20863 20.0001 5.85001C20.0001 4.49139 18.8987 3.39001 17.5401 3.39001C16.1814 3.39001 15.0801 4.49139 15.0801 5.85001C15.0801 7.20863 16.1814 8.31001 17.5401 8.31001Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M6.46001 8.31001C7.81863 8.31001 8.92 7.20863 8.92 5.85001C8.92 4.49139 7.81863 3.39001 6.46001 3.39001C5.10139 3.39001 4 4.49139 4 5.85001C4 7.20863 5.10139 8.31001 6.46001 8.31001Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M17.5401 20.6101C18.8987 20.6101 20.0001 19.5087 20.0001 18.1501C20.0001 16.7914 18.8987 15.6901 17.5401 15.6901C16.1814 15.6901 15.0801 16.7914 15.0801 18.1501C15.0801 19.5087 16.1814 20.6101 17.5401 20.6101Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M6.46001 20.6101C7.81863 20.6101 8.92 19.5087 8.92 18.1501C8.92 16.7914 7.81863 15.6901 6.46001 15.6901C5.10139 15.6901 4 16.7914 4 18.1501C4 19.5087 5.10139 20.6101 6.46001 20.6101Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),Ce=()=>{const[i,o]=n.useState(!1),a=()=>{o(!0)},d=()=>{o(!1)};return t.jsxs(de,{children:[t.jsx(pe,{children:t.jsx(be,{})}),t.jsx(ce,{onClick:a,children:t.jsx(he,{children:t.jsx(ve,{style:{stroke:i?"#E3FFA8":"#B6B6B6"}})})}),t.jsxs(xe,{children:[t.jsx(z,{}),t.jsx($,{})]}),t.jsx(le,{children:t.jsx(se,{})}),i&&t.jsx(ge,{isModalOpen:i,children:t.jsx(ke,{onCloseButtonClick:d})})]})},Le=e.div`
+`,ve=()=>t.jsx(be,{to:"/main",children:"HealthyHub"}),Ce=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:23,height:23,stroke:"#B6B6B6",viewBox:"0 0 32 32",fill:"",...i},n.createElement("path",{d:"M17.5401 8.31001C18.8987 8.31001 20.0001 7.20863 20.0001 5.85001C20.0001 4.49139 18.8987 3.39001 17.5401 3.39001C16.1814 3.39001 15.0801 4.49139 15.0801 5.85001C15.0801 7.20863 16.1814 8.31001 17.5401 8.31001Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M6.46001 8.31001C7.81863 8.31001 8.92 7.20863 8.92 5.85001C8.92 4.49139 7.81863 3.39001 6.46001 3.39001C5.10139 3.39001 4 4.49139 4 5.85001C4 7.20863 5.10139 8.31001 6.46001 8.31001Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M17.5401 20.6101C18.8987 20.6101 20.0001 19.5087 20.0001 18.1501C20.0001 16.7914 18.8987 15.6901 17.5401 15.6901C16.1814 15.6901 15.0801 16.7914 15.0801 18.1501C15.0801 19.5087 16.1814 20.6101 17.5401 20.6101Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M6.46001 20.6101C7.81863 20.6101 8.92 19.5087 8.92 18.1501C8.92 16.7914 7.81863 15.6901 6.46001 15.6901C5.10139 15.6901 4 16.7914 4 18.1501C4 19.5087 5.10139 20.6101 6.46001 20.6101Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),Le=()=>{const[i,o]=n.useState(!1),a=()=>{o(!0)},d=()=>{o(!1)};return t.jsxs(le,{children:[t.jsx(ce,{children:t.jsx(ve,{})}),t.jsx(xe,{onClick:a,children:t.jsx(ge,{children:t.jsx(Ce,{style:{stroke:i?"#E3FFA8":"#B6B6B6"}})})}),t.jsxs(he,{children:[t.jsx(z,{}),t.jsx($,{})]}),t.jsx(pe,{children:t.jsx(de,{})}),i&&t.jsx(me,{isModalOpen:i,children:t.jsx(je,{onCloseButtonClick:d})})]})},Me=e.div`
   background: var(--color-primary-black-2);
-`,Me=e.div`
+`,Se=e.div`
   width: 320px;
   padding-left: 10px;
   padding-right: 10px;
@@ -839,4 +850,4 @@ import{s as e,N as v,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
     padding-left: 34px;
     padding-right: 34px;
   }
-`,Be=()=>{const i=f(G);return t.jsxs(t.Fragment,{children:[t.jsx(Le,{children:i?t.jsx(Ce,{}):t.jsx(q,{})}),t.jsx(Me,{children:t.jsx(n.Suspense,{fallback:t.jsx("div",{children:"Loading..."}),children:t.jsx(A,{})})})]})};export{Be as default};
+`,De=()=>{const i=f(G);return t.jsxs(t.Fragment,{children:[t.jsx(Me,{children:i?t.jsx(Le,{}):t.jsx(q,{})}),t.jsx(Se,{children:t.jsx(n.Suspense,{fallback:t.jsx("div",{children:"Loading..."}),children:t.jsx(A,{})})})]})};export{De as default};
