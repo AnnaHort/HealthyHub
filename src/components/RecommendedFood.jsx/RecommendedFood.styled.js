@@ -120,7 +120,7 @@ export const RecommendedFoodCalories = styled.p`
   margin-left: 6px;
 `;
 
-export const RecomendedFoodButton = styled.a`
+export const RecomendedFoodButton = styled.button`
   color: var(--color-primary-grey);
   font-family: Poppins;
   font-size: 16px;

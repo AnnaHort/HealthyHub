@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-router-dom';
 
 import {
   RecommendedFoodContainer,
@@ -50,6 +51,10 @@ const RecommendedFoodMain = () => {
     }
   };
 
+  const handleSeeMoreClick = () => {
+    console.log('Button click');
+  };
+
   return (
     <div>
       <RecommendedFoodUnitName>Recommended Food</RecommendedFoodUnitName>
@@ -69,15 +74,17 @@ const RecommendedFoodMain = () => {
             </RecommendedFoodFrame>
           );
         })}
-        <RecomendedFoodButton href="/recommended-food">
-          See more
-          <ButtonPointer
-            src={RecommendedFoodPointer}
-            alt="#"
-            width="16"
-            height="16"
-          />
-        </RecomendedFoodButton>
+        <Link to="/recommended-food">
+          <RecomendedFoodButton onClick={handleSeeMoreClick}>
+            See more
+            <ButtonPointer
+              src={RecommendedFoodPointer}
+              alt="#"
+              width="16"
+              height="16"
+            />
+          </RecomendedFoodButton>
+        </Link>
       </RecommendedFoodContainer>
     </div>
   );
