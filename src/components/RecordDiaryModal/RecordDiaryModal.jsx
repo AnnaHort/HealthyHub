@@ -46,6 +46,14 @@ const RecordDiaryModal = () => {
     e.preventDefault();
     // Додайте код для обробки введених даних тут
     console.log('Введені значення:', inputValues);
+
+    setInputValues({
+      product: '',
+      carbonoh: '',
+      protein: '',
+      fat: '',
+      calories: '',
+    });
   };
 
   return (
