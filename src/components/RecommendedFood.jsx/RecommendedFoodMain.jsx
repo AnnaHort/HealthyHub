@@ -1,3 +1,8 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-router-dom';
+
 import {
   RecommendedFoodContainer,
   RecommendedFoodFrame,
@@ -13,39 +18,48 @@ import {
 
 import RecommendedFoodPointer from '../../img/recommendedFoodPointer/arrow-right.png';
 
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 // для создания состояния и управления им.
 const RecommendedFoodMain = () => {
+  const isMobile = useMediaQuery({ minWidth: 320, maxWidth: 833 });
+  const isTablet = useMediaQuery({ minWidth: 834 });
+
   const [recommendedFood, setRecommendedFood] = useState([]);
 
-  // выполняет запрос к серверу с библиотекой axios.
   useEffect(() => {
+    // делаем запрос на сервер
     const fetchRecommendedFood = async () => {
       try {
-        // віполняет запрос и отображает только 4 картинки
         const response = await axios.get('/api/recommended-food');
-        setRecommendedFood(response.data.slice(0, 4));
+        setRecommendedFood(response.data);
       } catch (error) {
-        console.error('Error fetching food:', error);
-        if (error.response) {
-          console.error('Error response:', error.response.data);
-        }
+        console.error('Error:', error);
       }
     };
 
-    // асинхронная функция вызываемая внутри useEffect
     fetchRecommendedFood();
   }, []);
+
+  const getCardCount = () => {
+    if (isMobile) {
+      return 2;
+    } else if (isTablet) {
+      return 4;
+    } else {
+      return recommendedFood.length;
+    }
+  };
+
+  const handleSeeMoreClick = () => {
+    console.log('Button click');
+  };
 
   return (
     <div>
       <RecommendedFoodUnitName>Recommended Food</RecommendedFoodUnitName>
       <RecommendedFoodContainer>
-        {recommendedFood.map((foodItem, id) => {
+        {recommendedFood.slice(0, getCardCount()).map((foodItem, id) => {
           console.log(foodItem.icon);
           return (
             <RecommendedFoodFrame key={id}>
@@ -60,17 +74,20 @@ const RecommendedFoodMain = () => {
             </RecommendedFoodFrame>
           );
         })}
-        <RecomendedFoodButton href="/recommended-food">
-          See more
-          <ButtonPointer
-            src={RecommendedFoodPointer}
-            alt="#"
-            width="16"
-            height="16"
-          />
-        </RecomendedFoodButton>
+        <Link to="/recommended-food">
+          <RecomendedFoodButton onClick={handleSeeMoreClick}>
+            See more
+            <ButtonPointer
+              src={RecommendedFoodPointer}
+              alt="#"
+              width="16"
+              height="16"
+            />
+          </RecomendedFoodButton>
+        </Link>
       </RecommendedFoodContainer>
     </div>
   );
 };
+
 export default RecommendedFoodMain;
