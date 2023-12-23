@@ -16,14 +16,24 @@ import CurrentWeightModal from '../CurrentWeightModal/CurrentWeightModal';
 
 import MaintakeMen from '../../Emoji/WaightImage.svg';
 import IconsEditTwo from '../../Icons/IconEditTwo';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
+import { getCurrentUser } from '../../redux/updateUser/updateOperations';
 
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 const ControlPanelWeight = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [userData, setUserData] = useState(null);
-  // const dispatch = useDispatch();
+  const userUpdate = useSelector(selectUpdateUserStatus);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (userUpdate) {
+      dispatch(getCurrentUser());
+    }
+  }, [userUpdate, dispatch]);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,17 +41,12 @@ const ControlPanelWeight = () => {
         setUserData(response.data);
         console.log(response.data);
       } catch (error) {
-        console.log(error);
+        console.error('Data error', error.message);
       }
     };
     fetchData();
-  }, []);
+  }, [userUpdate]); 
 
-  // useEffect(() => {
-  //   if (userData) {
-  //     dispatch(fetchCurentUser());
-  //   }
-  // }, [userData]);
 
   const handleIconButtonClick = () => {
     setModalOpen(true);
