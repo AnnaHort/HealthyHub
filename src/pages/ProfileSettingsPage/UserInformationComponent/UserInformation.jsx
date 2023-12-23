@@ -23,18 +23,26 @@ import {
 
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+// import { fetchUserInfo } from '../../../redux/userCurrentInfo/operations';
+import {
+  setUpdateUserFalse,
+  updateUser,
+} from '../../../redux/updateUser/updateOperations';
 // import { Toaster } from 'react-hot-toast';
 
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 const UserInformation = () => {
+  const dispatch = useDispatch();
+
   const [userData, setUserData] = useState(null);
   const [name, setName] = useState();
   const [age, setAge] = useState();
   const [gender, setGender] = useState();
   const [height, setHeight] = useState();
   const [weight, setWeight] = useState();
-  const [userActivity,setUserActivity] = useState("");
+  const [userActivity, setUserActivity] = useState('');
   // const [avatarURL, setAvatarURL] = useState("");
 
   useEffect(() => {
@@ -67,7 +75,10 @@ const UserInformation = () => {
     try {
       const response = await axios.put('/api/user/update', newUserData);
       console.log(response.data);
+      dispatch(updateUser(newUserData));
       toast.success(response.data.message);
+
+      dispatch(setUpdateUserFalse());
     } catch (error) {
       console.error('Data error', error.message);
       toast.error('Error updating user information');
@@ -94,7 +105,7 @@ const UserInformation = () => {
         <UserInformationPhotoContainer>
           <UserInformationImgContainer>
             <UserInformationImg
-              style={{ width: '36px', height: '36px', borderRadius:"50%" }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%' }}
               src={`${userData.avatarURL}`}
               // onChange={(e) => setAvatarURL(e.target.value)}
               alt="Avatar"
@@ -199,8 +210,8 @@ const UserInformation = () => {
               id="low 1.2-1.3"
               value="low 1.2-1.3"
               name="activity"
-              checked={userActivity === "1.25"}
-              onChange={() => setUserActivity("1.25")}            
+              checked={userActivity === '1.25'}
+              onChange={() => setUserActivity('1.25')}
             />
             <UserInformationLabelRadio htmlFor="low 1.2-1.3">
               1.2-1.3 - if you do not have physical activity and sedentary work
@@ -213,8 +224,8 @@ const UserInformation = () => {
               id="light 1.4-1.5"
               value="light 1.4-1.5"
               name="activity"
-              checked={userActivity === "1.45"}
-              onChange={() => setUserActivity("1.45")}
+              checked={userActivity === '1.45'}
+              onChange={() => setUserActivity('1.45')}
             />
             <UserInformationLabelRadio htmlFor="light 1.4-1.5">
               1.4-1.5 - if you do short runs or light gymnastics 1-3 times a
@@ -228,8 +239,8 @@ const UserInformation = () => {
               id="average 1.6-1.7"
               value="average 1.6-1.7"
               name="activity"
-              checked={userActivity === "1.65"}
-              onChange={() => setUserActivity("1.65")}
+              checked={userActivity === '1.65'}
+              onChange={() => setUserActivity('1.65')}
             />
             <UserInformationLabelRadio htmlFor="average 1.6-1.7">
               1.6-1.7 - if you play sports with average loads 3-5 times a week
@@ -242,8 +253,8 @@ const UserInformation = () => {
               id="high 1.8-1.9"
               value="high 1.8-1.9"
               name="activity"
-              checked={userActivity === "1.85"}
-              onChange={() => setUserActivity("1.85")}
+              checked={userActivity === '1.85'}
+              onChange={() => setUserActivity('1.85')}
             />
             <UserInformationLabelRadio htmlFor="high 1.8-1.9">
               1.8-1.9 - if you train fully 6-7 times a week
@@ -256,8 +267,8 @@ const UserInformation = () => {
               id="hard 2.0"
               value="hard 2.0"
               name="activity"
-              checked={userActivity === "2"}
-              onChange={() => setUserActivity("2")}
+              checked={userActivity === '2'}
+              onChange={() => setUserActivity('2')}
             />
             <UserInformationLabelRadio htmlFor="hard 2.0">
               2.0 - if your work is related to physical labor, you train 2 times
@@ -276,7 +287,7 @@ const UserInformation = () => {
         </UserInformationLinkCancel>
       </UserInformationBtnContainer>
 
-      <ToastContainer position="top-right"/>
+      <ToastContainer position="top-right" />
     </UserInformationForm>
   );
 };
