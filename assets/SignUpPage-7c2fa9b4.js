@@ -1,4 +1,4 @@
-import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p as v,E as j,B as O,q as Q,t as J,v as K,s as e,w,x as b,y as G,b as X,r as s,k as Z,z as _,Q as S}from"./index-fd07ddf2.js";const ii={name:"",email:"",password:""},ei=/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,ti=g().shape({name:h().required("Name is required"),email:h().matches(ei,"Invalid email").required("Email is required"),password:h().min(6,"Password must be at least 6 characters").required("Password is required")}),ni=({onSubmit:o,onNext:a})=>i.jsxs(T,{children:[i.jsx(D,{src:L,alt:"Responsive Image"}),i.jsxs("div",{children:[i.jsx(V,{children:"Sign up"}),i.jsx(U,{children:"You need to register to use the service"}),i.jsx(u,{initialValues:ii,validationSchema:ti,onSubmit:(t,{setSubmitting:n})=>{o(t),a(),n(!1)},children:({errors:t,touched:n})=>i.jsxs(W,{autoComplete:"off",children:[i.jsxs("label",{htmlFor:"name",children:[i.jsx(v,{name:"name",placeholder:"Name"}),t.name&&n.name?i.jsx(j,{children:t.name}):null]}),i.jsxs("label",{htmlFor:"email",children:[i.jsx(v,{name:"email",type:"email",placeholder:"E-mail"}),t.email&&n.email?i.jsx(j,{children:t.email}):null]}),i.jsxs("label",{htmlFor:"password",children:[i.jsx(v,{name:"password",type:"password",placeholder:"Password"}),t.password&&n.password?i.jsx(j,{children:t.password}):null]}),i.jsx(O,{type:"submit",children:"Next"}),i.jsxs(Q,{children:[i.jsx(J,{children:"Do you already have an account?"}),i.jsx(K,{to:"/signin",children:"Sign in"})]})]})})]})]}),ai=e.div`
+import{h as g,i as h,j as i,S as H,I as N,R as L,m as V,n as U,F as u,o as W,p as v,E as S,B as D,q as O,t as Q,v as J,s as e,w as b,x as j,y as P,b as K,r as x,k as X,z as Z,Q as k}from"./index-2499d38b.js";const _={name:"",email:"",password:""},ii=/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,ei=g().shape({name:h().required("Name is required"),email:h().matches(ii,"Invalid email").required("Email is required"),password:h().min(6,"Password must be at least 6 characters").required("Password is required")}),ti=({onSubmit:r,onNext:a})=>i.jsxs(H,{children:[i.jsx(N,{src:L,alt:"Responsive Image"}),i.jsxs("div",{children:[i.jsx(V,{children:"Sign up"}),i.jsx(U,{children:"You need to register to use the service"}),i.jsx(u,{initialValues:_,validationSchema:ei,onSubmit:(t,{setSubmitting:n})=>{r(t),a(),n(!1)},children:({errors:t,touched:n})=>i.jsxs(W,{autoComplete:"off",children:[i.jsxs("label",{htmlFor:"name",children:[i.jsx(v,{name:"name",placeholder:"Name"}),t.name&&n.name?i.jsx(S,{children:t.name}):null]}),i.jsxs("label",{htmlFor:"email",children:[i.jsx(v,{name:"email",type:"email",placeholder:"E-mail"}),t.email&&n.email?i.jsx(S,{children:t.email}):null]}),i.jsxs("label",{htmlFor:"password",children:[i.jsx(v,{name:"password",type:"password",placeholder:"Password"}),t.password&&n.password?i.jsx(S,{children:t.password}):null]}),i.jsx(D,{type:"submit",children:"Next"}),i.jsxs(O,{children:[i.jsx(Q,{children:"Do you already have an account?"}),i.jsx(J,{to:"/signin",children:"Sign in"})]})]})})]})]}),ni=e.div`
   background-color: var(--color-primary-black);
   min-width: 320px;
   height: 744px;
@@ -19,7 +19,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     flex-direction: row;
     gap: 104px;
   }
-`,oi=e.img`
+`,ai=e.img`
   display: flex;
   width: 300px;
   height: 290px;
@@ -49,7 +49,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     flex-shrink: 0;
     margin-left: 140px;
   }
-`,ri=e(w)`
+`,oi=e(b)`
   display: flex;
   flex-direction: column;
 
@@ -62,7 +62,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     display: flex;
     align-items: flex-start;
   }
-`,li=e.h2`
+`,ri=e.h2`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 24px;
@@ -81,7 +81,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   @media (min-width: 1024px) {
     margin: 0;
   }
-`,di=e.p`
+`,li=e.p`
   color: var(--color-primary-grey);
   padding-bottom: 24px;
   margin: 0;
@@ -120,7 +120,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     width: 192px;
     flex-direction: column;
   }
-`,pi=e.button`
+`,di=e.button`
   width: 100%;
   color: var(--color-primary-black-2);
   text-align: center;
@@ -146,7 +146,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   @media (min-width: 1024px) {
     width: 192px;
   }
-`,mi=e.button`
+`,pi=e.button`
   width: 100%;
   color: var(--color-primary-grey);
   text-align: center;
@@ -171,15 +171,15 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     display: flex;
     justify-content: center;
   }
-`,k=e.li`
+`,B=e.li`
   display: flex;
   gap: 8px;
-`,B=e(b)`
+`,F=e(j)`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   opacity: 0;
-`,F=e.label`
+`,G=e.label`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -224,10 +224,10 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   input[type='radio']:checked + &::after {
     opacity: 1;
   }
-`,xi=e.div`
+`,mi=e.div`
   color: #e74a3b;
   margin-bottom: 20px;
-`,hi={goal:""},ci=g({goal:h().required("Choose one of the options").oneOf(["Lose Fat","Maintain","Gain Muscle"])}),gi=({onNext:o,onBack:a,onSubmit:t})=>i.jsxs(ai,{children:[i.jsx(oi,{alt:"Goal Image",src:"/src/components/YourGoal/img/IllustrationGoals-min.svg"}),i.jsx(u,{initialValues:hi,validationSchema:ci,onSubmit:(n,{setSubmitting:l})=>{t(n),o(),l(!1)},children:({errors:n})=>i.jsxs(ri,{children:[i.jsx(li,{children:"Your goal"}),i.jsx(di,{children:"Choose a goal so that we can help you effectively"}),i.jsxs(si,{children:[i.jsxs(k,{children:[i.jsx(B,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat"}),i.jsx(F,{htmlFor:"loseFat",children:"Lose Fat"})]}),i.jsxs(k,{children:[i.jsx(B,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),i.jsx(F,{htmlFor:"maintain",children:"Maintain"})]}),i.jsxs(k,{children:[i.jsx(B,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),i.jsx(F,{htmlFor:"gainMuscle",children:"Gain Muscle"})]})]}),i.jsx(xi,{children:n.goal}),i.jsx(pi,{type:"submit",children:"Next"}),i.jsx(mi,{type:"button",onClick:a,children:"Back"})]})})]}),ui=e.div`
+`,xi={goal:""},hi=g({goal:h().required("Choose one of the options").oneOf(["Lose fat","Maintain","Gain Muscle"])}),ci=({onNext:r,onBack:a,onSubmit:t})=>i.jsxs(ni,{children:[i.jsx(ai,{alt:"Goal Image",src:"/src/components/YourGoal/img/IllustrationGoals-min.svg"}),i.jsx(u,{initialValues:xi,validationSchema:hi,onSubmit:(n,{setSubmitting:s})=>{t(n),r(),s(!1)},children:({errors:n})=>i.jsxs(oi,{children:[i.jsx(ri,{children:"Your goal"}),i.jsx(li,{children:"Choose a goal so that we can help you effectively"}),i.jsxs(si,{children:[i.jsxs(B,{children:[i.jsx(F,{type:"radio",id:"loseFat",name:"goal",value:"Lose fat"}),i.jsx(G,{htmlFor:"loseFat",children:"Lose Fat"})]}),i.jsxs(B,{children:[i.jsx(F,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),i.jsx(G,{htmlFor:"maintain",children:"Maintain"})]}),i.jsxs(B,{children:[i.jsx(F,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),i.jsx(G,{htmlFor:"gainMuscle",children:"Gain Muscle"})]})]}),i.jsx(mi,{children:n.goal}),i.jsx(di,{type:"submit",children:"Next"}),i.jsx(pi,{type:"button",onClick:a,children:"Back"})]})})]}),gi=e.div`
   background-color: var(--color-primary-black);
   width: 320px;
   margin: 0 auto;
@@ -254,7 +254,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     gap: 104px;
     text-align: start;
   }
-`,fi=e.img`
+`,ui=e.img`
   width: 300px;
   height: 296px;
   margin-bottom: 10px;
@@ -268,7 +268,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     height: 588px;
     margin-bottom: 0;
   }
-`,yi=e.h2`
+`,fi=e.h2`
   color: var(--color-primary-white);
   font-size: 24px;
   font-weight: 500;
@@ -286,7 +286,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     text-align: left;
     margin-top: 80px;
   }
-`,wi=e.p`
+`,yi=e.p`
   color: var(--color-primary-grey);
   font-size: 18px;
   line-height: 1.33;
@@ -325,7 +325,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     margin-bottom: 12px;
     margin-left: 0;
   }
-`;const bi=e(w)`
+`;const wi=e(b)`
   @media (min-width: 834px) {
     margin-left: auto;
     margin-right: auto;
@@ -334,7 +334,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     margin-left: 0;
     margin-right: 0;
   }
-`,vi=e.div`
+`,bi=e.div`
   display: flex;
   gap: 16px;
   margin-bottom: 24px;
@@ -350,7 +350,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     margin-right: 0;
     margin-left: 0;
   }
-`,P=e.p`
+`,A=e.p`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 14px;
@@ -384,7 +384,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     margin-left: 0;
     margin-right: 0;
   }
-`,Si=e(b)`
+`,vi=e(j)`
   color: var(--color-primary-grey);
   font-family: Poppins;
   line-height: 1.429;
@@ -406,7 +406,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     background: transparent;
     border-color: transparent;
   }
-`,ki=e.button`
+`,Si=e.button`
   border-radius: 12px;
   border: none;
   outline: none;
@@ -429,7 +429,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     margin-bottom: 20px;
     width: 212px;
   }
-`,Bi=e.button`
+`,ki=e.button`
   color: var(--color-primary-grey);
   background-color: var(--color-primary-black);
   width: 192px;
@@ -443,13 +443,13 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     margin: 0;
     width: 212px;
   }
+`,Bi=e.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
 `,Fi=e.div`
   color: #e74a3b;
   margin-bottom: 20px;
-`,Gi=e.div`
-  color: #e74a3b;
-  margin-bottom: 20px;
-`,zi="/HealthyHub/assets/gender-and-age-mobile-541c31ba.png",Pi="/HealthyHub/assets/gender-and-age-tablet-99eb88e0.png",Ai="/HealthyHub/assets/gender-and-age-desktop-cc0787a2.png",Ci=e.div`
+`,Gi="/HealthyHub/assets/gender-and-age-mobile-541c31ba.png",Pi="/HealthyHub/assets/gender-and-age-tablet-99eb88e0.png",zi="/HealthyHub/assets/gender-and-age-desktop-cc0787a2.png",Ri=e.div`
   background-color: var(--color-primary-black);
   padding: 24px 10px;
   @media (min-width: 834px) {
@@ -458,7 +458,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   @media (min-width: 1024px) {
     display: flex;
   }
-`,Ri=e.img`
+`,Ci=e.img`
   margin-bottom: 24px;
   margin-right: auto;
   margin-left: auto;
@@ -475,7 +475,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   @media (min-width: 1440px) {
     margin-right: 104px;
   }
-`,Ii=e.div`
+`,Mi=e.div`
   max-width: 458px;
   margin-right: auto;
   margin-left: auto;
@@ -486,7 +486,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     align-items: flex-start;
     padding-top: 80px;
   }
-`,Ei=e.h2`
+`,Ai=e.h2`
   color: var(--color-primary-white);
   font-size: 24px;
   font-weight: 500;
@@ -498,7 +498,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
     font-weight: 500;
     line-height: 1.2;
   }
-`,Mi=e.p`
+`,Ii=e.p`
   color: var(--color-primary-grey);
   font-size: 18px;
   font-weight: 400;
@@ -516,14 +516,14 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   @media (min-width: 1024px) {
     text-align: start;
   }
-`,Yi=e(w)`
+`,Ei=e(b)`
   display: flex;
   flex-direction: column;
   align-items: center;
   @media (min-width: 1024px) {
     align-items: flex-start;
   }
-`,qi=e.ul`
+`,Yi=e.ul`
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -532,12 +532,12 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   gap: 8px;
   display: flex;
   align-items: center;
-`;const p=e.div`
+`;const d=e.div`
   display: flex;
   position: relative;
-`,m=e(b)`
+`,p=e(j)`
   opacity: 0;
-`,x=e.label`
+`,m=e.label`
   position: relative;
   padding-left: 16px;
   cursor: pointer;
@@ -580,7 +580,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
-`;const $i=e.button`
+`;const qi=e.button`
   color: var(--color-primary-black-2);
   font-size: 14px;
   font-weight: 500;
@@ -599,7 +599,7 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   @media (min-width: 1024px) {
     max-width: 212px;
   }
-`,Hi=e.button`
+`,Ti=e.button`
   color: var(--color-primary-grey);
   font-size: 14px;
   font-weight: 500;
@@ -611,13 +611,13 @@ import{h as g,i as h,j as i,S as T,I as D,R as L,m as V,n as U,F as u,o as W,p a
   @media (min-width: 1024px) {
     max-width: 212px;
   }
-`,Ni=e.div`
+`,$i=e.div`
   color: #e74a3b;
   margin-bottom: 20px;
-`,Ti={gender:"",age:""},Di=g().shape({gender:h().required("Select gender").oneOf(["male","female"]),age:G().required("Specify age").integer("Age must be an integer").min(1,"Minimum age is 1 year").max(100,"Maximum age is 100 years")}),Li=({onNext:o,onBack:a,onSubmit:t})=>i.jsxs(ui,{children:[i.jsx(fi,{src:zi,srcSet:`${Pi} 834w, ${Ai} 1440w`,sizes:"(max-width: 833px) 100vw, (min-width: 834px) 50vw",alt:"Responsive Image"}),i.jsxs("div",{children:[i.jsx(yi,{children:"Select gender, Age"}),i.jsx(wi,{children:"Choose a goal so that we can help you effectively"}),i.jsx(u,{initialValues:Ti,validationSchema:Di,onSubmit:(n,{setSubmitting:l})=>{t(n),o(),l(!1)},children:({errors:n})=>i.jsxs(bi,{children:[i.jsx(P,{children:"Gender"}),i.jsxs(vi,{children:[i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"male",name:"gender",value:"male"}),i.jsx(x,{style:{width:"120px",textAlign:"start"},htmlFor:"male",children:"Male"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"female",name:"gender",value:"female"}),i.jsx(x,{htmlFor:"female",children:"Female"})]})]}),i.jsx(Fi,{children:n.gender}),i.jsxs("label",{htmlFor:"age",children:[i.jsx(P,{children:"Your age"}),i.jsx(ji,{children:i.jsx(Si,{type:"number",id:"age",name:"age",placeholder:"Enter your age"})})]}),i.jsx(Gi,{children:n.age}),i.jsx(ki,{type:"submit",children:"Next"}),i.jsx(Bi,{onClick:a,children:"Back"})]})})]})]}),Vi=({onNext:o,onBack:a,onSubmit:t})=>i.jsx("div",{children:i.jsx(Li,{onBack:a,onNext:o,onSubmit:t})}),Ui=e.div`
+`,Hi={gender:"",age:""},Ni=g().shape({gender:h().required("Select gender").oneOf(["Male","Female"]),age:P().required("Specify age").integer("Age must be an integer").min(1,"Minimum age is 1 year").max(100,"Maximum age is 100 years")}),Li=({onNext:r,onBack:a,onSubmit:t})=>i.jsxs(gi,{children:[i.jsx(ui,{src:Gi,srcSet:`${Pi} 834w, ${zi} 1440w`,sizes:"(max-width: 833px) 100vw, (min-width: 834px) 50vw",alt:"Responsive Image"}),i.jsxs("div",{children:[i.jsx(fi,{children:"Select gender, Age"}),i.jsx(yi,{children:"Choose a goal so that we can help you effectively"}),i.jsx(u,{initialValues:Hi,validationSchema:Ni,onSubmit:(n,{setSubmitting:s})=>{t(n),r(),s(!1)},children:({errors:n})=>i.jsxs(wi,{children:[i.jsx(A,{children:"Gender"}),i.jsxs(bi,{children:[i.jsxs(d,{children:[i.jsx(p,{type:"radio",id:"Male",name:"gender",value:"Male"}),i.jsx(m,{style:{width:"120px",textAlign:"start"},htmlFor:"Male",children:"Male"})]}),i.jsxs(d,{children:[i.jsx(p,{type:"radio",id:"Female",name:"gender",value:"Female"}),i.jsx(m,{htmlFor:"Female",children:"Female"})]})]}),i.jsx(Bi,{children:n.gender}),i.jsxs("label",{htmlFor:"age",children:[i.jsx(A,{children:"Your age"}),i.jsx(ji,{children:i.jsx(vi,{type:"number",id:"age",name:"age",placeholder:"Enter your age"})})]}),i.jsx(Fi,{children:n.age}),i.jsx(Si,{type:"submit",children:"Next"}),i.jsx(ki,{onClick:a,children:"Back"})]})})]})]}),Vi=({onNext:r,onBack:a,onSubmit:t})=>i.jsx("div",{children:i.jsx(Li,{onBack:a,onNext:r,onSubmit:t})}),Ui=e.div`
 display: flex;
 flex-direction: column;
-`,A=e.label`
+`,I=e.label`
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
@@ -626,10 +626,10 @@ flex-direction: column;
   color: var(--color-primary-white);
   margin-top: 24px;
   margin-bottom: 12px;
-`,Wi=e(w)`
+`,Wi=e(b)`
   display: flex;
   flex-direction: column;
-`,C=e(b)`
+`,E=e(j)`
   width: 100%;
   height: 36px;
   padding-left: 10px;
@@ -641,7 +641,7 @@ flex-direction: column;
   @media (min-width: 1440px) {
     max-width: 212px;
   }
-`,Oi=e.button`
+`,Di=e.button`
   width: 100%;
   height: 36px;
   background-color: var(--color-primary-green-lite);
@@ -657,7 +657,7 @@ flex-direction: column;
   @media (min-width: 1440px) {
     max-width: 212px;
   }
-`,Qi=e.button`
+`,Oi=e.button`
   width: 100%;
   height: 36px;
   background-color: inherit;
@@ -674,15 +674,15 @@ flex-direction: column;
   @media (min-width: 1440px) {
     max-width: 212px;
   }
+`,Qi=e.div`
+  color: #e74a3b;
+  margin-bottom: 20px;
+  margin-top: 20px;
 `,Ji=e.div`
   color: #e74a3b;
   margin-bottom: 20px;
   margin-top: 20px;
-`,Ki=e.div`
-  color: #e74a3b;
-  margin-bottom: 20px;
-  margin-top: 20px;
-`,Xi={height:"",weight:""},Zi=g().shape({weight:G().required("Weight is required").min(1,"Weight should be greater than 0").positive("Weight should be a positive number"),height:G().required("Height is required").min(1,"Height should be greater than 0").positive("Height should be a positive number")}),_i=({onBack:o,onNext:a,onSubmit:t})=>i.jsx(Ui,{children:i.jsx(u,{initialValues:Xi,validationSchema:Zi,onSubmit:(n,{setSubmitting:l})=>{t(n),a(),l(!1)},children:({errors:n})=>i.jsxs(Wi,{children:[i.jsx(A,{htmlFor:"height",children:"Height"}),i.jsx(C,{name:"height",type:"number",id:"height",placeholder:"Enter your height"}),i.jsx(Ki,{children:n.height}),i.jsx(A,{htmlFor:"weight",children:"Weight"}),i.jsx(C,{name:"weight",type:"number",id:"weight",placeholder:"Enter your weight"}),i.jsx(Ji,{children:n.weight}),i.jsxs("div",{children:[i.jsx(Oi,{type:"submit",children:"Next"}),i.jsx(Qi,{type:"button",onClick:o,children:"Back"})]})]})})}),ie="/HealthyHub/assets/symbol-defs-2eb7c4d7.svg#icon-body-parameters",ee=e.svg`
+`,Ki={height:"",weight:""},Xi=g().shape({weight:P().required("Weight is required").min(1,"Weight should be greater than 0").positive("Weight should be a positive number"),height:P().required("Height is required").min(1,"Height should be greater than 0").positive("Height should be a positive number")}),Zi=({onBack:r,onNext:a,onSubmit:t})=>i.jsx(Ui,{children:i.jsx(u,{initialValues:Ki,validationSchema:Xi,onSubmit:(n,{setSubmitting:s})=>{t(n),a(),s(!1)},children:({errors:n})=>i.jsxs(Wi,{children:[i.jsx(I,{htmlFor:"height",children:"Height"}),i.jsx(E,{name:"height",type:"number",id:"height",placeholder:"Enter your height"}),i.jsx(Ji,{children:n.height}),i.jsx(I,{htmlFor:"weight",children:"Weight"}),i.jsx(E,{name:"weight",type:"number",id:"weight",placeholder:"Enter your weight"}),i.jsx(Qi,{children:n.weight}),i.jsxs("div",{children:[i.jsx(Di,{type:"submit",children:"Next"}),i.jsx(Oi,{type:"button",onClick:r,children:"Back"})]})]})})}),_i="/HealthyHub/assets/symbol-defs-2eb7c4d7.svg#icon-body-parameters",ie=e.svg`
   @media (min-width: 834px) {
     width: 380px;
     height: 376px;
@@ -699,7 +699,7 @@ flex-direction: column;
     width: 590px;
     height: 588px;
   }
-`,te=()=>i.jsx("div",{children:i.jsx(ee,{width:"300",height:"300",children:i.jsx("use",{xlinkHref:`${ie}#icon-body-parameters`,width:"100%",height:"100%"})})}),ne=e.div`
+`,ee=()=>i.jsx("div",{children:i.jsx(ie,{width:"300",height:"300",children:i.jsx("use",{xlinkHref:`${_i}#icon-body-parameters`,width:"100%",height:"100%"})})}),te=e.div`
   display: flex;
   flex-direction: column;
   @media (min-width: 834px) {
@@ -713,7 +713,7 @@ flex-direction: column;
   @media (min-width: 1440px) {
    
   }
-`,ae=e.h2`
+`,ne=e.h2`
   font-family: Poppins;
   font-size: 24px;
   font-weight: 500;
@@ -733,7 +733,7 @@ flex-direction: column;
   @media (min-width: 1440px) {
     margin-top: 80px;
   }
-`,oe=e.h3`
+`,ae=e.h3`
   max-width: 290px;
   font-family: Poppins;
   font-size: 18px;
@@ -756,7 +756,7 @@ flex-direction: column;
     display: flex;
     flex-wrap: wrap;
   }
-`,re=()=>i.jsxs(ne,{children:[i.jsx(ae,{children:"Body parameters"}),i.jsx(oe,{children:"Enter your parameters for correct performance tracking"})]}),le=e.div`
+`,oe=()=>i.jsxs(te,{children:[i.jsx(ne,{children:"Body parameters"}),i.jsx(ae,{children:"Enter your parameters for correct performance tracking"})]}),re=e.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -773,7 +773,7 @@ flex-direction: column;
     justify-content: center;
     flex-direction: row;
   }
-`,de=e.div`
+`,le=e.div`
   margin-left: auto;
   margin-right: auto;
 
@@ -786,4 +786,4 @@ flex-direction: column;
   @media (min-width: 1024px) {
   margin-left: 104px;
   }
-`,pe=({onNext:o,onBack:a,onSubmit:t})=>i.jsx(le,{children:i.jsxs(de,{children:[i.jsx(te,{}),i.jsxs(se,{children:[i.jsx(re,{}),i.jsx(_i,{onBack:a,onNext:o,onSubmit:t})]})]})}),me={activity:""},xe=g({activity:h().required("Сhoose your activity level").oneOf(["low 1.2-1.3","light 1.4-1.5","average 1.6-1.7","high 1.8-1.9","hard 2.0"])}),he=({onBack:o,onSubmit:a})=>i.jsxs(Ci,{children:[i.jsx(Ri,{src:"/src/img/YourActivityImg/illustrationActivity-min.svg"}),i.jsxs(Ii,{children:[i.jsx(Ei,{children:"Your Activity"}),i.jsx(Mi,{children:"To correctly calculate calorie and water intake"}),i.jsx(u,{initialValues:me,validationSchema:xe,onSubmit:(t,{setSubmitting:n})=>{a(t),n(!1)},children:({errors:t})=>i.jsxs(Yi,{action:"#",children:[i.jsxs(qi,{children:[i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"low 1.2-1.3",value:"low 1.2-1.3",name:"activity"}),i.jsx(x,{htmlFor:"low 1.2-1.3",children:"1.2-1.3 - if you do not have physical activity and sedentary work"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"light 1.4-1.5",value:"light 1.4-1.5",name:"activity"}),i.jsx(x,{htmlFor:"light 1.4-1.5",children:"1.4-1.5 - if you do short runs or light gymnastics 1-3 times a week"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"average 1.6-1.7",value:"average 1.6-1.7",name:"activity"}),i.jsx(x,{htmlFor:"average 1.6-1.7",children:"1.6-1.7 - if you play sports with average loads 3-5 times a week"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"high 1.8-1.9",value:"high 1.8-1.9",name:"activity"}),i.jsx(x,{htmlFor:"high 1.8-1.9",children:"1.8-1.9 - if you train fully 6-7 times a week"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"hard 2.0",value:"hard 2.0",name:"activity"}),i.jsx(x,{htmlFor:"hard 2.0",children:"2.0 - if your work is related to physical labor, you train 2 times a day and include strength exercises in your training program"})]})]}),i.jsx(Ni,{children:t.activity}),i.jsx($i,{type:"submit",children:"Sign Up"}),i.jsx(Hi,{type:"button",onClick:o,children:"Back"})]})})]})]}),ce=()=>{const o=X(),[a,t]=s.useState(1),[,n]=s.useState({name:"",email:"",password:""}),[,l]=s.useState(""),[R,I]=s.useState(""),[E,M]=s.useState({age:"",gender:""}),[Y,q]=s.useState({height:"",weight:""}),[$,H]=s.useState("");console.log(R,"local state dataGoal"),console.log(E,"local state dataAgeGender"),console.log(Y,"local state dataBodyParams"),console.log($,"local state dataActivity");const N=async d=>{var z;try{const r=await o(_(d));console.log("Response from Redux:",r),r.type==="auth/register/fulfilled"&&(S.success("Successful registration"),n(d))}catch(r){console.error("Registration Error:",r.message),((z=r==null?void 0:r.response)==null?void 0:z.status)===500?S.error("Invalid Email"):S.error("Registration failed. Please try again later."),l(r)}},f=d=>{I(d),M(d),q(d),H(d)},c=()=>{t(a+1)},y=()=>{t(a-1)};return i.jsxs("div",{children:[a===1&&i.jsx(ni,{onSubmit:N,onNext:c}),a===2&&i.jsx(gi,{onNext:c,onBack:y,onSubmit:f}),a===3&&i.jsx(Vi,{onNext:c,onBack:y,onSubmit:f}),a===4&&i.jsx(pe,{onNext:c,onBack:y,onSubmit:f}),a===5&&i.jsx(he,{onNext:c,onBack:y,onSubmit:f}),i.jsx(Z,{})]})},ue=()=>i.jsx("div",{children:i.jsx(ce,{})});export{ue as default};
+`,de=({onNext:r,onBack:a,onSubmit:t})=>i.jsx(re,{children:i.jsxs(le,{children:[i.jsx(ee,{}),i.jsxs(se,{children:[i.jsx(oe,{}),i.jsx(Zi,{onBack:a,onNext:r,onSubmit:t})]})]})}),pe={activity:""},me=g({activity:h().required("Сhoose your activity level").oneOf(["1.25","1.45","1.65","1.85","2"])}),xe=({onBack:r,onSubmit:a})=>i.jsxs(Ri,{children:[i.jsx(Ci,{src:"/src/img/YourActivityImg/illustrationActivity-min.svg"}),i.jsxs(Mi,{children:[i.jsx(Ai,{children:"Your Activity"}),i.jsx(Ii,{children:"To correctly calculate calorie and water intake"}),i.jsx(u,{initialValues:pe,validationSchema:me,onSubmit:(t,{setSubmitting:n})=>{a(t),n(!1)},children:({errors:t})=>i.jsxs(Ei,{action:"#",children:[i.jsxs(Yi,{children:[i.jsxs(d,{children:[i.jsx(p,{type:"radio",id:"low 1.2-1.3",value:"1.25",name:"activity"}),i.jsx(m,{htmlFor:"low 1.2-1.3",children:"1.2-1.3 - if you do not have physical activity and sedentary work"})]}),i.jsxs(d,{children:[i.jsx(p,{type:"radio",id:"light 1.4-1.5",value:"1.45",name:"activity"}),i.jsx(m,{htmlFor:"light 1.4-1.5",children:"1.4-1.5 - if you do short runs or light gymnastics 1-3 times a week"})]}),i.jsxs(d,{children:[i.jsx(p,{type:"radio",id:"average 1.6-1.7",value:"1.65",name:"activity"}),i.jsx(m,{htmlFor:"average 1.6-1.7",children:"1.6-1.7 - if you play sports with average loads 3-5 times a week"})]}),i.jsxs(d,{children:[i.jsx(p,{type:"radio",id:"high 1.8-1.9",value:"1.85",name:"activity"}),i.jsx(m,{htmlFor:"high 1.8-1.9",children:"1.8-1.9 - if you train fully 6-7 times a week"})]}),i.jsxs(d,{children:[i.jsx(p,{type:"radio",id:"hard 2.0",value:"2",name:"activity"}),i.jsx(m,{htmlFor:"hard 2.0",children:"2.0 - if your work is related to physical labor, you train 2 times a day and include strength exercises in your training program"})]})]}),i.jsx($i,{children:t.activity}),i.jsx(qi,{type:"submit",children:"Sign Up"}),i.jsx(Ti,{type:"button",onClick:r,children:"Back"})]})})]})]}),he=()=>{const r=K(),[a,t]=x.useState(1),[n,s]=x.useState({name:"",email:"",password:""}),[,z]=x.useState(""),[R,Y]=x.useState(""),[C,q]=x.useState({age:"",gender:""}),[M,T]=x.useState({height:"",weight:""}),$=async l=>{try{const o={name:n.name,password:n.password,email:n.email,goal:R,gender:C.gender,age:C.age,height:M.height,weight:M.weight,userActivity:l.activity},c=await r(Z(o));console.log("Response from Redux:",c),c.type==="auth/register/fulfilled"&&k.success("Successful registration"),c.type==="auth/register/rejected"&&(c.payload==="Request failed with status code 500"?(z("Invalid Email"),k.error("Invalid Email")):(z(c.payload||"Registration failed. Please try again later."),k.error("Registration failed. Please try again later.")))}catch(o){console.error("Registration Error:",o.message)}},f=l=>{s(o=>({...o,name:l.name||o.name,email:l.email||o.email,password:l.password||o.password})),Y(l.goal||R),q(o=>({...o,age:l.age||o.age,gender:l.gender||o.gender})),T(o=>({...o,height:l.height||o.height,weight:l.weight||o.weight}))},y=()=>{t(a+1)},w=()=>{t(a-1)};return i.jsxs("div",{children:[a===1&&i.jsx(ti,{onSubmit:f,onNext:y}),a===2&&i.jsx(ci,{onNext:y,onBack:w,onSubmit:f}),a===3&&i.jsx(Vi,{onNext:y,onBack:w,onSubmit:f}),a===4&&i.jsx(de,{onNext:y,onBack:w,onSubmit:f}),a===5&&i.jsx(xe,{onBack:w,onSubmit:$}),i.jsx(X,{})]})},ge=()=>i.jsx("div",{children:i.jsx(he,{})});export{ge as default};
