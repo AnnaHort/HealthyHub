@@ -9,7 +9,6 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { faker } from '@faker-js/faker';
 
 ChartJS.register(
   CategoryScale,
@@ -152,7 +151,7 @@ const WaterDashboar = () => {
        datasets: [
          {
            label: 'Calories',
-           data: labels.map(() => faker.datatype.number({ min: 0, max: 3000 })),
+          //  data: ,
            borderColor: '#e3ffa8',
            backgroundColor: '#0F0F0F',
            pointBackgroundColor: '#e3ffa8',

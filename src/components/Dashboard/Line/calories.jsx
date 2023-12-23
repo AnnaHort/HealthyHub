@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { faker } from '@faker-js/faker';
+// import { faker } from '@faker-js/faker';
 
 ChartJS.register(
   CategoryScale,
@@ -22,6 +22,10 @@ ChartJS.register(
 );
 
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchUserInfo } from '../../../redux/userCurrentInfo/operations';
+import { getUserInfo } from '../../../redux/userCurrentInfo/selectors';
 
 const Container = styled.div`
   margin-left: 10px;
@@ -36,7 +40,6 @@ const Container = styled.div`
     
   }
 `;
-
 
 const TitleContainer = styled.div`
   display: flex;
@@ -90,6 +93,26 @@ const ChartsContainer = styled.div`
 `;
 
 const CaloriesDashboard = () => {
+  const dispatch = useDispatch()
+  const userInfo = useSelector(getUserInfo)
+  console.log(userInfo);
+
+  useEffect(() => {
+    
+       dispatch(fetchUserInfo());
+    
+  }, [dispatch])
+
+
+  const caloriesData = userInfo ? userInfo.user.calories : [];
+  console.log(caloriesData)
+
+  // if (calories && calories.length) {
+    
+  // }
+
+const labels = Array.from({length: 31}, (_, index) => index + 1)
+
   const options = {
     responsive: true,
     plugins: {
@@ -138,22 +161,16 @@ const CaloriesDashboard = () => {
     },
   };
 
-  const labels = [];
-  for (let i = 1; i <= 31; i++) {
-    labels.push(i);
-  }
-
   const data = {
     labels,
     datasets: [
       {
         label: 'Calories',
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 3000 })),
+        data: caloriesData,
         borderColor: '#e3ffa8',
         backgroundColor: '#0F0F0F',
         pointBackgroundColor: '#e3ffa8',
-        borderWidth: 1, 
-    
+        borderWidth: 1,
       },
     ],
   };
@@ -161,7 +178,7 @@ const CaloriesDashboard = () => {
     <Container>
       <TitleContainer>
         <CaloriesTitle>Calories</CaloriesTitle>
-        <CaloriesDesc>Average value: 1700 cal</CaloriesDesc>
+        <CaloriesDesc>Average value: { }</CaloriesDesc>
       </TitleContainer>
 
       <ChartsContainer>
