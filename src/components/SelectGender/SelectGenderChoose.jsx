@@ -32,7 +32,7 @@ const initialValues = {
 };
 
 const genderAgeSchema = Yup.object().shape({
-  gender: Yup.string().required('Select gender').oneOf(['male', 'female']),
+  gender: Yup.string().required('Select gender').oneOf(['Male', 'Female']),
   age: Yup.number()
     .required('Specify age')
     .integer('Age must be an integer')
@@ -73,13 +73,13 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
                   <RadioButtonContainerStyled>
                     <RadioInputStyle
                       type="radio"
-                      id="male"
+                      id="Male"
                       name="gender"
-                      value="male"
+                      value="Male"
                     />
                     <RadioLabelStyle
                       style={{ width: '120px', textAlign: 'start' }}
-                      htmlFor="male"
+                      htmlFor="Male"
                     >
                       Male
                     </RadioLabelStyle>
@@ -87,11 +87,11 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
                   <RadioButtonContainerStyled>
                     <RadioInputStyle
                       type="radio"
-                      id="female"
+                      id="Female"
                       name="gender"
-                      value="female"
+                      value="Female"
                     />
-                    <RadioLabelStyle htmlFor="female">Female</RadioLabelStyle>
+                    <RadioLabelStyle htmlFor="Female">Female</RadioLabelStyle>
                   </RadioButtonContainerStyled>
                 </GenderRadioBtnContainer>
                 <GenderErrorMessage>{errors.gender}</GenderErrorMessage>
