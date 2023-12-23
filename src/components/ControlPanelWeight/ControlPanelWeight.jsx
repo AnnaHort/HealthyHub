@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+// import { useDispatch } from 'react-redux';
+// import {fetchCurentUser} from "/src/redux/auth/authOperations.js"
 import {
   Container,
   Description,
@@ -20,6 +22,7 @@ axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 const ControlPanelWeight = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [userData, setUserData] = useState(null);
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,6 +36,12 @@ const ControlPanelWeight = () => {
     };
     fetchData();
   }, []);
+
+  // useEffect(() => {
+  //   if (userData) {
+  //     dispatch(fetchCurentUser());
+  //   }
+  // }, [userData]);
 
   const handleIconButtonClick = () => {
     setModalOpen(true);

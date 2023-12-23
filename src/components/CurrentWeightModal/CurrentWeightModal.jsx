@@ -16,9 +16,12 @@ import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import {fetchCurentUser} from "/src/redux/auth/authOperations.js"
 
 const CurrentWeightModal = ({ onCloseButtonClick }) => {
   const [weight, setWeight] = useState();
+  const dispatch = useDispatch()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,6 +32,7 @@ const CurrentWeightModal = ({ onCloseButtonClick }) => {
       const response = await axios.put('/api/user/update', newUserData);
       console.log(response.data);
       toast.success(response.data.message);
+      dispatch(fetchCurentUser())
     } catch (error) {
       console.error('Data error', error.message);
       toast.error('Error updating user information');
