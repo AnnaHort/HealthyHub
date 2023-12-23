@@ -3,14 +3,16 @@ import styled from 'styled-components';
 
 export const DiaryBlockContainer = styled.div`
   width: 100%;
-  margin-top: 12px;
-  padding: 16px 12px;
+  margin-top: 20px;
+  padding: 16px 10px;
   border-radius: 12px;
-  background: var(--color-primary-black-2);
+  background: var(--color-primary-black);
   overflow-y: auto;
+
+  border: 2px solid red;
 `;
 
-export const TitleWrapper = styled.div`
+export const DiaryBlockTitleWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -25,8 +27,7 @@ export const DiaryBlockTitle = styled.h1`
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-right: 16px;
 
   @media screen and (min-width: 834px) {
     font-size: 22px;
@@ -38,32 +39,84 @@ export const SeeMoreButton = styled(NavLink)`
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
-  color: var(--primary-grey-color);
+  color: var(--color-primary-grey);
 `;
 
-export const DiaryBlockList = styled.ul`
-  
-`;
+export const DiaryBlockList = styled.ul``;
 
 export const DiaryBlockItem = styled.li`
-  
+  margin-bottom: 28px;
+
+  &:not(:last-child) {
+    margin-bottom: 28px;
+  }
+`;
+
+export const MealTitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
 `;
 
 export const MealTitle = styled.h3`
+  font-family: Poppins;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--color-primary-white);
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-left: 12px;
   width: 160px;
 `;
 
 export const NutrientList = styled.ul`
-  
+  display: flex;
 `;
 
 export const NutrientItem = styled.li`
-  
+display:flex;
 `;
 
+export const NutrientName = styled.p`
+  font-family: Poppins;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-primary-white);
+`;
+export const NutrientValue = styled.p`
+  font-family: Poppins;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--color-primary-white);
+`;
 export const AddMealButton = styled.button`
-  
+  font-family: Poppins;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  border: none;
+  background-color: transparent;
+  line-height: 1.43;
+  font-weight: 500;
+  color: var(--color-primary-green-lite);
+  cursor: pointer;
+  transition: transform 250ms ease-out;
+
+  &:hover {
+    color: var(--secondary-color-yellow);
+    text-decoration: underline;
+  }
+
+  svg {
+    fill: var(--color-primary-green-lite);
+  }
 `;
