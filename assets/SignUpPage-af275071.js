@@ -1,4 +1,4 @@
-import{e as g,f as h,j as i,S as T,I as D,R as L,g as V,h as U,F as u,i as W,k as v,E as j,B as Q,Q as O,m as J,n as K,s as e,o as w,p as b,q as G,u as X,r as d,t as Z,v as _,w as S}from"./index-3b8c5e04.js";const ii={name:"",email:"",password:""},ei=/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,ti=g().shape({name:h().required("Name is required"),email:h().matches(ei,"Invalid email").required("Email is required"),password:h().min(6,"Password must be at least 6 characters").required("Password is required")}),ni=({onSubmit:o,onNext:a})=>i.jsxs(T,{children:[i.jsx(D,{src:L,alt:"Responsive Image"}),i.jsxs("div",{children:[i.jsx(V,{children:"Sign up"}),i.jsx(U,{children:"You need to register to use the service"}),i.jsx(u,{initialValues:ii,validationSchema:ti,onSubmit:(t,{setSubmitting:n})=>{o(t),a(),n(!1)},children:({errors:t,touched:n})=>i.jsxs(W,{autoComplete:"off",children:[i.jsxs("label",{htmlFor:"name",children:[i.jsx(v,{name:"name",placeholder:"Name"}),t.name&&n.name?i.jsx(j,{children:t.name}):null]}),i.jsxs("label",{htmlFor:"email",children:[i.jsx(v,{name:"email",type:"email",placeholder:"E-mail"}),t.email&&n.email?i.jsx(j,{children:t.email}):null]}),i.jsxs("label",{htmlFor:"password",children:[i.jsx(v,{name:"password",type:"password",placeholder:"Password"}),t.password&&n.password?i.jsx(j,{children:t.password}):null]}),i.jsx(Q,{type:"submit",children:"Next"}),i.jsxs(O,{children:[i.jsx(J,{children:"Do you already have an account?"}),i.jsx(K,{to:"/signin",children:"Sign in"})]})]})})]})]}),ai=e.div`
+import{e as g,h,j as i,S as T,I as D,R as L,i as V,m as U,F as u,n as W,o as v,E as j,B as O,p as Q,q as J,t as K,s as e,v as w,w as b,x as G,u as X,r as s,k as Z,y as _,Q as S}from"./index-ad452001.js";const ii={name:"",email:"",password:""},ei=/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,ti=g().shape({name:h().required("Name is required"),email:h().matches(ei,"Invalid email").required("Email is required"),password:h().min(6,"Password must be at least 6 characters").required("Password is required")}),ni=({onSubmit:o,onNext:a})=>i.jsxs(T,{children:[i.jsx(D,{src:L,alt:"Responsive Image"}),i.jsxs("div",{children:[i.jsx(V,{children:"Sign up"}),i.jsx(U,{children:"You need to register to use the service"}),i.jsx(u,{initialValues:ii,validationSchema:ti,onSubmit:(t,{setSubmitting:n})=>{o(t),a(),n(!1)},children:({errors:t,touched:n})=>i.jsxs(W,{autoComplete:"off",children:[i.jsxs("label",{htmlFor:"name",children:[i.jsx(v,{name:"name",placeholder:"Name"}),t.name&&n.name?i.jsx(j,{children:t.name}):null]}),i.jsxs("label",{htmlFor:"email",children:[i.jsx(v,{name:"email",type:"email",placeholder:"E-mail"}),t.email&&n.email?i.jsx(j,{children:t.email}):null]}),i.jsxs("label",{htmlFor:"password",children:[i.jsx(v,{name:"password",type:"password",placeholder:"Password"}),t.password&&n.password?i.jsx(j,{children:t.password}):null]}),i.jsx(O,{type:"submit",children:"Next"}),i.jsxs(Q,{children:[i.jsx(J,{children:"Do you already have an account?"}),i.jsx(K,{to:"/signin",children:"Sign in"})]})]})})]})]}),ai=e.div`
   background-color: var(--color-primary-black);
   min-width: 320px;
   height: 744px;
@@ -81,7 +81,7 @@ import{e as g,f as h,j as i,S as T,I as D,R as L,g as V,h as U,F as u,i as W,k a
   @media (min-width: 1024px) {
     margin: 0;
   }
-`,si=e.p`
+`,di=e.p`
   color: var(--color-primary-grey);
   padding-bottom: 24px;
   margin: 0;
@@ -102,7 +102,7 @@ import{e as g,f as h,j as i,S as T,I as D,R as L,g as V,h as U,F as u,i as W,k a
     flex-direction: row;
     font-size: 22px;
   }
-`,di=e.ul`
+`,si=e.ul`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -227,7 +227,7 @@ import{e as g,f as h,j as i,S as T,I as D,R as L,g as V,h as U,F as u,i as W,k a
 `,xi=e.div`
   color: #e74a3b;
   margin-bottom: 20px;
-`,hi={goal:""},ci=g({goal:h().required("Choose one of the options").oneOf(["Lose Fat","Maintain","Gain Muscle"])}),gi=({onNext:o,onBack:a,onSubmit:t})=>i.jsxs(ai,{children:[i.jsx(oi,{alt:"Goal Image",src:"/src/components/YourGoal/img/IllustrationGoals-min.svg"}),i.jsx(u,{initialValues:hi,validationSchema:ci,onSubmit:(n,{setSubmitting:l})=>{t(n),o(),l(!1)},children:({errors:n})=>i.jsxs(ri,{children:[i.jsx(li,{children:"Your goal"}),i.jsx(si,{children:"Choose a goal so that we can help you effectively"}),i.jsxs(di,{children:[i.jsxs(k,{children:[i.jsx(B,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat"}),i.jsx(F,{htmlFor:"loseFat",children:"Lose Fat"})]}),i.jsxs(k,{children:[i.jsx(B,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),i.jsx(F,{htmlFor:"maintain",children:"Maintain"})]}),i.jsxs(k,{children:[i.jsx(B,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),i.jsx(F,{htmlFor:"gainMuscle",children:"Gain Muscle"})]})]}),i.jsx(xi,{children:n.goal}),i.jsx(pi,{type:"submit",children:"Next"}),i.jsx(mi,{type:"button",onClick:a,children:"Back"})]})})]}),ui=e.div`
+`,hi={goal:""},ci=g({goal:h().required("Choose one of the options").oneOf(["Lose Fat","Maintain","Gain Muscle"])}),gi=({onNext:o,onBack:a,onSubmit:t})=>i.jsxs(ai,{children:[i.jsx(oi,{alt:"Goal Image",src:"/src/components/YourGoal/img/IllustrationGoals-min.svg"}),i.jsx(u,{initialValues:hi,validationSchema:ci,onSubmit:(n,{setSubmitting:l})=>{t(n),o(),l(!1)},children:({errors:n})=>i.jsxs(ri,{children:[i.jsx(li,{children:"Your goal"}),i.jsx(di,{children:"Choose a goal so that we can help you effectively"}),i.jsxs(si,{children:[i.jsxs(k,{children:[i.jsx(B,{type:"radio",id:"loseFat",name:"goal",value:"Lose Fat"}),i.jsx(F,{htmlFor:"loseFat",children:"Lose Fat"})]}),i.jsxs(k,{children:[i.jsx(B,{type:"radio",id:"maintain",name:"goal",value:"Maintain"}),i.jsx(F,{htmlFor:"maintain",children:"Maintain"})]}),i.jsxs(k,{children:[i.jsx(B,{type:"radio",id:"gainMuscle",name:"goal",value:"Gain Muscle"}),i.jsx(F,{htmlFor:"gainMuscle",children:"Gain Muscle"})]})]}),i.jsx(xi,{children:n.goal}),i.jsx(pi,{type:"submit",children:"Next"}),i.jsx(mi,{type:"button",onClick:a,children:"Back"})]})})]}),ui=e.div`
   background-color: var(--color-primary-black);
   width: 320px;
   margin: 0 auto;
@@ -641,7 +641,7 @@ flex-direction: column;
   @media (min-width: 1440px) {
     max-width: 212px;
   }
-`,Qi=e.button`
+`,Oi=e.button`
   width: 100%;
   height: 36px;
   background-color: var(--color-primary-green-lite);
@@ -657,7 +657,7 @@ flex-direction: column;
   @media (min-width: 1440px) {
     max-width: 212px;
   }
-`,Oi=e.button`
+`,Qi=e.button`
   width: 100%;
   height: 36px;
   background-color: inherit;
@@ -682,7 +682,7 @@ flex-direction: column;
   color: #e74a3b;
   margin-bottom: 20px;
   margin-top: 20px;
-`,Xi={height:"",weight:""},Zi=g().shape({weight:G().required("Weight is required").min(1,"Weight should be greater than 0").positive("Weight should be a positive number"),height:G().required("Height is required").min(1,"Height should be greater than 0").positive("Height should be a positive number")}),_i=({onBack:o,onNext:a,onSubmit:t})=>i.jsx(Ui,{children:i.jsx(u,{initialValues:Xi,validationSchema:Zi,onSubmit:(n,{setSubmitting:l})=>{t(n),a(),l(!1)},children:({errors:n})=>i.jsxs(Wi,{children:[i.jsx(A,{htmlFor:"height",children:"Height"}),i.jsx(C,{name:"height",type:"number",id:"height",placeholder:"Enter your height"}),i.jsx(Ki,{children:n.height}),i.jsx(A,{htmlFor:"weight",children:"Weight"}),i.jsx(C,{name:"weight",type:"number",id:"weight",placeholder:"Enter your weight"}),i.jsx(Ji,{children:n.weight}),i.jsxs("div",{children:[i.jsx(Qi,{type:"submit",children:"Next"}),i.jsx(Oi,{type:"button",onClick:o,children:"Back"})]})]})})}),ie="/HealthyHub/assets/symbol-defs-2eb7c4d7.svg#icon-body-parameters",ee=e.svg`
+`,Xi={height:"",weight:""},Zi=g().shape({weight:G().required("Weight is required").min(1,"Weight should be greater than 0").positive("Weight should be a positive number"),height:G().required("Height is required").min(1,"Height should be greater than 0").positive("Height should be a positive number")}),_i=({onBack:o,onNext:a,onSubmit:t})=>i.jsx(Ui,{children:i.jsx(u,{initialValues:Xi,validationSchema:Zi,onSubmit:(n,{setSubmitting:l})=>{t(n),a(),l(!1)},children:({errors:n})=>i.jsxs(Wi,{children:[i.jsx(A,{htmlFor:"height",children:"Height"}),i.jsx(C,{name:"height",type:"number",id:"height",placeholder:"Enter your height"}),i.jsx(Ki,{children:n.height}),i.jsx(A,{htmlFor:"weight",children:"Weight"}),i.jsx(C,{name:"weight",type:"number",id:"weight",placeholder:"Enter your weight"}),i.jsx(Ji,{children:n.weight}),i.jsxs("div",{children:[i.jsx(Oi,{type:"submit",children:"Next"}),i.jsx(Qi,{type:"button",onClick:o,children:"Back"})]})]})})}),ie="/HealthyHub/assets/symbol-defs-2eb7c4d7.svg#icon-body-parameters",ee=e.svg`
   @media (min-width: 834px) {
     width: 380px;
     height: 376px;
@@ -773,7 +773,7 @@ flex-direction: column;
     justify-content: center;
     flex-direction: row;
   }
-`,se=e.div`
+`,de=e.div`
   margin-left: auto;
   margin-right: auto;
 
@@ -782,8 +782,8 @@ flex-direction: column;
     justify-content: center;
     flex-direction: row;
   }
-`,de=e.div`
+`,se=e.div`
   @media (min-width: 1024px) {
   margin-left: 104px;
   }
-`,pe=({onNext:o,onBack:a,onSubmit:t})=>i.jsx(le,{children:i.jsxs(se,{children:[i.jsx(te,{}),i.jsxs(de,{children:[i.jsx(re,{}),i.jsx(_i,{onBack:a,onNext:o,onSubmit:t})]})]})}),me={activity:""},xe=g({activity:h().required("Сhoose your activity level").oneOf(["low 1.2-1.3","light 1.4-1.5","average 1.6-1.7","high 1.8-1.9","hard 2.0"])}),he=({onBack:o,onSubmit:a})=>i.jsxs(Ci,{children:[i.jsx(Ri,{src:"/src/img/YourActivityImg/illustrationActivity-min.svg"}),i.jsxs(Ii,{children:[i.jsx(Ei,{children:"Your Activity"}),i.jsx(Mi,{children:"To correctly calculate calorie and water intake"}),i.jsx(u,{initialValues:me,validationSchema:xe,onSubmit:(t,{setSubmitting:n})=>{a(t),n(!1)},children:({errors:t})=>i.jsxs(Yi,{action:"#",children:[i.jsxs(qi,{children:[i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"low 1.2-1.3",value:"low 1.2-1.3",name:"activity"}),i.jsx(x,{htmlFor:"low 1.2-1.3",children:"1.2-1.3 - if you do not have physical activity and sedentary work"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"light 1.4-1.5",value:"light 1.4-1.5",name:"activity"}),i.jsx(x,{htmlFor:"light 1.4-1.5",children:"1.4-1.5 - if you do short runs or light gymnastics 1-3 times a week"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"average 1.6-1.7",value:"average 1.6-1.7",name:"activity"}),i.jsx(x,{htmlFor:"average 1.6-1.7",children:"1.6-1.7 - if you play sports with average loads 3-5 times a week"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"high 1.8-1.9",value:"high 1.8-1.9",name:"activity"}),i.jsx(x,{htmlFor:"high 1.8-1.9",children:"1.8-1.9 - if you train fully 6-7 times a week"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"hard 2.0",value:"hard 2.0",name:"activity"}),i.jsx(x,{htmlFor:"hard 2.0",children:"2.0 - if your work is related to physical labor, you train 2 times a day and include strength exercises in your training program"})]})]}),i.jsx(Ni,{children:t.activity}),i.jsx($i,{type:"submit",children:"Sign Up"}),i.jsx(Hi,{type:"button",onClick:o,children:"Back"})]})})]})]}),ce=()=>{const o=X(),[a,t]=d.useState(1),[,n]=d.useState({name:"",email:"",password:""}),[,l]=d.useState(""),[R,I]=d.useState(""),[E,M]=d.useState({age:"",gender:""}),[Y,q]=d.useState({height:"",weight:""}),[$,H]=d.useState("");console.log(R,"local state dataGoal"),console.log(E,"local state dataAgeGender"),console.log(Y,"local state dataBodyParams"),console.log($,"local state dataActivity");const N=async s=>{var P;try{const r=await o(_(s));console.log("Response from Redux:",r),r.type==="auth/register/fulfilled"&&(S.success("Successful registration"),n(s))}catch(r){console.error("Registration Error:",r.message),((P=r==null?void 0:r.response)==null?void 0:P.status)===500?S.error("Invalid Email"):S.error("Registration failed. Please try again later."),l(r)}},f=s=>{I(s),M(s),q(s),H(s)},c=()=>{t(a+1)},y=()=>{t(a-1)};return i.jsxs("div",{children:[a===1&&i.jsx(ni,{onSubmit:N,onNext:c}),a===2&&i.jsx(gi,{onNext:c,onBack:y,onSubmit:f}),a===3&&i.jsx(Vi,{onNext:c,onBack:y,onSubmit:f}),a===4&&i.jsx(pe,{onNext:c,onBack:y,onSubmit:f}),a===5&&i.jsx(he,{onNext:c,onBack:y,onSubmit:f}),i.jsx(Z,{})]})},ue=()=>i.jsx("div",{children:i.jsx(ce,{})});export{ue as default};
+`,pe=({onNext:o,onBack:a,onSubmit:t})=>i.jsx(le,{children:i.jsxs(de,{children:[i.jsx(te,{}),i.jsxs(se,{children:[i.jsx(re,{}),i.jsx(_i,{onBack:a,onNext:o,onSubmit:t})]})]})}),me={activity:""},xe=g({activity:h().required("Сhoose your activity level").oneOf(["low 1.2-1.3","light 1.4-1.5","average 1.6-1.7","high 1.8-1.9","hard 2.0"])}),he=({onBack:o,onSubmit:a})=>i.jsxs(Ci,{children:[i.jsx(Ri,{src:"/src/img/YourActivityImg/illustrationActivity-min.svg"}),i.jsxs(Ii,{children:[i.jsx(Ei,{children:"Your Activity"}),i.jsx(Mi,{children:"To correctly calculate calorie and water intake"}),i.jsx(u,{initialValues:me,validationSchema:xe,onSubmit:(t,{setSubmitting:n})=>{a(t),n(!1)},children:({errors:t})=>i.jsxs(Yi,{action:"#",children:[i.jsxs(qi,{children:[i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"low 1.2-1.3",value:"low 1.2-1.3",name:"activity"}),i.jsx(x,{htmlFor:"low 1.2-1.3",children:"1.2-1.3 - if you do not have physical activity and sedentary work"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"light 1.4-1.5",value:"light 1.4-1.5",name:"activity"}),i.jsx(x,{htmlFor:"light 1.4-1.5",children:"1.4-1.5 - if you do short runs or light gymnastics 1-3 times a week"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"average 1.6-1.7",value:"average 1.6-1.7",name:"activity"}),i.jsx(x,{htmlFor:"average 1.6-1.7",children:"1.6-1.7 - if you play sports with average loads 3-5 times a week"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"high 1.8-1.9",value:"high 1.8-1.9",name:"activity"}),i.jsx(x,{htmlFor:"high 1.8-1.9",children:"1.8-1.9 - if you train fully 6-7 times a week"})]}),i.jsxs(p,{children:[i.jsx(m,{type:"radio",id:"hard 2.0",value:"hard 2.0",name:"activity"}),i.jsx(x,{htmlFor:"hard 2.0",children:"2.0 - if your work is related to physical labor, you train 2 times a day and include strength exercises in your training program"})]})]}),i.jsx(Ni,{children:t.activity}),i.jsx($i,{type:"submit",children:"Sign Up"}),i.jsx(Hi,{type:"button",onClick:o,children:"Back"})]})})]})]}),ce=()=>{const o=X(),[a,t]=s.useState(1),[,n]=s.useState({name:"",email:"",password:""}),[,l]=s.useState(""),[R,I]=s.useState(""),[E,M]=s.useState({age:"",gender:""}),[Y,q]=s.useState({height:"",weight:""}),[$,H]=s.useState("");console.log(R,"local state dataGoal"),console.log(E,"local state dataAgeGender"),console.log(Y,"local state dataBodyParams"),console.log($,"local state dataActivity");const N=async d=>{var P;try{const r=await o(_(d));console.log("Response from Redux:",r),r.type==="auth/register/fulfilled"&&(S.success("Successful registration"),n(d))}catch(r){console.error("Registration Error:",r.message),((P=r==null?void 0:r.response)==null?void 0:P.status)===500?S.error("Invalid Email"):S.error("Registration failed. Please try again later."),l(r)}},f=d=>{I(d),M(d),q(d),H(d)},c=()=>{t(a+1)},y=()=>{t(a-1)};return i.jsxs("div",{children:[a===1&&i.jsx(ni,{onSubmit:N,onNext:c}),a===2&&i.jsx(gi,{onNext:c,onBack:y,onSubmit:f}),a===3&&i.jsx(Vi,{onNext:c,onBack:y,onSubmit:f}),a===4&&i.jsx(pe,{onNext:c,onBack:y,onSubmit:f}),a===5&&i.jsx(he,{onNext:c,onBack:y,onSubmit:f}),i.jsx(Z,{})]})},ue=()=>i.jsx("div",{children:i.jsx(ce,{})});export{ue as default};
