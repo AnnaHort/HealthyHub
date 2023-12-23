@@ -4,14 +4,16 @@ import {
   AddText,
   BtnCancel,
   BtnConfirm,
+  ButtonContainer,
   Container,
   Description,
   FatAndCalories,
   Form,
   Img,
-  ImgDescription,
+  ImgDescriptionContainer,
   InputCalories,
   InputCarbonoh,
+  InputContainer,
   InputFat,
   InputProduct,
   InputProtein,
@@ -45,61 +47,67 @@ const RecordDiaryModal = () => {
     // Додайте код для обробки введених даних тут
     console.log('Введені значення:', inputValues);
   };
+
   return (
     <Container>
       <Title>Record your meal</Title>
-      <ImgDescription>
+      <ImgDescriptionContainer>
         <Img src="" alt="" />
         <Description>Breakfast</Description>
-      </ImgDescription>
+      </ImgDescriptionContainer>
       <Form onSubmit={handleSubmit}>
-        <InputProduct
-          type="text"
-          name="product"
-          placeholder="The name of the product or dish"
-          value={inputValues.product}
-          onChange={handleInputChange}
-        />
-
-        <InputCarbonoh
-          type="text"
-          name="carbonoh"
-          placeholder="Carbonoh."
-          value={inputValues.carbonoh}
-          onChange={handleInputChange}
-        />
-
-        <InputProtein
-          type="text"
-          name="protein"
-          placeholder="Protein"
-          value={inputValues.protein}
-          onChange={handleInputChange}
-        />
-        <FatAndCalories>
-          <InputFat
+        <InputContainer>
+          <InputProduct
             type="text"
-            name="fat"
-            placeholder="Fat"
-            value={inputValues.fat}
+            name="product"
+            placeholder="The name of the product or dish"
+            value={inputValues.product}
             onChange={handleInputChange}
           />
-          <InputCalories
-            type="text"
-            name="calories"
-            placeholder="Calories"
-            value={inputValues.calories}
+
+          <InputCarbonoh
+            type="number"
+            name="carbonoh"
+            placeholder="Carbonoh."
+            value={inputValues.carbonoh}
             onChange={handleInputChange}
           />
-          <Trash />
-        </FatAndCalories>
+
+          <InputProtein
+            type="number"
+            name="protein"
+            placeholder="Protein"
+            value={inputValues.protein}
+            onChange={handleInputChange}
+          />
+          <FatAndCalories>
+            <InputFat
+              type="number"
+              name="fat"
+              placeholder="Fat"
+              value={inputValues.fat}
+              onChange={handleInputChange}
+            />
+            <InputCalories
+              type="number"
+              name="calories"
+              placeholder="Calories"
+              value={inputValues.calories}
+              onChange={handleInputChange}
+            />
+            <Trash />
+          </FatAndCalories>
+        </InputContainer>
+
+        <AddButton>
+          <Add />
+          <AddText>Add more</AddText>
+        </AddButton>
+        <ButtonContainer>
+          <BtnConfirm type="submit">Confirm</BtnConfirm>
+          <BtnCancel>Cancel</BtnCancel>
+        </ButtonContainer>
       </Form>
-      <AddButton>
-        <Add />
-        <AddText>Add more</AddText>
-      </AddButton>
-      <BtnConfirm>Confirm</BtnConfirm>
-      <BtnCancel>Cancel</BtnCancel>
     </Container>
   );
 };
