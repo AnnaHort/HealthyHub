@@ -30,12 +30,9 @@ const SignUpForm = () => {
     height: '',
     weight: '',
   });
-  const [dataActivity, setDataActivity] = useState('');
 
   const handleRegisterSubmit = async (data) => {
     try {
-      setDataActivity(data.activity);
-      console.log(dataActivity, 'in function dataActivity');
       const valuesToSend = {
         name: personalData.name,
         password: personalData.password,
@@ -45,7 +42,7 @@ const SignUpForm = () => {
         age: dataAgeGender.age,
         height: dataBodyParams.height,
         weight: dataBodyParams.weight,
-        userActivity: dataActivity,
+        userActivity: data.activity,
       };
 
       const response = await dispatch(register(valuesToSend));
