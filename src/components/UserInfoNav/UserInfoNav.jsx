@@ -20,15 +20,14 @@ const UserInfoNav = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [userData, setUserData] = useState();
   const userUpdate = useSelector(selectUpdateUserStatus);
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (userUpdate) {
       dispatch(getCurrentUser());
     }
   }, [userUpdate, dispatch]);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -40,9 +39,7 @@ const UserInfoNav = () => {
       }
     };
     fetchData();
-  }, [userUpdate]); 
-  
-
+  }, [userUpdate]);
 
   const handleIconButtonClick = () => {
     setModalOpen(true);
@@ -76,8 +73,8 @@ const UserInfoNav = () => {
       </IconButton>
 
       {isModalOpen && (
-        <ModalContainer onClick={handleCloseButtonClick}>
-          <UserInfoModal />
+        <ModalContainer>
+          <UserInfoModal onClick={handleCloseButtonClick} />
         </ModalContainer>
       )}
     </UserInfoContainer>
