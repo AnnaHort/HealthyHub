@@ -59,7 +59,7 @@ const SignInPages = () => {
 
         if (response.type === 'auth/login/fulfilled' || isComponentLoggedIn) {
           console.log('Successful login');
-          toast.success('Successful login');
+          toast.success('Successful login', { autoClose: 2000 });
           navigate('/main');
         }
 
