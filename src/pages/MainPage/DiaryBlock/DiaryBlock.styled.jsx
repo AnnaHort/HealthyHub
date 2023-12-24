@@ -8,8 +8,11 @@ export const DiaryBlockContainer = styled.div`
   border-radius: 12px;
   background: var(--color-primary-black);
   overflow-y: auto;
-
   border: 2px solid red;
+
+  @media screen and (min-width: 834px) {
+    width: 558px;
+  }
 `;
 
 export const DiaryBlockTitleWrapper = styled.div`
@@ -40,7 +43,7 @@ export const SeeMoreButton = styled(NavLink)`
   line-height: 20px;
   font-weight: 500;
   color: var(--color-primary-grey);
-  
+
   @media screen and (min-width: 834px) {
     font-size: 16px;
     line-height: 22px;
@@ -81,8 +84,13 @@ export const NutrientList = styled.ul`
 `;
 
 export const NutrientItem = styled.li`
-display:flex;
-width: calc((100% - 12px)/2)`;
+  display: flex;
+  width: calc((100% - 12px) / 2);
+
+  @media screen and (min-width: 834px) {
+    width: calc((100% - 24px) / 3);
+  }
+`;
 
 export const NutrientName = styled.p`
   font-family: Poppins;
