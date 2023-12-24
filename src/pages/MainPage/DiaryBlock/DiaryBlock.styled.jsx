@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const DiaryBlockContainer = styled.div`
   width: 100%;
   margin-top: 20px;
-  padding: 16px 10px;
+  padding: 0px 10px;
   border-radius: 12px;
   background: var(--color-primary-black);
   overflow-y: auto;
@@ -45,8 +45,6 @@ export const SeeMoreButton = styled(NavLink)`
 export const DiaryBlockList = styled.ul``;
 
 export const DiaryBlockItem = styled.li`
-  margin-bottom: 28px;
-
   &:not(:last-child) {
     margin-bottom: 28px;
   }
@@ -73,11 +71,14 @@ export const MealTitle = styled.h3`
 
 export const NutrientList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
 `;
 
 export const NutrientItem = styled.li`
 display:flex;
-`;
+width: calc((100% - 12px)/2)`;
 
 export const NutrientName = styled.p`
   font-family: Poppins;
@@ -86,6 +87,7 @@ export const NutrientName = styled.p`
   font-weight: 400;
   line-height: 20px;
   color: var(--color-primary-white);
+  margin-right: 10px;
 `;
 export const NutrientValue = styled.p`
   font-family: Poppins;
