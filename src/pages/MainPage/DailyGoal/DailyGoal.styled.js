@@ -43,7 +43,7 @@ export const MDGInfoCard = styled.div`
 export const MDGCardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 203px;
+  width: 210px;
   height: 180px;
   gap: 20px;
 

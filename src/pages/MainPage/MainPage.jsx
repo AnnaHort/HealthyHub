@@ -1,5 +1,5 @@
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from '../../redux/auth/authOperations';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -8,6 +8,17 @@ import { ReactComponent as ArrowRigth } from '../../img/MainPages/arrow-right.sv
 import { DailyGoal } from './DailyGoal';
 import { Water } from './Water/Water';
 import DiaryBlock from './DiaryBlock/DiaryBlock';
+import { FoodInfo } from './Food/Food';
+import { AddWaterModal } from '../../components/MainPage/AddWaterModal';
+
+import { fetchUserStatsDay } from '../../redux/userStatsDay/operations';
+import {
+  getCaloriesDayilyNorma,
+  getCaloriesAmount,
+  getWaterDailyNorma,
+  getwaterAmount,
+  getUserStatsLoad,
+} from '../../redux/userStatsDay/selectors';
 
 import {
   MainContainer,
@@ -22,8 +33,19 @@ import RecommendedFoodMain from '../../components/RecommendedFood.jsx/Recommende
 
 const MainPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-
+  const userStatsDayLoad = useSelector(getUserStatsLoad);
+  const dailyCalories = useSelector(getCaloriesDayilyNorma);
+  const amountCalories = useSelector(getCaloriesAmount);
+  const dailyWaterL = useSelector(getWaterDailyNorma);
+  const waterAmount = useSelector(getwaterAmount);
   const dispatch = useDispatch();
+
+  let dailyWaterMl = 0;
+  dailyWaterL ? (dailyWaterMl = dailyWaterL.toFixed(2) * 1000) : 1500;
+
+  useEffect(() => {
+    !userStatsDayLoad && dispatch(fetchUserStatsDay());
+  }, [dispatch, userStatsDayLoad]);
 
   const navigate = useNavigate();
 
@@ -31,10 +53,6 @@ const MainPage = () => {
     setIsOpenModal((isOpenModal) => !isOpenModal);
   };
 
-  let dailyCalories = 1700;
-  let waterConsumtion = 800;
-
-  
   const handleLogout = async () => {
     try {
       await dispatch(logOut());
@@ -55,15 +73,22 @@ const MainPage = () => {
           </MainLinkToGoal>
         </MainWrapperTitle>
         <MainElementsWrapper>
-          <DailyGoal dailyCalories={dailyCalories} />
+          <DailyGoal dailyCalories={dailyCalories} dailyWater={dailyWaterMl} />
           <Water
             handleModal={toggleIsOpenModal}
-            waterConsumtion={waterConsumtion}
+            dailyWater={dailyWaterMl}
+            waterAmount={waterAmount}
           />
+          <FoodInfo
+            dailyCalories={dailyCalories}
+            amountCalories={amountCalories}
+          />
+          </MainElementsWrapper>
+        <DARFWrap>
           <DiaryBlock />
-        </MainElementsWrapper>
-        <DARFWrap></DARFWrap>
-        <RecommendedFoodMain />
+          <RecommendedFoodMain />      
+        </DARFWrap>
+        {isOpenModal && <AddWaterModal handleModal={toggleIsOpenModal} />}
       </MainContainer>
       <Link to="/signin" onClick={handleLogout}>
         Logout

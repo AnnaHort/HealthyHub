@@ -7,6 +7,7 @@ import selectIsLoggedIn from '../../redux/auth/authSelectors';
 
 import { Container, ContainerHeader } from './SharedLayout.styled';
 
+
 const SharedLayout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
@@ -17,6 +18,7 @@ const SharedLayout = () => {
       </ContainerHeader>
       <Container>
         <Suspense fallback={<div>Loading...</div>}>
+        
           <Outlet />
         </Suspense>
       </Container>
