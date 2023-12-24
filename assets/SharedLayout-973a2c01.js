@@ -1,4 +1,5 @@
-import{s as e,N as C,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e as B,f as I,g as L,k as U,L as P,h as W,l as F,U as H,i as G,O as A}from"./index-4afa74bf.js";const T=e(C)`
+import{s as e,N as C,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e as B,f as I,g as L,k as P,L as U,h as W,l as F,U as H,i as G,O as A}from"./index-22d22451.js";const T=e(C)`
+  font-family: Poppins;
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
@@ -25,6 +26,7 @@ import{s as e,N as C,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   align-items: center;
   gap: 6px;
 `,M=e(C)`
+  font-family: Poppins;
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -37,6 +39,7 @@ import{s as e,N as C,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
     line-height: 1.43;
   }
 `,V=e.span`
+  font-family: Poppins;
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -541,7 +544,7 @@ import{s as e,N as C,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
     width: 166px;
     margin-bottom: 0px;
   }
-`,Ut=e.button`
+`,Pt=e.button`
   width: 300px;
   height: 36px;
   color: var(--color-primary-black-2);
@@ -568,7 +571,7 @@ import{s as e,N as C,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
 
   @media (min-width: 1440px) {
   }
-`,Pt=e.button`
+`,Ut=e.button`
   width: 300px;
   margin: 0;
   color: var(--color-primary-grey);
@@ -602,7 +605,7 @@ import{s as e,N as C,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   height: 16px;
   stroke: var(--color-primary-grey);
   margin-right: 8px;
-`,Gt=({onCloseButtonClick:i})=>{const[o,a]=n.useState(""),[d,s]=n.useState(),l=f(w),c=u(),g=async r=>{r.preventDefault();const p={weight:o};try{const x=await h.put("/api/user/update",p);y.success(x.data.message),c(S(p)),c(B())}catch(x){console.error("Data error",x.message),y.error("Error updating user information")}};n.useEffect(()=>{(async()=>{try{const p=await h.get("api/user/current");s(p.data)}catch(p){console.error("Data error",p.message)}})()},[l]);const m=new Date().toLocaleDateString();return d?t.jsxs(St,{children:[t.jsxs(Wt,{children:[t.jsx(Bt,{children:"Enter your current weight"}),t.jsx(Ft,{onClick:i,children:t.jsx(Ht,{children:t.jsx(k,{})})})]}),t.jsx(Dt,{children:"You can record your weight once a day"}),t.jsxs(Et,{children:["Today: ",t.jsx(zt,{children:m})]}),t.jsxs($t,{onSubmit:g,children:[t.jsx(It,{type:"number",placeholder:"Enter your weight",min:"1",max:"300",value:o,onChange:r=>a(r.target.value)}),t.jsx(Ut,{type:"submit",children:"Confirm"}),t.jsx(Pt,{onClick:i,children:"Cancel"})]}),t.jsx(U,{position:"top-right"})]}):t.jsx("div",{children:"Loading..."})},At="/HealthyHub/assets/WaightImage-833d9f56.svg",Tt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]});h.defaults.baseURL="https://healthhub-backend.onrender.com";const $=()=>{const[i,o]=n.useState(!1),[a,d]=n.useState(null),s=f(w),l=u();n.useEffect(()=>{s&&l(L())},[s,l]),n.useEffect(()=>{(async()=>{try{const r=await h.get("api/user/current");d(r.data),console.log(r.data)}catch(r){console.error("Data error",r.message)}})()},[s]);const c=()=>{o(!0)},g=()=>{o(!1)};return a?t.jsxs(wt,{children:[t.jsx(kt,{children:t.jsx("img",{src:At,alt:"MaintakeMen"})}),t.jsxs(bt,{children:[t.jsx(jt,{children:"Weight"}),t.jsxs(vt,{children:[a.weight," ",t.jsx("span",{children:"kg"}),t.jsx(Ct,{onClick:c,children:t.jsx(Lt,{children:t.jsx(Tt,{})})})]})]}),i&&t.jsx(Mt,{children:t.jsx(Gt,{onCloseButtonClick:g})})]}):t.jsx("div",{children:"Loading..."})},Ot=e.div`
+`,Gt=({onCloseButtonClick:i})=>{const[o,a]=n.useState(""),[d,s]=n.useState(),l=f(w),c=u(),g=async r=>{r.preventDefault();const p={weight:o};try{const x=await h.put("/api/user/update",p);y.success(x.data.message),c(S(p)),c(B())}catch(x){console.error("Data error",x.message),y.error("Error updating user information")}};n.useEffect(()=>{(async()=>{try{const p=await h.get("api/user/current");s(p.data)}catch(p){console.error("Data error",p.message)}})()},[l]);const m=new Date().toLocaleDateString();return d?t.jsxs(St,{children:[t.jsxs(Wt,{children:[t.jsx(Bt,{children:"Enter your current weight"}),t.jsx(Ft,{onClick:i,children:t.jsx(Ht,{children:t.jsx(k,{})})})]}),t.jsx(Dt,{children:"You can record your weight once a day"}),t.jsxs(Et,{children:["Today: ",t.jsx(zt,{children:m})]}),t.jsxs($t,{onSubmit:g,children:[t.jsx(It,{type:"number",placeholder:"Enter your weight",min:"1",max:"300",value:o,onChange:r=>a(r.target.value)}),t.jsx(Pt,{type:"submit",children:"Confirm"}),t.jsx(Ut,{onClick:i,children:"Cancel"})]}),t.jsx(P,{position:"top-right"})]}):t.jsx("div",{children:"Loading..."})},At="/HealthyHub/assets/WaightImage-833d9f56.svg",Tt=()=>t.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 32 32",fill:"none",children:[t.jsx("path",{d:"M13.2599 3.59997L5.04985 12.29C4.73985 12.62 4.43985 13.27 4.37985 13.72L4.00985 16.96C3.87985 18.13 4.71985 18.93 5.87985 18.73L9.09985 18.18C9.54985 18.1 10.1799 17.77 10.4899 17.43L18.6999 8.73997C20.1199 7.23997 20.7599 5.52997 18.5499 3.43997C16.3499 1.36997 14.6799 2.09997 13.2599 3.59997Z",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M11.8901 5.05005C12.3201 7.81005 14.5601 9.92005 17.3401 10.2",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"}),t.jsx("path",{d:"M3 22H21",stroke:"",strokeWidth:"1.5",strokeMiterlimit:"10",strokeLinecap:"round",strokeLinejoin:"round"})]});h.defaults.baseURL="https://healthhub-backend.onrender.com";const $=()=>{const[i,o]=n.useState(!1),[a,d]=n.useState(null),s=f(w),l=u();n.useEffect(()=>{s&&l(L())},[s,l]),n.useEffect(()=>{(async()=>{try{const r=await h.get("api/user/current");d(r.data),console.log(r.data)}catch(r){console.error("Data error",r.message)}})()},[s]);const c=()=>{o(!0)},g=()=>{o(!1)};return a?t.jsxs(wt,{children:[t.jsx(kt,{children:t.jsx("img",{src:At,alt:"MaintakeMen"})}),t.jsxs(bt,{children:[t.jsx(jt,{children:"Weight"}),t.jsxs(vt,{children:[a.weight," ",t.jsx("span",{children:"kg"}),t.jsx(Ct,{onClick:c,children:t.jsx(Lt,{children:t.jsx(Tt,{})})})]})]}),i&&t.jsx(Mt,{children:t.jsx(Gt,{onCloseButtonClick:g})})]}):t.jsx("div",{children:"Loading..."})},Ot=e.div`
   width: 130px;
   height: 28px;
   display: flex;
@@ -673,7 +676,7 @@ import{s as e,N as C,j as t,r as n,a as h,u as f,b as w,c as u,Q as y,d as S,e a
   height: 16px;
   stroke: var(--color-primary-white);
   margin-right: 8px;
-`,Kt=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2 12.8801V11.1201C2 10.0801 2.85 9.22006 3.9 9.22006C5.71 9.22006 6.45 7.94006 5.54 6.37006C5.02 5.47006 5.33 4.30006 6.24 3.78006L7.97 2.79006C8.76 2.32006 9.78 2.60006 10.25 3.39006L10.36 3.58006C11.26 5.15006 12.74 5.15006 13.65 3.58006L13.76 3.39006C14.23 2.60006 15.25 2.32006 16.04 2.79006L17.77 3.78006C18.68 4.30006 18.99 5.47006 18.47 6.37006C17.56 7.94006 18.3 9.22006 20.11 9.22006C21.15 9.22006 22.01 10.0701 22.01 11.1201V12.8801C22.01 13.9201 21.16 14.7801 20.11 14.7801C18.3 14.7801 17.56 16.0601 18.47 17.6301C18.99 18.5401 18.68 19.7001 17.77 20.2201L16.04 21.2101C15.25 21.6801 14.23 21.4001 13.76 20.6101L13.65 20.4201C12.75 18.8501 11.27 18.8501 10.36 20.4201L10.25 20.6101C9.78 21.4001 8.76 21.6801 7.97 21.2101L6.24 20.2201C5.33 19.7001 5.02 18.5301 5.54 17.6301C6.45 16.0601 5.71 14.7801 3.9 14.7801C2.85 14.7801 2 13.9201 2 12.8801Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),Xt=()=>t.jsx(qt,{children:t.jsx(P,{to:"/settings",children:t.jsxs(Yt,{children:[t.jsx(Jt,{children:t.jsx(Kt,{})}),"Setting"]})})}),_t=e.button`
+`,Kt=i=>n.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:22,height:22,stroke:"",viewBox:"0 0 32 32",fill:"none",...i},n.createElement("path",{d:"M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"}),n.createElement("path",{d:"M2 12.8801V11.1201C2 10.0801 2.85 9.22006 3.9 9.22006C5.71 9.22006 6.45 7.94006 5.54 6.37006C5.02 5.47006 5.33 4.30006 6.24 3.78006L7.97 2.79006C8.76 2.32006 9.78 2.60006 10.25 3.39006L10.36 3.58006C11.26 5.15006 12.74 5.15006 13.65 3.58006L13.76 3.39006C14.23 2.60006 15.25 2.32006 16.04 2.79006L17.77 3.78006C18.68 4.30006 18.99 5.47006 18.47 6.37006C17.56 7.94006 18.3 9.22006 20.11 9.22006C21.15 9.22006 22.01 10.0701 22.01 11.1201V12.8801C22.01 13.9201 21.16 14.7801 20.11 14.7801C18.3 14.7801 17.56 16.0601 18.47 17.6301C18.99 18.5401 18.68 19.7001 17.77 20.2201L16.04 21.2101C15.25 21.6801 14.23 21.4001 13.76 20.6101L13.65 20.4201C12.75 18.8501 11.27 18.8501 10.36 20.4201L10.25 20.6101C9.78 21.4001 8.76 21.6801 7.97 21.2101L6.24 20.2201C5.33 19.7001 5.02 18.5301 5.54 17.6301C6.45 16.0601 5.71 14.7801 3.9 14.7801C2.85 14.7801 2 13.9201 2 12.8801Z",strokeWidth:1.5,strokeMiterlimit:10,strokeLinecap:"round",strokeLinejoin:"round"})),Xt=()=>t.jsx(qt,{children:t.jsx(U,{to:"/settings",children:t.jsxs(Yt,{children:[t.jsx(Jt,{children:t.jsx(Kt,{})}),"Setting"]})})}),_t=e.button`
   border: none;
   background: none;
   color: var(--color-primary-white);
