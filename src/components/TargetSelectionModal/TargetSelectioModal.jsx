@@ -49,7 +49,7 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
       
       dispatch(updateUser(newUserData));
       dispatch(setUpdateUserFalse());
-      toast.success(response.data.message);
+      toast.success(response.data.message, { autoClose: 2000 });
       return response.data;
     } catch (error) {
       console.error('Data error', error.message);

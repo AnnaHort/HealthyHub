@@ -49,7 +49,7 @@ const SignUpForm = () => {
       console.log('Response from Redux:', response);
 
       if (response.type === 'auth/register/fulfilled') {
-        toast.success('Successful registration');
+        toast.success('Successful registration', { autoClose: 2000 });
       }
 
       if (response.type === 'auth/register/rejected') {

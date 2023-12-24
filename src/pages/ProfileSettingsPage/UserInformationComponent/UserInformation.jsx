@@ -99,13 +99,7 @@ const UserInformation = () => {
       if(fileAvatar){
         await uploadAvatar();
       }
-     
-
-
-
       dispatch(updateUser(newUserData));
-  
-
       dispatch(setUpdateUserFalse());
       toast.success(response.data.message, { autoClose: 2000 });
     } catch (error) {

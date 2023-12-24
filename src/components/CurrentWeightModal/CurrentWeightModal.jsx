@@ -36,7 +36,7 @@ const CurrentWeightModal = ({ onCloseButtonClick }) => {
 
     try {
       const response = await axios.put('/api/user/update', newUserData);
-      toast.success(response.data.message);
+      toast.success(response.data.message, { autoClose: 2000 });
       dispatch(updateUser(newUserData));
       dispatch(setUpdateUserFalse());
     } catch (error) {
