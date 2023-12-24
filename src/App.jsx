@@ -34,7 +34,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-            <Route index element={<WelcomePage />}></Route>
+           
             <Route path="/welcome" element={<WelcomePage />} />
 
             <Route
