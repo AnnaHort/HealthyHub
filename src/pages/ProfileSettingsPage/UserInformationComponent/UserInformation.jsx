@@ -29,6 +29,7 @@ import {
   updateUser,
 } from '../../../redux/updateUser/updateOperations';
 import { selectUpdateUserStatus } from '../../../redux/updateUser/updateSelectors';
+import DownloadSvg from './DownloadSvg/DownloadSvg';
 
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
@@ -138,10 +139,12 @@ const UserInformation = () => {
             />
           </UserInformationImgContainer>
           <UserInformationIconDirect>
-            <use
+
+            <DownloadSvg/>
+            {/* <use
               href="/src/Sprites/icons/symbol-defs.svg#icon-direct-inbox"
               stroke="var(--color-primary-green-lite)"
-            ></use>
+            ></use> */}
           </UserInformationIconDirect>
           <input
             type="file"
