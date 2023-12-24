@@ -8,7 +8,6 @@ export const DiaryBlockContainer = styled.div`
   border-radius: 12px;
   background: var(--color-primary-black);
   overflow-y: auto;
-  border: 2px solid red;
 
   @media screen and (min-width: 834px) {
     width: 558px;
