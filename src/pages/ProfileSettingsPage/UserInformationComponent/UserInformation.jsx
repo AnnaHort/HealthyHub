@@ -56,7 +56,7 @@ const UserInformation = () => {
       return response.data;
     } catch (error) {
       console.error('Error uploading avatar', error.message);
-      toast.error('Error uploading avatar');
+     
     }
   };
 
@@ -95,7 +95,11 @@ const UserInformation = () => {
       const response = await axios.put('/api/user/update', newUserData);
       console.log(response.data);
 
-      await uploadAvatar();
+
+      if(fileAvatar){
+        await uploadAvatar();
+      }
+     
 
 
 
