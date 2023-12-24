@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authSlice';
-import { userStatsDayReducer } from './userStatsday/slice';
+import { userStatsDayReducer } from './userStatsDay/slice';
 import { updateReducer } from './updateUser/updateslice';
 
 const authPersistConfig = {
