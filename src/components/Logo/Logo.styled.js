@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const TitleStyled = styled(NavLink)`
+  font-family: Poppins;
   color: var(--color-primary-grey);
   font-size: 16px;
   font-weight: 700;
