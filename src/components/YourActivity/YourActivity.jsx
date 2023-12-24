@@ -8,7 +8,7 @@ import {
   YourActivityBackBtnStyled,
   YourActivityContainerStyled,
   YourActivityFormStyled,
-  YourActivityImgStyled,
+  StyledActivityImg,
   YourActivityList,
   YourActivitySignUpBtnStyled,
   YourActivityText,
@@ -35,7 +35,7 @@ const YourActivitylSchema = Yup.object({
 const YourActivity = ({ onBack, onSubmit }) => {
   return (
     <YourActivityContainerStyled>
-      <YourActivityImgStyled src="/src/img/YourActivityImg/illustrationActivity-min.svg" />
+      <StyledActivityImg viewBox="0 0 300 304" />
 
       <FormContainerStyled>
         <YourActivityTitleStyled>Your Activity</YourActivityTitleStyled>

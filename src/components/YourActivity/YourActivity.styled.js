@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 import { Field, Form } from 'formik';
+import { ReactComponent as ActivityImg } from '/src/components/YourActivity/img/Illustration Activity.svg';
+
 
 export const YourActivityContainerStyled = styled.div`
   background-color: var(--color-primary-black);
   padding: 24px 10px;
   @media (min-width: 834px) {
     padding-top: 40px;
+    text-align: center;
   }
   @media (min-width: 1024px) {
     display: flex;
   }
 `;
 
-export const YourActivityImgStyled = styled.img`
+export const StyledActivityImg = styled(ActivityImg)`
   margin-bottom: 24px;
   margin-right: auto;
   margin-left: auto;

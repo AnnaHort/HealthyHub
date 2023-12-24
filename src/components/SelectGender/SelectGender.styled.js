@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Field, Form } from 'formik';
 
+import { ReactComponent as GenderImg } from '/src/components/SelectGender/img/Illustration-gender-and-age.svg';
+
 export const SelectGenderContainer = styled.div`
   background-color: var(--color-primary-black);
   width: 320px;
@@ -30,7 +32,7 @@ export const SelectGenderContainer = styled.div`
   }
 `;
 
-export const Image = styled.img`
+export const StyledGenderImg = styled(GenderImg)`
   width: 300px;
   height: 296px;
   margin-bottom: 10px;
