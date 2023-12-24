@@ -6,7 +6,7 @@ import { Formik } from 'formik';
 
 import {
   SignUpRegisterContainer,
-  Image,
+  StyledSignImg,
   RegisterTitle,
   RegisterText,
   Input,
@@ -18,7 +18,7 @@ import {
   ErrorMessage,
 } from './SignUpRegister.styled';
 
-import RegisterImageDesktop from '../../img/register-img-desktop.png';
+// import RegisterImageDesktop from '../../img/register-img-desktop.png';
 
 const initialValues = {
   name: '',
@@ -41,7 +41,7 @@ const SignupSchema = Yup.object().shape({
 const SignUpRegister = ({ onSubmit, onNext }) => {
   return (
     <SignUpRegisterContainer>
-      <Image src={RegisterImageDesktop} alt="Responsive Image" />
+      <StyledSignImg viewBox="0 0 300 296" />
       <div>
         <RegisterTitle>Sign up</RegisterTitle>
         <RegisterText>You need to register to use the service</RegisterText>

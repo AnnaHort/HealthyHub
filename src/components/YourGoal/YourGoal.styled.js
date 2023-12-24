@@ -1,6 +1,9 @@
 import { Field, Form } from 'formik';
 import styled from 'styled-components';
 
+import { ReactComponent as GoalImg } from '/src/components/YourGoal/img/Illustration-Goals.svg';
+
+
 export const GoalContainer = styled.div`
   background-color: var(--color-primary-black);
   min-width: 320px;
@@ -24,7 +27,7 @@ export const GoalContainer = styled.div`
   }
 `;
 
-export const GoalImg = styled.img`
+export const StyledGoalImg = styled(GoalImg)`
   display: flex;
   width: 300px;
   height: 290px;
@@ -45,7 +48,17 @@ export const GoalImg = styled.img`
     margin-bottom: 60px;
   }
 
-  @media (min-width: 1024px) {
+  /* @media (min-width: 1024px) {
+    display: flex;
+    width: 468px;
+    height: 454px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: 140px;
+  } */
+
+    @media (min-width: 1440px) {
     display: flex;
     width: 592px;
     height: 574px;
