@@ -40,6 +40,11 @@ export const SeeMoreButton = styled(NavLink)`
   line-height: 20px;
   font-weight: 500;
   color: var(--color-primary-grey);
+  
+  @media screen and (min-width: 834px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
 `;
 
 export const DiaryBlockList = styled.ul``;
@@ -66,7 +71,6 @@ export const MealTitle = styled.h3`
   display: flex;
   align-items: center;
   margin-left: 12px;
-  width: 160px;
 `;
 
 export const NutrientList = styled.ul`
@@ -102,6 +106,8 @@ export const NutrientValue = styled.p`
 export const AddMealButton = styled.button`
   font-family: Poppins;
   font-style: normal;
+  font-size: 14px;
+  font-weight: 400;
   display: flex;
   align-items: center;
   column-gap: 8px;
@@ -111,12 +117,6 @@ export const AddMealButton = styled.button`
   font-weight: 500;
   color: var(--color-primary-green-lite);
   cursor: pointer;
-  transition: transform 250ms ease-out;
-
-  &:hover {
-    color: var(--secondary-color-yellow);
-    text-decoration: underline;
-  }
 
   svg {
     fill: var(--color-primary-green-lite);
