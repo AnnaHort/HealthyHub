@@ -6,17 +6,27 @@ export const StyledListFood = styled.ul`
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
+  @media (min-width: 1440px) {
+   
+  
+  }
 `;
 
 export const StyledList = styled.li`
   display: flex;
+  flex-direction: row;
   padding: 20px 20px 24px;
   align-items: center;
   border-radius: 12px;
   margin-bottom: 20px;
   background-color: var(--color-primary-black-2);
   @media (min-width: 834px) {
-   margin-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1440px) {
+    height: 86px;
   }
 `;
 

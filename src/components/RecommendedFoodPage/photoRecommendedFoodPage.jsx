@@ -15,6 +15,10 @@ margin-bottom: 24px;
     width: 590px;
     height: 588px;
   }
+
+  @media (min-width: 1440px){
+    margin-left: 150px;
+  }
 `;
 const PhotoRecommendedFoodPage = () => {
     return (

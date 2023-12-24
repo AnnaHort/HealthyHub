@@ -2,6 +2,15 @@ import ListRecommendedFoodPage from "./ListRecommendedFoodPage/listRecommendedFo
 import PhotoRecommendedFoodPage from "./photoRecommendedFoodPage";
 import styled from "styled-components";
 
+const RecommendedFoodContainer = styled.div`
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 44px;
+    flex-direction: row;
+  }
+`;
+
 const TitleRecommendedFood = styled.h2`
   font-family: Poppins;
   font-size: 24px;
@@ -16,13 +25,15 @@ const TitleRecommendedFood = styled.h2`
   }
 `;
 const RecommendedFoodPage = () => {
-    return (
-      <div>
-        <TitleRecommendedFood>Recommented food</TitleRecommendedFood>
+  return (
+    <div>
+      <TitleRecommendedFood>Recommented food</TitleRecommendedFood>
+      <RecommendedFoodContainer>
         <PhotoRecommendedFoodPage />
         <ListRecommendedFoodPage />
-      </div>
-    );
+      </RecommendedFoodContainer>
+    </div>
+  );
 }
 
 export default RecommendedFoodPage;
