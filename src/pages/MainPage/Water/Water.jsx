@@ -18,11 +18,12 @@ import {
   MWAddIcon,
 } from './Water.styled';
 
-export const Water = ({ handleModal, waterConsumtion }) => {
-  const leftWaterIntake = 1500 - waterConsumtion;
+export const Water = ({ handleModal, dailyWater, waterAmount }) => {
+
+  const leftWaterIntake = dailyWater - waterAmount;
 
   const waterPercent =
-    waterConsumtion <= 1500 ? Math.round((waterConsumtion * 100) / 1500) : 100;
+    waterAmount <= dailyWater ? Math.round((waterAmount * 100) / dailyWater) : 100;
 
   const offset =
     waterPercent <= 84 ? Math.ceil((waterPercent / 100) * 176 + 10) : 88;
@@ -46,7 +47,7 @@ export const Water = ({ handleModal, waterConsumtion }) => {
           <MWInfoTitle>Water consumption</MWInfoTitle>
           <MWValueWrap>
             <MWInfoNumber>
-              {waterConsumtion} <MWTextAfterNumber>ml</MWTextAfterNumber>
+              {waterAmount} <MWTextAfterNumber>ml</MWTextAfterNumber>
             </MWInfoNumber>
             <MWLeftInfo>
               left:
