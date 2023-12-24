@@ -1,12 +1,12 @@
 import {
-  Image,
+  StyledSignImg,
   LinkStyled,
   RegisterText,
   RegisterTitle,
 } from '../../components/SignUpForm/SignUpRegister.styled';
-import RegisterImageMobile from '../../img/register-img-mobile.png';
-import RegisterImageTablet from '../../img/register-img-tablet.png';
-import RegisterImageDesktop from '../../img/register-img-desktop.png';
+// import RegisterImageMobile from '../../img/register-img-mobile.png';
+// import RegisterImageTablet from '../../img/register-img-tablet.png';
+// import RegisterImageDesktop from '../../img/register-img-desktop.png';
 import {
   SignInForm,
   InputSignIn,
@@ -59,7 +59,7 @@ const SignInPages = () => {
 
         if (response.type === 'auth/login/fulfilled' || isComponentLoggedIn) {
           console.log('Successful login');
-          toast.success('Successful login');
+          toast.success('Successful login', { autoClose: 2000 });
           navigate('/main');
         }
 
@@ -108,12 +108,7 @@ const SignInPages = () => {
 
   return (
     <SignInPagesContainer>
-      <Image
-        src={RegisterImageMobile}
-        srcSet={`${RegisterImageTablet} 834w, ${RegisterImageDesktop} 1440w`}
-        sizes="(max-width: 833px) 100vw, (min-width: 834px) 50vw"
-        alt="Responsive Image"
-      />
+      <StyledSignImg viewBox="0 0 300 296" />
       <RegisterTitleContainer>
         <RegisterTitle>Sign in</RegisterTitle>
         <RegisterText>You need to login to use the service</RegisterText>

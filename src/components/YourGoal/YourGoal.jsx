@@ -8,7 +8,7 @@ import {
   GoalCustomRadio,
   GoalDescription,
   GoalForm,
-  GoalImg,
+  StyledGoalImg,
   GoalLabel,
   GoalList,
   GoalRadioItem,
@@ -29,11 +29,7 @@ const goalSchema = Yup.object({
 export const YourGoal = ({ onNext, onBack, onSubmit }) => {
   return (
     <GoalContainer>
-      <GoalImg
-        alt="Goal Image"
-        src="/src/components/YourGoal/img/IllustrationGoals-min.svg"
-      />
-
+      <StyledGoalImg viewBox="0 0 300 296" />
       <Formik
         initialValues={initialValues}
         validationSchema={goalSchema}

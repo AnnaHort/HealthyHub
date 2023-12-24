@@ -6,8 +6,6 @@ import { useSelector } from 'react-redux';
 import selectIsLoggedIn from '../../redux/auth/authSelectors';
 
 import { Container, ContainerHeader } from './SharedLayout.styled';
-import RecommendedFoodPage from '../RecommendedFoodPage/recommendedFoodPage';
-
 
 const SharedLayout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -19,8 +17,7 @@ const SharedLayout = () => {
       </ContainerHeader>
       <Container>
         <Suspense fallback={<div>Loading...</div>}>
-        
-<RecommendedFoodPage/>
+
           <Outlet />
         </Suspense>
       </Container>

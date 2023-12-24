@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { logOut } from '../../redux/auth/authOperations';
-import { Link, useNavigate } from 'react-router-dom';
+// import { logOut } from '../../redux/auth/authOperations';
+// import { Link, useNavigate } from 'react-router-dom';
 
 import { ReactComponent as ArrowRigth } from '../../img/MainPages/arrow-right.svg';
 
@@ -47,20 +47,20 @@ const MainPage = () => {
     !userStatsDayLoad && dispatch(fetchUserStatsDay());
   }, [dispatch, userStatsDayLoad]);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const toggleIsOpenModal = () => {
     setIsOpenModal((isOpenModal) => !isOpenModal);
   };
 
-  const handleLogout = async () => {
-    try {
-      await dispatch(logOut());
-      navigate('/signin');
-    } catch (error) {
-      console.error('Error during logout:', error);
-    }
-  };
+  // const handleLogout = async () => {
+  //   try {
+  //     await dispatch(logOut());
+  //     navigate('/signin');
+  //   } catch (error) {
+  //     console.error('Error during logout:', error);
+  //   }
+  // };
 
   return (
     <>
@@ -90,9 +90,9 @@ const MainPage = () => {
         </DARFWrap>
         {isOpenModal && <AddWaterModal handleModal={toggleIsOpenModal} />}
       </MainContainer>
-      <Link to="/signin" onClick={handleLogout}>
+      {/* <Link to="/signin" onClick={handleLogout}>
         Logout
-      </Link>
+      </Link> */}
     </>
   );
 };
