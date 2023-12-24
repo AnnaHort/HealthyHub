@@ -17,7 +17,6 @@ import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsP
 import DiaryPage from './pages/DiaryPage/DiaryPage';
 <pages></pages>;
 
-
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
 );
@@ -35,10 +34,10 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-          <Route path="/welcome" element={<WelcomePage />} />
+            <Route index element={<WelcomePage />}></Route>
+            <Route path="/welcome" element={<WelcomePage />} />
 
-
-          <Route
+            <Route
               path="/signup"
               element={
                 <RestrictedRoute
@@ -52,18 +51,11 @@ function App() {
               path="/signin"
               element={
                 <RestrictedRoute
-                  redirectTo="/signin"
+                  redirectTo="/main"
                   component={<SignInPages />}
                 />
               }
             />
-
-
-
-            
-
-            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-
 
             <Route
               path="/main"
@@ -72,12 +64,46 @@ function App() {
               }
             />
 
-            <Route path="/settings" element={<ProfileSettingsPage />} />
-            <Route path="/main/diary" element={<DiaryPage/>} />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute
+                  redirectTo="/welcome"
+                  component={<DashboardPage />}
+                />
+              }
+            />
 
+            <Route
+              path="/diary"
+              element={
+                <PrivateRoute redirectTo="/welcome" component={<DiaryPage />} />
+              }
+            />
+
+            {/* <Route
+              path="/recommended-food"
+              element={
+                <PrivateRoute
+                  redirectTo="/welcome"
+                  component={<RecommendedFoodPage />}
+                />
+              }
+            /> */}
+
+            <Route
+              path="/settings"
+              element={
+                <PrivateRoute
+                  redirectTo="/welcome"
+                  component={<ProfileSettingsPage />}
+                />
+              }
+            />
+
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            
           </Route>
-
-          <Route path="/dashboard" element={<DashboardPage />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
