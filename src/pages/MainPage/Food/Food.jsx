@@ -18,7 +18,7 @@ import {
   getFatLeft,
   getProteinAmount,
   getProteinLeft
-} from "../../../redux/userStatsday/selectors";
+} from "../../../redux/userStatsDay/selectors";
 
 
 const carbBcg = 'rgba(255, 196, 247, 1)';

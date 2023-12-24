@@ -11,14 +11,14 @@ import DiaryBlock from './DiaryBlock/DiaryBlock';
 import { FoodInfo } from './Food/Food';
 import { AddWaterModal } from '../../components/MainPage/AddWaterModal';
 
-import { fetchUserStatsDay } from '../../redux/userStatsday/operations';
+import { fetchUserStatsDay } from '../../redux/userStatsDay/operations';
 import {
   getCaloriesDayilyNorma,
   getCaloriesAmount,
   getWaterDailyNorma,
   getwaterAmount,
   getUserStatsLoad,
-} from '../../redux/userStatsday/selectors';
+} from '../../redux/userStatsDay/selectors';
 
 import {
   MainContainer,
