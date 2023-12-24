@@ -4,12 +4,12 @@ import {
   SignInPagesContainer,
 } from '../../pages/SignInPages/SignInPages.styled';
 import {
-  Image,
+  StyledSignImg,
   
 } from '../SignUpForm/SignUpRegister.styled';
-import RegisterImageMobile from '../../img/register-img-mobile.png';
-import RegisterImageTablet from '../../img/register-img-tablet.png';
-import RegisterImageDesktop from '../../img/register-img-desktop.png';
+// import RegisterImageMobile from '../../img/register-img-mobile.png';
+// import RegisterImageTablet from '../../img/register-img-tablet.png';
+// import RegisterImageDesktop from '../../img/register-img-desktop.png';
 import {
   InputForgot,
   ForgotForm,
@@ -25,12 +25,7 @@ import {
 const ForgotPasswordPage = () => {
   return (
     <SignInPagesContainer>
-      <Image
-        src={RegisterImageMobile}
-        srcSet={`${RegisterImageTablet} 834w, ${RegisterImageDesktop} 1440w`}
-        sizes="(max-width: 833px) 100vw, (min-width: 834px) 50vw"
-        alt="Responsive Image"
-      />
+      <StyledSignImg viewBox="0 0 300 296" />
       <RegisterTitleContainer>
         <ForgotPassTitle>Forgot your password</ForgotPassTitle>
         <ForgotPassTitleText>

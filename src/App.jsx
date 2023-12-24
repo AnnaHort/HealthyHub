@@ -17,6 +17,8 @@ import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsP
 import DiaryPage from './pages/DiaryPage/DiaryPage';
 import RecommendedFoodPage from './components/RecommendedFoodPage/recommendedFoodPage';
 <pages></pages>;
+import { useSelector } from 'react-redux';
+import  selectIsLoggedIn from '/src/redux/auth/authSelectors.js';
 
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
@@ -25,6 +27,7 @@ const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 
 function App() {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     dispatch(fetchCurentUser());
@@ -35,7 +38,12 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-           
+            {isLoggedIn ? (
+              <Route index element={<MainPage />} />
+            ) : (
+              <Route index element={<WelcomePage />} />
+            )}
+
             <Route path="/welcome" element={<WelcomePage />} />
 
             <Route
@@ -103,7 +111,6 @@ function App() {
             />
 
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-            
           </Route>
 
           <Route path="*" element={<ErrorPage />} />

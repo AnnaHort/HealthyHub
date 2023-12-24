@@ -44,7 +44,6 @@ const ControlPanelGoals = () => {
       <SelectPanel>
         <Title>Goal</Title>
         <Description>
-          {/* Використовуємо значення з нового селектора для цілей користувача */}
           {userGoals}
           <IconButton>
             <StyledArrowDown onClick={handleIconButtonClick}>
