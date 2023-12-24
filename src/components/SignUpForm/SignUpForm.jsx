@@ -14,13 +14,14 @@ const SignUpForm = () => {
   const dispatch = useDispatch();
 
   const [currentStep, setCurrentStep] = useState(1);
-  const [, setLocalData] = useState({
+  const [personalData, setPersonalData] = useState({
     name: '',
     email: '',
     password: '',
   });
   const [, setError] = useState('');
   const [dataGoal, setDataGoal] = useState('');
+
   const [dataAgeGender, setDataAgeGender] = useState({
     age: '',
     gender: '',
@@ -29,36 +30,65 @@ const SignUpForm = () => {
     height: '',
     weight: '',
   });
-  const [dataActivity, setDataActivity] = useState('');
-  console.log(dataGoal, 'local state dataGoal');
-  console.log(dataAgeGender, 'local state dataAgeGender');
-  console.log(dataBodyParams, 'local state dataBodyParams');
-  console.log(dataActivity, 'local state dataActivity');
 
-  const handleRegisterSubmit = async (values) => {
+  const handleRegisterSubmit = async (data) => {
     try {
-      const response = await dispatch(register(values));
+      const valuesToSend = {
+        name: personalData.name,
+        password: personalData.password,
+        email: personalData.email,
+        goal: dataGoal,
+        gender: dataAgeGender.gender,
+        age: dataAgeGender.age,
+        height: dataBodyParams.height,
+        weight: dataBodyParams.weight,
+        userActivity: data.activity,
+      };
+
+      const response = await dispatch(register(valuesToSend));
       console.log('Response from Redux:', response);
+
       if (response.type === 'auth/register/fulfilled') {
         toast.success('Successful registration');
-        setLocalData(values);
+      }
+
+      if (response.type === 'auth/register/rejected') {
+        if (response.payload === 'Request failed with status code 500') {
+          setError('Invalid Email');
+          toast.error('Invalid Email');
+        } else {
+          setError(
+            response.payload || 'Registration failed. Please try again later.'
+          );
+          toast.error('Registration failed. Please try again later.');
+        }
       }
     } catch (err) {
       console.error('Registration Error:', err.message);
-      if (err?.response?.status === 500) {
-        toast.error('Invalid Email');
-      } else {
-        toast.error('Registration failed. Please try again later.');
-      }
-      setError(err);
     }
   };
 
   const SelectData = (data) => {
-    setDataGoal(data);
-    setDataAgeGender(data);
-    setDataBodyParams(data);
-    setDataActivity(data);
+    setPersonalData((prevData) => ({
+      ...prevData,
+      name: data.name || prevData.name,
+      email: data.email || prevData.email,
+      password: data.password || prevData.password,
+    }));
+
+    setDataGoal(data.goal || dataGoal);
+
+    setDataAgeGender((prevData) => ({
+      ...prevData,
+      age: data.age || prevData.age,
+      gender: data.gender || prevData.gender,
+    }));
+
+    setDataBodyParams((prevData) => ({
+      ...prevData,
+      height: data.height || prevData.height,
+      weight: data.weight || prevData.weight,
+    }));
   };
 
   const handleNext = () => {
@@ -72,7 +102,7 @@ const SignUpForm = () => {
   return (
     <div>
       {currentStep === 1 && (
-        <SignUpRegister onSubmit={handleRegisterSubmit} onNext={handleNext} />
+        <SignUpRegister onSubmit={SelectData} onNext={handleNext} />
       )}
       {currentStep === 2 && (
         <YourGoal
@@ -96,11 +126,7 @@ const SignUpForm = () => {
         />
       )}
       {currentStep === 5 && (
-        <YourActivity
-          onNext={handleNext}
-          onBack={handlePrev}
-          onSubmit={SelectData}
-        />
+        <YourActivity onBack={handlePrev} onSubmit={handleRegisterSubmit} />
       )}
       <ToastContainer />
     </div>

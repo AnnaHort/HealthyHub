@@ -10,6 +10,7 @@ export const NavContainerStyled = styled.nav`
 `;
 
 export const SignStyled = styled(NavLink)`
+  font-family: Poppins;
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;
@@ -24,6 +25,7 @@ export const SignStyled = styled(NavLink)`
 `;
 
 export const SpanStyled = styled.span`
+  font-family: Poppins;
   color: var(--color-primary-white);
   font-size: 12px;
   font-weight: 400;

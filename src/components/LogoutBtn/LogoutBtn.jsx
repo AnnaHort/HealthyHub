@@ -1,11 +1,27 @@
 import { ButtonLogout, Div, StyledIcon } from './LogoutBtn.styled';
+import { ReactComponent as Logout } from '../../img/Header/logout.svg';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../../redux/auth/authOperations';
+import { useNavigate } from 'react-router-dom';
 
 const LogoutBtn = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await dispatch(logOut());
+      navigate('/signin');
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
+  };
+
   return (
     <Div>
-      <ButtonLogout>
+      <ButtonLogout onClick={handleLogout}>
         <StyledIcon>
-          <use href="/src/Sprites/icons/symbol-defs.svg#icon-logout"></use>
+          <Logout />
         </StyledIcon>
         Log out
       </ButtonLogout>

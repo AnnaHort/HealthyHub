@@ -7,6 +7,7 @@ import { ReactComponent as ArrowRigth } from '../../img/MainPages/arrow-right.sv
 
 import { DailyGoal } from './DailyGoal';
 import { Water } from './Water/Water';
+import DiaryBlock from './DiaryBlock/DiaryBlock';
 import { FoodInfo } from './Food/Food';
 import { AddWaterModal } from '../../components/MainPage/AddWaterModal';
 
@@ -28,10 +29,10 @@ import {
   MainElementsWrapper,
   DARFWrap,
 } from './MainPage.styled';
+import RecommendedFoodMain from '../../components/RecommendedFood.jsx/RecommendedFoodMain';
 
 const MainPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-
   const userStatsDayLoad = useSelector(getUserStatsLoad);
   const dailyCalories = useSelector(getCaloriesDayilyNorma);
   const amountCalories = useSelector(getCaloriesAmount);
@@ -82,8 +83,11 @@ const MainPage = () => {
             dailyCalories={dailyCalories}
             amountCalories={amountCalories}
           />
-        </MainElementsWrapper>
-        <DARFWrap></DARFWrap>
+          </MainElementsWrapper>
+        <DARFWrap>
+          <DiaryBlock />
+          <RecommendedFoodMain />      
+        </DARFWrap>
         {isOpenModal && <AddWaterModal handleModal={toggleIsOpenModal} />}
       </MainContainer>
       <Link to="/signin" onClick={handleLogout}>

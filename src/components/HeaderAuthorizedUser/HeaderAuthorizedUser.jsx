@@ -1,4 +1,5 @@
-import Logo from '../Logo/Logo';
+import { useState } from 'react';
+
 import ControlPanelGoals from '../ControlPanelGoals/ControlPanelGoals';
 import ControlPanelWeight from '../ControlPanelWeight/ControlPanelWeight';
 import UserInfoNav from '../UserInfoNav/UserInfoNav';
@@ -7,20 +8,34 @@ import {
   ControlPanelContainer,
   IconButton,
   LogoContainer,
+  ModalContainer,
   StyledIcon,
   UserInfoContainer,
 } from './HeaderAuthorizedUser.styled';
+import GoalAndWeighModal from '../GoalAndWeighModal/GoalAndWeighModal';
+import LogoAuthorizedUser from '../LogoAuthorizedUser/LogoAuthorizedUser';
+import { ReactComponent as IconMenu } from '../../img/Header/icon-menu.svg';
 
 const HeaderAuthorizedUser = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleIconButtonClick = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseButtonClick = () => {
+    setModalOpen(false);
+  };
+
   return (
     <Container>
       <LogoContainer>
-        <Logo />
+        <LogoAuthorizedUser />
       </LogoContainer>
 
-      <IconButton>
+      <IconButton onClick={handleIconButtonClick}>
         <StyledIcon>
-          <use href="/src/Sprites/icons/symbol-defs.svg#icon-menu"></use>
+          <IconMenu style={{ stroke: isModalOpen ? '#E3FFA8' : '#B6B6B6' }} />
         </StyledIcon>
       </IconButton>
 
@@ -32,6 +47,12 @@ const HeaderAuthorizedUser = () => {
       <UserInfoContainer>
         <UserInfoNav />
       </UserInfoContainer>
+
+      {isModalOpen && (
+        <ModalContainer isModalOpen={isModalOpen}>
+          <GoalAndWeighModal onCloseButtonClick={handleCloseButtonClick} />
+        </ModalContainer>
+      )}
     </Container>
   );
 };
