@@ -12,6 +12,7 @@ export const DiaryBlockContainer = styled.div`
 
   @media screen and (min-width: 834px) {
     width: 558px;
+    padding: 0px 0px;
   }
 `;
 
@@ -56,6 +57,12 @@ export const DiaryBlockItem = styled.li`
   &:not(:last-child) {
     margin-bottom: 28px;
   }
+
+  @media screen and (min-width: 834px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 export const MealTitleWrapper = styled.div`
@@ -81,15 +88,17 @@ export const NutrientList = styled.ul`
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 8px;
+
+  @media screen and (min-width: 834px) {
+    gap: 35px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
 `;
 
 export const NutrientItem = styled.li`
   display: flex;
   width: calc((100% - 12px) / 2);
-
-  @media screen and (min-width: 834px) {
-    width: calc((100% - 24px) / 3);
-  }
 `;
 
 export const NutrientName = styled.p`
@@ -129,4 +138,9 @@ export const AddMealButton = styled.button`
   svg {
     fill: var(--color-primary-green-lite);
   }
+`;
+
+export const DeleteButton = styled.button`
+  background-color: transparent;
+  border: none;
 `;
