@@ -13,7 +13,7 @@ export const RecommendedFoodContainer = styled.div`
   @media (min-width: 1440px) {
     width: 676px;
     height: 230px;
-    margin-left: 696px;
+    //margin-left: 696px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -66,7 +66,7 @@ export const RecommendedFoodUnitName = styled.h2`
     line-height: 1.45;
   }
   @media (min-width: 1440px) {
-    margin-left: 696px;
+    //margin-left: 696px;
   }
 `;
 
