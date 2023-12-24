@@ -5,7 +5,7 @@ const SvgRecommendedFood = styled.svg`
 margin-bottom: 24px;
   @media (min-width: 834px) {
     width: 380px;
-    height: 376px;
+    height: 396px;
     display: flex;
     margin-left: auto;
     margin-right: auto;

@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const StyledListFood = styled.ul`
+  @media (min-width: 834px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+`;
+
 export const StyledList = styled.li`
   display: flex;
   padding: 20px 20px 24px;
@@ -7,6 +15,9 @@ export const StyledList = styled.li`
   border-radius: 12px;
   margin-bottom: 20px;
   background-color: var(--color-primary-black-2);
+  @media (min-width: 834px) {
+   margin-bottom: 0;
+  }
 `;
 
 export const TitleListRecommendedFood = styled.h2`

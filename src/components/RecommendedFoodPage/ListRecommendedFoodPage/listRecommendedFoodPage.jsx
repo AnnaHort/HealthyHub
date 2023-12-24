@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
+    StyledListFood,
 StyledList,
     TitleListRecommendedFood,
   WrappContainer,
@@ -66,7 +67,7 @@ const ListRecommendedFoodPage = () => {
     <div>
       <TitleListRecommendedFood>List RecommendedFood</TitleListRecommendedFood>
       <div>
-        <ul>{selectListRecommendedFood()}</ul>
+        <StyledListFood>{selectListRecommendedFood()}</StyledListFood>
       </div>
     </div>
   );

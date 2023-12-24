@@ -10,6 +10,10 @@ const TitleRecommendedFood = styled.h2`
   line-height: 30px;
   color: var(--color-primary-white);
   margin: 16px 0;
+
+  @media (min-width: 834px){
+    margin: 24px 0 20px 0;
+  }
 `;
 const RecommendedFoodPage = () => {
     return (
