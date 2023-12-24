@@ -5,7 +5,7 @@ const SvgRecommendedFood = styled.svg`
 margin-bottom: 24px;
   @media (min-width: 834px) {
     width: 380px;
-    height: 376px;
+    height: 396px;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -14,6 +14,10 @@ margin-bottom: 24px;
   @media (min-width: 1024px) {
     width: 590px;
     height: 588px;
+  }
+
+  @media (min-width: 1440px){
+    margin-left: 150px;
   }
 `;
 const PhotoRecommendedFoodPage = () => {
