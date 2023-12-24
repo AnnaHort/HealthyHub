@@ -12,6 +12,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authSlice';
+import { userStatsDayReducer } from './userStatsday/slice';
 
 
 const authPersistConfig = {
@@ -24,6 +25,7 @@ export const store = configureStore({
   // стейт з властивістю authReducer (authSlice.reducer)
   reducer: {
     authReducer: persistReducer(authPersistConfig, authReducer),
+    userStatsDayReducer: userStatsDayReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
