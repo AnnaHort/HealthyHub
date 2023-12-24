@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { ReactComponent as BodyImg } from '/src/components/BodyParameters/img/Illustration-Body-parameters.svg';
+
 
 export const BodyContainer = styled.div`
   display: flex;
@@ -33,5 +35,25 @@ export const FlexBodyContainer = styled.div`
 export const WrappBodyContainer = styled.div`
   @media (min-width: 1024px) {
   margin-left: 104px;
+  }
+`;
+
+export const StyledBodyImg = styled(BodyImg)`
+
+  @media (min-width: 834px) {
+    width: 380px;
+    height: 376px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 1024px){
+   margin-top: 90px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 590px;
+    height: 588px;
   }
 `;
