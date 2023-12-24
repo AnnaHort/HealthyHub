@@ -15,6 +15,7 @@ import RestrictedRoute from './components/RestrictedRoute';
 import DashboardPage from './pages/DashboardPage/dashboardPage';
 import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsPage';
 import DiaryPage from './pages/DiaryPage/DiaryPage';
+import RecommendedFoodPage from './components/RecommendedFoodPage/recommendedFoodPage';
 <pages></pages>;
 import { useSelector } from 'react-redux';
 import  selectIsLoggedIn from '/src/redux/auth/authSelectors.js';
@@ -89,15 +90,15 @@ function App() {
               }
             />
 
-            {/* <Route
+            <Route
               path="/recommended-food"
               element={
                 <PrivateRoute
                   redirectTo="/welcome"
-                  component={<RecommendedFoodPage />}
+                  component={<RecommendedFoodPage/>}
                 />
               }
-            /> */}
+            />
 
             <Route
               path="/settings"
