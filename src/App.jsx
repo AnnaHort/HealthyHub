@@ -35,6 +35,18 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
+          <Route path="/welcome" element={<WelcomePage />} />
+
+
+          <Route
+              path="/signup"
+              element={
+                <RestrictedRoute
+                  redirectTo="/main"
+                  component={<SignUpPage />}
+                />
+              }
+            />
 
             <Route
               path="/signin"
@@ -46,17 +58,9 @@ function App() {
               }
             />
 
-            <Route
-              path="/signup"
-              element={
-                <RestrictedRoute
-                  redirectTo="/signup"
-                  component={<SignUpPage />}
-                />
-              }
-            />
 
-            <Route path="/welcome" element={<WelcomePage />} />
+
+            
 
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
