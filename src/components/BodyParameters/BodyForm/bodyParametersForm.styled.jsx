@@ -75,12 +75,12 @@ export const BodyParamsBackButton = styled.button`
 
 export const WeightErrorMessage = styled.div`
   color: #e74a3b;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  /* margin-bottom: 20px;
+  margin-top: 20px; */
 `;
 
 export const HeightErrorMessage = styled.div`
   color: #e74a3b;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  /* margin-bottom: 20px;
+  margin-top: 20px; */
 `;

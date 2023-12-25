@@ -10,10 +10,6 @@ const SvgContainer = styled.svg`
     margin-right: auto;
   }
 
-  @media (min-width: 1024px){
-   margin-top: 90px;
-  }
-
   @media (min-width: 1440px) {
     width: 590px;
     height: 588px;

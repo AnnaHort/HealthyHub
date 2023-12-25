@@ -51,7 +51,7 @@ export const StyledBodyImg = styled(BodyImg)`
   }
 
   @media (min-width: 1024px){
-   margin-top: 90px;
+   /* margin-top: 90px; */
   }
 
   @media (min-width: 1440px) {
