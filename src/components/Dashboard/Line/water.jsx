@@ -1,3 +1,4 @@
+import { startOfMonth, endOfMonth, eachDayOfInterval, format } from 'date-fns';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -21,6 +22,7 @@ ChartJS.register(
 );
 
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 
 const Container = styled.div`
   margin-left: 10px;
@@ -92,90 +94,104 @@ const ChartsContainer = styled.div`
   }
 `;
 
+const WaterDashboar = ({ data }) => {
+  console.log('Data received in WaterDashboar:', data);
+  const [selectedMonth, setSelectedMonths] = useState(new Date());
 
-const WaterDashboar = () => {
-  
-   const options = {
-     responsive: true,
-     plugins: {
-       legend: {
-         position: false,
-         display: false,
-       },
-     },
-     scales: {
-       x: {
-         beginAtZero: true,
-         grid: {
-           display: true,
-           color: '#292928',
-           borderColor: '#292928',
-         },
-       },
-       y: {
-         position: 'left',
-         ticks: {
-           beginAtZero: true,
-           stepSize: 1000,
-           callback: function (value) {
-             if (value >= 1000) {
-               return (value / 1000).toLocaleString() + 'K';
-             }
-             return value;
-           },
-         },
-         grid: {
-           display: true,
-           color: '#292928',
-           borderColor: '#292928',
-         },
-       },
-     },
-     layout: {
-       padding: {
-         left: 14,
-         right: 31,
-         top: 25,
-         bottom: 40,
-       },
-     },
-   };
+  useEffect(() => {
+    console.log('Selected month changed:', selectedMonth);
+  }, [selectedMonth]);
 
-     const labels = [];
-     for (let i = 1; i <= 31; i++) {
-       labels.push(i);
-     }
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: false,
+        display: false,
+      },
+    },
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid: {
+          display: true,
+          color: '#292928',
+          borderColor: '#292928',
+        },
+      },
+      y: {
+        position: 'left',
+        ticks: {
+          beginAtZero: true,
+          stepSize: 1000,
+          callback: function (value) {
+            if (value >= 1000) {
+              return (value / 1000).toLocaleString() + 'K';
+            }
+            return value;
+          },
+        },
+        grid: {
+          display: true,
+          color: '#292928',
+          borderColor: '#292928',
+        },
+      },
+    },
+    layout: {
+      padding: {
+        left: 14,
+        right: 31,
+        top: 25,
+        bottom: 40,
+      },
+    },
+  };
 
-     const data = {
-       labels,
-       datasets: [
-         {
-           label: 'Calories',
-          //  data: ,
-           borderColor: '#e3ffa8',
-           backgroundColor: '#0F0F0F',
-           pointBackgroundColor: '#e3ffa8',
-           borderWidth: 1,
-         },
-       ],
-     };
-    
-    return (
-      <Container>
-        <TitleContainer>
-          <WaterTitle>Water</WaterTitle>
-          <WaterDesc>Average value: 1700 ml</WaterDesc>
-        </TitleContainer>
+  const generateLabels = (selectedMonth) => {
+    const startOfMonthDate = startOfMonth(selectedMonth);
+    const endOfMonthDate = endOfMonth(selectedMonth);
 
-        <ChartsContainer>
-          <Line
-            options={options}
-            data={data}
-            style={{ backgroundColor: '#0F0F0F', borderRadius: "12px", }}
-          />
-        </ChartsContainer>
-      </Container>
-    );
+    const daysInMonth = eachDayOfInterval({
+      start: startOfMonthDate,
+      end: endOfMonthDate,
+    });
+
+    return daysInMonth.map((day) => {
+      const dayOfMonth = Number(format(day, 'd'), 10);
+      return dayOfMonth.toString();
+    });
+  };
+
+ 
+  return (
+    <Container>
+      <TitleContainer>
+        <WaterTitle>Water</WaterTitle>
+        <WaterDesc>Average value: {data.waterAverage}</WaterDesc>
+      </TitleContainer>
+
+      <ChartsContainer>
+        <Line
+          options={options}
+          data={{
+            labels: generateLabels(selectedMonth),
+            datasets: [
+              {
+                label: 'Water',
+                data: data.value,
+                borderColor: '#e3ffa8',
+                backgroundColor: '#0F0F0F',
+                pointBackgroundColor: '#e3ffa8',
+                borderWidth: 1,
+              },
+            ],
+          }}
+          style={{ backgroundColor: '#0F0F0F', borderRadius: '12px' }}
+        />
+      </ChartsContainer>
+    </Container>
+  );
 };
 
 export default WaterDashboar;
