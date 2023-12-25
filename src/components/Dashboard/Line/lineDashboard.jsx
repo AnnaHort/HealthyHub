@@ -76,13 +76,13 @@ const LineDashboard = () => {
     //   'December',
     // ];
 
-    const [currentMonthsIndex, setCurrentMonthsIndex] = useState(
+    const [currentMonthsIndex, setMonthsNumber] = useState(
       new Date().getMonth() + 1
     );
 
-    // nowData = 
 
   const dispatch = useDispatch();
+
   // const monthsData = useSelector();
 
   useEffect(() => {
