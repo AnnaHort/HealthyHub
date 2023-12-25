@@ -11,7 +11,7 @@ export const fetchUserStatictic = createAsyncThunk(
   'api/stats/month/:monthNumber/fetchUserStatictic',
   async (monthNumber, thunkAPI) => {
     try {
-      const res = await axios.get('api/stats/month/:monthNumber');
+      const res = await axios.get(`api/stats/month/${monthNumber}`);
       console.log('Data received:', res.data);
 
       if (res.data.token) {
