@@ -9,7 +9,6 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-// import { faker } from '@faker-js/faker';
 
 ChartJS.register(
   CategoryScale,
@@ -22,22 +21,20 @@ ChartJS.register(
 );
 
 import styled from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchUserInfo } from '../../../redux/userCurrentInfo/operations';
-import { getUserInfo } from '../../../redux/userCurrentInfo/selectors';
+import { FetchUserStatictic } from '../../../redux/dashboardPage/operation';
 
 const Container = styled.div`
   margin-left: 10px;
   overflow-y: auto;
 
   @media (min-width: 834px) {
-   margin-left: unset;
+    margin-left: unset;
     overflow-y: unset;
   }
 
-  @media (min-width: 1440px){
-    
+  @media (min-width: 1440px) {
   }
 `;
 
@@ -93,25 +90,20 @@ const ChartsContainer = styled.div`
 `;
 
 const CaloriesDashboard = () => {
-  const dispatch = useDispatch()
-  const userInfo = useSelector(getUserInfo)
-  console.log(userInfo);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    
-       dispatch(fetchUserInfo());
-    
-  }, [dispatch])
+    dispatch(FetchUserStatictic());
+  }, [dispatch]);
 
-
-  const caloriesData = userInfo ? userInfo.user.calories : [];
-  console.log(caloriesData)
+  // const caloriesData = userInfo ? userInfo.user.calories : [];
+  // console.log(caloriesData)
 
   // if (calories && calories.length) {
-    
+
   // }
 
-const labels = Array.from({length: 31}, (_, index) => index + 1)
+  const labels = Array.from({ length: 31 }, (_, index) => index + 1);
 
   const options = {
     responsive: true,
@@ -129,7 +121,6 @@ const labels = Array.from({length: 31}, (_, index) => index + 1)
           color: '#292928',
           borderColor: '#292928',
         },
-       
       },
       y: {
         position: 'left',
@@ -148,7 +139,6 @@ const labels = Array.from({length: 31}, (_, index) => index + 1)
           color: '#292928',
           borderColor: '#292928',
         },
-      
       },
     },
     layout: {
@@ -166,7 +156,7 @@ const labels = Array.from({length: 31}, (_, index) => index + 1)
     datasets: [
       {
         label: 'Calories',
-        data: caloriesData,
+        // data: caloriesData,
         borderColor: '#e3ffa8',
         backgroundColor: '#0F0F0F',
         pointBackgroundColor: '#e3ffa8',
@@ -178,14 +168,14 @@ const labels = Array.from({length: 31}, (_, index) => index + 1)
     <Container>
       <TitleContainer>
         <CaloriesTitle>Calories</CaloriesTitle>
-        <CaloriesDesc>Average value: { }</CaloriesDesc>
+        <CaloriesDesc>Average value: {}</CaloriesDesc>
       </TitleContainer>
 
       <ChartsContainer>
         <Line
           options={options}
           data={data}
-          style={{ backgroundColor: '#0F0F0F', borderRadius: '12px', }}
+          style={{ backgroundColor: '#0F0F0F', borderRadius: '12px' }}
         />
       </ChartsContainer>
     </Container>
