@@ -9,8 +9,7 @@ export const SelectGenderContainer = styled.div`
   margin: 0 auto;
   padding-top: 24px;
   padding-bottom: 24px;
-  padding-left: 10px;
-  padding-right: 10px;
+
   @media (min-width: 834px) {
     width: 492px;
     padding-top: 40px;
@@ -49,13 +48,15 @@ export const StyledGenderImg = styled(GenderImg)`
 `;
 
 export const SelectGenderRegisterTitle = styled.h2`
+  font-family: Poppins;
+  padding-left: 10px;
+  padding-right: 10px;
   color: var(--color-primary-white);
   font-size: 24px;
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 16px;
-  padding-left: 10px;
-  padding-right: 10px;
+
   @media (min-width: 834px) {
     font-size: 30px;
     line-height: 1.2;
@@ -65,29 +66,34 @@ export const SelectGenderRegisterTitle = styled.h2`
   @media (min-width: 1440px) {
     text-align: left;
     margin-top: 80px;
+    padding-left: 0px;
+  padding-right: 0px;
   }
 `;
 
 export const SelectGenderRegisterText = styled.p`
   color: var(--color-primary-grey);
-  font-size: 18px;
-  line-height: 1.33;
   padding-left: 10px;
   padding-right: 10px;
+  font-family: Poppins;
+  font-size: 18px;
+  line-height: 1.33;
   margin-bottom: 24px;
   font-weight: 400;
   line-height: 1.33;
   @media (min-width: 834px) {
+    padding-left: 50px;
+  padding-right: 50px;
     text-align: center;
     font-size: 22px;
     line-height: 1.45;
-    padding-left: 0;
-    padding-right: 0;
+
 
     @media (min-width: 1440px) {
       text-align: left;
       padding-left: 0;
-      padding-right: 72px;
+      padding-right: 0px;
+      width: 350px;
     }
   }
 `;
@@ -166,6 +172,7 @@ export const SelectGenderInputContainer = styled.div`
   border: 1px solid var(--color-primary-green-lite);
   border-radius: 12px;
   margin-bottom: 40px;
+  width: 300px;
   @media (min-width: 834px) {
     width: 380px;
     margin-left: auto;
@@ -230,12 +237,14 @@ export const Button = styled.button`
 export const ButtonBack = styled.button`
   color: var(--color-primary-grey);
   background-color: var(--color-primary-black);
-  width: 192px;
-  margin: 0 auto;
+
   display: block;
   border: none;
+  width: 300px;
   @media (min-width: 834px) {
-    max-width: 380px;
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
   }
   @media (min-width: 1440px) {
     margin: 0;
