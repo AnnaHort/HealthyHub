@@ -18,8 +18,6 @@ import {
   ErrorMessage,
 } from './SignUpRegister.styled';
 
-// import RegisterImageDesktop from '../../img/register-img-desktop.png';
-
 const initialValues = {
   name: '',
   email: '',

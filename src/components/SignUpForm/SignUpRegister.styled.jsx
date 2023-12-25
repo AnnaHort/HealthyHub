@@ -10,8 +10,8 @@ export const SignUpRegisterContainer = styled.div`
   margin: 0 auto;
   padding-top: 24px;
   padding-bottom: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
 
   @media (min-width: 834px) {
     width: 492px;
@@ -107,13 +107,16 @@ export const Input = styled(Field)`
   position: relative;
   border: 1px solid var(--color-primary-green-lite);
   border-radius: 12px;
-  max-width: 380px;
+  width: 300px;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
 
   :hover {
     color: var(--color-primary-white);
+  }
+  @media (min-width: 834px) {
+    width: 380px;
   }
   @media (min-width: 1440px) {
     display: block;
@@ -141,9 +144,9 @@ export const Button = styled.button`
   font-family: Poppins;
   font-weight: 500;
   line-height: 1.43;
-  width: 100%;
+  width: 300px;
   @media (min-width: 834px) {
-    max-width: 380px;
+    width: 380px;
     margin-bottom: 238px;
     margin-bottom: 206px;
   }

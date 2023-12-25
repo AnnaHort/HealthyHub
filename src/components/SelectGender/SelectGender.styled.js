@@ -47,6 +47,13 @@ export const StyledGenderImg = styled(GenderImg)`
   }
 `;
 
+export const SelectGenderInfoContainer = styled.div`
+
+@media (min-width: 1440px) {
+  margin-top: 80px;
+  }
+`
+
 export const SelectGenderRegisterTitle = styled.h2`
   font-family: Poppins;
   padding-left: 10px;
@@ -65,7 +72,6 @@ export const SelectGenderRegisterTitle = styled.h2`
   }
   @media (min-width: 1440px) {
     text-align: left;
-    margin-top: 80px;
     padding-left: 0px;
   padding-right: 0px;
   }

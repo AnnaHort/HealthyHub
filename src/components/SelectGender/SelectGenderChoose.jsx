@@ -15,6 +15,7 @@ import {
   SelectGenderRegisterText,
   GenderErrorMessage,
   AgeErrorMessage,
+  SelectGenderInfoContainer,
 } from './SelectGender.styled';
 
 import {
@@ -41,7 +42,7 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
   return (
     <SelectGenderContainer>
       <StyledGenderImg viewBox="0 0 300 288" />
-<div>
+<SelectGenderInfoContainer>
 <SelectGenderRegisterTitle>Select gender, Age</SelectGenderRegisterTitle>
       <SelectGenderRegisterText>
         Choose a goal so that we can help you effectively
@@ -104,7 +105,7 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
           );
         }}
       </Formik>
-</div>
+</SelectGenderInfoContainer>
 
     </SelectGenderContainer>
   );

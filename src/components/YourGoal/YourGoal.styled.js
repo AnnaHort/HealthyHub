@@ -149,7 +149,7 @@ export const GoalList = styled.ul`
 `;
 
 export const GoalBtnNext = styled.button`
-  width: 100%;
+  width: 300px;
   color: var(--color-primary-black-2);
   text-align: center;
   font-family: Poppins;
@@ -177,7 +177,7 @@ export const GoalBtnNext = styled.button`
 `;
 
 export const GoalBtnBack = styled.button`
-  width: 100%;
+  width: 300px;
   color: var(--color-primary-grey);
   text-align: center;
   font-family: Poppins;

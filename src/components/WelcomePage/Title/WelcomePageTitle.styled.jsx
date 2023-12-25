@@ -29,10 +29,12 @@ export const MainTitle = styled.h1`
     display: flex;
     font-size: 30px;
     line-height: 36px;
+    margin-top: 80px;
+
   }
 
   @media (min-width: 1024px) {
-    margin-top: 80px;
+    /* margin-top: 80px; */
   }
 `;
 
