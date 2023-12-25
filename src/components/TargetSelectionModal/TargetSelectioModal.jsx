@@ -21,7 +21,7 @@ import LooseFatMen from '../../Emoji/LoseFatMen.svg';
 import MaintakeGirl from '../../Emoji/MaintakeGirl.svg';
 import GainMuscle from '../../Emoji/GainMuscle.svg';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
 import {
@@ -48,9 +48,11 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
 
     try {
       const response = await axios.put('/api/user/update', newUserData);
-      toast.success(response.data.message);
       dispatch(updateUser(newUserData));
       dispatch(setUpdateUserFalse());
+      toast.success(response.data.message, { autoClose: 2000 });
+      onCloseButtonClick();
+      return response.data;
     } catch (error) {
       console.error('Data error', error.message);
       toast.error('Error updating user information');
@@ -99,7 +101,6 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
                 </StyledIcon>
               </CloseButton>
             </Div>
-
             <Description>
               The service will adjust your calorie intake to your goal
             </Description>
@@ -119,7 +120,6 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
                     Lose Fat
                   </Label>
                 </RadioItem>
-
                 <RadioItem>
                   <CustomRadio
                     type="radio"
@@ -134,7 +134,6 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
                     Maintain
                   </Label>
                 </RadioItem>
-
                 <RadioItem>
                   <CustomRadio
                     type="radio"
@@ -153,6 +152,7 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
               <BtnConfirm type="submit">Submit</BtnConfirm>
             </Form>
             <BtnBack onClick={onCloseButtonClick}>Back</BtnBack>
+            <ToastContainer position="top-right"/>
           </MobiletContainer>
         </Container>
       </ModalLayout>

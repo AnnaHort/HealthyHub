@@ -29,6 +29,7 @@ import {
   updateUser,
 } from '../../../redux/updateUser/updateOperations';
 import { selectUpdateUserStatus } from '../../../redux/updateUser/updateSelectors';
+import DownloadSvg from './DownloadSvg/DownloadSvg';
 
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
@@ -56,7 +57,7 @@ const UserInformation = () => {
       return response.data;
     } catch (error) {
       console.error('Error uploading avatar', error.message);
-      toast.error('Error uploading avatar');
+     
     }
   };
 
@@ -95,13 +96,11 @@ const UserInformation = () => {
       const response = await axios.put('/api/user/update', newUserData);
       console.log(response.data);
 
-      await uploadAvatar();
 
-
-
+      if(fileAvatar){
+        await uploadAvatar();
+      }
       dispatch(updateUser(newUserData));
-  
-
       dispatch(setUpdateUserFalse());
       toast.success(response.data.message, { autoClose: 2000 });
     } catch (error) {
@@ -140,10 +139,9 @@ const UserInformation = () => {
             />
           </UserInformationImgContainer>
           <UserInformationIconDirect>
-            <use
-              href="/src/Sprites/icons/symbol-defs.svg#icon-direct-inbox"
-              stroke="var(--color-primary-green-lite)"
-            ></use>
+
+            <DownloadSvg/>
+
           </UserInformationIconDirect>
           <input
             type="file"

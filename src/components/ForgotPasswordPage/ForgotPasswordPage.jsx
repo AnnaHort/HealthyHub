@@ -1,15 +1,12 @@
+import axios from 'axios';
 import {
+  FormikEmailContainer,
   RegisterTitleContainer,
   SignInBtnContainer,
   SignInPagesContainer,
 } from '../../pages/SignInPages/SignInPages.styled';
-import {
-  StyledSignImg,
-  
-} from '../SignUpForm/SignUpRegister.styled';
-// import RegisterImageMobile from '../../img/register-img-mobile.png';
-// import RegisterImageTablet from '../../img/register-img-tablet.png';
-// import RegisterImageDesktop from '../../img/register-img-desktop.png';
+import { StyledSignImg } from '../SignUpForm/SignUpRegister.styled';
+
 import {
   InputForgot,
   ForgotForm,
@@ -21,8 +18,36 @@ import {
   ForgotPassTitle,
   ForgotPassTitleText,
 } from './ForgotPasswordPage.styled';
+import * as Yup from 'yup';
+import { useFormik } from 'formik';
+import { ToastContainer, toast } from 'react-toastify';
+
+axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
+const emailRegexp = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .matches(emailRegexp, 'Invalid email')
+    .required('Email is required'),
+});
 
 const ForgotPasswordPage = () => {
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: async (values, { resetForm }) => {
+      try {
+        const response = await axios.post('/api/auth/forgot-password', values);
+        toast.success(response.data.message, { autoClose: 3000 });
+        resetForm();
+      } catch (error) {
+        toast.error(error.response.data.message, { autoClose: 2000 });
+      }
+    },
+  });
+
   return (
     <SignInPagesContainer>
       <StyledSignImg viewBox="0 0 300 296" />
@@ -32,16 +57,23 @@ const ForgotPasswordPage = () => {
           We will send you an email with recovery instructions
         </ForgotPassTitleText>
 
-        <ForgotForm autoComplete="off">
-          <label htmlFor="email">
-            <InputForgot
-              type="email"
-              id="email"
-              name="email"
-              placeholder="E-mail"
-            />
-          </label>
-
+        <ForgotForm autoComplete="off" onSubmit={formik.handleSubmit}>
+          <div style={{ position: 'relative' }}>
+            <label htmlFor="email">
+              <InputForgot
+                type="email"
+                id="email"
+                name="email"
+                placeholder="E-mail"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+              />
+            </label>
+            {formik.touched.email && formik.errors.email && (
+              <FormikEmailContainer>{formik.errors.email}</FormikEmailContainer>
+            )}
+          </div>
           <ForgotPassBtnContainer>
             <SignInBtnContainer>
               <ForgotPassBtn type="submit">Send</ForgotPassBtn>
@@ -56,6 +88,7 @@ const ForgotPasswordPage = () => {
           </ForgotPassBtnContainer>
         </ForgotForm>
       </RegisterTitleContainer>
+      <ToastContainer position="top-right" />
     </SignInPagesContainer>
   );
 };
