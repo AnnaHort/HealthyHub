@@ -1,7 +1,7 @@
 import ListRecommendedFoodPage from './ListRecommendedFoodPage/listRecommendedFoodPage';
-// import PhotoRecommendedFoodPage from "./photoRecommendedFoodPage";
 import { ReactComponent as Images } from '../../img/RecommendedFoodPage/ImgRecomendedFood.svg';
 import styled from 'styled-components';
+import { ToastContainer } from 'react-toastify';
 
 const RecommendedFoodContainer = styled.div`
   @media (min-width: 1440px) {
@@ -54,7 +54,6 @@ const RecommendedFoodPage = () => {
           <Images />
         </ImgContainer>
 
-        {/* <PhotoRecommendedFoodPage /> */}
         <ListRecommendedFoodPage />
       </RecommendedFoodContainer>
     </div>
