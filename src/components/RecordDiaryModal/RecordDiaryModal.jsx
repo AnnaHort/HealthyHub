@@ -26,6 +26,9 @@ import {
   Title,
 } from './RecordDiaryModal.styled';
 
+import { addFood } from '../../redux/userStatsDay/operations';
+import { fetchUserStatsDay } from '../../redux/userStatsDay/operations';
+
 import { Backdrop } from '../MainPage/AddWaterModal/AddWaterModal.styled';
 
 import { ReactComponent as Trash } from '../../img/MainPages/trash.svg';
@@ -63,6 +66,7 @@ const DiarySchema = Yup.object().shape({
   ),
 });
 const RecordDiaryModal = ({ onClose, selectedMeal }) => {
+  const dispatch = useDispatch();
   const [mealEntries, setMealEntries] = useState([
     {
       product: '',
@@ -97,10 +101,23 @@ const RecordDiaryModal = ({ onClose, selectedMeal }) => {
     return yyyy + '-' + mm + '-' + dd;
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Код для обробки введених даних та оновлення масиву mealEntries
-    console.log('Введені значення:', mealEntries);
+  const handleSubmit = (values, { resetForm }) => {
+    const formattedDate = formatDate(new Date());
+    const dataToSend = {
+      dishName: values.mealEntries[0].product,
+      mealType: selectedMeal.title,
+      calories: values.mealEntries[0].calories,
+      date: formattedDate,
+      carbonohidrates: values.mealEntries[0].carbonoh,
+      fat: values.mealEntries[0].fat,
+      protein: values.mealEntries[0].protein,
+    };
+
+    console.log(dataToSend);
+    dispatch(addFood(dataToSend));
+    dispatch(fetchUserStatsDay());
+
+    resetForm();
   };
 
   const handleAddMore = () => {

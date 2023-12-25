@@ -270,12 +270,6 @@ export const BtnConfirm = styled.button`
   align-items: center;
   gap: 10px;
   border: none;
-
-  @media (min-width: 834px) {
-  }
-
-  @media (min-width: 1440px) {
-  }
 `;
 
 export const BtnCancel = styled.button`
