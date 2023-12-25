@@ -21,7 +21,7 @@ import LooseFatMen from '../../Emoji/LoseFatMen.svg';
 import MaintakeGirl from '../../Emoji/MaintakeGirl.svg';
 import GainMuscle from '../../Emoji/GainMuscle.svg';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
 import {
@@ -152,7 +152,6 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
               <BtnConfirm type="submit">Submit</BtnConfirm>
             </Form>
             <BtnBack onClick={onCloseButtonClick}>Back</BtnBack>
-            <ToastContainer position="top-right"/>
           </MobiletContainer>
         </Container>
       </ModalLayout>

@@ -17,7 +17,7 @@ import {
 } from './CurrentWeightModal.styled';
 import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg';
 import { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
@@ -112,7 +112,7 @@ const CurrentWeightModal = ({ onCloseButtonClick }) => {
               <BtnConfirm type="submit">Confirm</BtnConfirm>
               <BtnCancel onClick={onCloseButtonClick}>Cancel</BtnCancel>
             </FormContainer>
-            <ToastContainer position="top-right" />
+
           </MobileContainer>
         </Container>
       </ModalLayout>

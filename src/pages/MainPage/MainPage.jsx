@@ -28,7 +28,7 @@ import {
   DARFWrap,
 } from './MainPage.styled';
 import RecommendedFoodMain from '../../components/RecommendedFood.jsx/RecommendedFoodMain';
-import { ToastContainer } from 'react-toastify';
+
 
 const MainPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -78,7 +78,7 @@ const MainPage = () => {
         </DARFWrap>
         {isOpenModal && <AddWaterModal handleModal={toggleIsOpenModal} />}
 
-        <ToastContainer position="top-right" />
+
       </MainContainer>
 
     </>

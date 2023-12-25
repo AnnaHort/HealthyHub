@@ -1,9 +1,6 @@
-// import ProfileSettingImg from './ProfileSettingImg';
 import {
-  // Img,
   ProfileSettingsPageContainer,
   ProfileSettingsPageImg,
-  // ProfileSettingsPageImg,
   ProfileSettingsPageTitle,
 } from './ProfileSettingsPage.styled';
 import UserInformation from './UserInformationComponent/UserInformation';
@@ -14,7 +11,6 @@ const ProfileSettingsPage = () => {
     <ProfileSettingsPageContainer>
       <div>
         <ProfileSettingsPageTitle>Profile setting</ProfileSettingsPageTitle>
-        {/* <ProfileSettingsPageImg src="/src/img/ProfileSettingPagesImg/Illustration.png" /> */}
         <ProfileSettingsPageImg>
           <Images />
         </ProfileSettingsPageImg>
