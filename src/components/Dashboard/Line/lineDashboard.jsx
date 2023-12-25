@@ -7,6 +7,7 @@ import WaterDashboar from "./water";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchUserStatictic } from "../../../redux/dashboardPage/operation";
+import { useState } from "react";
 
 const DashboardContainer = styled.div`
   max-width: 780px;
@@ -75,16 +76,21 @@ const LineDashboard = () => {
     //   'December',
     // ];
 
-  //   const [currentMonthsIndex, setCurrentMonthsIndex] = useState(
-  //     new Date.getMonth()
-  //   );
+    const [currentMonthsIndex, setCurrentMonthsIndex] = useState(
+      new Date().getMonth() + 1
+    );
+
+    // nowData = 
 
   const dispatch = useDispatch();
   // const monthsData = useSelector();
 
   useEffect(() => {
-    dispatch(fetchUserStatictic())
+    dispatch(fetchUserStatictic(currentMonthsIndex))
   },[dispatch])
+
+  console.log(currentMonthsIndex);
+
     return (
       <div>
         <MonthsDashboard />
