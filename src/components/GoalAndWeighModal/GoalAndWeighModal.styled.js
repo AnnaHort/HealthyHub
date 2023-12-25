@@ -1,5 +1,27 @@
 import styled from 'styled-components';
 
+export const Backdrop = styled.div`
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+
+  @media (min-width: 834px) {
+  top: 100px;
+  }
+`;
+
+export const ModalLayout = styled.div`
+  position: relative;
+  width: 320px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 export const Container = styled.div`
   width: 300px;
   height: 184px;

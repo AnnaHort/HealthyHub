@@ -5,6 +5,8 @@ export const UserInfoContainer = styled.div`
   height: 28px;
   display: flex;
   align-items: center;
+
+  position: relative;
 `;
 
 export const Text = styled.p`
