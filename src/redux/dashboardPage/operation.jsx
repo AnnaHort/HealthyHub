@@ -7,12 +7,12 @@ const setHeader = token => {
   return (axios.defaults.headers.common.Authorization = `Bearer ${token}`);
 };
 
-export const FetchUserStatictic = createAsyncThunk(
-  'api/stats/month/:monthNumber/FetchUserStatictic',
-  async (_, thunkAPI) => {
+export const fetchUserStatictic = createAsyncThunk(
+  'api/stats/month/:monthNumber/fetchUserStatictic',
+  async (monthNumber, thunkAPI) => {
     try {
       const res = await axios.get('api/stats/month/:monthNumber');
-      console.log('Data received:', res.data); 
+      console.log('Data received:', res.data);
 
       if (res.data.token) {
         setHeader(res.data.token);
