@@ -14,7 +14,7 @@ import { authReducer } from './auth/authSlice';
 import { userStatsDayReducer } from './userStatsDay/slice';
 import { updateReducer } from './updateUser/updateslice';
 import { recommendedFoodReducer } from './recommendedFood/slice';
-import { userMonthsReducer } from './dashboardPage/slice';
+import { userMonthsReducer } from './dashboardPage/dashboardSlice';
 
 const authPersistConfig = {
   key: 'auth',
