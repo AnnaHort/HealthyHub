@@ -106,7 +106,18 @@ const DiaryBlock = () => {
                     </NutrientValue>
                   </NutrientItem>
                 )}
-                {/* Другие питательные вещества... */}
+                {meal.nutrients.protein !== '' && (
+                  <NutrientItem>
+                    <NutrientName>Protein:</NutrientName>
+                    <NutrientValue>{meal.nutrients.protein}</NutrientValue>
+                  </NutrientItem>
+                )}
+                {meal.nutrients.fat !== '' && (
+                  <NutrientItem>
+                    <NutrientName>Fat:</NutrientName>
+                    <NutrientValue>{meal.nutrients.fat}</NutrientValue>
+                  </NutrientItem>
+                )}
                 <DeleteButton>
                   <BasketIcon />
                 </DeleteButton>
