@@ -6,7 +6,9 @@ export const BodyContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 24px 10px 40px 10px;
+  /* padding: 24px 10px 40px 10px; */
+  padding-top: 24px;
+  padding-bottom: 40px;
   background-color: var(--color-primary-black);
 
   @media (min-width: 834px) {

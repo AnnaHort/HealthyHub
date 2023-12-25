@@ -100,7 +100,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <div>
+    <>
       {currentStep === 1 && (
         <SignUpRegister onSubmit={SelectData} onNext={handleNext} />
       )}
@@ -129,7 +129,7 @@ const SignUpForm = () => {
         <YourActivity onBack={handlePrev} onSubmit={handleRegisterSubmit} />
       )}
       <ToastContainer />
-    </div>
+    </>
   );
 };
 

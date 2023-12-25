@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { Form, Field } from 'formik';
 
 export const BodyFormContainer = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const LabelForm = styled.label`
@@ -25,7 +25,7 @@ export const FormStyled = styled(Form)`
 export const FieldStyled = styled(Field)`
   width: 100%;
   height: 36px;
-  padding-left: 10px;
+  padding: 8px 10px;
   border-radius: 12px;
   background-color: inherit;
   color: var(--color-primary-grey);
@@ -48,7 +48,7 @@ export const BodyParamsNextButton = styled.button`
   color: var(--color-primary-black-2);
   border-radius: 12px;
   margin-top: 40px;
-
+  border: none;
   @media (min-width: 1440px) {
     max-width: 212px;
   }
@@ -84,4 +84,3 @@ export const HeightErrorMessage = styled.div`
   margin-bottom: 20px;
   margin-top: 20px;
 `;
-

@@ -4,9 +4,6 @@ import {
   RegisterText,
   RegisterTitle,
 } from '../../components/SignUpForm/SignUpRegister.styled';
-// import RegisterImageMobile from '../../img/register-img-mobile.png';
-// import RegisterImageTablet from '../../img/register-img-tablet.png';
-// import RegisterImageDesktop from '../../img/register-img-desktop.png';
 import {
   SignInForm,
   InputSignIn,

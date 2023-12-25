@@ -5,18 +5,20 @@ import { ReactComponent as ActivityImg } from '/src/components/YourActivity/img/
 
 export const YourActivityContainerStyled = styled.div`
   background-color: var(--color-primary-black);
-  padding: 24px 10px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   @media (min-width: 834px) {
     padding-top: 40px;
     text-align: center;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     display: flex;
   }
 `;
 
 export const StyledActivityImg = styled(ActivityImg)`
   margin-bottom: 24px;
+
   margin-right: auto;
   margin-left: auto;
   @media (min-width: 834px) {
@@ -24,12 +26,13 @@ export const StyledActivityImg = styled(ActivityImg)`
     height: 384px;
     margin-bottom: 60px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     width: 592px;
     height: 598px;
     margin-right: 35px;
   }
   @media (min-width: 1440px) {
+    margin-left: 150px;
     margin-right: 104px;
   }
 `;
@@ -38,13 +41,16 @@ export const FormContainerStyled = styled.div`
   max-width: 458px;
   margin-right: auto;
   margin-left: auto;
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     max-width: 308px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-top: 80px;
+    margin-right: 0;
+  margin-left: 0;
   }
+  
 `;
 
 export const YourActivityTitleStyled = styled.h2`
@@ -76,7 +82,7 @@ export const YourActivityText = styled.p`
     font-weight: 400;
     line-height: 1.46;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     text-align: start;
   }
 `;
@@ -85,7 +91,7 @@ export const YourActivityFormStyled = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     align-items: flex-start;
   }
 `;
@@ -159,6 +165,7 @@ export const YourActivityLabelStyled = styled.label`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+
 `;
 
 export const YourActivitySignUpBtnStyled = styled.button`
@@ -177,7 +184,7 @@ export const YourActivitySignUpBtnStyled = styled.button`
     max-width: 360px;
     margin-bottom: 20px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     max-width: 212px;
   }
 `;
@@ -191,7 +198,7 @@ export const YourActivityBackBtnStyled = styled.button`
   width: 100%;
   padding: 8px 10px;
   background-color: transparent;
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     max-width: 212px;
   }
 `;

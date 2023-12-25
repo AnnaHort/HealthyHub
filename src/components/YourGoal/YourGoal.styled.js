@@ -7,21 +7,21 @@ import { ReactComponent as GoalImg } from '/src/components/YourGoal/img/Illustra
 export const GoalContainer = styled.div`
   background-color: var(--color-primary-black);
   min-width: 320px;
-  height: 744px;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* height: 744px; */
+  /* padding-left: 10px;
+  padding-right: 10px; */
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (min-width: 834px) {
     min-width: 834px;
-    height: 1194px;
+    /* height: 1194px; */
   }
 
   @media (min-width: 1024px) {
     max-width: 1440px;
-    height: 800px;
+    /* height: 800px; */
     flex-direction: row;
     gap: 104px;
   }
@@ -189,6 +189,7 @@ export const GoalBtnBack = styled.button`
   border: none;
   margin: 0;
   display: block;
+  border: none;
 
   @media (min-width: 834px) {
     width: 192px;
