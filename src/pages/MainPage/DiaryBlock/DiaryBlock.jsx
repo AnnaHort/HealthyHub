@@ -62,7 +62,7 @@ const DiaryBlock = () => {
     <DiaryBlockContainer>
       <DiaryBlockTitleWrapper>
         <DiaryBlockTitle>Diary</DiaryBlockTitle>
-        <SeeMoreButton to="/main/diary">See more</SeeMoreButton>
+        <SeeMoreButton to="/diary">See more</SeeMoreButton>
       </DiaryBlockTitleWrapper>
 
       <DiaryBlockList>

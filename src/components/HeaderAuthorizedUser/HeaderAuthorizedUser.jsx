@@ -15,6 +15,7 @@ import {
 import GoalAndWeighModal from '../GoalAndWeighModal/GoalAndWeighModal';
 import LogoAuthorizedUser from '../LogoAuthorizedUser/LogoAuthorizedUser';
 import { ReactComponent as IconMenu } from '../../img/Header/icon-menu.svg';
+import { ToastContainer } from 'react-toastify';
 
 const HeaderAuthorizedUser = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -53,6 +54,7 @@ const HeaderAuthorizedUser = () => {
           <GoalAndWeighModal onCloseButtonClick={handleCloseButtonClick} />
         </ModalContainer>
       )}
+         <ToastContainer position="top-right" />
     </Container>
   );
 };

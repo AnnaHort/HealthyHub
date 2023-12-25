@@ -8,8 +8,6 @@ export const StyledListFood = styled.ul`
   }
 
   @media (min-width: 1440px) {
-   
-  
   }
 `;
 
@@ -26,6 +24,7 @@ export const StyledList = styled.li`
   }
 
   @media (min-width: 1440px) {
+    width: 328px;
     height: 86px;
   }
 `;
@@ -41,7 +40,7 @@ export const TitleListRecommendedFood = styled.h2`
 `;
 
 export const WrappContainer = styled.div`
-margin-left: 20px;
+  margin-left: 20px;
 `;
 
 export const NameDesc = styled.p`

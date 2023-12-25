@@ -17,6 +17,7 @@ import {
   InputFat,
   InputProduct,
   InputProtein,
+  ScrollableContainer,
   Title,
 } from './RecordDiaryModal.styled';
 
@@ -24,36 +25,52 @@ import { ReactComponent as Trash } from '../../img/MainPages/trash.svg';
 import { ReactComponent as Add } from '../../img/RecordDiaryModal/add_green.svg';
 
 const RecordDiaryModal = () => {
-  const [inputValues, setInputValues] = useState({
-    product: '',
-    carbonoh: '',
-    protein: '',
-    fat: '',
-    calories: '',
-  });
-
-  // Обробник подій для оновлення значень інпутів
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setInputValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
-  };
-
-  // Обробник подій для відправки форми
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Додайте код для обробки введених даних тут
-    console.log('Введені значення:', inputValues);
-
-    setInputValues({
+  const [mealEntries, setMealEntries] = useState([
+    {
       product: '',
       carbonoh: '',
       protein: '',
       fat: '',
       calories: '',
-    });
+    },
+  ]);
+
+  const handleInputChange = (e, index) => {
+    const { name, value } = e.target;
+    const updatedEntries = [...mealEntries];
+    updatedEntries[index] = {
+      ...updatedEntries[index],
+      [name]: value,
+    };
+    setMealEntries(updatedEntries);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Код для обробки введених даних та оновлення масиву mealEntries
+    console.log('Введені значення:', mealEntries);
+  };
+
+  const handleAddMore = () => {
+    // Додає новий блок інпутів до масиву mealEntries
+    setMealEntries((prevEntries) => [
+      ...prevEntries,
+      {
+        product: '',
+        carbonoh: '',
+        protein: '',
+        fat: '',
+        calories: '',
+      },
+    ]);
+  };
+
+  const handleDelete = (index) => {
+    // Видалення блоку інпутів за вказаним індексом
+    setMealEntries((prevEntries) => [
+      ...prevEntries.slice(0, index),
+      ...prevEntries.slice(index + 1),
+    ]);
   };
 
   return (
@@ -64,53 +81,62 @@ const RecordDiaryModal = () => {
         <Description>Breakfast</Description>
       </ImgDescriptionContainer>
       <Form onSubmit={handleSubmit}>
-        <InputContainer>
-          <InputProduct
-            type="text"
-            name="product"
-            placeholder="The name of the product or dish"
-            value={inputValues.product}
-            onChange={handleInputChange}
-          />
+        <ScrollableContainer>
+          {mealEntries.map((entry, index) => (
+            <InputContainer key={index}>
+              <InputProduct
+                type="text"
+                name="product"
+                placeholder="The name of the product or dish"
+                value={entry.product}
+                autoComplete="off"
+                onChange={(e) => handleInputChange(e, index)}
+              />
 
-          <InputCarbonoh
-            type="number"
-            name="carbonoh"
-            placeholder="Carbonoh."
-            value={inputValues.carbonoh}
-            onChange={handleInputChange}
-          />
+              <InputCarbonoh
+                type="number"
+                name="carbonoh"
+                placeholder="Carbonoh."
+                value={entry.carbonoh}
+                autoComplete="off"
+                onChange={(e) => handleInputChange(e, index)}
+              />
 
-          <InputProtein
-            type="number"
-            name="protein"
-            placeholder="Protein"
-            value={inputValues.protein}
-            onChange={handleInputChange}
-          />
-          <FatAndCalories>
-            <InputFat
-              type="number"
-              name="fat"
-              placeholder="Fat"
-              value={inputValues.fat}
-              onChange={handleInputChange}
-            />
-            <InputCalories
-              type="number"
-              name="calories"
-              placeholder="Calories"
-              value={inputValues.calories}
-              onChange={handleInputChange}
-            />
-            <Trash />
-          </FatAndCalories>
-        </InputContainer>
+              <InputProtein
+                type="number"
+                name="protein"
+                placeholder="Protein"
+                value={entry.protein}
+                autoComplete="off"
+                onChange={(e) => handleInputChange(e, index)}
+              />
+              <FatAndCalories>
+                <InputFat
+                  type="number"
+                  name="fat"
+                  placeholder="Fat"
+                  value={entry.fat}
+                  autoComplete="off"
+                  onChange={(e) => handleInputChange(e, index)}
+                />
+                <InputCalories
+                  type="number"
+                  name="calories"
+                  placeholder="Calories"
+                  value={entry.calories}
+                  autoComplete="off"
+                  onChange={(e) => handleInputChange(e, index)}
+                />
+                <Trash onClick={() => handleDelete(index)} />
+              </FatAndCalories>
+            </InputContainer>
+          ))}
+          <AddButton type="button" onClick={handleAddMore}>
+            <Add />
+            <AddText>Add more</AddText>
+          </AddButton>
+        </ScrollableContainer>
 
-        <AddButton>
-          <Add />
-          <AddText>Add more</AddText>
-        </AddButton>
         <ButtonContainer>
           <BtnConfirm type="submit">Confirm</BtnConfirm>
           <BtnCancel>Cancel</BtnCancel>

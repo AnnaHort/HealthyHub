@@ -1,11 +1,53 @@
 import styled from 'styled-components';
 
+export const Backdrop = styled.div`
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+
+  @media (min-width: 834px) {
+  top: 100px;
+  }
+`;
+
+export const ModalLayout = styled.div`
+  position: relative;
+  width: 320px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 834px) {
+    width: 834px;
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1440px;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+`; 
+
+
 export const Container = styled.div`
+
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
   padding: 24px 10px 40px 10px;
   background-color: var(--color-primary-black);
   height: 100vh;
 
   @media (min-width: 834px) {
+    position: absolute;
+    top: 0;
     width: 392px;
     height: 352px;
     /* flex-shrink: 0; */
@@ -13,6 +55,30 @@ export const Container = styled.div`
     border-radius: 12px;
     background: var(--Color-Primary-Black-2, #0f0f0f);
     box-shadow: 0px 4px 14px 0px rgba(227, 255, 168, 0.2);
+
+    margin-left: 294px;
+    margin-right: 148px;
+
+    @media (min-width: 1440px) {
+    margin-left: 800px;
+    margin-right: 248px;
+  }
+  }
+`;
+
+
+export const MobiletContainer = styled.div`
+  width: 320px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 834px) {
+    width: 100%;
+    height: 200px;
+    padding: 0;
+    margin: 0;
   }
 `;
 

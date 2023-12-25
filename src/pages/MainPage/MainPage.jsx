@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { logOut } from '../../redux/auth/authOperations';
-// import { Link, useNavigate } from 'react-router-dom';
 
 import { ReactComponent as ArrowRigth } from '../../img/MainPages/arrow-right.svg';
 
@@ -31,6 +29,7 @@ import {
 } from './MainPage.styled';
 import RecommendedFoodMain from '../../components/RecommendedFood.jsx/RecommendedFoodMain';
 
+
 const MainPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const userStatsDayLoad = useSelector(getUserStatsLoad);
@@ -47,27 +46,16 @@ const MainPage = () => {
     !userStatsDayLoad && dispatch(fetchUserStatsDay());
   }, [dispatch, userStatsDayLoad]);
 
-  // const navigate = useNavigate();
-
   const toggleIsOpenModal = () => {
     setIsOpenModal((isOpenModal) => !isOpenModal);
   };
-
-  // const handleLogout = async () => {
-  //   try {
-  //     await dispatch(logOut());
-  //     navigate('/signin');
-  //   } catch (error) {
-  //     console.error('Error during logout:', error);
-  //   }
-  // };
 
   return (
     <>
       <MainContainer>
         <MainWrapperTitle>
           <MainTitle>Today</MainTitle>
-          <MainLinkToGoal to="dashboard">
+          <MainLinkToGoal to="/dashboard">
             <MainText>On the way to the goal</MainText>
             <ArrowRigth />
           </MainLinkToGoal>
@@ -89,10 +77,10 @@ const MainPage = () => {
           <RecommendedFoodMain />      
         </DARFWrap>
         {isOpenModal && <AddWaterModal handleModal={toggleIsOpenModal} />}
+
+
       </MainContainer>
-      {/* <Link to="/signin" onClick={handleLogout}>
-        Logout
-      </Link> */}
+
     </>
   );
 };

@@ -21,7 +21,7 @@ import {
   UserInformationTitle,
 } from './UserInformation.styled';
 import { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getCurrentUser,
@@ -141,10 +141,7 @@ const UserInformation = () => {
           <UserInformationIconDirect>
 
             <DownloadSvg/>
-            {/* <use
-              href="/src/Sprites/icons/symbol-defs.svg#icon-direct-inbox"
-              stroke="var(--color-primary-green-lite)"
-            ></use> */}
+
           </UserInformationIconDirect>
           <input
             type="file"
@@ -317,7 +314,6 @@ const UserInformation = () => {
         </UserInformationLinkCancel>
       </UserInformationBtnContainer>
 
-      <ToastContainer position="top-right" />
     </UserInformationForm>
   );
 };

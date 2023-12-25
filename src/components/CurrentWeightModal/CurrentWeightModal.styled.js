@@ -1,17 +1,80 @@
 import styled from 'styled-components';
 
+export const Backdrop = styled.div`
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+
+  @media (min-width: 834px) {
+  top: 100px;
+  }
+`;
+
+export const ModalLayout = styled.div`
+  position: relative;
+  width: 320px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 834px) {
+    width: 834px;
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1440px;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+`; 
+
+export const MobileContainer = styled.div`
+  width: 320px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 834px) {
+    width: 100%;
+    height: 200px;
+    padding: 0;
+    margin: 0;
+  }
+`;
+
 export const Container = styled.div`
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
   padding: 24px 10px 40px 10px;
   background: var(--color-primary-black);
   height: 100vh;
 
   @media (min-width: 834px) {
+    position: absolute;
+    top: 0;
     width: 392px;
     height: 200px;
     border-radius: 12px;
     background: var(--color-primary-black-2);
     box-shadow: 0px 4px 14px 0px rgba(227, 255, 168, 0.2);
     padding: 20px 24px 40px 24px;
+
+    margin-left: 260px;
+    margin-right: 148px;
+
+    @media (min-width: 1440px) {
+    margin-left: 1012px;
+    margin-right: 36px;
+  }
   }
 `;
 
