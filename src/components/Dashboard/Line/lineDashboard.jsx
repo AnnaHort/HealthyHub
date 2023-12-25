@@ -6,7 +6,7 @@ import CaloriesDashboard from "./calories";
 import WaterDashboar from "./water";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchUserStatictic } from "../../../redux/dashboardPage/operation";
+import { fetchUserStatictic } from "../../../redux/dashboardPage//dashboardOperation";
 import { getUserMonthsFood, getUserMonthsWater, } from "../../../redux/dashboardPage/dashboardSelector";
 
 
