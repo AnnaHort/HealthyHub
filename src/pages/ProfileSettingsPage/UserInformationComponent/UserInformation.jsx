@@ -21,7 +21,7 @@ import {
   UserInformationTitle,
 } from './UserInformation.styled';
 import { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getCurrentUser,
@@ -314,7 +314,6 @@ const UserInformation = () => {
         </UserInformationLinkCancel>
       </UserInformationBtnContainer>
 
-      <ToastContainer position="top-right" />
     </UserInformationForm>
   );
 };
