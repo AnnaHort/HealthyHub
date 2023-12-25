@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Container,
   Description,
@@ -15,9 +15,18 @@ import { ReactComponent as ArrowRigth } from '../../img/Header/arrow-right.svg';
 import { ReactComponent as ArrowDown } from '../../img/Header/arrow-down.svg';
 
 import GainMuscle from '../../Emoji/GainMuscle.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCurrentUser } from '/src/redux/updateUser/updateOperations.js';
+import { selectUserGoals } from '/src/redux/updateUser/updateSelectors.js';
 
 const ControlPanelGoals = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const dispatch = useDispatch();
+  const userGoals = useSelector(selectUserGoals);
+
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
 
   const handleIconButtonClick = () => {
     setModalOpen(true);
@@ -26,6 +35,7 @@ const ControlPanelGoals = () => {
   const handleCloseButtonClick = () => {
     setModalOpen(false);
   };
+
   return (
     <Container>
       <ImgBox>
@@ -34,7 +44,7 @@ const ControlPanelGoals = () => {
       <SelectPanel>
         <Title>Goal</Title>
         <Description>
-          Lose fat
+          {userGoals}
           <IconButton>
             <StyledArrowDown onClick={handleIconButtonClick}>
               <ArrowDown />
@@ -57,3 +67,4 @@ const ControlPanelGoals = () => {
 };
 
 export default ControlPanelGoals;
+

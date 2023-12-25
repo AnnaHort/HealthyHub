@@ -64,7 +64,7 @@ export const SpanData = styled.span`
   line-height: 20px; /* 142.857% */
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   display: block;
 
   @media (min-width: 834px) {

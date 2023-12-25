@@ -92,19 +92,6 @@ export const List = styled.ul`
   }
 `;
 
-// export const RadioItem = styled.li`
-//   display: flex;
-//   gap: 20px;
-
-//   @media (min-width: 834px) {
-//     gap: 0px;
-//   }
-
-//   @media (min-width: 1440px) {
-//     gap: 20px;
-//   }
-// `;
-
 export const CustomRadio = styled.input`
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -112,66 +99,6 @@ export const CustomRadio = styled.input`
   opacity: 0;
 `;
 
-// export const Label = styled.label`
-//   color: var(--color-primary-white);
-//   font-family: Poppins;
-//   font-size: 14px;
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 20px;
-
-//   position: relative;
-//   padding-left: 32px;
-//   cursor: pointer;
-//   line-height: 1.43;
-
-//   &::before {
-//     content: '';
-//     display: inline-block;
-//     position: absolute;
-//     top: 50%;
-//     transform: translate(-50%, -50%);
-//     left: 0;
-//     width: 40px;
-//     height: 40px;
-//     border: 1px solid #b6b6b6;
-//     background: transparent;
-//     border-radius: 12px;
-//   }
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     top: 50%;
-//     left: 0;
-//     transform: translate(-50%, -50%);
-//     width: 40px;
-//     height: 40px;
-//     background: transparent;
-//     border: 1px solid #b6c3ff;
-//     border-radius: 12px;
-//     opacity: 0;
-//     transition: 0.2s ease-in;
-//   }
-
-//   input[type='radio']:checked + &::after {
-//     opacity: 1;
-//   }
-
-//   input[type='radio'] + &::before {
-//     content: '';
-//     display: inline-block;
-//     position: absolute;
-//     top: 50%;
-//     left: 0;
-//     transform: translate(-50%, -50%);
-//     width: 40px;
-//     height: 40px;
-//   }
-
-//   input[type='radio']:checked + & {
-//     color: #b6c3ff; /* Change this to your desired text color */
-//   }
-// `;
 
 export const RadioItem = styled.li`
   display: flex;
@@ -269,12 +196,12 @@ export const Label = styled.label`
   }
 
   input[type='radio']:checked + & {
-    color: #b6c3ff; /* Change this to your desired text color */
+    color: #b6c3ff; 
   }
 
   img {
-    width: 20px; /* Set the width of your SVG */
-    height: 20px; /* Set the height of your SVG */
+    width: 20px; 
+    height: 20px; 
   }
 `;
 

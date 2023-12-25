@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 
 import {
   SelectGenderContainer,
-  Image,
+  StyledGenderImg,
   Text,
   RegisterForm,
   Input,
@@ -17,9 +17,10 @@ import {
   AgeErrorMessage,
 } from './SelectGender.styled';
 
-import SelectGenderImegMobile from '../../img/select_gender/gender-and-age-mobile.png';
-import SelectGenderImegTablet from '../../img/select_gender/gender-and-age-tablet.png';
-import SelectGenderImegDesktop from '../../img/select_gender/gender-and-age-desktop.png';
+// import SelectGenderImegMobile from '../../img/select_gender/gender-and-age-mobile.png';
+// import SelectGenderImegTablet from '../../img/select_gender/gender-and-age-tablet.png';
+// import SelectGenderImegDesktop from '../../img/select_gender/gender-and-age-desktop.png';
+
 import {
   RadioButtonContainerStyled,
   RadioInputStyle,
@@ -32,7 +33,7 @@ const initialValues = {
 };
 
 const genderAgeSchema = Yup.object().shape({
-  gender: Yup.string().required('Select gender').oneOf(['male', 'female']),
+  gender: Yup.string().required('Select gender').oneOf(['Male', 'Female']),
   age: Yup.number()
     .required('Specify age')
     .integer('Age must be an integer')
@@ -43,12 +44,7 @@ const genderAgeSchema = Yup.object().shape({
 const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
   return (
     <SelectGenderContainer>
-      <Image
-        src={SelectGenderImegMobile}
-        srcSet={`${SelectGenderImegTablet} 834w, ${SelectGenderImegDesktop} 1440w`}
-        sizes="(max-width: 833px) 100vw, (min-width: 834px) 50vw"
-        alt="Responsive Image"
-      />
+      <StyledGenderImg viewBox="0 0 300 288" />
       <div>
         <SelectGenderRegisterTitle>
           Select gender, Age
@@ -73,13 +69,13 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
                   <RadioButtonContainerStyled>
                     <RadioInputStyle
                       type="radio"
-                      id="male"
+                      id="Male"
                       name="gender"
-                      value="male"
+                      value="Male"
                     />
                     <RadioLabelStyle
                       style={{ width: '120px', textAlign: 'start' }}
-                      htmlFor="male"
+                      htmlFor="Male"
                     >
                       Male
                     </RadioLabelStyle>
@@ -87,11 +83,11 @@ const SelectGenderChoose = ({ onNext, onBack, onSubmit }) => {
                   <RadioButtonContainerStyled>
                     <RadioInputStyle
                       type="radio"
-                      id="female"
+                      id="Female"
                       name="gender"
-                      value="female"
+                      value="Female"
                     />
-                    <RadioLabelStyle htmlFor="female">Female</RadioLabelStyle>
+                    <RadioLabelStyle htmlFor="Female">Female</RadioLabelStyle>
                   </RadioButtonContainerStyled>
                 </GenderRadioBtnContainer>
                 <GenderErrorMessage>{errors.gender}</GenderErrorMessage>

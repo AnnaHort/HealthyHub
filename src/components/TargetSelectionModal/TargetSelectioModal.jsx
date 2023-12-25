@@ -17,8 +17,63 @@ import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg
 import LooseFatMen from '../../Emoji/LoseFatMen.svg';
 import MaintakeGirl from '../../Emoji/MaintakeGirl.svg';
 import GainMuscle from '../../Emoji/GainMuscle.svg';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
+import {
+  setUpdateUserFalse,
+  updateUser,
+} from '../../redux/updateUser/updateOperations';
+import { useEffect, useState } from 'react';
+
+axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 export const TargetSelectionModal = ({ onCloseButtonClick }) => {
+  const [goal, setGoal] = useState('');
+  const [userData, setUserData] = useState();
+
+  const userUpdate = useSelector(selectUpdateUserStatus);
+  const dispatch = useDispatch();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const newUserData = {
+      goal,
+    };
+
+    try {
+      const response = await axios.put('/api/user/update', newUserData);
+     
+      
+      dispatch(updateUser(newUserData));
+      dispatch(setUpdateUserFalse());
+      toast.success(response.data.message, { autoClose: 2000 });
+      return response.data;
+    } catch (error) {
+      console.error('Data error', error.message);
+      toast.error('Error updating user information');
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('api/user/current');
+        console.log(response.data.goal);
+        setGoal(response.data.goal);
+        setUserData(response.data);
+      } catch (error) {
+        console.error('Data error', error.message);
+      }
+    };
+    fetchData();
+  }, [userUpdate]);
+
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
   return (
     <Container>
       <Div>
@@ -33,7 +88,7 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
       <Description>
         The service will adjust your calorie intake to your goal
       </Description>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <List>
           <RadioItem>
             <CustomRadio
@@ -41,6 +96,8 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
               id="loseFat"
               name="goal"
               value="Lose Fat"
+              checked={goal === 'Lose fat'}
+              onChange={() => setGoal('Lose fat')}
             />
             <Label htmlFor="loseFat">
               <img src={LooseFatMen} alt="LooseFatMen" />
@@ -54,6 +111,8 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
               id="maintain"
               name="goal"
               value="Maintain"
+              checked={goal === 'Maintain'}
+              onChange={() => setGoal('Maintain')}
             />
             <Label htmlFor="maintain">
               <img src={MaintakeGirl} alt="MaintakeGirl" />
@@ -67,6 +126,8 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
               id="gainMuscle"
               name="goal"
               value="Gain Muscle"
+              checked={goal === 'Gain Muscle'}
+              onChange={() => setGoal('Gain Muscle')}
             />
             <Label htmlFor="gainMuscle">
               <img src={GainMuscle} alt="GainMuscle" />
@@ -74,9 +135,11 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
             </Label>
           </RadioItem>
         </List>
+        <BtnConfirm type="submit">Submit</BtnConfirm>
       </Form>
-      <BtnConfirm>Submit</BtnConfirm>
+
       <BtnBack onClick={onCloseButtonClick}>Back</BtnBack>
+      <ToastContainer position="top-right"/>
     </Container>
   );
 };

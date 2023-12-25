@@ -13,7 +13,7 @@ import {
 } from './DailyGoal.styled';
 
 
-export const DailyGoal = ({ dailyCalories }) => {
+export const DailyGoal = ({ dailyCalories, dailyWater }) => {
     return (
         <MDGContainer>
             <MDGTitle>Daily goal</MDGTitle>
@@ -27,8 +27,7 @@ export const DailyGoal = ({ dailyCalories }) => {
                     <MilkSvg />
                     <MDGInfoWrapper>
                         <MDGInfoTitle>Water</MDGInfoTitle>
-                        <MDGInfoNumber>
-                            1500<Unit>ml</Unit>
+                        <MDGInfoNumber>{dailyWater}<Unit>ml</Unit>
                         </MDGInfoNumber>
                     </MDGInfoWrapper>
                 </MDGCardWrapper>

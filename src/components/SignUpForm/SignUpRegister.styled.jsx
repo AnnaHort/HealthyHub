@@ -2,6 +2,8 @@ import { Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { ReactComponent as SignImg } from '/src/components/SignUpForm/img/Illustration.svg';
+
 export const SignUpRegisterContainer = styled.div`
   background-color: var(--color-primary-black);
   width: 320px;
@@ -29,7 +31,7 @@ export const SignUpRegisterContainer = styled.div`
   }
 `;
 
-export const Image = styled.img`
+export const StyledSignImg = styled(SignImg)`
   width: 300px;
   height: 296px;
   margin-bottom: 24px;

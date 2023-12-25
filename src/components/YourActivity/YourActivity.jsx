@@ -8,7 +8,7 @@ import {
   YourActivityBackBtnStyled,
   YourActivityContainerStyled,
   YourActivityFormStyled,
-  YourActivityImgStyled,
+  StyledActivityImg,
   YourActivityList,
   YourActivitySignUpBtnStyled,
   YourActivityText,
@@ -17,25 +17,25 @@ import {
 } from './YourActivity.styled';
 
 const initialValues = {
-  activity: '',
+  activity: "",
 };
 
 const YourActivitylSchema = Yup.object({
   activity: Yup.string()
     .required('Сhoose your activity level')
     .oneOf([
-      'low 1.2-1.3',
-      'light 1.4-1.5',
-      'average 1.6-1.7',
-      'high 1.8-1.9',
-      'hard 2.0',
+      "1.25",
+      "1.45",
+      "1.65",
+      "1.85",
+      "2",
     ]),
 });
 
 const YourActivity = ({ onBack, onSubmit }) => {
   return (
     <YourActivityContainerStyled>
-      <YourActivityImgStyled src="/src/img/YourActivityImg/illustrationActivity-min.svg" />
+      <StyledActivityImg viewBox="0 0 300 304" />
 
       <FormContainerStyled>
         <YourActivityTitleStyled>Your Activity</YourActivityTitleStyled>
@@ -58,7 +58,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                     <RadioInputStyle
                       type="radio"
                       id="low 1.2-1.3"
-                      value="low 1.2-1.3"
+                      value="1.25"
                       name="activity"
                     />
                     <RadioLabelStyle htmlFor="low 1.2-1.3">
@@ -71,7 +71,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                     <RadioInputStyle
                       type="radio"
                       id="light 1.4-1.5"
-                      value="light 1.4-1.5"
+                      value="1.45"
                       name="activity"
                     />
                     <RadioLabelStyle htmlFor="light 1.4-1.5">
@@ -84,7 +84,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                     <RadioInputStyle
                       type="radio"
                       id="average 1.6-1.7"
-                      value="average 1.6-1.7"
+                      value="1.65"
                       name="activity"
                     />
                     <RadioLabelStyle htmlFor="average 1.6-1.7">
@@ -97,7 +97,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                     <RadioInputStyle
                       type="radio"
                       id="high 1.8-1.9"
-                      value="high 1.8-1.9"
+                      value="1.85"
                       name="activity"
                     />
                     <RadioLabelStyle htmlFor="high 1.8-1.9">
@@ -109,7 +109,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                     <RadioInputStyle
                       type="radio"
                       id="hard 2.0"
-                      value="hard 2.0"
+                      value="2"
                       name="activity"
                     />
                     <RadioLabelStyle htmlFor="hard 2.0">
