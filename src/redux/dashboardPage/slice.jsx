@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit"
 import { fetchUserStatictic } from "./operation"
 
 const initionState = {
-    calories: null,
-    water: null,
-    weight: null,
+    food: {},
+    water: {},
+    weight: {},
     loading: false,
-}
+};
 
 const monthsInfoSlice = createSlice({
     name: 'info',
@@ -18,11 +18,14 @@ const monthsInfoSlice = createSlice({
         })
             .addCase(fetchUserStatictic.fulfilled, (state, action) => {
               state.loading = false;
-              state.calories = action.payload.calories;
+              state.food = action.payload.food;
               state.water = action.payload.water;
               state.weight = action.payload.weight;
+            })
+            .addCase(fetchUserStatictic.rejected, (state) => {
+                state.loading = false;
         })
     )
 })
 
-export default monthsInfoSlice.reducer;
+export const userMonthsReducer =  monthsInfoSlice.reducer;

@@ -14,6 +14,7 @@ import { authReducer } from './auth/authSlice';
 import { userStatsDayReducer } from './userStatsDay/slice';
 import { updateReducer } from './updateUser/updateslice';
 import { recommendedFoodReducer } from './recommendedFood/slice';
+import { userMonthsReducer } from './dashboardPage/slice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -28,6 +29,7 @@ export const store = configureStore({
     updateReducer: updateReducer,
     userStatsDayReducer: userStatsDayReducer,
     recommendedFood: recommendedFoodReducer,
+    userStatsMonthsReducer: userMonthsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
