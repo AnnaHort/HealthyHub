@@ -6,7 +6,9 @@ export const BodyContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 24px 10px 40px 10px;
+  /* padding: 24px 10px 40px 10px; */
+  padding-top: 24px;
+  padding-bottom: 40px;
   background-color: var(--color-primary-black);
 
   @media (min-width: 834px) {
@@ -49,7 +51,7 @@ export const StyledBodyImg = styled(BodyImg)`
   }
 
   @media (min-width: 1024px){
-   margin-top: 90px;
+   /* margin-top: 90px; */
   }
 
   @media (min-width: 1440px) {

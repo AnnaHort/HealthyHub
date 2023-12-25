@@ -1,14 +1,31 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const SignInRegisterText = styled.p`
+  color: var(--color-primary-grey);
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33;
+  margin-bottom: 24px;
+  @media (min-width: 834px) {
+    width: 444px;
+    text-align: start;
+    font-size: 21px;
+    line-height: 1.46;
+  }
+  @media (min-width: 1440px) {
+    font-size: 22px;
+    line-height: 1.46;
+  }
+`;
+
 export const SignInPagesContainer = styled.div`
   background-color: var(--color-primary-black);
   width: 320px;
   margin: 0 auto;
   padding-top: 24px;
   padding-bottom: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
 
   @media (min-width: 834px) {
     width: 492px;
@@ -27,8 +44,15 @@ export const SignInPagesContainer = styled.div`
 `;
 
 export const RegisterTitleContainer = styled.div`
+  width: 300px;
+  @media (min-width: 834px) {
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @media (min-width: 1440px) {
     padding-top: 80px;
+    width: 440px;
   }
 `;
 
@@ -57,7 +81,7 @@ export const InputSignIn = styled.input`
   position: relative;
   border: 1px solid var(--color-primary-green-lite);
   border-radius: 12px;
-  max-width: 380px;
+  width: 300px;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -65,9 +89,12 @@ export const InputSignIn = styled.input`
   :hover {
     color: var(--color-primary-white);
   }
+  @media (min-width: 834px) {
+    width: 380px;
+  }
   @media (min-width: 1440px) {
     display: block;
-    max-width: 212px;
+    width: 212px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -86,9 +113,9 @@ export const ButtonSignIn = styled.button`
   font-family: Poppins;
   font-weight: 500;
   line-height: 1.43;
-  width: 100%;
+  width: 300px;
   @media (min-width: 834px) {
-    max-width: 380px;
+    width: 380px;
     margin-bottom: 20px;
   }
   @media (min-width: 1440px) {
@@ -191,7 +218,7 @@ export const FormikEmailContainer = styled.div`
 `;
 
 export const FormikPasswordContainer = styled.div`
-   position: absolute;
+  position: absolute;
   top: 44px;
   color: red;
   @media (min-width: 834px) {

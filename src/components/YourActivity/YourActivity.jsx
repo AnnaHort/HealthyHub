@@ -35,7 +35,9 @@ const YourActivitylSchema = Yup.object({
 const YourActivity = ({ onBack, onSubmit }) => {
   return (
     <YourActivityContainerStyled>
-      <StyledActivityImg viewBox="0 0 300 304" />
+      <StyledActivityImg 
+      viewBox="0 0 300 304"
+       />
 
       <FormContainerStyled>
         <YourActivityTitleStyled>Your Activity</YourActivityTitleStyled>
@@ -61,7 +63,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                       value="1.25"
                       name="activity"
                     />
-                    <RadioLabelStyle htmlFor="low 1.2-1.3">
+                    <RadioLabelStyle htmlFor="low 1.2-1.3" style={{  textAlign: 'start'}}>
                       1.2-1.3 - if you do not have physical activity and
                       sedentary work
                     </RadioLabelStyle>
@@ -74,7 +76,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                       value="1.45"
                       name="activity"
                     />
-                    <RadioLabelStyle htmlFor="light 1.4-1.5">
+                    <RadioLabelStyle htmlFor="light 1.4-1.5" style={{  textAlign: 'start'}}>
                       1.4-1.5 - if you do short runs or light gymnastics 1-3
                       times a week
                     </RadioLabelStyle>
@@ -87,7 +89,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                       value="1.65"
                       name="activity"
                     />
-                    <RadioLabelStyle htmlFor="average 1.6-1.7">
+                    <RadioLabelStyle htmlFor="average 1.6-1.7" style={{  textAlign: 'start'}}>
                       1.6-1.7 - if you play sports with average loads 3-5 times
                       a week
                     </RadioLabelStyle>
@@ -100,7 +102,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                       value="1.85"
                       name="activity"
                     />
-                    <RadioLabelStyle htmlFor="high 1.8-1.9">
+                    <RadioLabelStyle htmlFor="high 1.8-1.9" style={{  textAlign: 'start'}}>
                       1.8-1.9 - if you train fully 6-7 times a week
                     </RadioLabelStyle>
                   </RadioButtonContainerStyled>
@@ -112,7 +114,7 @@ const YourActivity = ({ onBack, onSubmit }) => {
                       value="2"
                       name="activity"
                     />
-                    <RadioLabelStyle htmlFor="hard 2.0">
+                    <RadioLabelStyle htmlFor="hard 2.0" style={{  textAlign: 'start'}}>
                       2.0 - if your work is related to physical labor, you train
                       2 times a day and include strength exercises in your
                       training program

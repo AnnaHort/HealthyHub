@@ -37,6 +37,7 @@ export const ForgotPassTitle = styled.h2`
 
 export const ForgotPassTitleText = styled.p`
   color: var(--color-primary-grey);
+  font-family: Poppins;
   font-size: 18px;
   line-height: 1.33;
   margin-bottom: 24px;

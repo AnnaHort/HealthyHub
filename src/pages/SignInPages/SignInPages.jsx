@@ -1,12 +1,8 @@
 import {
   StyledSignImg,
   LinkStyled,
-  RegisterText,
   RegisterTitle,
 } from '../../components/SignUpForm/SignUpRegister.styled';
-// import RegisterImageMobile from '../../img/register-img-mobile.png';
-// import RegisterImageTablet from '../../img/register-img-tablet.png';
-// import RegisterImageDesktop from '../../img/register-img-desktop.png';
 import {
   SignInForm,
   InputSignIn,
@@ -20,6 +16,7 @@ import {
   SignInPagesContainer,
   FormikEmailContainer,
   FormikPasswordContainer,
+  SignInRegisterText,
 } from './SignInPages.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from '../../redux/auth/authOperations';
@@ -111,7 +108,7 @@ const SignInPages = () => {
       <StyledSignImg viewBox="0 0 300 296" />
       <RegisterTitleContainer>
         <RegisterTitle>Sign in</RegisterTitle>
-        <RegisterText>You need to login to use the service</RegisterText>
+        <SignInRegisterText>You need to login to use the service</SignInRegisterText>
 
         <SignInForm autoComplete="off" onSubmit={formik.handleSubmit}>
           <div style={{ position: 'relative' }}>
