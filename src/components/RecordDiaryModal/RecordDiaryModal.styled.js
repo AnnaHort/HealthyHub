@@ -9,7 +9,31 @@ export const Container = styled.div`
   @media (min-width: 834px) {
     padding: 24px;
     width: 708px;
-    height: 408px;
+    /* height: 408px; */
+  }
+`;
+
+export const ScrollableContainer = styled.div`
+  max-height: 252px;
+  overflow: auto;
+  margin-bottom: 64px;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: none;
+    outline: 0px solid slategrey;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: none;
+
+  @media (min-width: 834px) {
+    max-height: 150px;
+    margin-bottom: 0 auto;
   }
 `;
 
@@ -189,10 +213,8 @@ export const AddButton = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 64px;
 
   @media (min-width: 834px) {
-    margin-bottom: 120px;
   }
 `;
 
