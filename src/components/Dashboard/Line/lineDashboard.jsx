@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { fetchUserStatictic } from "../../../redux/dashboardPage/operation";
 import { getUserMonthsFood, getUserMonthsWater, } from "../../../redux/dashboardPage/dashboardSelector";
 
+
 const DashboardContainer = styled.div`
   max-width: 780px;
   margin-left: auto;
@@ -58,7 +59,6 @@ const WeightContainerStyle = styled.div`
 `;
 
 const LineDashboard = () => {
-
 
   const dispatch = useDispatch();
   const monthsDataFood = useSelector(getUserMonthsFood);

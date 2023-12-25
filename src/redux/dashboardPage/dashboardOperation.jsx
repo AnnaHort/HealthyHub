@@ -11,10 +11,20 @@ export const fetchUserStatictic = createAsyncThunk(
   'api/stats/month/:monthNumber/fetchUserStatictic',
   async (_, thunkAPI) => {
     try {
+
         const state = thunkAPI.getState();
         const persistToken = state.authReducer.token;
         if (!persistToken) {
           return thunkAPI.rejectWithValue('Unable to fetch user');
+
+      const res = await axios.get(`api/stats/month/${monthNumber}`);
+      console.log('Data received:', res.data);
+
+      if (res.data.token) {
+        setHeader(res.data.token);
+      } else {
+        console.error('Token is missing in the server response.');
+
       }
       setHeader(persistToken);
       const res = await axios.get('api/stats/month/12');
