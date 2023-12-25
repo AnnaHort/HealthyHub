@@ -15,10 +15,14 @@ export const Container = styled.div`
 
   transition: all 10s linear;
 
-  @media (min-width: 834px) {
+  @media screen and (min-width: 834px) {
+    top: 180px;
     padding: 24px;
     width: 708px;
-    /* height: 408px; */
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 215px;
   }
 `;
 

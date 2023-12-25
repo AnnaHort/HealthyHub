@@ -75,8 +75,12 @@ const RecordDiaryModal = ({onClose}) => {
     ]);
   };
 
+  const handleCloseModal = (e) => {
+    (e.code === 'Escape' || e.currentTarget === e.target) && onClose();
+  };
+
   return (
-    // <Backdrop onClick={onClose}>
+    <Backdrop onClick={handleCloseModal}>
       <Container>
         <Title>Record your meal</Title>
         <ImgDescriptionContainer>
@@ -145,7 +149,7 @@ const RecordDiaryModal = ({onClose}) => {
           </ButtonContainer>
         </Form>
       </Container>
-    // </Backdrop>
+    </Backdrop>
   );
 };
 
