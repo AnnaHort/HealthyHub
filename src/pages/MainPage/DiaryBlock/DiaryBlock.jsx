@@ -27,9 +27,12 @@ import { ReactComponent as BasketIcon } from '../../../img/Diary/basket.svg';
 
 const DiaryBlock = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); 
+   const [selectedMeal, setSelectedMeal] = useState({});
 
-  const openModal = () => {
-    setIsModalOpen(true); 
+
+  const openModal = (mealTitle, mealImage) => {
+    setIsModalOpen(true);
+    setSelectedMeal({ title: mealTitle, image: mealImage });
   };
 
   const closeModal = () => {
@@ -46,6 +49,7 @@ const DiaryBlock = () => {
         protein: 10,
         fat: 5,
       },
+      image: <BreakfastImg />,
     },
     {
       title: 'Lunch',
@@ -54,6 +58,7 @@ const DiaryBlock = () => {
         protein: 15,
         fat: 8,
       },
+      image: <LunchImg />,
     },
     {
       title: 'Dinner',
@@ -62,6 +67,7 @@ const DiaryBlock = () => {
         protein: '',
         fat: '',
       },
+      image: <DinnerImg />,
     },
     {
       title: 'Snack',
@@ -70,6 +76,7 @@ const DiaryBlock = () => {
         protein: '',
         fat: '',
       },
+      image: <SnackImg />,
     },
   ];
 
@@ -84,20 +91,7 @@ const DiaryBlock = () => {
         {meals.map((meal, index) => (
           <DiaryBlockItem key={index}>
             <MealTitleWrapper>
-              {(() => {
-                switch (meal.title) {
-                  case 'Breakfast':
-                    return <BreakfastImg />;
-                  case 'Lunch':
-                    return <LunchImg />;
-                  case 'Dinner':
-                    return <DinnerImg />;
-                  case 'Snack':
-                    return <SnackImg />;
-                  default:
-                    return null;
-                }
-              })()}
+              {meal.image}
               <MealTitle>{meal.title}</MealTitle>
             </MealTitleWrapper>
             {meal.nutrients.carbohydrates !== '' ||
@@ -112,25 +106,13 @@ const DiaryBlock = () => {
                     </NutrientValue>
                   </NutrientItem>
                 )}
-                {meal.nutrients.protein !== '' && (
-                  <NutrientItem>
-                    <NutrientName>Protein:</NutrientName>
-                    <NutrientValue>{meal.nutrients.protein}</NutrientValue>
-                  </NutrientItem>
-                )}
-                {meal.nutrients.fat !== '' && (
-                  <NutrientItem>
-                    <NutrientName>Fat:</NutrientName>
-                    <NutrientValue>{meal.nutrients.fat}</NutrientValue>
-                  </NutrientItem>
-                )}
-
+                {/* Другие питательные вещества... */}
                 <DeleteButton>
                   <BasketIcon />
                 </DeleteButton>
               </NutrientList>
             ) : (
-              <AddMealButton onClick={openModal}>
+              <AddMealButton onClick={() => openModal(meal.title, meal.image)}>
                 <PlusIcon />
                 Record your meal
               </AddMealButton>
@@ -138,7 +120,9 @@ const DiaryBlock = () => {
           </DiaryBlockItem>
         ))}
       </DiaryBlockList>
-      {isModalOpen && <RecordDiaryModal onClose={closeModal} />}
+      {isModalOpen && (
+        <RecordDiaryModal onClose={closeModal} selectedMeal={selectedMeal} />
+      )}
     </DiaryBlockContainer>
   );
 };

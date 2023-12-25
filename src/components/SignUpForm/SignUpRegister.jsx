@@ -66,7 +66,6 @@ const SignUpRegister = ({ onSubmit, onNext }) => {
                 </label>
                 <label htmlFor="email">
                   <Input name="email" type="email" placeholder="E-mail" />
-
                   {errors.email && touched.email ? (
                     <ErrorMessage>{errors.email}</ErrorMessage>
                   ) : null}

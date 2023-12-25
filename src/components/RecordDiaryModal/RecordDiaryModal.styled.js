@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Form, Field } from 'formik';
 
 export const Container = styled.div`
   position: absolute;
@@ -102,7 +103,7 @@ export const Description = styled.p`
   }
 `;
 
-export const Form = styled.form`
+export const DiaryForm = styled(Form)`
   display: flex;
   flex-direction: column;
 
@@ -122,7 +123,7 @@ export const InputContainer = styled.div`
   }
 `;
 
-export const InputProduct = styled.input`
+export const InputProduct = styled(Field)`
   width: 276px;
   height: 36px;
   padding: 8px 10px;
@@ -142,7 +143,7 @@ export const InputProduct = styled.input`
   }
 `;
 
-export const InputCarbonoh = styled.input`
+export const InputCarbonoh = styled(Field)`
   width: 276px;
   height: 36px;
   padding: 8px 10px;
@@ -162,7 +163,7 @@ export const InputCarbonoh = styled.input`
   }
 `;
 
-export const InputProtein = styled.input`
+export const InputProtein = styled(Field)`
   width: 276px;
   height: 36px;
   padding: 8px 10px;
@@ -182,7 +183,7 @@ export const InputProtein = styled.input`
   }
 `;
 
-export const InputFat = styled.input`
+export const InputFat = styled(Field)`
   width: 120px;
   height: 36px;
   padding: 8px 10px;
@@ -202,7 +203,7 @@ export const InputFat = styled.input`
   }
 `;
 
-export const InputCalories = styled.input`
+export const InputCalories = styled(Field)`
   width: 120px;
   height: 36px;
   padding: 8px 10px;
