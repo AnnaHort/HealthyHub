@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { fetchUserStatictic } from "./operation"
+import { fetchUserStatictic } from "./dashboardOperation"
 
 const initionState = {
     food: {},

@@ -7,7 +7,7 @@ import WaterDashboar from "./water";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchUserStatictic } from "../../../redux/dashboardPage/operation";
-import { getUserMonthsFood, getUserMonthsWater, } from "../../../redux/dashboardPage/selector";
+import { getUserMonthsFood, getUserMonthsWater, } from "../../../redux/dashboardPage/dashboardSelector";
 
 
 const DashboardContainer = styled.div`
