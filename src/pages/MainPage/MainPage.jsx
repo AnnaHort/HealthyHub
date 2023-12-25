@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { logOut } from '../../redux/auth/authOperations';
-// import { Link, useNavigate } from 'react-router-dom';
 
 import { ReactComponent as ArrowRigth } from '../../img/MainPages/arrow-right.svg';
 
@@ -30,6 +28,7 @@ import {
   DARFWrap,
 } from './MainPage.styled';
 import RecommendedFoodMain from '../../components/RecommendedFood.jsx/RecommendedFoodMain';
+import { ToastContainer } from 'react-toastify';
 
 const MainPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -47,20 +46,9 @@ const MainPage = () => {
     !userStatsDayLoad && dispatch(fetchUserStatsDay());
   }, [dispatch, userStatsDayLoad]);
 
-  // const navigate = useNavigate();
-
   const toggleIsOpenModal = () => {
     setIsOpenModal((isOpenModal) => !isOpenModal);
   };
-
-  // const handleLogout = async () => {
-  //   try {
-  //     await dispatch(logOut());
-  //     navigate('/signin');
-  //   } catch (error) {
-  //     console.error('Error during logout:', error);
-  //   }
-  // };
 
   return (
     <>
@@ -89,10 +77,10 @@ const MainPage = () => {
           <RecommendedFoodMain />      
         </DARFWrap>
         {isOpenModal && <AddWaterModal handleModal={toggleIsOpenModal} />}
+
+        <ToastContainer position="top-right" />
       </MainContainer>
-      {/* <Link to="/signin" onClick={handleLogout}>
-        Logout
-      </Link> */}
+
     </>
   );
 };
