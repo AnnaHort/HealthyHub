@@ -76,7 +76,7 @@ const RecordDiaryModal = ({onClose}) => {
   };
 
   return (
-    <Backdrop onClick={onClose}>
+    // <Backdrop onClick={onClose}>
       <Container>
         <Title>Record your meal</Title>
         <ImgDescriptionContainer>
@@ -145,7 +145,7 @@ const RecordDiaryModal = ({onClose}) => {
           </ButtonContainer>
         </Form>
       </Container>
-    </Backdrop>
+    // </Backdrop>
   );
 };
 
