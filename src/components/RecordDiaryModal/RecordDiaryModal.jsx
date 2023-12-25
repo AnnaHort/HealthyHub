@@ -21,6 +21,8 @@ import {
   Title,
 } from './RecordDiaryModal.styled';
 
+import {Backdrop} from '../MainPage/AddWaterModal/AddWaterModal.styled'
+
 import { ReactComponent as Trash } from '../../img/MainPages/trash.svg';
 import { ReactComponent as Add } from '../../img/RecordDiaryModal/add_green.svg';
 
@@ -74,75 +76,76 @@ const RecordDiaryModal = ({onClose}) => {
   };
 
   return (
-    <Container>
-      <Title>Record your meal</Title>
-      <ImgDescriptionContainer>
-        <Img src="" alt="" />
-        <Description>Breakfast</Description>
-      </ImgDescriptionContainer>
-      <Form onSubmit={handleSubmit}>
-        <ScrollableContainer>
-          {mealEntries.map((entry, index) => (
-            <InputContainer key={index}>
-              <InputProduct
-                type="text"
-                name="product"
-                placeholder="The name of the product or dish"
-                value={entry.product}
-                autoComplete="off"
-                onChange={(e) => handleInputChange(e, index)}
-              />
-
-              <InputCarbonoh
-                type="number"
-                name="carbonoh"
-                placeholder="Carbonoh."
-                value={entry.carbonoh}
-                autoComplete="off"
-                onChange={(e) => handleInputChange(e, index)}
-              />
-
-              <InputProtein
-                type="number"
-                name="protein"
-                placeholder="Protein"
-                value={entry.protein}
-                autoComplete="off"
-                onChange={(e) => handleInputChange(e, index)}
-              />
-              <FatAndCalories>
-                <InputFat
-                  type="number"
-                  name="fat"
-                  placeholder="Fat"
-                  value={entry.fat}
+    <Backdrop onClick={onClose}>
+      <Container>
+        <Title>Record your meal</Title>
+        <ImgDescriptionContainer>
+          <Img src="" alt="" />
+          <Description>Breakfast</Description>
+        </ImgDescriptionContainer>
+        <Form onSubmit={handleSubmit}>
+          <ScrollableContainer>
+            {mealEntries.map((entry, index) => (
+              <InputContainer key={index}>
+                <InputProduct
+                  type="text"
+                  name="product"
+                  placeholder="The name of the product or dish"
+                  value={entry.product}
                   autoComplete="off"
                   onChange={(e) => handleInputChange(e, index)}
                 />
-                <InputCalories
+
+                <InputCarbonoh
                   type="number"
-                  name="calories"
-                  placeholder="Calories"
-                  value={entry.calories}
+                  name="carbonoh"
+                  placeholder="Carbonoh."
+                  value={entry.carbonoh}
                   autoComplete="off"
                   onChange={(e) => handleInputChange(e, index)}
                 />
-                <Trash onClick={() => handleDelete(index)} />
-              </FatAndCalories>
-            </InputContainer>
-          ))}
-          <AddButton type="button" onClick={handleAddMore}>
-            <Add />
-            <AddText>Add more</AddText>
-          </AddButton>
-        </ScrollableContainer>
 
-        <ButtonContainer>
-          <BtnConfirm type="submit">Confirm</BtnConfirm>
-          <BtnCancel onClick={onClose}>Cancel</BtnCancel>
-        </ButtonContainer>
-      </Form>
-    </Container>
+                <InputProtein
+                  type="number"
+                  name="protein"
+                  placeholder="Protein"
+                  value={entry.protein}
+                  autoComplete="off"
+                  onChange={(e) => handleInputChange(e, index)}
+                />
+                <FatAndCalories>
+                  <InputFat
+                    type="number"
+                    name="fat"
+                    placeholder="Fat"
+                    value={entry.fat}
+                    autoComplete="off"
+                    onChange={(e) => handleInputChange(e, index)}
+                  />
+                  <InputCalories
+                    type="number"
+                    name="calories"
+                    placeholder="Calories"
+                    value={entry.calories}
+                    autoComplete="off"
+                    onChange={(e) => handleInputChange(e, index)}
+                  />
+                  <Trash onClick={() => handleDelete(index)} />
+                </FatAndCalories>
+              </InputContainer>
+            ))}
+            <AddButton type="button" onClick={handleAddMore}>
+              <Add />
+              <AddText>Add more</AddText>
+            </AddButton>
+          </ScrollableContainer>
+          <ButtonContainer>
+            <BtnConfirm type="submit">Confirm</BtnConfirm>
+            <BtnCancel onClick={onClose}>Cancel</BtnCancel>
+          </ButtonContainer>
+        </Form>
+      </Container>
+    </Backdrop>
   );
 };
 

@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+
   width: 300px;
   padding: 16px 12px 40px 12px;
   background: var(--color-primary-black-2);
   border-radius: 12px;
+
+  box-shadow: 0px 4px 14px 0px rgba(227, 255, 168, 0.2);
+
+  transition: all 10s linear;
 
   @media (min-width: 834px) {
     padding: 24px;
