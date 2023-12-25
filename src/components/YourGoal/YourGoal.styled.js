@@ -15,7 +15,7 @@ export const GoalContainer = styled.div`
   align-items: center;
 
   @media (min-width: 834px) {
-    min-width: 834px;
+    /* min-width: 834px; */
     /* height: 1194px; */
   }
 
