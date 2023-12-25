@@ -21,9 +21,6 @@ ChartJS.register(
 );
 
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { FetchUserStatictic } from '../../../redux/dashboardPage/operation';
 
 const Container = styled.div`
   margin-left: 10px;
@@ -90,18 +87,7 @@ const ChartsContainer = styled.div`
 `;
 
 const CaloriesDashboard = () => {
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(FetchUserStatictic());
-  }, [dispatch]);
-
-  // const caloriesData = userInfo ? userInfo.user.calories : [];
-  // console.log(caloriesData)
-
-  // if (calories && calories.length) {
-
-  // }
 
   const labels = Array.from({ length: 31 }, (_, index) => index + 1);
 
