@@ -24,7 +24,7 @@ import {
 import { ReactComponent as Trash } from '../../img/MainPages/trash.svg';
 import { ReactComponent as Add } from '../../img/RecordDiaryModal/add_green.svg';
 
-const RecordDiaryModal = () => {
+const RecordDiaryModal = ({onClose}) => {
   const [mealEntries, setMealEntries] = useState([
     {
       product: '',
@@ -139,7 +139,7 @@ const RecordDiaryModal = () => {
 
         <ButtonContainer>
           <BtnConfirm type="submit">Confirm</BtnConfirm>
-          <BtnCancel>Cancel</BtnCancel>
+          <BtnCancel onClick={onClose}>Cancel</BtnCancel>
         </ButtonContainer>
       </Form>
     </Container>

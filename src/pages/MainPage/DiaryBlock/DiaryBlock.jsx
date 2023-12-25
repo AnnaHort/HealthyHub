@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   DiaryBlockContainer,
   DiaryBlockTitleWrapper,
@@ -15,6 +16,8 @@ import {
   DeleteButton,
 } from './DiaryBlock.styled';
 
+import RecordDiaryModal from '../../../components/RecordDiaryModal/RecordDiaryModal';
+
 import { ReactComponent as BreakfastImg } from '../../../img/Diary/breakfast.svg';
 import { ReactComponent as LunchImg } from '../../../img/Diary/lunch.svg';
 import { ReactComponent as DinnerImg } from '../../../img/Diary/dinner.svg';
@@ -23,6 +26,18 @@ import { ReactComponent as PlusIcon } from '../../../img/Diary/plus.svg';
 import { ReactComponent as BasketIcon } from '../../../img/Diary/basket.svg';
 
 const DiaryBlock = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+
+  const openModal = () => {
+    setIsModalOpen(true); 
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); 
+  };
+
+  // Ваш код компонента DiaryBlock
+
   const meals = [
     {
       title: 'Breakfast',
@@ -115,7 +130,7 @@ const DiaryBlock = () => {
                 </DeleteButton>
               </NutrientList>
             ) : (
-              <AddMealButton>
+              <AddMealButton onClick={openModal}>
                 <PlusIcon />
                 Record your meal
               </AddMealButton>
@@ -123,6 +138,7 @@ const DiaryBlock = () => {
           </DiaryBlockItem>
         ))}
       </DiaryBlockList>
+      {isModalOpen && <RecordDiaryModal onClose={closeModal} />}
     </DiaryBlockContainer>
   );
 };
