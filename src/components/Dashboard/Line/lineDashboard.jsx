@@ -6,6 +6,7 @@ import CaloriesDashboard from "./calories";
 import WaterDashboar from "./water";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { FetchUserStatictic } from "../../../redux/dashboardPage/operation";
 
 const DashboardContainer = styled.div`
   max-width: 780px;
@@ -82,7 +83,7 @@ const LineDashboard = () => {
   // const monthsData = useSelector();
 
   useEffect(() => {
-    dispatch()
+    dispatch(FetchUserStatictic())
   },[dispatch])
     return (
       <div>
