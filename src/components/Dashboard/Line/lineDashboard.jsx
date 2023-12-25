@@ -1,8 +1,12 @@
-import WaterDashboar from "./water";
-import Calories from "./calories";
+
 import MonthsDashboard from "../months/months";
 import WeightCharts from "./weight";
 import styled from "styled-components";
+import CaloriesDashboard from "./calories";
+import WaterDashboar from "./water";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchUserStatictic } from "../../../redux/dashboardPage/operation";
 
 const DashboardContainer = styled.div`
   max-width: 780px;
@@ -53,12 +57,40 @@ const WeightContainerStyle = styled.div`
 `;
 
 const LineDashboard = () => {
+
+    // const date = new Date.now().getFullYear();
+
+    // const months = [
+    //   'January',
+    //   'February',
+    //   'March',
+    //   'April',
+    //   'May',
+    //   'June',
+    //   'July',
+    //   'August',
+    //   'September',
+    //   'October',
+    //   'November',
+    //   'December',
+    // ];
+
+  //   const [currentMonthsIndex, setCurrentMonthsIndex] = useState(
+  //     new Date.getMonth()
+  //   );
+
+  const dispatch = useDispatch();
+  // const monthsData = useSelector();
+
+  useEffect(() => {
+    dispatch(fetchUserStatictic())
+  },[dispatch])
     return (
       <div>
         <MonthsDashboard />
         <DashboardContainer>
-          <Calories />
-          <WaterDashboar />
+          <CaloriesDashboard />
+          <WaterDashboar/>
         </DashboardContainer>
         <WeightContainerStyle>
           <WeightCharts />

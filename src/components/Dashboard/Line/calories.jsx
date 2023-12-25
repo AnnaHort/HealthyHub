@@ -9,7 +9,6 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { faker } from '@faker-js/faker';
 
 ChartJS.register(
   CategoryScale,
@@ -28,15 +27,13 @@ const Container = styled.div`
   overflow-y: auto;
 
   @media (min-width: 834px) {
-   margin-left: unset;
+    margin-left: unset;
     overflow-y: unset;
   }
 
-  @media (min-width: 1440px){
-    
+  @media (min-width: 1440px) {
   }
 `;
-
 
 const TitleContainer = styled.div`
   display: flex;
@@ -90,6 +87,10 @@ const ChartsContainer = styled.div`
 `;
 
 const CaloriesDashboard = () => {
+
+
+  const labels = Array.from({ length: 31 }, (_, index) => index + 1);
+
   const options = {
     responsive: true,
     plugins: {
@@ -106,7 +107,6 @@ const CaloriesDashboard = () => {
           color: '#292928',
           borderColor: '#292928',
         },
-       
       },
       y: {
         position: 'left',
@@ -125,7 +125,6 @@ const CaloriesDashboard = () => {
           color: '#292928',
           borderColor: '#292928',
         },
-      
       },
     },
     layout: {
@@ -138,22 +137,16 @@ const CaloriesDashboard = () => {
     },
   };
 
-  const labels = [];
-  for (let i = 1; i <= 31; i++) {
-    labels.push(i);
-  }
-
   const data = {
     labels,
     datasets: [
       {
         label: 'Calories',
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 3000 })),
+        // data: caloriesData,
         borderColor: '#e3ffa8',
         backgroundColor: '#0F0F0F',
         pointBackgroundColor: '#e3ffa8',
-        borderWidth: 1, 
-    
+        borderWidth: 1,
       },
     ],
   };
@@ -161,14 +154,14 @@ const CaloriesDashboard = () => {
     <Container>
       <TitleContainer>
         <CaloriesTitle>Calories</CaloriesTitle>
-        <CaloriesDesc>Average value: 1700 cal</CaloriesDesc>
+        <CaloriesDesc>Average value: {}</CaloriesDesc>
       </TitleContainer>
 
       <ChartsContainer>
         <Line
           options={options}
           data={data}
-          style={{ backgroundColor: '#0F0F0F', borderRadius: '12px', }}
+          style={{ backgroundColor: '#0F0F0F', borderRadius: '12px' }}
         />
       </ChartsContainer>
     </Container>
