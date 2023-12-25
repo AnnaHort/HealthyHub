@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import ListRecommendedFoodPage from "./ListRecommendedFoodPage/listRecommendedFoodPage";
 import PhotoRecommendedFoodPage from "./photoRecommendedFoodPage";
 import styled from "styled-components";
@@ -32,6 +33,7 @@ const RecommendedFoodPage = () => {
         <PhotoRecommendedFoodPage />
         <ListRecommendedFoodPage />
       </RecommendedFoodContainer>
+      <ToastContainer position="top-right" />
     </div>
   );
 }
