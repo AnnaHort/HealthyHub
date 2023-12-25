@@ -141,10 +141,7 @@ const UserInformation = () => {
           <UserInformationIconDirect>
 
             <DownloadSvg/>
-            {/* <use
-              href="/src/Sprites/icons/symbol-defs.svg#icon-direct-inbox"
-              stroke="var(--color-primary-green-lite)"
-            ></use> */}
+
           </UserInformationIconDirect>
           <input
             type="file"
