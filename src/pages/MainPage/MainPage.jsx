@@ -55,7 +55,7 @@ const MainPage = () => {
       <MainContainer>
         <MainWrapperTitle>
           <MainTitle>Today</MainTitle>
-          <MainLinkToGoal to="dashboard">
+          <MainLinkToGoal to="/dashboard">
             <MainText>On the way to the goal</MainText>
             <ArrowRigth />
           </MainLinkToGoal>
