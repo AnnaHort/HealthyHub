@@ -96,12 +96,56 @@ const ChartsContainer = styled.div`
 
 const WaterDashboar = ({ data, selectedMonth }) => {
   console.log('Data received in WaterDashboar:', data);
+  const [chartData, setChartData] = useState([]);
+  const [averageWater, setAverageWater] = useState(0);
+
+  useEffect(() => {
+    const renderDays = () => {
+      const formatDate = new Date(2023, selectedMonth, 0);
+      const daysInMonth = formatDate.getDate();
+      const days = Array.from({ length: daysInMonth }, (_, index) => 0);
+
+      try {
+        if (data && Array.isArray(data)) {
+          data.forEach((day) => {
+            if (day.data) {
+              const daysIndex = Number(day.data.split(',')[0]) - 1;
+              if (
+                !isNaN(daysIndex) &&
+                daysIndex >= 0 &&
+                daysIndex < daysInMonth
+              ) {
+                days.splice(daysIndex, 1, day.water);
+              } else {
+                console.error(`Invalid day index: ${daysIndex}`);
+              }
+            } else {
+              console.error(`Missing 'data' property in day object`);
+            }
+          });
+        } else {
+          console.error(`Invalid or missing 'data' array`);
+        }
+      } catch (error) {
+        console.error(`Error during rendering days: ${error}`);
+      }
+
+      setChartData(days);
+    };
+
+    renderDays();
+  }, [data, selectedMonth]);
 
   const formatDate = new Date(2023, selectedMonth, 0).getDate();
   const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
 
+  // вычисление среднего колличесвта употребляемых каллорий
   useEffect(() => {
-    console.log('eiojf');
+    if (data && data.length > 0) {
+      const total = data.reduce((acc, item) => acc + item.water, 0);
+      const calculatedAverageWater = total / data.length;
+      setAverageWater(Math.floor(calculatedAverageWater));
+    }
   }, [data]);
 
   const options = {
@@ -150,28 +194,11 @@ const WaterDashboar = ({ data, selectedMonth }) => {
     },
   };
 
-  const renderDays = () => {
-    const formatDate = new Date(2023, selectedMonth, 0);
-    const daysInMonth = formatDate.getDate();
-    const days = Array.from({ length: daysInMonth }, (_, index) => 0);
-
-    try {
-      data?.map((day) => {
-        const daysIndex = Number(day.data.split(',')[0]) - 1;
-        days.splice(daysIndex, 1, day.water);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-
-    return days;
-  };
-
   return (
     <Container>
       <TitleContainer>
         <WaterTitle>Water</WaterTitle>
-        <WaterDesc>Average value: {data.waterAverage}</WaterDesc>
+        <WaterDesc>Average value:{" "} {averageWater}</WaterDesc>
       </TitleContainer>
 
       <ChartsContainer>
@@ -182,7 +209,7 @@ const WaterDashboar = ({ data, selectedMonth }) => {
             datasets: [
               {
                 label: 'Water',
-                data: renderDays(),
+                data: chartData,
                 borderColor: '#e3ffa8',
                 backgroundColor: '#0F0F0F',
                 pointBackgroundColor: '#e3ffa8',
