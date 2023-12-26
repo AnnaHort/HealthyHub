@@ -86,10 +86,9 @@ const ChartsContainer = styled.div`
   }
 `;
 
-const CaloriesDashboard = () => {
-
-
-  const labels = Array.from({ length: 31 }, (_, index) => index + 1);
+const CaloriesDashboard = ({ data, selectedMonth }) => {
+  const formatDate = new Date(2023, selectedMonth, 0).getDate();
+  const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
 
   const options = {
     responsive: true,
@@ -136,13 +135,30 @@ const CaloriesDashboard = () => {
       },
     },
   };
+  const renderDays = () => {
+    const formatDate = new Date(2023, selectedMonth, 0);
+    const daysInMonth = formatDate.getDate();
+    console.log(daysInMonth);
+    const days = Array.from({ length: daysInMonth }, (_, index) => 0);
 
-  const data = {
+    try {
+      data?.map((day) => {
+        const daysIndex = Number(day.data.split(',')[0]) - 1;
+        days.splice(daysIndex, 1, day.food);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+    return days;
+  };
+
+  const info = {
     labels,
     datasets: [
       {
         label: 'Calories',
-        // data: caloriesData,
+        data: renderDays(),
         borderColor: '#e3ffa8',
         backgroundColor: '#0F0F0F',
         pointBackgroundColor: '#e3ffa8',
@@ -160,7 +176,7 @@ const CaloriesDashboard = () => {
       <ChartsContainer>
         <Line
           options={options}
-          data={data}
+          data={info}
           style={{ backgroundColor: '#0F0F0F', borderRadius: '12px' }}
         />
       </ChartsContainer>
