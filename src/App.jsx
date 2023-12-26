@@ -9,6 +9,8 @@ import ForgotPasswordPage from './components/ForgotPasswordPage/ForgotPasswordPa
 
 import MainPage from './pages/MainPage/MainPage';
 
+import { Loader } from './components/Loader/Loader';
+
 import { fetchCurentUser } from './redux/auth/authOperations';
 import PrivateRoute from '/src/components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
@@ -17,7 +19,14 @@ import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsP
 import DiaryPage from './pages/DiaryPage/DiaryPage';
 import RecommendedFoodPage from './components/RecommendedFoodPage/recommendedFoodPage';
 import { useSelector } from 'react-redux';
-import  selectIsLoggedIn from '/src/redux/auth/authSelectors.js';
+
+import selectIsLoggedIn, {
+  selectIsLoading,
+} from '/src/redux/auth/authSelectors.js';
+import { selectIsLoadingDashboard } from './redux/dashboardPage/dashboardSelector';
+import { getIsLoadingRecommendedFood } from './redux/recommendedFood/selector';
+import { selectIsLoadingUpdate } from './redux/updateUser/updateSelectors';
+import { getIsLoadingUserStats } from './redux/userStatsDay/selectors';
 
 const SharedLayout = lazy(() =>
   import('./components/SharedLayout/SharedLayout')
@@ -27,6 +36,11 @@ const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 function App() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const LoadingAuth = useSelector(selectIsLoading);
+  const LoadingDashboard = useSelector(selectIsLoadingDashboard);
+  const LoadingRecFood = useSelector(getIsLoadingRecommendedFood);
+  const LoadingUpdUser = useSelector(selectIsLoadingUpdate);
+  const LoadingUserStats = useSelector(getIsLoadingUserStats);
 
   useEffect(() => {
     dispatch(fetchCurentUser());
@@ -34,7 +48,7 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             {isLoggedIn ? (
@@ -85,9 +99,7 @@ function App() {
             <Route
               path="/diary"
               element={
-                <PrivateRoute 
-                redirectTo="/welcome"
-                 component={<DiaryPage />} />
+                <PrivateRoute redirectTo="/welcome" component={<DiaryPage />} />
               }
             />
 
@@ -96,7 +108,7 @@ function App() {
               element={
                 <PrivateRoute
                   redirectTo="/welcome"
-                  component={<RecommendedFoodPage/>}
+                  component={<RecommendedFoodPage />}
                 />
               }
             />
@@ -117,6 +129,11 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Suspense>
+      {(LoadingAuth ||
+        LoadingDashboard ||
+        LoadingRecFood ||
+        LoadingUpdUser ||
+        LoadingUserStats) && <Loader />}
     </>
   );
 }

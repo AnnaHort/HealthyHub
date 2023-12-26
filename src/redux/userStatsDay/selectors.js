@@ -1,6 +1,6 @@
 export const getUserStatsFood = state => state.userStatsDayReducer.food;
 export const getUserStatsWater = state => state.userStatsDayReducer.water;
-export const getUserStatsLoad  = state => state.userStatsDayReducer.load;
+export const getUserStatsLoad = state => state.userStatsDayReducer.load;
 
 //      FOOD STATISTIC FOR DAY
 export const getCaloriesDayilyNorma = state => state.userStatsDayReducer.food.caloriesDayilyNorma;
@@ -22,3 +22,6 @@ export const getWaterDailyNorma = state => state.userStatsDayReducer.water.water
 export const getDailyNormFulfillment = state => state.userStatsDayReducer.water.dailyNormFulfillment;
 export const getWaterLeft = state => state.userStatsDayReducer.water.waterLeft;
 export const getwaterAmount = state => state.userStatsDayReducer.water.waterAmount;
+
+
+export const getIsLoadingUserStats = state => state.userStatsDayReducer.isLoading;
