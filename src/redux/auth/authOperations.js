@@ -31,15 +31,16 @@ export const register = createAsyncThunk(
 
 // логін
 export const logIn = createAsyncThunk(
-  'auth/login',
-  async (userData, thunkAPI) => {
-    try {
-      const response = await axios.post('/api/auth/signin', userData);
-      token.set(response.data.token);
-      console.log(response.data);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+
+    'auth/login',
+    async (userData, thunkAPI) => {
+      try {
+        const response = await axios.post('/api/auth/signin', userData);
+        token.set(response.data.token);
+        return response.data;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
     }
   }
 );
