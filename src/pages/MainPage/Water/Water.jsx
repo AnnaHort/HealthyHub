@@ -16,13 +16,17 @@ import {
   MWLeftNumber,
   MWButton,
   MWAddIcon,
+  MWButtonDel,
+  NWDelIcon,
 } from './Water.styled';
 
 export const Water = ({ handleModal, dailyWater, waterAmount }) => {
-
   const leftWaterIntake = dailyWater - waterAmount;
 
-  const waterPercent = waterAmount <= dailyWater ? Math.round((waterAmount * 100) / dailyWater) : 100;
+  const waterPercent =
+    waterAmount <= dailyWater
+      ? Math.round((waterAmount * 100) / dailyWater)
+      : 100;
 
   const offset = waterPercent <= 84 ? Math.ceil((waterPercent / 100) * 176 + 10) : 88;
 
@@ -60,6 +64,9 @@ export const Water = ({ handleModal, dailyWater, waterAmount }) => {
             Add water intake
           </MWButton>
         </MWInfoWrapper>
+        <MWButtonDel>
+          <NWDelIcon />
+        </MWButtonDel>
       </MWCard>
     </MWContainer>
   );

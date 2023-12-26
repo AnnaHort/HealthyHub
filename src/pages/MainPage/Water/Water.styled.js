@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import { ReactComponent as AddIcon } from '../../../img/MainPages/add.svg';
+import { ReactComponent as DelWater } from '../../../img/MainPages/trash.svg';
 
 //MW --- Main Water
 
-export const MWContainer = styled.div``;
+export const MWContainer = styled.div`
+`;
 
 export const MWTitle = styled.h2`
   color: var(--color-primary-white);
@@ -21,6 +23,8 @@ export const MWTitle = styled.h2`
 `;
 
 export const MWCard = styled.div`
+  position: relative;
+
   display: flex;
   column-gap: 20px;
   align-items: center;
@@ -198,4 +202,22 @@ export const MWButton = styled.button`
 
 export const MWAddIcon = styled(AddIcon)`
   stroke: var(--color-primary-black-2);
+`;
+
+export const MWButtonDel = styled.button`
+  position: absolute;
+  right: 12px;
+  top: 12px;
+
+  background: none;
+  border: none;
+
+  @media screen and (min-width: 834px) {
+    right: 24px;
+    top: 24px;
+  }
+`;
+
+export const NWDelIcon = styled(DelWater)`
+
 `;
