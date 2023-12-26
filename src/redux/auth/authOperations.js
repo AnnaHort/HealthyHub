@@ -42,7 +42,6 @@ export const logIn = createAsyncThunk(
         return thunkAPI.rejectWithValue(error.message);
       }
     }
-  }
 );
 
 // вихід з системи
@@ -65,7 +64,6 @@ export const fetchCurentUser = createAsyncThunk(
     const state = thunkAPI.getState();
 
     const persistedToken = state.authReducer.token;
-
     if (persistedToken === null || persistedToken === '') {
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
