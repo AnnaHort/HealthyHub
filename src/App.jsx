@@ -1,37 +1,48 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import ErrorPage from 'pages/ErrorPage/ErrorPage';
-import WelcomePage from './pages/WelcomePage/welcomePage';
-import SignInPages from './pages/SignInPages/SignInPages';
-
-import ForgotPasswordPage from './components/ForgotPasswordPage/ForgotPasswordPage';
-
-import MainPage from './pages/MainPage/MainPage';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Loader } from './components/Loader/Loader';
 
-import { fetchCurentUser } from './redux/auth/authOperations';
-import PrivateRoute from '/src/components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
-import DashboardPage from './pages/DashboardPage/dashboardPage';
-import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsPage';
-import DiaryPage from './pages/DiaryPage/DiaryPage';
-import RecommendedFoodPage from './components/RecommendedFoodPage/recommendedFoodPage';
-import { useSelector } from 'react-redux';
 
-import selectIsLoggedIn, {
-  selectIsLoading,
-} from '/src/redux/auth/authSelectors.js';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+// import MainPage from './pages/MainPage/MainPage';
+// import DashboardPage from './pages/DashboardPage/dashboardPage';
+// import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsPage';
+// import DiaryPage from './pages/DiaryPage/DiaryPage';
+// import RecommendedFoodPage from './components/RecommendedFoodPage/recommendedFoodPage';
+
+// import ErrorPage from 'pages/ErrorPage/ErrorPage';
+// import WelcomePage from './pages/WelcomePage/welcomePage';
+// import SignInPages from './pages/SignInPages/SignInPages';
+
+// import ForgotPasswordPage from './components/ForgotPasswordPage/ForgotPasswordPage';
+
+const WelcomePage = lazy(() => import('./pages/WelcomePage/welcomePage')); 
+const SignInPages = lazy(() => import('./pages/SignInPages/SignInPages')); 
+const ForgotPasswordPage = lazy(() => import('./components/ForgotPasswordPage/ForgotPasswordPage')); 
+const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage')); 
+
+const MainPage = lazy(() => import('./pages/MainPage/MainPage')); 
+const DashboardPage = lazy(() => import('./pages/DashboardPage/dashboardPage')); 
+const ProfileSettingsPage = lazy(() => import('./pages/ProfileSettingsPage/ProfileSettingsPage')); 
+const DiaryPage = lazy(() => import('./pages/DiaryPage/DiaryPage')); 
+const RecommendedFoodPage = lazy(() => import('./components/RecommendedFoodPage/recommendedFoodPage')); 
+const SharedLayout = lazy(() => import('./components/SharedLayout/SharedLayout'));
+const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
+
+
+import selectIsLoggedIn, { selectIsLoading } from '/src/redux/auth/authSelectors.js';
 import { selectIsLoadingDashboard } from './redux/dashboardPage/dashboardSelector';
 import { getIsLoadingRecommendedFood } from './redux/recommendedFood/selector';
 import { selectIsLoadingUpdate } from './redux/updateUser/updateSelectors';
 import { getIsLoadingUserStats } from './redux/userStatsDay/selectors';
+import { fetchCurentUser } from './redux/auth/authOperations';
 
-const SharedLayout = lazy(() =>
-  import('./components/SharedLayout/SharedLayout')
-);
-const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 
 function App() {
   const dispatch = useDispatch();
