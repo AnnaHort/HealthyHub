@@ -42,7 +42,6 @@ export const logIn = createAsyncThunk(
         return thunkAPI.rejectWithValue(error.message);
       }
     }
-  }
 );
 
 // вихід з системи
