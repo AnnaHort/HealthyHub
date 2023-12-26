@@ -1,62 +1,72 @@
-import styled from "styled-components";
-import { Field, Form } from 'formik';
+import { styled } from '@mui/system';
+import { FormControl, InputLabel, MenuList,MenuItem, Select } from '@mui/material';
 
-export const Container = styled.div`
+export const StyledFormControl = styled(FormControl)(({ theme }) => ({
+  width: '140px',
 
-`;
+  
+  [theme.breakpoints.up('834')]: {},
+}));
 
-export const DashboardForm = styled(Form)`
+export const StyledInputLabel = styled(InputLabel)(({ theme }) => ({
+  fontFamily: 'Poppins',
+  fontSize: '24px',
+  fontWeight: '500',
+  lineHeight: '30px',
+  color: 'var(--color-primary-white)',
 
-`;
+  [theme.breakpoints.up('834')]: {
+    fonrSize: '30px',
+    lineHeight: '36px',
+  },
+}));
 
-export const LabelDashboard = styled.label`
-  font-family: Poppins;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 30px;
-  color: var(--color-primary-white);
-  margin-bottom: 8px;
-`;
+export const StyledSelect = styled(Select)(({ theme }) => ({
+  color: 'var(--color-primary-grey)',
+  [theme.breakpoints.up('834')]: {
+    fontSize: '18px',
+  },
+}));
 
-export const FieldStyled = styled(Field)`
-  width: 212px;
-  overflow-y: auto;
-  border: none;
-  margin-left: 6px;
-  background-color: inherit;
-  color: var(--color-primary-green-lite);
 
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
+export const StyledMenuList = styled(MenuList)(() => ({
+  backgroundColor: 'var(--color-primary-black-2)',
+  width: '212px',
+  height: '144px',
+  overflowY: 'auto',
+  borderRadius: '12px',
+  paddingTop: 0,
+  paddingBottom: 0,
+  boxShadow: '0px 4px 14px 0px rgba(227, 255, 168, 0.2)',
 
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color-primary-grey);
-    border-radius: 12px;
-  }
+  '& .MuiList-root': {
+    backgroundColor: 'var(--color-primary-black-2)',
+    width: '212px',
+    height: '144px',
+    overflowY: 'auto',
+    borderRadius: '12px',
+    paddingTop: 0,
+    paddingBottom: 0,
+    boxShadow: '0px 4px 14px 0px rgba(227, 255, 168, 0.2)',
+  },
 
-  /* Стили для галочки */
-  input[type='checkbox'] {
-    position: absolute;
-    top: 50%;
-    left: 6px;
-    transform: translateY(-50%);
-  }
+  '&::-webkit-scrollbar': {
+    display: 'none',
+  },
+  scrollbarWidth: 'none',
+}));
 
-  /* Стили для текста опции */
-  span {
-    position: absolute;
-    top: 50%;
-    left: 32px; /* Расстояние от галочки до текста */
-    transform: translateY(-50%);
-  }
-`;
 
-export const OptionStyled = styled.option`
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  color: var(--color-primary-grey);
-`;
+
+export const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
+  fontFamily: 'Poppins',
+  fontSize: '14px',
+  fontWeight: '400',
+  lineHeight: '20px',
+  color: 'var(--color-primary-grey)',
+
+  '&:hover': {
+    backgroundColor: 'rgba(255, 255, 255, 0.03)',
+    color: 'var(--color-primary-green-lite)',
+  },
+}));

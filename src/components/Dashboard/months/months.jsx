@@ -1,19 +1,49 @@
-import { Formik, ErrorMessage } from 'formik';
+import { Formik, useFormikContext } from 'formik';
+
 import {
-  Container,
-  DashboardForm,
-  LabelDashboard,
-  FieldStyled,
-  OptionStyled,
+  StyledFormControl,
+  StyledInputLabel,
+  StyledSelect,
+  StyledMenuList,
+  StyledMenuItem,
 } from './months.styled';
 
+const MonthsDropdown = ({ setMonth, monthNames }) => {
+  const formik = useFormikContext();
+
+  return (
+    <StyledFormControl>
+      <StyledInputLabel id="selectedMonthLabel">Months</StyledInputLabel>
+      <StyledSelect
+        labelId="selectedMonthLabel"
+        id="selectedMonths"
+        name="selectedMonths"
+        value={formik.values.selectedMonths}
+        onChange={(e) => {
+          const selectedValue = e.target.value;
+          formik.setFieldValue('selectedMonths', selectedValue);
+          const selectedIndex = monthNames.indexOf(selectedValue);
+          setMonth(selectedIndex + 1);
+        }}
+        label="Months"
+      >
+          {monthNames.map((month) => (
+          <StyledMenuItem key={month} value={month}>
+            {month}
+          </StyledMenuItem>
+        ))}
+      </StyledSelect>
+    </StyledFormControl>
+  );
+};
+
 const MonthsDashboard = ({ selectedMonths, setMonth }) => {
-  const getCurrentMonths = () => {
+  const getCurrentMonth = () => {
     const now = new Date();
     return now.getMonth();
   };
 
-  const month = [
+  const monthNames = [
     'January',
     'February',
     'March',
@@ -28,65 +58,17 @@ const MonthsDashboard = ({ selectedMonths, setMonth }) => {
     'December',
   ];
 
-  const getLastYearMonths = () => {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
-    return months;
-  };
-
   return (
-    <Container>
-      <Formik
-        initialValues={{
-          selectedMonths: getCurrentMonths(),
-        }}
-        onSubmit={(values) => {
-          console.log('Months:', values.selectedMonths);
-        }}
-      >
-        <DashboardForm>
-          <LabelDashboard htmlFor="selectedMonth">Months</LabelDashboard>
-          <FieldStyled
-            as="select"
-            name="selectedMonths"
-            onChange={(e) => {
-              console.log(e.target.value);
-              console.log(month.length);
-              for (let i = 0; i < month.length; i++) {
-                if (e.target.value == month[i]) {
-                  console.log(1 + i + ' true');
-                  return setMonth(i + 1);
-                }
-                console.log(i);
-              }
-            }}
-          >
-            {getLastYearMonths().map((month) => (
-              <OptionStyled key={month} value={month}>
-                {month}
-              </OptionStyled>
-            ))}
-          </FieldStyled>
-          <ErrorMessage name="height" component="div" />
-
-          <div>
-            <h3>{getCurrentMonths()}</h3>
-          </div>
-        </DashboardForm>
-      </Formik>
-    </Container>
+    <Formik
+      initialValues={{
+        selectedMonths: selectedMonths || getCurrentMonth(),
+      }}
+      onSubmit={(values) => {
+        console.log('Months:', values.selectedMonths);
+      }}
+    >
+      <MonthsDropdown setMonth={setMonth} monthNames={monthNames} />
+    </Formik>
   );
 };
 
