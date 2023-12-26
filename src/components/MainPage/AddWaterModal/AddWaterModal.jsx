@@ -54,15 +54,12 @@ export const AddWaterModal = ({ handleModal }) => {
     dispatch(
       addWater({ amount: `${waterIntake}`, date: `${formatDate(new Date())}` })
     );
+    
     dispatch(fetchUserStatsDay());
 
     resetForm();
     handleModal();
   };
-
-  useEffect(() => {
-    dispatch(fetchUserStatsDay());
-  }, [dispatch]);
 
   return (
     <Backdrop onClick={handleCloseModal}>

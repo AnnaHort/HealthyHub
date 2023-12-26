@@ -28,7 +28,6 @@ const ListRecommendedFoodPage = () => {
   }, [dispatch]);
 
   const selectListRecommendedFood = () => {
-    console.log('recommendedFood:', recommendedFood);
     if (recommendedFood === undefined) {
       return null;
     }

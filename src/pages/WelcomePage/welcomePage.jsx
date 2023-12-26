@@ -11,7 +11,6 @@ import {
 } from './welcomePage.styled';
 
 const WelcomePage = () => {
-  console.log('WelcomePage is rendering');
   return (
     <WelcomePageContainer>
       <MainPhotoWelcomePage />
