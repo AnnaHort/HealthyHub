@@ -34,10 +34,28 @@ export const addWater = createAsyncThunk(
       const state = thunkAPI.getState();
       const persistToken = state.authReducer.token;
       if (!persistToken) {
-        return thunkAPI.rejectWithValue('No token');
+        return thunkAPI.rejectWithValue('Unable to fetch user');
       }
       setAuth(persistToken);
       const response = await axios.post('api/stats/water-intake', credentials );
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const delWater = createAsyncThunk(
+  'post/WaterAdd',
+  async (credentials, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState();
+      const persistToken = state.authReducer.token;
+      if (!persistToken) {
+        return thunkAPI.rejectWithValue('Unable to fetch user');
+      }
+      setAuth(persistToken);
+      const response = await axios.delete('api/stats/water-intake');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
