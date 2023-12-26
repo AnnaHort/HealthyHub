@@ -1,4 +1,8 @@
+import { useDispatch } from 'react-redux';
+
 import { WaterChart } from '../../../components/MainPage/Water';
+
+import { delWater, fetchUserStatsDay } from '../../../redux/userStatsDay/operations';
 
 import {
   MWContainer,
@@ -21,6 +25,8 @@ import {
 } from './Water.styled';
 
 export const Water = ({ handleModal, dailyWater, waterAmount }) => {
+  const dispatch = useDispatch();
+
   const leftWaterIntake = dailyWater - waterAmount;
 
   const waterPercent =
@@ -31,6 +37,11 @@ export const Water = ({ handleModal, dailyWater, waterAmount }) => {
   const offset = waterPercent <= 84 ? Math.ceil((waterPercent / 100) * 176 + 10) : 88;
 
   const percentColor = waterPercent <= 85 ? 'rgba(182, 195, 255, 1)' : 'green';
+
+  const deleteWaterDay = () =>{
+    dispatch(delWater());
+    dispatch(fetchUserStatsDay());
+    }
 
   return (
     <MWContainer>
@@ -64,7 +75,7 @@ export const Water = ({ handleModal, dailyWater, waterAmount }) => {
             Add water intake
           </MWButton>
         </MWInfoWrapper>
-        <MWButtonDel>
+        <MWButtonDel onClick={deleteWaterDay}>
           <NWDelIcon />
         </MWButtonDel>
       </MWCard>
