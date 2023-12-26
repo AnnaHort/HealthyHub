@@ -52,7 +52,6 @@ const RecommendedFoodMain = () => {
   };
 
   const handleSeeMoreClick = () => {
-    console.log('Button click');
   };
 
   return (
@@ -60,7 +59,6 @@ const RecommendedFoodMain = () => {
       <RecommendedFoodUnitName>Recommended Food</RecommendedFoodUnitName>
       <RecommendedFoodContainer>
         {recommendedFood.slice(0, getCardCount()).map((foodItem, id) => {
-          console.log(foodItem.icon);
           return (
             <RecommendedFoodFrame key={id}>
               <RecommendedFoodImg src={foodItem.img} alt={foodItem.name} />
