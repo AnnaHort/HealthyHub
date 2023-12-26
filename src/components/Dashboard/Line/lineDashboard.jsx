@@ -1,14 +1,15 @@
-
-import MonthsDashboard from "../months/months";
-import WeightCharts from "./weight";
-import styled from "styled-components";
-import CaloriesDashboard from "./calories";
-import WaterDashboar from "./water";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchUserStatictic } from "../../../redux/dashboardPage//dashboardOperation";
-import { getUserMonthsFood, getUserMonthsWater, } from "../../../redux/dashboardPage/dashboardSelector";
-
+import MonthsDashboard from '../months/months';
+import WeightCharts from './weight';
+import styled from 'styled-components';
+import CaloriesDashboard from './calories';
+import WaterDashboar from './water';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { fetchUserStatictic } from '../../../redux/dashboardPage//dashboardOperation';
+import {
+  getUserMonthsFood,
+  getUserMonthsWater,
+} from '../../../redux/dashboardPage/dashboardSelector';
 
 const DashboardContainer = styled.div`
   max-width: 780px;
@@ -38,7 +39,7 @@ const WeightContainerStyle = styled.div`
   max-width: 780px;
   margin-left: auto;
   margin-right: auto;
-  
+
   @media (min-width: 834px) {
     margin-left: auto;
     margin-right: auto;
@@ -59,29 +60,38 @@ const WeightContainerStyle = styled.div`
 `;
 
 const LineDashboard = () => {
-
   const dispatch = useDispatch();
   const monthsDataFood = useSelector(getUserMonthsFood);
-  const monthsDataWater = useSelector(getUserMonthsWater)
- console.log('info months Calories:', monthsDataFood);
+  const monthsDataWater = useSelector(getUserMonthsWater);
+  console.log('info months Calories:', monthsDataFood);
   console.log('Data passed to WaterDashboar:', monthsDataWater);
 
+  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
+  console.log(selectedMonth);
+
   useEffect(() => {
-    dispatch(fetchUserStatictic())
-  }, [dispatch])
-  
-    return (
-      <div>
-        <MonthsDashboard />
-        <DashboardContainer>
-          <CaloriesDashboard />
-          <WaterDashboar data={monthsDataWater} />
-        </DashboardContainer>
-        <WeightContainerStyle>
-          <WeightCharts />
-        </WeightContainerStyle>
-      </div>
-    );
-}
+    dispatch(fetchUserStatictic(selectedMonth));
+    console.log(selectedMonth);
+  }, [dispatch, selectedMonth]);
+
+  return (
+    <div>
+      <MonthsDashboard
+        selectedMonths={selectedMonth}
+        setMonth={setSelectedMonth}
+      />
+      <DashboardContainer>
+        <CaloriesDashboard
+          data={monthsDataFood}
+          selectedMonth={selectedMonth}
+        />
+        <WaterDashboar data={monthsDataWater} selectedMonth={selectedMonth} />
+      </DashboardContainer>
+      <WeightContainerStyle>
+        <WeightCharts />
+      </WeightContainerStyle>
+    </div>
+  );
+};
 
 export default LineDashboard;

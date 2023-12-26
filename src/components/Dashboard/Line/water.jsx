@@ -94,13 +94,15 @@ const ChartsContainer = styled.div`
   }
 `;
 
-const WaterDashboar = ({ data }) => {
+const WaterDashboar = ({ data, selectedMonth }) => {
   console.log('Data received in WaterDashboar:', data);
-  const [selectedMonth, setSelectedMonths] = useState(new Date());
+
+  const formatDate = new Date(2023, selectedMonth, 0).getDate();
+  const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
 
   useEffect(() => {
-    console.log('Selected month changed:', selectedMonth);
-  }, [selectedMonth]);
+    console.log('eiojf');
+  }, [data]);
 
   const options = {
     responsive: true,
@@ -148,22 +150,23 @@ const WaterDashboar = ({ data }) => {
     },
   };
 
-  const generateLabels = (selectedMonth) => {
-    const startOfMonthDate = startOfMonth(selectedMonth);
-    const endOfMonthDate = endOfMonth(selectedMonth);
+  const renderDays = () => {
+    const formatDate = new Date(2023, selectedMonth, 0);
+    const daysInMonth = formatDate.getDate();
+    const days = Array.from({ length: daysInMonth }, (_, index) => 0);
 
-    const daysInMonth = eachDayOfInterval({
-      start: startOfMonthDate,
-      end: endOfMonthDate,
-    });
+    try {
+      data?.map((day) => {
+        const daysIndex = Number(day.data.split(',')[0]) - 1;
+        days.splice(daysIndex, 1, day.water);
+      });
+    } catch (error) {
+      console.log(error);
+    }
 
-    return daysInMonth.map((day) => {
-      const dayOfMonth = Number(format(day, 'd'), 10);
-      return dayOfMonth.toString();
-    });
+    return days;
   };
 
- 
   return (
     <Container>
       <TitleContainer>
@@ -175,11 +178,11 @@ const WaterDashboar = ({ data }) => {
         <Line
           options={options}
           data={{
-            labels: generateLabels(selectedMonth),
+            labels,
             datasets: [
               {
                 label: 'Water',
-                data: data.value,
+                data: renderDays(),
                 borderColor: '#e3ffa8',
                 backgroundColor: '#0F0F0F',
                 pointBackgroundColor: '#e3ffa8',

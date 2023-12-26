@@ -9,7 +9,7 @@ const setHeader = (token) => {
 
 export const fetchUserStatictic = createAsyncThunk(
   'api/stats/month/:monthNumber/fetchUserStatictic',
-  async (_, thunkAPI) => {
+  async (body, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
       const persistToken = state.authReducer.token;
@@ -19,7 +19,7 @@ export const fetchUserStatictic = createAsyncThunk(
       }
 
       setHeader(persistToken);
-      const res = await axios.get('api/stats/month/12');
+      const res = await axios.get(`api/stats/month/${body}`);
       console.log('Data received:', res.data);
       return res.data;
     } catch (error) {
