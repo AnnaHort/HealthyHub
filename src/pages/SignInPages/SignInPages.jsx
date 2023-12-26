@@ -52,10 +52,8 @@ const SignInPages = () => {
     onSubmit: async (values) => {
       try {
         const response = await dispatch(logIn(values));
-        console.log('Response from Redux:', response);
 
         if (response.type === 'auth/login/fulfilled' || isComponentLoggedIn) {
-          console.log('Successful login');
           toast.success('Successful login', { autoClose: 2000 });
           navigate('/main');
         }
@@ -84,9 +82,7 @@ const SignInPages = () => {
     };
     try {
       const response = await dispatch(logIn(userData));
-      console.log('Response from Redux:', response);
       if (response.type === 'auth/login/fulfilled' || isComponentLoggedIn) {
-        console.log('Successful login');
         navigate('/main');
       }
       if (

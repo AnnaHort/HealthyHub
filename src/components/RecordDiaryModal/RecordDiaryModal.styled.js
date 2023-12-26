@@ -1,15 +1,29 @@
 import styled from 'styled-components';
+import { Form, Field } from 'formik';
 
 export const Container = styled.div`
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+
   width: 300px;
   padding: 16px 12px 40px 12px;
   background: var(--color-primary-black-2);
   border-radius: 12px;
 
-  @media (min-width: 834px) {
+  box-shadow: 0px 4px 14px 0px rgba(227, 255, 168, 0.2);
+
+  transition: all 10s linear;
+
+  @media screen and (min-width: 834px) {
+    top: 180px;
     padding: 24px;
     width: 708px;
-    /* height: 408px; */
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 215px;
   }
 `;
 
@@ -89,7 +103,7 @@ export const Description = styled.p`
   }
 `;
 
-export const Form = styled.form`
+export const DiaryForm = styled(Form)`
   display: flex;
   flex-direction: column;
 
@@ -109,7 +123,7 @@ export const InputContainer = styled.div`
   }
 `;
 
-export const InputProduct = styled.input`
+export const InputProduct = styled(Field)`
   width: 276px;
   height: 36px;
   padding: 8px 10px;
@@ -129,7 +143,7 @@ export const InputProduct = styled.input`
   }
 `;
 
-export const InputCarbonoh = styled.input`
+export const InputCarbonoh = styled(Field)`
   width: 276px;
   height: 36px;
   padding: 8px 10px;
@@ -149,7 +163,7 @@ export const InputCarbonoh = styled.input`
   }
 `;
 
-export const InputProtein = styled.input`
+export const InputProtein = styled(Field)`
   width: 276px;
   height: 36px;
   padding: 8px 10px;
@@ -169,7 +183,7 @@ export const InputProtein = styled.input`
   }
 `;
 
-export const InputFat = styled.input`
+export const InputFat = styled(Field)`
   width: 120px;
   height: 36px;
   padding: 8px 10px;
@@ -189,7 +203,7 @@ export const InputFat = styled.input`
   }
 `;
 
-export const InputCalories = styled.input`
+export const InputCalories = styled(Field)`
   width: 120px;
   height: 36px;
   padding: 8px 10px;
@@ -256,12 +270,6 @@ export const BtnConfirm = styled.button`
   align-items: center;
   gap: 10px;
   border: none;
-
-  @media (min-width: 834px) {
-  }
-
-  @media (min-width: 1440px) {
-  }
 `;
 
 export const BtnCancel = styled.button`

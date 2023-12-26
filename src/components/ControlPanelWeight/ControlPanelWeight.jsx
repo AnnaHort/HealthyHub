@@ -19,6 +19,7 @@ import IconsEditTwo from '../../Icons/IconEditTwo';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
 import { getCurrentUser } from '../../redux/updateUser/updateOperations';
+import { fetchUserStatsDay } from '../../redux/userStatsDay/operations';
 
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
@@ -31,6 +32,8 @@ const ControlPanelWeight = () => {
   useEffect(() => {
     if (userUpdate) {
       dispatch(getCurrentUser());
+      dispatch(fetchUserStatsDay());
+
     }
   }, [userUpdate, dispatch]);
   
@@ -39,7 +42,6 @@ const ControlPanelWeight = () => {
       try {
         const response = await axios.get('api/user/current');
         setUserData(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error('Data error', error.message);
       }

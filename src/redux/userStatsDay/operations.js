@@ -44,3 +44,21 @@ export const addWater = createAsyncThunk(
     }
   }
 );
+
+export const addFood = createAsyncThunk(
+  'post/FoodAdd',
+  async (credentials, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState();
+      const persistToken = state.authReducer.token;
+      if (!persistToken) {
+        return thunkAPI.rejectWithValue('No token');
+      }
+      setAuth(persistToken);
+      const response = await axios.post('api/stats/food-intake', credentials);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

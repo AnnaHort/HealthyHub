@@ -1,15 +1,13 @@
-import MonthsDashboard from '../months/months';
-import WeightCharts from './weight';
-import styled from 'styled-components';
-import CaloriesDashboard from './calories';
-import WaterDashboar from './water';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { fetchUserStatictic } from '../../../redux/dashboardPage//dashboardOperation';
-import {
-  getUserMonthsFood,
-  getUserMonthsWater,
-} from '../../../redux/dashboardPage/dashboardSelector';
+import MonthsDashboard from "../months/months";
+import WeightCharts from "./weight";
+import styled from "styled-components";
+import CaloriesDashboard from "./calories";
+import WaterDashboar from "./water";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { fetchUserStatictic } from "../../../redux/dashboardPage//dashboardOperation";
+import { getUserMonthsFood, getUserMonthsWater, } from "../../../redux/dashboardPage/dashboardSelector";
+
 
 const DashboardContainer = styled.div`
   max-width: 780px;
@@ -67,7 +65,6 @@ const LineDashboard = () => {
   console.log('Data passed to WaterDashboar:', monthsDataWater);
 
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
-  console.log(selectedMonth);
 
   useEffect(() => {
     dispatch(fetchUserStatictic(selectedMonth));
@@ -93,5 +90,6 @@ const LineDashboard = () => {
     </div>
   );
 };
+
 
 export default LineDashboard;

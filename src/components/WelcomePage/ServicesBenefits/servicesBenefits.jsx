@@ -3,7 +3,6 @@ import {
   BenefitsList,
 } from './serviseBenefits.styled';
 const ServicesBenefits = () => {
-   console.log('ButtonSignUp is rendering');
    return (
      <BenegitsContainer>
        <Benefits>

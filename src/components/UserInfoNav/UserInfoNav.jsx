@@ -33,7 +33,6 @@ const UserInfoNav = () => {
       try {
         const response = await axios.get('api/user/current');
         setUserData(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error('Data error', error.message);
       }
