@@ -70,9 +70,9 @@ export const fetchCurentUser = createAsyncThunk(
     }
     
     try {
-      // const response = await axios.get('/users/current'); тут коменчу бо воно поки не реалізовано на бекі із-за цього помилка прилітає
+      const response = await axios.get('/api/user/current')
       token.set(persistedToken);
-      // return response.data;
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
