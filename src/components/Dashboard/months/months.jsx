@@ -50,7 +50,7 @@ const MonthsDashboard = ({ selectedMonths, setMonth }) => {
     <Container>
       <Formik
         initialValues={{
-          selectedMonths: getCurrentMonths(),
+          selectedMonths: selectedMonths,
         }}
         onSubmit={(values) => {
           console.log('Months:', values.selectedMonths);
