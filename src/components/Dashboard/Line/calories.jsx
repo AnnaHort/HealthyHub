@@ -21,6 +21,7 @@ ChartJS.register(
 );
 
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 
 const Container = styled.div`
   margin-left: 10px;
@@ -87,8 +88,59 @@ const ChartsContainer = styled.div`
 `;
 
 const CaloriesDashboard = ({ data, selectedMonth }) => {
-  const formatDate = new Date(2023, selectedMonth, 0).getDate();
+  const [chartData, setChartData] = useState([]);
+  const [averageFood, setAverageFood] = useState(0);
+
+ useEffect(() => {
+   const renderDays = () => {
+     const formatDate = new Date(2023, selectedMonth, 0);
+     const daysInMonth = formatDate.getDate();
+     const days = Array.from({ length: daysInMonth }, (_, index) => 0);
+
+     try {
+       if (data && Array.isArray(data)) {
+         data.forEach((day) => {
+           if (day.data) {
+             const daysIndex = Number(day.data.split(',')[0]) - 1;
+             if (
+               !isNaN(daysIndex) &&
+               daysIndex >= 0 &&
+               daysIndex < daysInMonth
+             ) {
+               days.splice(daysIndex, 1, day.food);
+             } else {
+               console.error(`Invalid day index: ${daysIndex}`);
+             }
+           } else {
+             console.error(`Missing 'data' property in day object`);
+           }
+         });
+       } else {
+         console.error(`Invalid or missing 'data' array`);
+       }
+     } catch (error) {
+       console.error(`Error during rendering days: ${error}`);
+     }
+
+     setChartData(days);
+   };
+
+   renderDays();
+ }, [data, selectedMonth]);
+
+ const formatDate = new Date(2023, selectedMonth, 0).getDate();
   const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
+
+
+  // вычисление среднего колличесвта употребляемых каллорий
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const total = data.reduce((acc, item) => acc + item.food, 0);
+      const calculatedAverageFood = total / data.length;
+      setAverageFood(Math.floor(calculatedAverageFood));
+   }
+  }, [data]);
+
 
   const options = {
     responsive: true,
@@ -135,30 +187,14 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
       },
     },
   };
-  const renderDays = () => {
-    const formatDate = new Date(2023, selectedMonth, 0);
-    const daysInMonth = formatDate.getDate();
-    console.log(daysInMonth);
-    const days = Array.from({ length: daysInMonth }, (_, index) => 0);
 
-    try {
-      data?.map((day) => {
-        const daysIndex = Number(day.data.split(',')[0]) - 1;
-        days.splice(daysIndex, 1, day.food);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-
-    return days;
-  };
 
   const info = {
     labels,
     datasets: [
       {
         label: 'Calories',
-        data: renderDays(),
+        data: chartData,
         borderColor: '#e3ffa8',
         backgroundColor: '#0F0F0F',
         pointBackgroundColor: '#e3ffa8',
@@ -170,7 +206,10 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
     <Container>
       <TitleContainer>
         <CaloriesTitle>Calories</CaloriesTitle>
-        <CaloriesDesc>Average value: {}</CaloriesDesc>
+        <CaloriesDesc>
+          Average value:{" "}
+          {averageFood}
+        </CaloriesDesc>
       </TitleContainer>
 
       <ChartsContainer>
