@@ -6,31 +6,32 @@ axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 // токен
 const token = {
-    set(token) {
-      axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-    },
-    unset() {
-      axios.defaults.headers.common.Authorization = '';
-    },
-  };
+  set(token) {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  },
+  unset() {
+    axios.defaults.headers.common.Authorization = '';
+  },
+};
 
 
 // реєстрація
 export const register = createAsyncThunk(
-    'auth/register',
-    async (userData, thunkAPI) => {
-      try {
-        const response = await axios.post('/api/auth/signup', userData);
-        token.set(response.data.token);
-        return response.data;
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error.message);
-      }
+  'auth/register',
+  async (userData, thunkAPI) => {
+    try {
+      const response = await axios.post('/api/auth/signup', userData);
+      token.set(response.data.token);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
     }
-  );
+  }
+);
 
-  // логін
+// логін
 export const logIn = createAsyncThunk(
+
     'auth/login',
     async (userData, thunkAPI) => {
       try {
@@ -41,20 +42,21 @@ export const logIn = createAsyncThunk(
         return thunkAPI.rejectWithValue(error.message);
       }
     }
-  );
+  }
+);
 
-  // вихід з системи
+// вихід з системи
 export const logOut = createAsyncThunk(
-    'auth/logout',
-    async (_ , thunkAPI) => {
-      try {
-        await axios.post('/api/auth/signout');
-        token.unset();
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error.message);
-      }
+  'auth/logout',
+  async (_, thunkAPI) => {
+    try {
+      await axios.post('/api/auth/signout');
+      token.unset();
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
     }
-  );
+  }
+);
 
 // refresh
 export const fetchCurentUser = createAsyncThunk(
@@ -64,14 +66,12 @@ export const fetchCurentUser = createAsyncThunk(
 
     const persistedToken = state.authReducer.token;
 
-
     if (persistedToken === null || persistedToken === '') {
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
-    
     try {
-      const response = await axios.get('/api/user/current')
       token.set(persistedToken);
+      const response = await axios.get('/api/user/current');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
