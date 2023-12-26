@@ -1,4 +1,3 @@
-import { startOfMonth, endOfMonth, eachDayOfInterval, format } from 'date-fns';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -95,37 +94,33 @@ const ChartsContainer = styled.div`
 `;
 
 const WaterDashboar = ({ data, selectedMonth }) => {
-  console.log('Data received in WaterDashboar:', data);
   const [chartData, setChartData] = useState([]);
   const [averageWater, setAverageWater] = useState(0);
 
   useEffect(() => {
+    console.log('Entering useEffect for rendering days...');
     const renderDays = () => {
+      if (!data || !Array.isArray(data)) {
+        console.error(`Invalid or missing 'data' array`);
+        return;
+      }
       const formatDate = new Date(2023, selectedMonth, 0);
       const daysInMonth = formatDate.getDate();
       const days = Array.from({ length: daysInMonth }, (_, index) => 0);
 
       try {
-        if (data && Array.isArray(data)) {
-          data.forEach((day) => {
-            if (day.data) {
-              const daysIndex = Number(day.data.split(',')[0]) - 1;
-              if (
-                !isNaN(daysIndex) &&
-                daysIndex >= 0 &&
-                daysIndex < daysInMonth
-              ) {
-                days.splice(daysIndex, 1, day.water);
-              } else {
-                console.error(`Invalid day index: ${daysIndex}`);
-              }
+        data.forEach((day) => {
+          if (day.data) {
+            const daysIndex = Number(day.data.split(',')[0]) - 1;
+            if (daysIndex >= 0 && daysIndex < daysInMonth) {
+              days[daysIndex] = day.water || 0;
             } else {
-              console.error(`Missing 'data' property in day object`);
+              console.error(`Invalid day index: ${daysIndex}`);
             }
-          });
-        } else {
-          console.error(`Invalid or missing 'data' array`);
-        }
+          } else {
+            console.error(`Missing 'data' property in day object`);
+          }
+        });
       } catch (error) {
         console.error(`Error during rendering days: ${error}`);
       }
@@ -141,12 +136,62 @@ const WaterDashboar = ({ data, selectedMonth }) => {
 
   // вычисление среднего колличесвта употребляемых каллорий
   useEffect(() => {
+    console.log('Entering useEffect for calculating average food...');
     if (data && data.length > 0) {
-      const total = data.reduce((acc, item) => acc + item.water, 0);
-      const calculatedAverageWater = total / data.length;
-      setAverageWater(Math.floor(calculatedAverageWater));
+      // Получаем текущую дату
+      const currentDate = new Date();
+      const filteredData = data.filter((item) => {
+        const [day, month] = item.data.split(', ');
+        const itemDate = new Date(2023, getMonthNumber(month), day);
+        return (
+          itemDate.getMonth() === currentDate.getMonth() &&
+          itemDate.getFullYear() === currentDate.getFullYear()
+        );
+      });
+
+      console.log('Filtered Data:', filteredData);
+      if (chartData.length > 0) {
+        // Вычисляем среднее количество воды для текущего месяца
+        const filteredChartData = chartData.filter(
+          (water) => !isNaN(water)
+        );
+        if (filteredChartData.length > 0) {
+          const total = filteredChartData.reduce(
+            (acc, water) => acc + water,
+            0
+          );
+          const calculatedAveragewater = total / filteredChartData.length;
+          setAverageWater(Math.floor(calculatedAveragewater));
+        } else {
+          // если данных нет, среднее значение устанавливаем в 0
+          setAverageWater(0);
+        }
+      }
+      if (chartData.length === 0) {
+        console.error(`No data for the current month`);
+        return;
+      }
     }
-  }, [data]);
+  }, [chartData]);
+
+  // Функция для преобразования названия месяца в числовой формат
+  function getMonthNumber(monthName) {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    return months.indexOf(monthName);
+  }
 
   const options = {
     responsive: true,
@@ -198,7 +243,7 @@ const WaterDashboar = ({ data, selectedMonth }) => {
     <Container>
       <TitleContainer>
         <WaterTitle>Water</WaterTitle>
-        <WaterDesc>Average value:{" "} {averageWater}</WaterDesc>
+        <WaterDesc>Average value: {averageWater}</WaterDesc>
       </TitleContainer>
 
       <ChartsContainer>
