@@ -5,7 +5,7 @@ import styled from "styled-components";
 import CaloriesDashboard from "./calories";
 import WaterDashboar from "./water";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchUserStatictic } from "../../../redux/dashboardPage//dashboardOperation";
 import { getUserMonthsFood, getUserMonthsWater, } from "../../../redux/dashboardPage/dashboardSelector";
 
@@ -66,8 +66,10 @@ const LineDashboard = () => {
  console.log('info months Calories:', monthsDataFood);
   console.log('Data passed to WaterDashboar:', monthsDataWater);
 
+  const [currentIndexMounth, setIndexMounth] = useState(new Date().getMonth()+1);
+ 
   useEffect(() => {
-    dispatch(fetchUserStatictic())
+    dispatch(fetchUserStatictic(currentIndexMounth))
   }, [dispatch])
   
     return (
