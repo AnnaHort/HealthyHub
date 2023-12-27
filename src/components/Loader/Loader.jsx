@@ -1,7 +1,7 @@
 import { Rings } from 'react-loader-spinner';
 import { Block } from './Loader.styled';
 
-export const Loader = () => {
+const Loader = () => {
   return (
     <Block>
       <Rings
@@ -16,3 +16,5 @@ export const Loader = () => {
     </Block>
   );
 };
+
+export default Loader;
