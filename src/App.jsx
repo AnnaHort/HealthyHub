@@ -47,81 +47,89 @@ function App() {
 
   return (
     <>
-        <Routes>
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={isLoggedIn ? <MainPage /> : <WelcomePage />}/>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route
+            index
+            element={
+              <RestrictedRoute
+                redirectTo="/welcome"
+                component={<WelcomePage />}
+              />
+            }
+          />
 
-            <Route path="/welcome" element={<WelcomePage />} />
+          <Route
+            path="/welcome"
+            element={
+              <RestrictedRoute redirectTo="/main" component={<WelcomePage />} />
+            }
+          />
 
-            <Route
-              path="/signup"
-              element={
-                <RestrictedRoute
-                  redirectTo="/main"
-                  component={<SignUpPage />}
-                />
-              }
-            />
+          <Route
+            path="/signup"
+            element={
+              <RestrictedRoute redirectTo="/main" component={<SignUpPage />} />
+            }
+          />
 
-            <Route
-              path="/signin"
-              element={
-                <RestrictedRoute
-                  redirectTo="/main"
-                  component={<SignInPages />}
-                />
-              }
-            />
+          <Route
+            path="/signin"
+            element={
+              <RestrictedRoute redirectTo="/main" component={<SignInPages />} />
+            }
+          />
 
-            <Route
-              path="/main"
-              element={
-                <PrivateRoute redirectTo="/signin" component={<MainPage />} />
-              }
-            />
+          <Route
+            path="/main"
+            element={
+              <PrivateRoute redirectTo="/welcome" component={<MainPage />} />
+            }
+          />
 
-            <Route
-              path="/dashboard"
-              element={
-                <PrivateRoute
-                  redirectTo="/signin"
-                  component={<DashboardPage />}
-                />
-              }
-            />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute
+                redirectTo="/welcome"
+                component={<DashboardPage />}
+              />
+            }
+          />
 
-            <Route
-              path="/diary"
-              element={
-                <PrivateRoute redirectTo="/signin" component={<DiaryPage />} />
-              }
-            />
+          <Route
+            path="/diary"
+            element={
+              <PrivateRoute redirectTo="/welcome" component={<DiaryPage />} />
+            }
+          />
 
-            <Route
-              path="/recommended-food"
-              element={
-                <PrivateRoute
-                  redirectTo="/signin"
-                  component={<RecommendedFoodPage />}
-                />
-              }
-            />
+          <Route
+            path="/recommended-food"
+            element={
+              <PrivateRoute
+                redirectTo="/welcome"
+                component={<RecommendedFoodPage />}
+              />
+            }
+          />
 
-            <Route
-              path="/settings"
-              element={
-                <PrivateRoute
-                  redirectTo="/welcome"
-                  component={<ProfileSettingsPage />}
-                />
-              }
-            />
+          <Route
+            path="/settings"
+            element={
+              <PrivateRoute
+                redirectTo="/welcome"
+                component={<ProfileSettingsPage />}
+              />
+            }
+          />
 
-            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-          </Route>
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        </Route>
 
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+
       {(LoadingAuth ||
         LoadingDashboard ||
         LoadingRecFood ||
