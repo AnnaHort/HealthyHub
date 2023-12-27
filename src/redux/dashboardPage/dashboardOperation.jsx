@@ -26,3 +26,23 @@ export const fetchUserStatictic = createAsyncThunk(
     }
   }
 );
+
+export const fetchUserWeight = createAsyncThunk('api/user/weight/:month/fetchUserWeight',
+  async (monthNumber, thunkAPI) => {
+  
+try {
+  const state = thunkAPI.getState();
+  const persistToken = state.authReducer.token;
+   if (!persistToken) {
+        return thunkAPI.rejectWithValue('Unable to fetch user');
+  }
+  setHeader(persistToken);
+      const res = await axios.get(`api/user/weight/${monthNumber}`);
+      return res.data;
+} catch (error) {
+  return thunkAPI.rejectWithValue({ errorMessage: error.message });
+}
+
+}
+
+)
