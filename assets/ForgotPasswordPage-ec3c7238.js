@@ -1,4 +1,4 @@
-import{u as t,L as l,d as a,j as i}from"./index-8dde6e79.js";import{S as m,R as p,F as d,e as g}from"./SignInPages.styled-ad160a88.js";import{S as h}from"./SignUpRegister.styled-ea3d4902.js";import{c,a as x}from"./index.esm-ebc73d88.js";import{u}from"./formik.esm-86f6de33.js";import{k as f,Q as r}from"./react-toastify.esm-0d078563.js";const w=t.div`
+import{u as e,L as l,d as a,j as i,k as m,Q as r}from"./index-19069e0b.js";import{S as p,R as d,F as g,e as h}from"./SignInPages.styled-80c1893f.js";import{S as c}from"./SignUpRegister.styled-b1be07df.js";import{c as x,a as u}from"./index.esm-b2927d03.js";import{u as f}from"./formik.esm-aa03417f.js";const w=e.div`
   display: flex;
   flex-direction: column;
   gap: 56px;
@@ -12,7 +12,7 @@ import{u as t,L as l,d as a,j as i}from"./index-8dde6e79.js";import{S as m,R as 
       margin-right: 0;
       margin-left: 0;
     }
-`,y=t.h2`
+`,y=e.h2`
   color: var(--color-primary-white);
   font-family: Poppins;
   font-size: 24px;
@@ -28,7 +28,7 @@ import{u as t,L as l,d as a,j as i}from"./index-8dde6e79.js";import{S as m,R as 
       text-align: start;
     }
   }
-`,v=t.p`
+`,v=e.p`
   color: var(--color-primary-grey);
   font-family: Poppins;
   font-size: 18px;
@@ -41,7 +41,7 @@ import{u as t,L as l,d as a,j as i}from"./index-8dde6e79.js";import{S as m,R as 
   @media (min-width: 1440px) {
       text-align: start;
     }
-`,b=t.form`
+`,b=e.form`
   @media (min-width: 834px) {
     margin-left: auto;
     margin-right: auto;
@@ -52,7 +52,7 @@ import{u as t,L as l,d as a,j as i}from"./index-8dde6e79.js";import{S as m,R as 
     margin-right: 0;
     text-align: start;
   }
-`,j=t.input`
+`,j=e.input`
   color: var(--color-primary-grey);
   font-family: Poppins;
   line-height: 1.429;
@@ -77,7 +77,7 @@ import{u as t,L as l,d as a,j as i}from"./index-8dde6e79.js";import{S as m,R as 
     margin-left: 0;
     margin-right: 0;
   }
-`,F=t.button`
+`,F=e.button`
   border-radius: 12px;
   border: none;
   outline: none;
@@ -89,21 +89,21 @@ import{u as t,L as l,d as a,j as i}from"./index-8dde6e79.js";import{S as m,R as 
   font-weight: 500;
   line-height: 1.43;
   width: 100%;
-`,P=t.div`
+`,P=e.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
   @media (min-width: 834px) {
     flex-direction: row;
   }
-`,S=t.p`
+`,S=e.p`
   color: var(--color-primary-grey);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.43;
-`,k=t(l)`
+`,k=e(l)`
   color: var(--color-primary-white);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.43;
-`;a.defaults.baseURL="https://healthhub-backend.onrender.com";const C=/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,z=c().shape({email:x().matches(C,"Invalid email").required("Email is required")}),$=()=>{const e=u({initialValues:{email:""},validationSchema:z,onSubmit:async(n,{resetForm:s})=>{try{const o=await a.post("/api/auth/forgot-password",n);r.success(o.data.message,{autoClose:3e3}),s()}catch(o){r.error(o.response.data.message,{autoClose:2e3})}}});return i.jsxs(m,{children:[i.jsx(h,{viewBox:"0 0 300 296"}),i.jsxs(p,{children:[i.jsx(y,{children:"Forgot your password"}),i.jsx(v,{children:"We will send you an email with recovery instructions"}),i.jsxs(b,{autoComplete:"off",onSubmit:e.handleSubmit,children:[i.jsxs("div",{style:{position:"relative"},children:[i.jsx("label",{htmlFor:"email",children:i.jsx(j,{type:"email",id:"email",name:"email",placeholder:"E-mail",onChange:e.handleChange,onBlur:e.handleBlur,value:e.values.email})}),e.touched.email&&e.errors.email&&i.jsx(d,{children:e.errors.email})]}),i.jsxs(w,{children:[i.jsx(g,{children:i.jsx(F,{type:"submit",children:"Send"})}),i.jsxs(P,{children:[i.jsx(S,{children:"If you don't have an account yet"}),i.jsx(k,{to:"/signup",children:"Sign up"})]})]})]})]}),i.jsx(f,{position:"top-right"})]})};export{$ as default};
+`;a.defaults.baseURL="https://healthhub-backend.onrender.com";const C=/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,z=x().shape({email:u().matches(C,"Invalid email").required("Email is required")}),E=()=>{const t=f({initialValues:{email:""},validationSchema:z,onSubmit:async(n,{resetForm:s})=>{try{const o=await a.post("/api/auth/forgot-password",n);r.success(o.data.message,{autoClose:3e3}),s()}catch(o){r.error(o.response.data.message,{autoClose:2e3})}}});return i.jsxs(p,{children:[i.jsx(c,{viewBox:"0 0 300 296"}),i.jsxs(d,{children:[i.jsx(y,{children:"Forgot your password"}),i.jsx(v,{children:"We will send you an email with recovery instructions"}),i.jsxs(b,{autoComplete:"off",onSubmit:t.handleSubmit,children:[i.jsxs("div",{style:{position:"relative"},children:[i.jsx("label",{htmlFor:"email",children:i.jsx(j,{type:"email",id:"email",name:"email",placeholder:"E-mail",onChange:t.handleChange,onBlur:t.handleBlur,value:t.values.email})}),t.touched.email&&t.errors.email&&i.jsx(g,{children:t.errors.email})]}),i.jsxs(w,{children:[i.jsx(h,{children:i.jsx(F,{type:"submit",children:"Send"})}),i.jsxs(P,{children:[i.jsx(S,{children:"If you don't have an account yet"}),i.jsx(k,{to:"/signup",children:"Sign up"})]})]})]})]}),i.jsx(m,{position:"top-right"})]})};export{E as default};
