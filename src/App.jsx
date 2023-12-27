@@ -52,7 +52,16 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          
+          <Route
+            index
+            element={
+              <RestrictedRoute
+                redirectTo="/welcome"
+                component={<WelcomePage />}
+              />
+            }
+          />
+
           <Route
             path="/welcome"
             element={
@@ -77,7 +86,7 @@ function App() {
           <Route
             path="/main"
             element={
-              <PrivateRoute redirectTo="/signin" component={<MainPage />} />
+              <PrivateRoute redirectTo="/welcome" component={<MainPage />} />
             }
           />
 
@@ -85,7 +94,7 @@ function App() {
             path="/dashboard"
             element={
               <PrivateRoute
-                redirectTo="/signin"
+                redirectTo="/welcome"
                 component={<DashboardPage />}
               />
             }
@@ -94,7 +103,7 @@ function App() {
           <Route
             path="/diary"
             element={
-              <PrivateRoute redirectTo="/signin" component={<DiaryPage />} />
+              <PrivateRoute redirectTo="/welcome" component={<DiaryPage />} />
             }
           />
 
@@ -102,7 +111,7 @@ function App() {
             path="/recommended-food"
             element={
               <PrivateRoute
-                redirectTo="/signin"
+                redirectTo="/welcome"
                 component={<RecommendedFoodPage />}
               />
             }
