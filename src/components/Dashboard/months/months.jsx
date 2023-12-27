@@ -10,23 +10,8 @@ import {
 const MonthsDashboard = ({ selectedMonths, setMonth }) => {
   const getCurrentMonths = () => {
     const now = new Date();
-    return now.getMonth();
+    return now.getMonth() + 1;
   };
-
-  const month = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
 
   const getLastYearMonths = () => {
     const months = [
@@ -61,20 +46,16 @@ const MonthsDashboard = ({ selectedMonths, setMonth }) => {
           <FieldStyled
             as="select"
             name="selectedMonths"
+            // отрисовываем текущее состояние
+            value={selectedMonths}
             onChange={(e) => {
-              console.log(e.target.value);
-              console.log(month.length);
-              for (let i = 0; i < month.length; i++) {
-                if (e.target.value == month[i]) {
-                  console.log(1 + i + ' true');
-                  return setMonth(i + 1);
-                }
-                console.log(i);
-              }
+              // передаём порядковый номер месяца
+              setMonth(Number(e.target.value));
             }}
           >
-            {getLastYearMonths().map((month) => (
-              <OptionStyled key={month} value={month}>
+            {getLastYearMonths().map((month, idx) => (
+              // отрисовываем числовое значение value
+              <OptionStyled key={month} value={idx + 1}>
                 {month}
               </OptionStyled>
             ))}

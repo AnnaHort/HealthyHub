@@ -19,86 +19,74 @@ import {
   UserInformationSaveBtn,
   UserInformationTitle,
 } from './UserInformation.styled';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  getCurrentUser,
   setUpdateUserFalse,
   updateUser,
 } from '../../../redux/updateUser/updateOperations';
-import { selectUpdateUserStatus } from '../../../redux/updateUser/updateSelectors';
 import DownloadSvg from './DownloadSvg/DownloadSvg';
+import { selectUser } from '../../../redux/auth/authSelectors';
 
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 const UserInformation = () => {
   const dispatch = useDispatch();
 
-  const [userData, setUserData] = useState(null);
-  const [name, setName] = useState();
-  const [age, setAge] = useState();
-  const [gender, setGender] = useState();
-  const [height, setHeight] = useState();
-  const [weight, setWeight] = useState();
-  const [userActivity, setUserActivity] = useState('');
-  const [fileAvatar, setFileAvatar] = useState();
+  const currentUserData = useSelector(selectUser);
 
-  const userUpdate = useSelector(selectUpdateUserStatus);
+  let { age, avatarURL, gender, height, name, userActivity, weight } =
+    currentUserData;
+
+  const [fileAvatar, setFileAvatar] = useState();
+  const [newUserName, setNewUserName] = useState(name);
+  const [newUserAge, setNewUserAge] = useState(age);
+  const [newUserGender, setNewUserGender] = useState(gender);
+  const [newUserHeight, setNewUserHeight] = useState(height);
+  const [newUserWeight, setNewUserWeight] = useState(weight);
+  const [newUserActivity, setNewUserActivity] = useState(userActivity);
+  const [newUserAvatar, setNewUserAvatar] = useState(avatarURL);
 
   // аватар
   const uploadAvatar = async () => {
     try {
       const formData = new FormData();
       formData.append('avatar', fileAvatar);
-
       const response = await axios.post('api/user/avatars', formData);
       return response.data;
     } catch (error) {
       console.error('Error uploading avatar', error.message);
-     
     }
   };
 
-  useEffect(() => {
-    if (userUpdate) {
-      dispatch(getCurrentUser());
-    }
-  }, [userUpdate, dispatch]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('api/user/current');
-        setUserData(response.data);
-        setGender(response.data.gender);
-        setUserActivity(response.data.userActivity);
-        dispatch(setUpdateUserFalse());
-      } catch (error) {
-        console.error('Data error', error.message);
-      }
-    };
-    fetchData();
-  }, [userUpdate]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (fileAvatar) {
+      try {
+        const response = await uploadAvatar();
+        const newAvatarURL = response.avatarURL;
+        setNewUserAvatar(newAvatarURL);
+      } catch (error) {
+        console.error('Error uploading avatar', error.message);
+        toast.error('Error uploading avatar');
+        return;
+      }
+    }
+
     const newUserData = {
-      name,
-      age,
-      gender,
-      height,
-      weight,
-      userActivity,
+      name: newUserName,
+      age: newUserAge,
+      gender: newUserGender,
+      height: newUserHeight,
+      weight: newUserWeight,
+      userActivity: newUserActivity,
     };
+
     try {
       const response = await axios.put('/api/user/update', newUserData);
-      console.log(response.data);
 
-
-      if(fileAvatar){
-        await uploadAvatar();
-      }
       dispatch(updateUser(newUserData));
       dispatch(setUpdateUserFalse());
       toast.success(response.data.message, { autoClose: 2000 });
@@ -108,13 +96,6 @@ const UserInformation = () => {
     }
   };
 
-  if (!userData) {
-    return <div>Loading...</div>;
-  }
-
-
-  const { avatarURL } = userData;
-
   return (
     <UserInformationForm onSubmit={handleSubmit}>
       <UserInformationContainer>
@@ -122,8 +103,8 @@ const UserInformation = () => {
         <UserInformationInput
           type="text"
           id="name"
-          placeholder={`${userData.name}`}
-          onChange={(e) => setName(e.target.value)}
+          placeholder={`${name}`}
+          onChange={(e) => setNewUserName(e.target.value)}
         />
       </UserInformationContainer>
 
@@ -133,14 +114,12 @@ const UserInformation = () => {
           <UserInformationImgContainer>
             <UserInformationImg
               style={{ width: '36px', height: '36px', borderRadius: '50%' }}
-              src={`${avatarURL}`}
+              src={newUserAvatar}
               alt="Avatar"
             />
           </UserInformationImgContainer>
           <UserInformationIconDirect>
-
-            <DownloadSvg/>
-
+            <DownloadSvg />
           </UserInformationIconDirect>
           <input
             type="file"
@@ -158,13 +137,13 @@ const UserInformation = () => {
       <UserInformationContainer>
         <UserInformationLabel htmlFor="age">Your age</UserInformationLabel>
         <UserInformationInput
-          placeholder={`${userData.age}`}
+          placeholder={`${age}`}
           type="number"
           id="age"
           name="quantity"
           min="1"
           max="100"
-          onChange={(e) => setAge(e.target.value)}
+          onChange={(e) => setNewUserAge(e.target.value)}
         />
       </UserInformationContainer>
 
@@ -177,8 +156,8 @@ const UserInformation = () => {
               id="male"
               name="gender"
               value="male"
-              checked={gender === 'Male'}
-              onChange={() => setGender('Male')}
+              checked={newUserGender === 'Male'}
+              onChange={() => setNewUserGender('Male')}
             />
             <UserInformationLabelRadio htmlFor="male">
               Male
@@ -191,8 +170,8 @@ const UserInformation = () => {
               id="female"
               name="gender"
               value="female"
-              checked={gender === 'Female'}
-              onChange={() => setGender('Female')}
+              checked={newUserGender === 'Female'}
+              onChange={() => setNewUserGender('Female')}
             />
             <UserInformationLabelRadio htmlFor="female">
               Female
@@ -204,26 +183,26 @@ const UserInformation = () => {
       <UserInformationContainer>
         <UserInformationLabel htmlFor="height">Height</UserInformationLabel>
         <UserInformationInput
-          placeholder={`${userData.height}`}
+          placeholder={`${height}`}
           type="number"
           id="height"
           name="quantity"
           min="1"
           max="300"
-          onChange={(e) => setHeight(e.target.value)}
+          onChange={(e) => setNewUserHeight(e.target.value)}
         />
       </UserInformationContainer>
 
       <UserInformationContainer>
         <UserInformationLabel htmlFor="weight">Weight</UserInformationLabel>
         <UserInformationInput
-          placeholder={`${userData.weight}`}
+          placeholder={`${weight}`}
           type="number"
           id="weight"
           name="quantity"
           min="1"
           max="300"
-          onChange={(e) => setWeight(e.target.value)}
+          onChange={(e) => setNewUserWeight(e.target.value)}
         />
       </UserInformationContainer>
 
@@ -236,8 +215,8 @@ const UserInformation = () => {
               id="low 1.2-1.3"
               value="low 1.2-1.3"
               name="activity"
-              checked={userActivity === '1.25'}
-              onChange={() => setUserActivity('1.25')}
+              checked={newUserActivity === '1.25'}
+              onChange={() => setNewUserActivity('1.25')}
             />
             <UserInformationLabelRadio htmlFor="low 1.2-1.3">
               1.2-1.3 - if you do not have physical activity and sedentary work
@@ -250,8 +229,8 @@ const UserInformation = () => {
               id="light 1.4-1.5"
               value="light 1.4-1.5"
               name="activity"
-              checked={userActivity === '1.45'}
-              onChange={() => setUserActivity('1.45')}
+              checked={newUserActivity === '1.45'}
+              onChange={() => setNewUserActivity('1.45')}
             />
             <UserInformationLabelRadio htmlFor="light 1.4-1.5">
               1.4-1.5 - if you do short runs or light gymnastics 1-3 times a
@@ -265,8 +244,8 @@ const UserInformation = () => {
               id="average 1.6-1.7"
               value="average 1.6-1.7"
               name="activity"
-              checked={userActivity === '1.65'}
-              onChange={() => setUserActivity('1.65')}
+              checked={newUserActivity === '1.65'}
+              onChange={() => setNewUserActivity('1.65')}
             />
             <UserInformationLabelRadio htmlFor="average 1.6-1.7">
               1.6-1.7 - if you play sports with average loads 3-5 times a week
@@ -279,8 +258,8 @@ const UserInformation = () => {
               id="high 1.8-1.9"
               value="high 1.8-1.9"
               name="activity"
-              checked={userActivity === '1.85'}
-              onChange={() => setUserActivity('1.85')}
+              checked={newUserActivity === '1.85'}
+              onChange={() => setNewUserActivity('1.85')}
             />
             <UserInformationLabelRadio htmlFor="high 1.8-1.9">
               1.8-1.9 - if you train fully 6-7 times a week
@@ -293,8 +272,8 @@ const UserInformation = () => {
               id="hard 2.0"
               value="hard 2.0"
               name="activity"
-              checked={userActivity === '2'}
-              onChange={() => setUserActivity('2')}
+              checked={newUserActivity === '2'}
+              onChange={() => setNewUserActivity('2')}
             />
             <UserInformationLabelRadio htmlFor="hard 2.0">
               2.0 - if your work is related to physical labor, you train 2 times
@@ -312,7 +291,6 @@ const UserInformation = () => {
           Cancel
         </UserInformationLinkCancel>
       </UserInformationBtnContainer>
-
     </UserInformationForm>
   );
 };
