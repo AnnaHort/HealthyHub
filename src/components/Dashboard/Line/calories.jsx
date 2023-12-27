@@ -90,6 +90,7 @@ const ChartsContainer = styled.div`
 const CaloriesDashboard = ({ data, selectedMonth }) => {
   const [chartData, setChartData] = useState([]);
   const [averageFood, setAverageFood] = useState(0);
+  const [hasData, setHasData] = useState(true)
 
   useEffect(() => {
     console.log('Entering useEffect for rendering days...');
@@ -120,6 +121,7 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
       }
 
       setChartData(days);
+      setHasData(true);
     };
 
     renderDays();
@@ -250,7 +252,9 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
     <Container>
       <TitleContainer>
         <CaloriesTitle>Calories</CaloriesTitle>
-        <CaloriesDesc>Average value: {averageFood}</CaloriesDesc>
+        <CaloriesDesc>
+          {hasData ? `Average value: ${averageFood}` : 'No data available'}
+        </CaloriesDesc>
       </TitleContainer>
 
       <ChartsContainer>
