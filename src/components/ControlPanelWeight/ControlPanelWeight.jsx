@@ -17,7 +17,7 @@ import CurrentWeightModal from '../CurrentWeightModal/CurrentWeightModal';
 import MaintakeMen from '../../Emoji/WaightImage.svg';
 import IconsEditTwo from '../../Icons/IconEditTwo';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
+import { selectUpdateUserStatus, selectUser } from '../../redux/updateUser/updateSelectors';
 import { getCurrentUser } from '../../redux/updateUser/updateOperations';
 import { fetchUserStatsDay } from '../../redux/userStatsDay/operations';
 
@@ -25,30 +25,22 @@ axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 const ControlPanelWeight = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [userData, setUserData] = useState(null);
+
+  // чи відбувалося оновлення 
   const userUpdate = useSelector(selectUpdateUserStatus);
+  // отримати дані юзера
+  const currentUserData = useSelector(selectUser);
+  const weight = currentUserData ? currentUserData.weight : null;
+  
   const dispatch = useDispatch();
 
+// якщо юзер оновився то виконати запит отримання даних
   useEffect(() => {
     if (userUpdate) {
       dispatch(getCurrentUser());
       dispatch(fetchUserStatsDay());
-
     }
   }, [userUpdate, dispatch]);
-  
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('api/user/current');
-        setUserData(response.data);
-      } catch (error) {
-        console.error('Data error', error.message);
-      }
-    };
-    fetchData();
-  }, [userUpdate]); 
-
 
   const handleIconButtonClick = () => {
     setModalOpen(true);
@@ -58,10 +50,6 @@ const ControlPanelWeight = () => {
     setModalOpen(false);
   };
 
-  if (!userData) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <Container>
       <ImgBox>
@@ -70,7 +58,7 @@ const ControlPanelWeight = () => {
       <SelectPanel>
         <Title>Weight</Title>
         <Description>
-          {userData.weight} <span>kg</span>
+          {weight} <span>kg</span>
           <IconButton onClick={handleIconButtonClick}>
             <StyledIcon>
               <IconsEditTwo />

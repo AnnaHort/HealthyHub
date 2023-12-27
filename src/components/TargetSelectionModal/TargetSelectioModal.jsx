@@ -22,8 +22,8 @@ import MaintakeGirl from '../../Emoji/MaintakeGirl.svg';
 import GainMuscle from '../../Emoji/GainMuscle.svg';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
+import { useDispatch } from 'react-redux';
+// import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
 import {
   setUpdateUserFalse,
   updateUser,
@@ -34,9 +34,9 @@ axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 export const TargetSelectionModal = ({ onCloseButtonClick }) => {
   const [goal, setGoal] = useState('');
-  const [userData, setUserData] = useState();
+  // const [userData, setUserData] = useState();
 
-  const userUpdate = useSelector(selectUpdateUserStatus);
+  // const userUpdate = useSelector(selectUpdateUserStatus);
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
@@ -59,19 +59,19 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
     }
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('api/user/current');
-        console.log(response.data.goal);
-        setGoal(response.data.goal);
-        setUserData(response.data);
-      } catch (error) {
-        console.error('Data error', error.message);
-      }
-    };
-    fetchData();
-  }, [userUpdate]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get('api/user/current');
+  //       console.log(response.data.goal);
+  //       setGoal(response.data.goal);
+  //       setUserData(response.data);
+  //     } catch (error) {
+  //       console.error('Data error', error.message);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [userUpdate]);
 
   const handleCloseModal = (e) => {
     (e.code === 'Escape' || e.currentTarget === e.target) &&
@@ -85,9 +85,9 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
     };
   });
 
-  if (!userData) {
-    return <div>Loading...</div>;
-  }
+  // if (!userData) {
+  //   return <div>Loading...</div>;
+  // }
   return (
     <Backdrop onClick={handleCloseModal}>
       <ModalLayout>

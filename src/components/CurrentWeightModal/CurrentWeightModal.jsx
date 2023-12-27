@@ -19,8 +19,7 @@ import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
+import { useDispatch } from 'react-redux';
 import {
   setUpdateUserFalse,
   updateUser,
@@ -28,9 +27,7 @@ import {
 
 const CurrentWeightModal = ({ onCloseButtonClick }) => {
   const [weight, setWeight] = useState('');
-  const [userData, setUserData] = useState();
 
-  const userUpdate = useSelector(selectUpdateUserStatus);
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
@@ -64,23 +61,8 @@ const CurrentWeightModal = ({ onCloseButtonClick }) => {
     };
   });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('api/user/current');
-        setUserData(response.data);
-      } catch (error) {
-        console.error('Data error', error.message);
-      }
-    };
-    fetchData();
-  }, [userUpdate]);
-
   const currentDate = new Date().toLocaleDateString();
 
-  if (!userData) {
-    return <div>Loading...</div>;
-  }
   return (
     <Backdrop onClick={handleCloseModal}>
       <ModalLayout>
