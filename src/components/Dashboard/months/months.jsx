@@ -4,7 +4,7 @@ import {
   StyledFormControl,
   StyledInputLabel,
   StyledSelect,
-  StyledMenuList,
+
   StyledMenuItem,
 } from './months.styled';
 
@@ -13,8 +13,10 @@ const MonthsDropdown = ({ setMonth, monthNames }) => {
 
   return (
     <StyledFormControl>
-      <StyledInputLabel id="selectedMonthLabel">Months</StyledInputLabel>
-      <StyledSelect
+      <StyledInputLabel id="selectedMonthLabel">
+        Months
+      </StyledInputLabel>
+      <StyledSelect 
         labelId="selectedMonthLabel"
         id="selectedMonths"
         name="selectedMonths"
@@ -26,8 +28,24 @@ const MonthsDropdown = ({ setMonth, monthNames }) => {
           setMonth(selectedIndex + 1);
         }}
         label="Months"
+        MenuProps={{
+          PaperProps: {
+            sx: {
+              bgcolor: 'var(--color-primary-black-2)',
+              minWidth: '212px',
+              height: '144px',
+
+              boxShadow: '0px 4px 14px 0px rgba(227, 255, 168, 0.2)',
+              '&::-webkit-scrollbar': {
+                display: 'none',
+              },
+              scrollbarWidth: 'none',
+              '& .MuiMenuItem-root': {},
+            },
+          },
+        }}
       >
-          {monthNames.map((month) => (
+        {monthNames.map((month) => (
           <StyledMenuItem key={month} value={month}>
             {month}
           </StyledMenuItem>
