@@ -1,26 +1,15 @@
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Loader } from './components/Loader/Loader';
+import Loader  from './components/Loader/Loader';
 
 import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-
-// import MainPage from './pages/MainPage/MainPage';
-// import DashboardPage from './pages/DashboardPage/dashboardPage';
-// import ProfileSettingsPage from '/src/pages/ProfileSettingsPage/ProfileSettingsPage';
-// import DiaryPage from './pages/DiaryPage/DiaryPage';
-// import RecommendedFoodPage from './components/RecommendedFoodPage/recommendedFoodPage';
-
-// import ErrorPage from 'pages/ErrorPage/ErrorPage';
-// import WelcomePage from './pages/WelcomePage/welcomePage';
-// import SignInPages from './pages/SignInPages/SignInPages';
-
-// import ForgotPasswordPage from './components/ForgotPasswordPage/ForgotPasswordPage';
+import SharedLayout from './components/SharedLayout/SharedLayout';
 
 const WelcomePage = lazy(() => import('./pages/WelcomePage/welcomePage')); 
 const SignInPages = lazy(() => import('./pages/SignInPages/SignInPages')); 
@@ -32,11 +21,10 @@ const DashboardPage = lazy(() => import('./pages/DashboardPage/dashboardPage'));
 const ProfileSettingsPage = lazy(() => import('./pages/ProfileSettingsPage/ProfileSettingsPage')); 
 const DiaryPage = lazy(() => import('./pages/DiaryPage/DiaryPage')); 
 const RecommendedFoodPage = lazy(() => import('./components/RecommendedFoodPage/recommendedFoodPage')); 
-const SharedLayout = lazy(() => import('./components/SharedLayout/SharedLayout'));
 const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 
 
-import selectIsLoggedIn, { selectIsLoading } from '/src/redux/auth/authSelectors.js';
+import selectIsLoggedIn, { selectIsLoading } from './redux/auth/authSelectors';
 import { selectIsLoadingDashboard } from './redux/dashboardPage/dashboardSelector';
 import { getIsLoadingRecommendedFood } from './redux/recommendedFood/selector';
 import { selectIsLoadingUpdate } from './redux/updateUser/updateSelectors';
@@ -59,14 +47,9 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-            {isLoggedIn ? (
-              <Route index element={<MainPage />} />
-            ) : (
-              <Route index element={<WelcomePage />} />
-            )}
+            <Route index element={isLoggedIn ? <MainPage /> : <WelcomePage />}/>
 
             <Route path="/welcome" element={<WelcomePage />} />
 
@@ -93,7 +76,7 @@ function App() {
             <Route
               path="/main"
               element={
-                <PrivateRoute redirectTo="/welcome" component={<MainPage />} />
+                <PrivateRoute redirectTo="/signin" component={<MainPage />} />
               }
             />
 
@@ -101,7 +84,7 @@ function App() {
               path="/dashboard"
               element={
                 <PrivateRoute
-                  redirectTo="/welcome"
+                  redirectTo="/signin"
                   component={<DashboardPage />}
                 />
               }
@@ -110,7 +93,7 @@ function App() {
             <Route
               path="/diary"
               element={
-                <PrivateRoute redirectTo="/welcome" component={<DiaryPage />} />
+                <PrivateRoute redirectTo="/signin" component={<DiaryPage />} />
               }
             />
 
@@ -118,7 +101,7 @@ function App() {
               path="/recommended-food"
               element={
                 <PrivateRoute
-                  redirectTo="/welcome"
+                  redirectTo="/signin"
                   component={<RecommendedFoodPage />}
                 />
               }
@@ -139,7 +122,6 @@ function App() {
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-      </Suspense>
       {(LoadingAuth ||
         LoadingDashboard ||
         LoadingRecFood ||

@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import HeaderAuthorizedUser from '../HeaderAuthorizedUser/HeaderAuthorizedUser';
 import { useSelector } from 'react-redux';
 import selectIsLoggedIn from '../../redux/auth/authSelectors';
+import Loader from '../Loader/Loader';
 
 import { Container, ContainerHeader } from './SharedLayout.styled';
 
@@ -15,10 +16,8 @@ const SharedLayout = () => {
       <ContainerHeader>
         {isLoggedIn ? <HeaderAuthorizedUser /> : <Header />}
       </ContainerHeader>
-
       <Container>
-        <Suspense fallback={<div>Loading...</div>}>
-
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </Container>
