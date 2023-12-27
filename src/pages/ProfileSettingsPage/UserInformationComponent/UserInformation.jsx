@@ -38,14 +38,15 @@ const UserInformation = () => {
 
   let { age, avatarURL, gender, height, name, userActivity, weight } =
     currentUserData;
-    
-  const [fileAvatar, setFileAvatar] = useState(avatarURL);
+
+  const [fileAvatar, setFileAvatar] = useState();
   const [newUserName, setNewUserName] = useState(name);
   const [newUserAge, setNewUserAge] = useState(age);
   const [newUserGender, setNewUserGender] = useState(gender);
   const [newUserHeight, setNewUserHeight] = useState(height);
   const [newUserWeight, setNewUserWeight] = useState(weight);
   const [newUserActivity, setNewUserActivity] = useState(userActivity);
+  const [newUserAvatar, setNewUserAvatar] = useState(avatarURL);
 
   // аватар
   const uploadAvatar = async () => {
@@ -62,6 +63,18 @@ const UserInformation = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (fileAvatar) {
+      try {
+        const response = await uploadAvatar();
+        const newAvatarURL = response.avatarURL;
+        setNewUserAvatar(newAvatarURL);
+      } catch (error) {
+        console.error('Error uploading avatar', error.message);
+        toast.error('Error uploading avatar');
+        return;
+      }
+    }
+
     const newUserData = {
       name: newUserName,
       age: newUserAge,
@@ -73,11 +86,7 @@ const UserInformation = () => {
 
     try {
       const response = await axios.put('/api/user/update', newUserData);
-      console.log(response.data);
 
-      if (fileAvatar) {
-        await uploadAvatar();
-      }
       dispatch(updateUser(newUserData));
       dispatch(setUpdateUserFalse());
       toast.success(response.data.message, { autoClose: 2000 });
@@ -105,7 +114,7 @@ const UserInformation = () => {
           <UserInformationImgContainer>
             <UserInformationImg
               style={{ width: '36px', height: '36px', borderRadius: '50%' }}
-              src={fileAvatar ? URL.createObjectURL(fileAvatar) : avatarURL}
+              src={newUserAvatar}
               alt="Avatar"
             />
           </UserInformationImgContainer>
