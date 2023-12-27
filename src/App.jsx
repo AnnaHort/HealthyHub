@@ -2,7 +2,7 @@ import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Loader from './components/Loader/Loader';
+import Loader  from './components/Loader/Loader';
 
 import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
@@ -11,33 +11,30 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
 
-const WelcomePage = lazy(() => import('./pages/WelcomePage/welcomePage'));
-const SignInPages = lazy(() => import('./pages/SignInPages/SignInPages'));
-const ForgotPasswordPage = lazy(() =>
-  import('./components/ForgotPasswordPage/ForgotPasswordPage')
-);
-const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
+const WelcomePage = lazy(() => import('./pages/WelcomePage/welcomePage')); 
+const SignInPages = lazy(() => import('./pages/SignInPages/SignInPages')); 
+const ForgotPasswordPage = lazy(() => import('./components/ForgotPasswordPage/ForgotPasswordPage')); 
+const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage')); 
 
-const MainPage = lazy(() => import('./pages/MainPage/MainPage'));
-const DashboardPage = lazy(() => import('./pages/DashboardPage/dashboardPage'));
-const ProfileSettingsPage = lazy(() =>
-  import('./pages/ProfileSettingsPage/ProfileSettingsPage')
-);
-const DiaryPage = lazy(() => import('./pages/DiaryPage/DiaryPage'));
-const RecommendedFoodPage = lazy(() =>
-  import('./components/RecommendedFoodPage/recommendedFoodPage')
-);
+const MainPage = lazy(() => import('./pages/MainPage/MainPage')); 
+const DashboardPage = lazy(() => import('./pages/DashboardPage/dashboardPage')); 
+const ProfileSettingsPage = lazy(() => import('./pages/ProfileSettingsPage/ProfileSettingsPage')); 
+const DiaryPage = lazy(() => import('./pages/DiaryPage/DiaryPage')); 
+const RecommendedFoodPage = lazy(() => import('./components/RecommendedFoodPage/recommendedFoodPage')); 
 const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 
-import { selectIsLoading } from './redux/auth/authSelectors';
+
+import selectIsLoggedIn, { selectIsLoading } from './redux/auth/authSelectors';
 import { selectIsLoadingDashboard } from './redux/dashboardPage/dashboardSelector';
 import { getIsLoadingRecommendedFood } from './redux/recommendedFood/selector';
 import { selectIsLoadingUpdate } from './redux/updateUser/updateSelectors';
 import { getIsLoadingUserStats } from './redux/userStatsDay/selectors';
 import { fetchCurentUser } from './redux/auth/authOperations';
 
+
 function App() {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const LoadingAuth = useSelector(selectIsLoading);
   const LoadingDashboard = useSelector(selectIsLoadingDashboard);
   const LoadingRecFood = useSelector(getIsLoadingRecommendedFood);
@@ -50,79 +47,81 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          
-          <Route
-            path="/welcome"
-            element={
-              <RestrictedRoute redirectTo="/main" component={<WelcomePage />} />
-            }
-          />
+        <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={isLoggedIn ? <MainPage /> : <WelcomePage />}/>
 
-          <Route
-            path="/signup"
-            element={
-              <RestrictedRoute redirectTo="/main" component={<SignUpPage />} />
-            }
-          />
+            <Route path="/welcome" element={<WelcomePage />} />
 
-          <Route
-            path="/signin"
-            element={
-              <RestrictedRoute redirectTo="/main" component={<SignInPages />} />
-            }
-          />
+            <Route
+              path="/signup"
+              element={
+                <RestrictedRoute
+                  redirectTo="/main"
+                  component={<SignUpPage />}
+                />
+              }
+            />
 
-          <Route
-            path="/main"
-            element={
-              <PrivateRoute redirectTo="/signin" component={<MainPage />} />
-            }
-          />
+            <Route
+              path="/signin"
+              element={
+                <RestrictedRoute
+                  redirectTo="/main"
+                  component={<SignInPages />}
+                />
+              }
+            />
 
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute
-                redirectTo="/signin"
-                component={<DashboardPage />}
-              />
-            }
-          />
+            <Route
+              path="/main"
+              element={
+                <PrivateRoute redirectTo="/signin" component={<MainPage />} />
+              }
+            />
 
-          <Route
-            path="/diary"
-            element={
-              <PrivateRoute redirectTo="/signin" component={<DiaryPage />} />
-            }
-          />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute
+                  redirectTo="/signin"
+                  component={<DashboardPage />}
+                />
+              }
+            />
 
-          <Route
-            path="/recommended-food"
-            element={
-              <PrivateRoute
-                redirectTo="/signin"
-                component={<RecommendedFoodPage />}
-              />
-            }
-          />
+            <Route
+              path="/diary"
+              element={
+                <PrivateRoute redirectTo="/signin" component={<DiaryPage />} />
+              }
+            />
 
-          <Route
-            path="/settings"
-            element={
-              <PrivateRoute
-                redirectTo="/welcome"
-                component={<ProfileSettingsPage />}
-              />
-            }
-          />
+            <Route
+              path="/recommended-food"
+              element={
+                <PrivateRoute
+                  redirectTo="/signin"
+                  component={<RecommendedFoodPage />}
+                />
+              }
+            />
 
-          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-        </Route>
+            <Route
+              path="/settings"
+              element={
+                <PrivateRoute
+                  redirectTo="/welcome"
+                  component={<ProfileSettingsPage />}
+                />
+              }
+            />
 
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          </Route>
+
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
       {(LoadingAuth ||
         LoadingDashboard ||
         LoadingRecFood ||
