@@ -7,6 +7,30 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/system';
 
+import { Line } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+import { useEffect, useState } from 'react';
+
 const StyledTableContainer = styled(TableContainer)({
   marginLeft: '10px',
   marginBottom: '68px',
@@ -105,7 +129,7 @@ const StyledTable = styled(Table)({
       paddingRight: '24px',
     },
     '&:not(:first-of-type)': {
-      paddingLeft: '29px', // отступ между цифрами
+      paddingLeft: '29px', 
     },
     '&:not(:last-of-type)': {
       paddingRight: '0',
@@ -154,17 +178,163 @@ const AverageValueStyled = styled('p')({
   },
 });
 
-const WeightCharts = () => {
-  const weights = [];
+// const WeightCharts = () => {
+//   const weights = [];
 
-  for (let i = 68; i >= 38; i--) {
-    weights.push(i);
-  }
-  const daysOfMonth = [];
+//   for (let i = 68; i >= 38; i--) {
+//     weights.push(i);
+//   }
+//   const daysOfMonth = [];
 
-  for (let i = 1; i <= 31; i++) {
-    daysOfMonth.push(i);
+//   for (let i = 1; i <= 31; i++) {
+//     daysOfMonth.push(i);
+//   }
+const WeightDashboard = ({ data, selectedMonth }) => {
+const [chartData, setChartData] = useState([]);
+  const [weight, setWeight] = useState(0);
+  const [hasData, setHasData] = useState(true);
+
+ useEffect(() => {
+    console.log('Entering useEffect for rendering days...');
+    if (!data || !Array.isArray(data) || data.length === 0) {
+      console.error(`Invalid or missing 'data' array`);
+      setHasData(false);
+       setChartData([]);
+      return;
+    }
+
+    const renderDays = async () => {
+      const formatDate = new Date(2023, selectedMonth, 0);
+      const daysInMonth = formatDate.getDate();
+      const days = Array.from({ length: daysInMonth }, (_, index) => 0);
+
+      try {
+        data.forEach((day) => {
+          if (day.data) {
+            const daysIndex = Number(day.data.split(',')[0]) - 1;
+            if (daysIndex >= 0 && daysIndex < daysInMonth) {
+              days[daysIndex] = day.water || 0;
+            } else {
+              console.error(`Invalid day index: ${daysIndex}`);
+            }
+          } else {
+            console.error(`Missing 'data' property in day object`);
+          }
+        });
+        setChartData(days);
+        setHasData(true);
+      } catch (error) {
+        console.error(`Error during rendering days: ${error}`);
+        setHasData(false);
+        setChartData([]);
+      }
+    };
+
+    renderDays();
+  }, [data, selectedMonth]);
+
+  const formatDate = new Date(2023, selectedMonth, 0).getDate();
+  const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
+
+ useEffect(() => {
+   console.log('Entering useEffect for calculating average water...');
+   if (!data || data.length === 0 || chartData.length === 0) {
+     console.error(`No data available for the current month`);
+     setHasData(false);
+     setWeight(0);
+     return;
+   }
+
+   
+   const currentDate = new Date();
+   const filteredData = data.filter((item) => {
+     if (!item.data) {
+       console.error(`Missing 'data' property in day object`);
+       return false;
+     }
+
+     const [day, month] = item.data.split(', ');
+     const itemDate = new Date(2023, getMonthNumber(month), day);
+
+     return (
+       itemDate.getMonth() === currentDate.getMonth() &&
+       itemDate.getFullYear() === currentDate.getFullYear()
+     );
+   });
+
+   console.log('Filtered Data:', filteredData);
+
+   
+   setHasData(filteredData.length > 0);
+ }, [data, chartData, selectedMonth]);
+  
+
+
+ function getMonthNumber(monthName) {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    return months.indexOf(monthName);
   }
+
+   console.log('hasData:', hasData);
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: false,
+        display: false,
+      },
+    },
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid: {
+          display: true,
+          color: '#292928',
+          borderColor: '#292928',
+        },
+      },
+      y: {
+        position: 'left',
+        ticks: {
+          beginAtZero: true,
+          stepSize: 1000,
+          callback: function (value) {
+            if (value >= 1000) {
+              return (value / 1000).toLocaleString() + 'K';
+            }
+            return value;
+          },
+        },
+        grid: {
+          display: true,
+          color: '#292928',
+          borderColor: '#292928',
+        },
+      },
+    },
+    layout: {
+      padding: {
+        left: 14,
+        right: 31,
+        top: 25,
+        bottom: 40,
+      },
+    },
+  };
 
   return (
     <div>
@@ -198,4 +368,4 @@ const WeightCharts = () => {
   );
 };
 
-export default WeightCharts;
+export default WeightDashboard;
