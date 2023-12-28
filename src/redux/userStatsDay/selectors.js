@@ -1,4 +1,5 @@
 export const getUserStatsFood = state => state.userStatsDayReducer.food;
+export const getUserStatsFoodSevising = state => state.userStatsDayReducer.food.foodServings;
 export const getUserStatsWater = state => state.userStatsDayReducer.water;
 export const getUserStatsLoad = state => state.userStatsDayReducer.load;
 

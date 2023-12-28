@@ -29,7 +29,6 @@ import {
 } from './MainPage.styled';
 import RecommendedFoodMain from '../../components/RecommendedFood.jsx/RecommendedFoodMain';
 
-
 const MainPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const userStatsDayLoad = useSelector(getUserStatsLoad);
@@ -71,16 +70,13 @@ const MainPage = () => {
             dailyCalories={dailyCalories}
             amountCalories={amountCalories}
           />
-          </MainElementsWrapper>
+        </MainElementsWrapper>
         <DARFWrap>
           <DiaryBlock />
-          <RecommendedFoodMain />      
+          <RecommendedFoodMain />
         </DARFWrap>
         {isOpenModal && <AddWaterModal handleModal={toggleIsOpenModal} />}
-
-
       </MainContainer>
-
     </>
   );
 };

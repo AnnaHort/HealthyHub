@@ -153,12 +153,14 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
       return;
     }
 
+
     // Получаем текущую дату
     const currentDate = new Date();
     const filteredData = data.filter((item) => {
       if (!item.data) {
         console.error(`Missing 'data' property in day object`);
         return false;
+    
       }
 
       const [day, month] = item.data.split(', ');

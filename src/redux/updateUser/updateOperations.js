@@ -15,6 +15,18 @@ export const updateUser = createAsyncThunk(
   }
 );
 
+export const updateUserGoal = createAsyncThunk(
+  'update/updateUsergoal',
+  async (userData, thunkAPI) => {
+    try {
+      const response = await axios.put('api/user/goal', userData);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const getCurrentUser = createAsyncThunk(
   "get/getCurrentUser",
   async(userData, thunkAPI) => {
