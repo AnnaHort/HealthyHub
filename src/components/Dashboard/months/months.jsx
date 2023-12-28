@@ -8,10 +8,6 @@ import {
 } from './months.styled';
 
 const MonthsDashboard = ({ selectedMonths, setMonth }) => {
-  const getCurrentMonths = () => {
-    const now = new Date();
-    return now.getMonth() + 1;
-  };
 
   const getLastYearMonths = () => {
     const months = [
@@ -37,9 +33,6 @@ const MonthsDashboard = ({ selectedMonths, setMonth }) => {
         initialValues={{
           selectedMonths: selectedMonths,
         }}
-        onSubmit={(values) => {
-          console.log('Months:', values.selectedMonths);
-        }}
       >
         <DashboardForm>
           <LabelDashboard htmlFor="selectedMonth">Months</LabelDashboard>
@@ -50,7 +43,7 @@ const MonthsDashboard = ({ selectedMonths, setMonth }) => {
             value={selectedMonths}
             onChange={(e) => {
               // передаём порядковый номер месяца
-              setMonth(Number(e.target.value));
+               setMonth(Number(e.target.value));
             }}
           >
             {getLastYearMonths().map((month, idx) => (
@@ -61,10 +54,6 @@ const MonthsDashboard = ({ selectedMonths, setMonth }) => {
             ))}
           </FieldStyled>
           <ErrorMessage name="height" component="div" />
-
-          <div>
-            <h3>{getCurrentMonths()}</h3>
-          </div>
         </DashboardForm>
       </Formik>
     </Container>
