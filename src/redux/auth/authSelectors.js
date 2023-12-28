@@ -1,4 +1,5 @@
 export const selectUser = (state) => state.authReducer.user;
+export const selectUserMacroelements = (state) => state.authReducer.user.macroelementsProporsion;
 export const selectToken = (state) => state.authReducer.token;
 const selectIsLoggedIn = (state) => state.authReducer.isLoggedIn;
 export const selectIsRefreshing = (state) => state.authReducer.isRefreshing;
