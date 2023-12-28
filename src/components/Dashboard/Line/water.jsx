@@ -94,12 +94,15 @@ const ChartsContainer = styled.div`
 `;
 
 const WaterDashboar = ({ data, selectedMonth }) => {
+  // хранилище данных
   const [chartData, setChartData] = useState([]);
   const [averageWater, setAverageWater] = useState(0);
+  // отслеживание наличия данных
    const [hasData, setHasData] = useState(true);
 
   useEffect(() => {
     console.log('Entering useEffect for rendering days...');
+    // проверка есть ли дата массивом, и меет ли какие-то данные, если нет, то график устанавливается в ноль
     if (!data || !Array.isArray(data) || data.length === 0) {
       console.error(`Invalid or missing 'data' array`);
       setHasData(false);
@@ -110,17 +113,22 @@ const WaterDashboar = ({ data, selectedMonth }) => {
     const renderDays = async () => {
       const formatDate = new Date(2023, selectedMonth, 0);
       const daysInMonth = formatDate.getDate();
+      // создвние массива длинной в колличество дней в месяце
       const days = Array.from({ length: daysInMonth }, (_, index) => 0);
 
       try {
+        // выполняем итерацию по каждому эл.[]
         data.forEach((day) => {
           if (day.data) {
             const daysIndex = Number(day.data.split(',')[0]) - 1;
+            // проверяем что индекс в диапазоне текущих дней в месяце
             if (daysIndex >= 0 && daysIndex < daysInMonth) {
               days[daysIndex] = day.water || 0;
+              // если выходит за переделы диапазона
             } else {
               console.error(`Invalid day index: ${daysIndex}`);
             }
+            // если обьект не содержит свойство дата
           } else {
             console.error(`Missing 'data' property in day object`);
           }
@@ -133,11 +141,13 @@ const WaterDashboar = ({ data, selectedMonth }) => {
         setChartData([]);
       }
     };
-
+// вызов при каждом изменении
     renderDays();
   }, [data, selectedMonth]);
 
+  // содержит колличество дней в текущем месяце
   const formatDate = new Date(2023, selectedMonth, 0).getDate();
+  // создаём новый массив для лэйбла от 1 до колличества дней в месяце
   const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
 
  useEffect(() => {

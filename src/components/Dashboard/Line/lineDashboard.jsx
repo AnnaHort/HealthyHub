@@ -67,9 +67,11 @@ const LineDashboard = () => {
   const [selectedMonth, setSelectedMonth] = useState(currentMonth);
 
   useEffect(() => {
-    setSelectedMonth(currentMonth);
-    dispatch(fetchUserStatictic(currentMonth));
-  }, [dispatch]);
+    const fetchData = async () => {
+      await dispatch(fetchUserStatictic(selectedMonth));
+    };
+    fetchData()
+  }, [dispatch, selectedMonth]);
 
    console.log('info months Calories:', monthsDataFood);
    console.log('Data passed to WaterDashboar:', monthsDataWater);
