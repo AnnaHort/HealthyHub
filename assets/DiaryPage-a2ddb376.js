@@ -1,4 +1,4 @@
-import{u as t,r as g,b as y,j as i,L as u,g as b}from"./index-0be86d89.js";import{d as j,D,L as v,B as k}from"./snack-54b17cb0.js";const P=t.div`
+import{u as t,r as g,b as y,j as i,L as u,g as b}from"./index-5328d414.js";import{d as j,D,L as v,B as k}from"./snack-dc80d62d.js";const P=t.div`
   width: 300px;
   margin-bottom: 40px;
   @media (min-width: 834px) {
