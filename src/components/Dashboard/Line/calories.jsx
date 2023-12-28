@@ -88,87 +88,112 @@ const ChartsContainer = styled.div`
 `;
 
 const CaloriesDashboard = ({ data, selectedMonth }) => {
+  // хранилище данных
   const [chartData, setChartData] = useState([]);
   const [averageFood, setAverageFood] = useState(0);
-  const [hasData, setHasData] = useState(true)
+  // отслеживание наличия данных
+  const [hasData, setHasData] = useState(true);
 
   useEffect(() => {
     console.log('Entering useEffect for rendering days...');
-    const renderDays = () => {
-      if (!data || !Array.isArray(data)) {
-        console.error(`Invalid or missing 'data' array`);
-        return;
-      }
+    // проверка есть ли дата массивом, и меет ли какие-то данные, если нет, то график устанавливается в ноль
+    if (!data || !Array.isArray(data) || data.length === 0) {
+      console.error(`Invalid or missing 'data' array`);
+      setHasData(false);
+      setChartData([]);
+      return;
+    }
+
+    const renderDays = async () => {
       const formatDate = new Date(2023, selectedMonth, 0);
       const daysInMonth = formatDate.getDate();
+      // создвние массива длинной в колличество дней в месяце
       const days = Array.from({ length: daysInMonth }, (_, index) => 0);
 
       try {
+        // выполняем итерацию по каждому эл.[]
         data.forEach((day) => {
           if (day.data) {
             const daysIndex = Number(day.data.split(',')[0]) - 1;
+            // проверяем что индекс в диапазоне текущих дней в месяце
             if (daysIndex >= 0 && daysIndex < daysInMonth) {
               days[daysIndex] = day.food || 0;
+              // если выходит за переделы диапазона
             } else {
               console.error(`Invalid day index: ${daysIndex}`);
             }
+            // если обьект не содержит свойство дата
           } else {
             console.error(`Missing 'data' property in day object`);
           }
         });
+        setChartData(days);
+        setHasData(true);
       } catch (error) {
         console.error(`Error during rendering days: ${error}`);
+        setHasData(false);
+        setChartData([]);
       }
-
-      setChartData(days);
-      setHasData(true);
     };
-
+    // вызов при каждом изменении
     renderDays();
   }, [data, selectedMonth]);
 
+  // содержит колличество дней в текущем месяце
   const formatDate = new Date(2023, selectedMonth, 0).getDate();
+  // создаём новый массив для лэйбла от 1 до колличества дней в месяце
   const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
 
-  // вычисление среднего колличесвта употребляемых каллорий
   useEffect(() => {
     console.log('Entering useEffect for calculating average food...');
-    if (data && data.length > 0) {
-      // Получаем текущую дату
-      const currentDate = new Date();
-      const filteredData = data.filter((item) => {
-        const [day, month] = item.data.split(', ');
-        const itemDate = new Date(2023, getMonthNumber(month), day);
-        return (
-          itemDate.getMonth() === currentDate.getMonth() &&
-          itemDate.getFullYear() === currentDate.getFullYear()
-        );
-      });
+    if (!data || data.length === 0 || chartData.length === 0) {
+      console.error(`No data available for the current month`);
+      setHasData(false);
+      setAverageFood(0);
+      return;
+    }
 
-      // console.log('Filtered Data:', filteredData);
-      if (chartData.length > 0) {
-        // Вычисляем среднее количество воды для текущего месяца
-         const filteredChartData = chartData.filter(
-           (calories) => !isNaN(calories)
-         );
-        if (filteredChartData.length > 0) {
-          const total = filteredChartData.reduce(
-            (acc, calories) => acc + calories,
-            0
-          );
-          const calculatedAverageFood = total / filteredChartData.length;
-          setAverageFood(Math.floor(calculatedAverageFood));
-        } else {
-          // если данных нет, среднее значение устанавливаем в 0
-          setAverageFood(0);
-        }
+
+    // Получаем текущую дату
+    const currentDate = new Date();
+    const filteredData = data.filter((item) => {
+      if (!item.data) {
+        console.error(`Missing 'data' property in day object`);
+        return false;
+    
       }
-      if (chartData.length === 0) {
-        console.error(`No data for the current month`);
-        return;
+
+      const [day, month] = item.data.split(', ');
+      const itemDate = new Date(2023, getMonthNumber(month), day);
+
+      return (
+        itemDate.getMonth() === currentDate.getMonth() &&
+        itemDate.getFullYear() === currentDate.getFullYear()
+      );
+    });
+
+
+    if (chartData.length > 0) {
+      // Вычисляем среднее количество воды для текущего месяца
+      const filteredChartData = chartData.filter(
+        (calories) => !isNaN(calories)
+      );
+      if (filteredChartData.length > 0) {
+        const total = filteredChartData.reduce(
+          (acc, calories) => acc + calories,
+          0
+        );
+        const calculatedAveragecalories = total / filteredChartData.length;
+        setAverageFood(Math.floor(calculatedAveragecalories));
+      } else {
+        // если данных нет, среднее значение устанавливаем в 0
+        setAverageFood(0);
       }
     }
-  }, [chartData]);
+
+    // Обновление hasData в зависимости от наличия данных
+    setHasData(filteredData.length > 0);
+  }, [data, chartData, selectedMonth]);
 
   // Функция для преобразования названия месяца в числовой формат
   function getMonthNumber(monthName) {
