@@ -14,7 +14,7 @@ export const Container = styled.div`
 
   box-shadow: 0px 4px 14px 0px rgba(227, 255, 168, 0.2);
 
-  transition: all 10s linear;
+  transition: all 1s linear;
 
   @media screen and (min-width: 834px) {
     top: 180px;
@@ -124,7 +124,7 @@ export const InputContainer = styled.div`
 `;
 
 export const InputProduct = styled(Field)`
-  width: 276px;
+  width: 270px;
   height: 36px;
   padding: 8px 10px;
   font-family: Poppins;
@@ -139,12 +139,12 @@ export const InputProduct = styled(Field)`
   outline: none;
 
   @media (min-width: 834px) {
-    width: 255px;
+    width: 235px;
   }
 `;
 
 export const InputCarbonoh = styled(Field)`
-  width: 276px;
+  width: 270px;
   height: 36px;
   padding: 8px 10px;
   font-family: Poppins;
@@ -164,7 +164,7 @@ export const InputCarbonoh = styled(Field)`
 `;
 
 export const InputProtein = styled(Field)`
-  width: 276px;
+  width: 270px;
   height: 36px;
   padding: 8px 10px;
   font-family: Poppins;
@@ -199,7 +199,7 @@ export const InputFat = styled(Field)`
   outline: none;
 
   @media (min-width: 834px) {
-    width: 61px;
+    width: 60px;
   }
 `;
 
@@ -223,10 +223,24 @@ export const InputCalories = styled(Field)`
   }
 `;
 
-export const AddButton = styled.div`
+export const AddButton = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  border: none;
+  background: none;
+
+  @media (min-width: 834px) {
+  }
+`;
+export const DelButton = styled.button`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border: none;
+  background: none;
 
   @media (min-width: 834px) {
   }
@@ -288,5 +302,22 @@ export const BtnCancel = styled.button`
 
   @media (min-width: 834px) {
     width: 192px;
+  }
+`;
+
+export const ErrorText = styled.div`
+  position: absolute;
+  top: 69px;
+  left: 0;
+  color: #e74a3b;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  padding-left: 10px;
+
+  @media screen and (min-width: 834px) {
+    left: 25px;
   }
 `;
