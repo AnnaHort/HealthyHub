@@ -7,7 +7,6 @@ import {
   DiaryImg,
   DearyButton,
   DiaryBox,
-  DiarySendBack,
   DishNameStyle,
   FoodInfoContainer,
   FoodNumberStyle,
@@ -29,6 +28,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchUserStatsDay } from '/src/redux/userStatsDay/operations.js';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const getMealTypeImage = (mealType) => {
   switch (mealType) {
@@ -85,12 +85,12 @@ const DiaryPage = () => {
 
   return (
     <>
-      <DiarySendBack to="/main">
+      <Link to="/main">
         <DiaryTop>
           <DiaryImg src={DiaryBack} alt="#" />
           Diary
         </DiaryTop>
-      </DiarySendBack>
+      </Link>
 
       <DiaryContainer>
         {allMealTypes.map((mealType) => (

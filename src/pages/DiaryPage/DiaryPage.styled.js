@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const DiaryContainer = styled.div`
@@ -13,9 +14,11 @@ export const DiaryContainer = styled.div`
     margin-bottom: 52px;
     margin-left: 0;
     margin-right: 0;
-    gap: 26px 0px;
+    gap: 26px 20px;
   }
 `;
+
+
 
 export const DiaryTop = styled.h1`
   color: var(--color-primary-white);
@@ -35,6 +38,7 @@ export const DiaryTop = styled.h1`
     margin-bottom: 16px;
   }
   @media (min-width: 1440px) {
+
   }
 `;
 
