@@ -13,13 +13,7 @@ export const DiaryContainer = styled.div`
     margin-bottom: 52px;
     margin-left: 0;
     margin-right: 0;
-  }
-`;
-
-export const DiarySendBack = styled.a`
-  @media (min-width: 1440px) {
-    margin: 0;
-    padding: 0;
+    gap: 26px 0px;
   }
 `;
 
@@ -38,12 +32,9 @@ export const DiaryTop = styled.h1`
     font-weight: 500;
     line-height: 36px;
     margin-top: 24px;
-    margin-bottom: 0;
+    margin-bottom: 16px;
   }
   @media (min-width: 1440px) {
-    padding: 0;
-    width: 0;
-    height: 0;
   }
 `;
 
@@ -57,6 +48,14 @@ export const DiaryImg = styled.img`
   }
 `;
 
+export const DiaryBoxContainer = styled.div`
+  @media (min-width: 834px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+`;
+
 export const DiaryTitle = styled.h2`
   color: var(--color-primary-white);
   font-family: Poppins;
@@ -65,16 +64,14 @@ export const DiaryTitle = styled.h2`
   font-weight: 400;
   line-height: 26px;
   display: flex;
+  margin-bottom: 12px;
   @media (min-width: 834px) {
     width: 155px;
     font-size: 22px;
     line-height: 32px;
-    display: inline-flex;
-    margin-bottom: 10px;
-    margin-top: 24px;
+    margin-bottom: 6px;
   }
   @media (min-width: 1440px) {
-    margin-top: 72px;
     gap: 12px;
     display: inline-flex;
     align-items: flex-start;
@@ -86,16 +83,11 @@ export const DiaryBox = styled.div`
   display: flex;
   flex-flow: row wrap;
   @media (min-width: 834px) {
-    width: 0;
-    height: 0;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: left;
-    margin-left: 230px;
+    gap: 34px;
+    margin-right: 64px;
   }
   @media (min-width: 1440px) {
     gap: 60px;
-    margin-left: 100px;
   }
 `;
 
@@ -108,6 +100,9 @@ export const DiaryText = styled.p`
   line-height: 20px;
   margin-right: 60px;
   margin-bottom: 12px;
+  @media (min-width: 834px) {
+    margin: 0;
+  }
   @media (min-width: 1440px) {
     margin-right: 0;
     margin-bottom: 0;
@@ -165,11 +160,85 @@ export const NumberWindow = styled.p`
   }
 `;
 
+export const FoodInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  @media (min-width: 834px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+export const DishListContainer = styled.div`
+  padding: 16px 12px;
+  @media (min-width: 834px) {
+    padding: 32px 14px;
+  }
+`;
+
+export const DishNameContainer = styled.div`
+  display: flex;
+  @media (min-width: 834px) {
+  }
+`;
+
 export const ButtonPlus = styled.img`
   width: 16px;
   height: 16px;
   margin-left: 16px;
   margin-right: 6px;
-
   padding-bottom: 0px;
+`;
+
+export const FoodNumberStyle = styled.p`
+  color: var(--color-primary-white);
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  margin-right: 16px;
+  font-style: normal;
+`;
+export const DishNameStyle = styled.p`
+  color: var(--color-primary-white);
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  font-style: normal;
+`;
+
+export const AboutDishContainer = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-left: 22px;
+  @media (min-width: 834px) {
+    margin-left: 0px;
+    gap: 32px;
+  }
+`;
+
+export const MobileSpan = styled.span`
+  color: var(--color-primary-grey);
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-right: 6px;
+  font-style: normal;
+  @media (min-width: 834px) {
+    display: none;
+  }
+`;
+export const DishDetails = styled.p`
+  color: var(--color-primary-white);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  @media (min-width: 834px) {
+    width: 80px;
+  }
 `;
