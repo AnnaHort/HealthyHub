@@ -15,7 +15,7 @@ const chartOptions = {
     },
     tooltip: {
       enabled: false,
-    },
+    }
   },
   animation: {
     animateRotate: true,
@@ -25,7 +25,7 @@ const chartOptions = {
 
 const bcgCircle = {
   id: 'bcgCircle',
-  beforeDatasetsDraw(chart) {
+  beforeDatasetsDraw(chart, args, pluginOptions) {
     const { ctx } = chart;
 
     ctx.save();
@@ -45,17 +45,18 @@ const bcgCircle = {
   },
 };
 
-export const CircleChart = ({ dailyCalories, amountCalories, chartBcg }) => {
-  if (amountCalories > dailyCalories) {
-    amountCalories = dailyCalories;
+export const CircleChart = ({ dailyCalories, inputValue, chartBcg }) => {
+  if (inputValue > dailyCalories) {
+    inputValue = dailyCalories;
     chartBcg = 'red';
   }
+  const emptyValue = dailyCalories - inputValue;
 
   const data = {
     datasets: [
       {
         label: [],
-        data: [dailyCalories, amountCalories],
+        data: [inputValue, emptyValue],
         backgroundColor: [chartBcg, 'transparent'],
         borderColor: ['rgba(255, 99, 132, 1)'],
         borderWidth: 0,

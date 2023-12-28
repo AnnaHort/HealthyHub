@@ -38,6 +38,7 @@ const MainPage = () => {
   const waterAmount = useSelector(getwaterAmount);
   const dispatch = useDispatch();
 
+
   let dailyWaterMl = 0;
   dailyWaterL ? (dailyWaterMl = dailyWaterL.toFixed(2) * 1000) : 1500;
 

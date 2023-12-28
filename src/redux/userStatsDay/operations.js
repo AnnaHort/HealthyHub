@@ -46,7 +46,7 @@ export const addWater = createAsyncThunk(
 );
 
 export const delWater = createAsyncThunk(
-  'post/WaterAdd',
+  'post/delWater',
   async (credentials, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
@@ -74,6 +74,44 @@ export const addFood = createAsyncThunk(
       }
       setAuth(persistToken);
       const response = await axios.post('api/stats/food-intake', credentials);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// DELETE /api/stats//delMeal/:mealType
+
+export const delFood = createAsyncThunk(
+  'post/delFood',
+  async (mealType, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState();
+      const persistToken = state.authReducer.token;
+      if (!persistToken) {
+        return thunkAPI.rejectWithValue('Unable to fetch user');
+      }
+      setAuth(persistToken);
+      const response = await axios.delete(`api/stats/delMeal/${mealType}`);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const delFoodId = createAsyncThunk(
+  'post/delFoodId',
+  async (id, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState();
+      const persistToken = state.authReducer.token;
+      if (!persistToken) {
+        return thunkAPI.rejectWithValue('Unable to fetch user');
+      }
+      setAuth(persistToken);
+      const response = await axios.delete(`api/stats/food-intake/${id}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
