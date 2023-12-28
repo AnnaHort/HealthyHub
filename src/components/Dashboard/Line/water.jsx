@@ -96,14 +96,14 @@ const ChartsContainer = styled.div`
 const WaterDashboar = ({ data, selectedMonth }) => {
   const [chartData, setChartData] = useState([]);
   const [averageWater, setAverageWater] = useState(0);
-   const [hasData, setHasData] = useState(true);
+  const [hasData, setHasData] = useState(true);
 
   useEffect(() => {
     console.log('Entering useEffect for rendering days...');
     if (!data || !Array.isArray(data) || data.length === 0) {
       console.error(`Invalid or missing 'data' array`);
       setHasData(false);
-       setChartData([]);
+      setChartData([]);
       return;
     }
 
@@ -140,51 +140,50 @@ const WaterDashboar = ({ data, selectedMonth }) => {
   const formatDate = new Date(2023, selectedMonth, 0).getDate();
   const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
 
- useEffect(() => {
-   console.log('Entering useEffect for calculating average water...');
-   if (!data || data.length === 0 || chartData.length === 0) {
-     console.error(`No data available for the current month`);
-     setHasData(false);
-     setAverageWater(0);
-     return;
-   }
+  useEffect(() => {
+    console.log('Entering useEffect for calculating average water...');
+    if (!data || data.length === 0 || chartData.length === 0) {
+      console.error(`No data available for the current month`);
+      setHasData(false);
+      setAverageWater(0);
+      return;
+    }
 
-   // Получаем текущую дату
-   const currentDate = new Date();
-   const filteredData = data.filter((item) => {
-     if (!item.data) {
-       console.error(`Missing 'data' property in day object`);
-       return false;
-     }
+    // Получаем текущую дату
+    const currentDate = new Date();
+    const filteredData = data.filter((item) => {
+      if (!item.data) {
+        console.error(`Missing 'data' property in day object`);
+        return false;
+      }
 
-     const [day, month] = item.data.split(', ');
-     const itemDate = new Date(2023, getMonthNumber(month), day);
+      const [day, month] = item.data.split(', ');
+      const itemDate = new Date(2023, getMonthNumber(month), day);
 
-     return (
-       itemDate.getMonth() === currentDate.getMonth() &&
-       itemDate.getFullYear() === currentDate.getFullYear()
-     );
-   });
+      return (
+        itemDate.getMonth() === currentDate.getMonth() &&
+        itemDate.getFullYear() === currentDate.getFullYear()
+      );
+    });
 
-   console.log('Filtered Data:', filteredData);
+    //  console.log('Filtered Data:', filteredData);
 
-   if (chartData.length > 0) {
-     // Вычисляем среднее количество воды для текущего месяца
-     const filteredChartData = chartData.filter((water) => !isNaN(water));
-     if (filteredChartData.length > 0) {
-       const total = filteredChartData.reduce((acc, water) => acc + water, 0);
-       const calculatedAveragewater = total / filteredChartData.length;
-       setAverageWater(Math.floor(calculatedAveragewater));
-     } else {
-       // если данных нет, среднее значение устанавливаем в 0
-       setAverageWater(0);
-     }
-   }
+    if (chartData.length > 0) {
+      // Вычисляем среднее количество воды для текущего месяца
+      const filteredChartData = chartData.filter((water) => !isNaN(water));
+      if (filteredChartData.length > 0) {
+        const total = filteredChartData.reduce((acc, water) => acc + water, 0);
+        const calculatedAveragewater = total / filteredChartData.length;
+        setAverageWater(Math.floor(calculatedAveragewater));
+      } else {
+        // если данных нет, среднее значение устанавливаем в 0
+        setAverageWater(0);
+      }
+    }
 
-   // Обновление hasData в зависимости от наличия данных
-   setHasData(filteredData.length > 0);
- }, [data, chartData, selectedMonth]);
-  
+    // Обновление hasData в зависимости от наличия данных
+    setHasData(filteredData.length > 0);
+  }, [data, chartData, selectedMonth]);
 
   // Функция для преобразования названия месяца в числовой формат
   function getMonthNumber(monthName) {
@@ -205,7 +204,7 @@ const WaterDashboar = ({ data, selectedMonth }) => {
     return months.indexOf(monthName);
   }
 
-   console.log('hasData:', hasData);
+  //  console.log('hasData:', hasData);
 
   const options = {
     responsive: true,
@@ -258,28 +257,28 @@ const WaterDashboar = ({ data, selectedMonth }) => {
       <TitleContainer>
         <WaterTitle>Water</WaterTitle>
         <WaterDesc>
-        {hasData ? `Average value: ${averageWater}` : 'No data available'}
+          {hasData ? `Average value: ${averageWater}` : 'No data available'}
         </WaterDesc>
       </TitleContainer>
 
       <ChartsContainer>
-          <Line
-            options={options}
-            data={{
-              labels,
-              datasets: [
-                {
-                  label: 'Water',
-                  data: chartData,
-                  borderColor: '#e3ffa8',
-                  backgroundColor: '#0F0F0F',
-                  pointBackgroundColor: '#e3ffa8',
-                  borderWidth: 1,
-                },
-              ],
-            }}
-            style={{ backgroundColor: '#0F0F0F', borderRadius: '12px' }}
-          />
+        <Line
+          options={options}
+          data={{
+            labels,
+            datasets: [
+              {
+                label: 'Water',
+                data: chartData,
+                borderColor: '#e3ffa8',
+                backgroundColor: '#0F0F0F',
+                pointBackgroundColor: '#e3ffa8',
+                borderWidth: 1,
+              },
+            ],
+          }}
+          style={{ backgroundColor: '#0F0F0F', borderRadius: '12px' }}
+        />
       </ChartsContainer>
     </Container>
   );

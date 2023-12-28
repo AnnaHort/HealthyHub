@@ -145,7 +145,7 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
         );
       });
 
-      console.log('Filtered Data:', filteredData);
+      // console.log('Filtered Data:', filteredData);
       if (chartData.length > 0) {
         // Вычисляем среднее количество воды для текущего месяца
          const filteredChartData = chartData.filter(
