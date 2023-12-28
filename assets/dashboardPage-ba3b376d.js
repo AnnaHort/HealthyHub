@@ -1,4 +1,4 @@
-import{u as j,j as f,r as w,b as kt,c as Fe,C as Rt,D as jt,E as Ot}from"./index-080dd594.js";import{F as At,a as Mt,b as Pt,E as Dt}from"./formik.esm-26a66365.js";import{_ as m,n as _t,T as Bt}from"./emotion-styled.browser.esm-dd6093a3.js";import{C as rt,a as ot,L as at,P as it,d as st,e as lt,p as ct,c as dt,f as ut}from"./index-e0b730e7.js";function O(e,t){if(e==null)return{};var n={},r=Object.keys(e),o,a;for(a=0;a<r.length;a++)o=r[a],!(t.indexOf(o)>=0)&&(n[o]=e[o]);return n}const Et=j.div`
+import{u as j,j as f,r as w,b as kt,c as Fe,C as Rt,D as jt,E as Ot}from"./index-0be86d89.js";import{F as At,a as Mt,b as Pt,E as Dt}from"./formik.esm-dfafe326.js";import{_ as m,n as _t,T as Bt}from"./emotion-styled.browser.esm-fd41d7ad.js";import{C as rt,a as ot,L as at,P as it,d as st,e as lt,p as ct,c as dt,f as ut}from"./index-89dfe65b.js";function O(e,t){if(e==null)return{};var n={},r=Object.keys(e),o,a;for(a=0;a<r.length;a++)o=r[a],!(t.indexOf(o)>=0)&&(n[o]=e[o]);return n}const Et=j.div`
 
 `,Ft=j(At)`
 
@@ -213,4 +213,4 @@ import{u as j,j as f,r as w,b as kt,c as Fe,C as Rt,D as jt,E as Ot}from"./index
     margin-top: 16px;
     margin-bottom: 20px;
   }
-`,ca=()=>{const e=kt(),t=Fe(Rt),n=Fe(jt),r=new Date().getMonth()+1,[o,a]=w.useState(r);return w.useEffect(()=>{a(r),e(Ot(r))},[e]),console.log("info months Calories:",t),console.log("Data passed to WaterDashboar:",n),f.jsxs("div",{children:[f.jsx(It,{selectedMonths:o,setMonth:a}),f.jsxs(sa,{children:[f.jsx(ea,{data:t,selectedMonth:o}),f.jsx(ia,{data:n,selectedMonth:o})]}),f.jsx(la,{children:f.jsx(Jo,{})})]})},ma=()=>f.jsx(f.Fragment,{children:f.jsx(ca,{})});export{ma as default};
+`,ca=()=>{const e=kt(),t=Fe(Rt),n=Fe(jt),r=new Date().getMonth()+1,[o,a]=w.useState(r);return w.useEffect(()=>{(async()=>{await e(Ot(o))})()},[e,o]),console.log("info months Calories:",t),console.log("Data passed to WaterDashboar:",n),f.jsxs("div",{children:[f.jsx(It,{selectedMonths:o,setMonth:a}),f.jsxs(sa,{children:[f.jsx(ea,{data:t,selectedMonth:o}),f.jsx(ia,{data:n,selectedMonth:o})]}),f.jsx(la,{children:f.jsx(Jo,{})})]})},ma=()=>f.jsx(f.Fragment,{children:f.jsx(ca,{})});export{ma as default};
