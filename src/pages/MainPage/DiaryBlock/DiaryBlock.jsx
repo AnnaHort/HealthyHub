@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
+import { getUserStatsFoodSevising } from '../../../redux/userStatsDay/selectors';
+
 import {
   DiaryBlockContainer,
   DiaryBlockTitleWrapper,
@@ -26,9 +30,40 @@ import { ReactComponent as PlusIcon } from '../../../img/Diary/plus.svg';
 import { ReactComponent as BasketIcon } from '../../../img/Diary/basket.svg';
 
 const DiaryBlock = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); 
-   const [selectedMeal, setSelectedMeal] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedMeal, setSelectedMeal] = useState('');
+  const [foodSetvisingForMealType, setFoodSetvisingForMealType] = useState([]);
 
+  const initialMeals = {
+    Breakfast: {
+      carbohydrates: null,
+      protein: null,
+      fat: null,
+      image: <BreakfastImg />,
+      type: 'breakfast',
+    },
+    Lunch: {
+      carbohydrates: null,
+      protein: null,
+      fat: null,
+      image: <LunchImg />,
+      type: 'lunch',
+    },
+    Dinner: {
+      carbohydrates: null,
+      protein: null,
+      fat: null,
+      image: <DinnerImg />,
+      type: 'dinner',
+    },
+    Snack: {
+      carbohydrates: null,
+      protein: null,
+      fat: null,
+      image: <SnackImg />,
+      type: 'snack',
+    },
+  };
 
   const openModal = (mealTitle) => {
     setIsModalOpen(true);
@@ -36,106 +71,101 @@ const DiaryBlock = () => {
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); 
+    setIsModalOpen(false);
   };
 
-  // Ваш код компонента DiaryBlock
+  const userStatsFoodSevising = useSelector(getUserStatsFoodSevising);
+  const foodSetvising =
+    userStatsFoodSevising !== undefined ? userStatsFoodSevising : [];
 
-  const meals = [
-    {
-      title: 'Breakfast',
-      nutrients: {
-        carbohydrates: 20,
-        protein: 10,
-        fat: 5,
-      },
-      image: <BreakfastImg />,
-    },
-    {
-      title: 'Lunch',
-      nutrients: {
-        carbohydrates: 30,
-        protein: 15,
-        fat: 8,
-      },
-      image: <LunchImg />,
-    },
-    {
-      title: 'Dinner',
-      nutrients: {
-        carbohydrates: '',
-        protein: '',
-        fat: '',
-      },
-      image: <DinnerImg />,
-    },
-    {
-      title: 'Snack',
-      nutrients: {
-        carbohydrates: '',
-        protein: '',
-        fat: '',
-      },
-      image: <SnackImg />,
-    },
-  ];
+  useEffect(() => {
+    if (foodSetvising !== undefined) {
+      let result = { ...initialMeals };
+      foodSetvising.forEach((obj) => {
+        let mealType = Object.keys(initialMeals).find(
+          (key) => initialMeals[key].type === obj.mealType
+        );
+        if (mealType) {
+          result[mealType].carbohydrates += Number(obj.carbonohidrates);
+          result[mealType].protein += Number(obj.protein);
+          result[mealType].fat += Number(obj.fat);
+        }
+      });
+
+      let meals = Object.keys(result).map((mealType) => {
+        return {
+          title: mealType,
+          nutrients: {
+            carbohydrates: result[mealType].carbohydrates,
+            protein: result[mealType].protein,
+            fat: result[mealType].fat,
+          },
+          image: result[mealType].image,
+          type: result[mealType].type,
+        };
+      });
+
+      setFoodSetvisingForMealType(meals);
+    }
+  }, [foodSetvising]);
 
   return (
     <>
-    <DiaryBlockContainer>
-      <DiaryBlockTitleWrapper>
-        <DiaryBlockTitle>Diary</DiaryBlockTitle>
-        <SeeMoreButton to="/diary">See more</SeeMoreButton>
-      </DiaryBlockTitleWrapper>
+      <DiaryBlockContainer>
+        <DiaryBlockTitleWrapper>
+          <DiaryBlockTitle>Diary</DiaryBlockTitle>
+          <SeeMoreButton to="/diary">See more</SeeMoreButton>
+        </DiaryBlockTitleWrapper>
 
-      <DiaryBlockList>
-        {meals.map((meal, index) => (
-          <DiaryBlockItem key={index}>
-            <MealTitleWrapper>
-              {meal.image}
-              <MealTitle>{meal.title}</MealTitle>
-            </MealTitleWrapper>
-            {meal.nutrients.carbohydrates !== '' ||
-            meal.nutrients.protein !== '' ||
-            meal.nutrients.fat !== '' ? (
-              <NutrientList>
-                {meal.nutrients.carbohydrates !== '' && (
-                  <NutrientItem>
-                    <NutrientName>Carbohydrates:</NutrientName>
-                    <NutrientValue>
-                      {meal.nutrients.carbohydrates}
-                    </NutrientValue>
-                  </NutrientItem>
+        <DiaryBlockList>
+          {foodSetvisingForMealType &&
+            foodSetvisingForMealType.map((meal, index) => (
+              <DiaryBlockItem key={index}>
+                <MealTitleWrapper>
+                  {meal.image}
+                  <MealTitle>{meal.title}</MealTitle>
+                </MealTitleWrapper>
+                {meal.nutrients.carbohydrates !== null ||
+                meal.nutrients.protein !== null ||
+                meal.nutrients.fat !== null ? (
+                  <NutrientList>
+                    {meal.nutrients.carbohydrates !== null && (
+                      <NutrientItem>
+                        <NutrientName>Carbohydrates:</NutrientName>
+                        <NutrientValue>
+                          {meal.nutrients.carbohydrates}
+                        </NutrientValue>
+                      </NutrientItem>
+                    )}
+                    {meal.nutrients.protein !== null && (
+                      <NutrientItem>
+                        <NutrientName>Protein:</NutrientName>
+                        <NutrientValue>{meal.nutrients.protein}</NutrientValue>
+                      </NutrientItem>
+                    )}
+                    {meal.nutrients.fat !== null && (
+                      <NutrientItem>
+                        <NutrientName>Fat:</NutrientName>
+                        <NutrientValue>{meal.nutrients.fat}</NutrientValue>
+                      </NutrientItem>
+                    )}
+                    <DeleteButton>
+                      <BasketIcon />
+                    </DeleteButton>
+                  </NutrientList>
+                ) : (
+                  <AddMealButton onClick={() => openModal(meal.title)}>
+                    <PlusIcon />
+                    Record your meal
+                  </AddMealButton>
                 )}
-                {meal.nutrients.protein !== '' && (
-                  <NutrientItem>
-                    <NutrientName>Protein:</NutrientName>
-                    <NutrientValue>{meal.nutrients.protein}</NutrientValue>
-                  </NutrientItem>
-                )}
-                {meal.nutrients.fat !== '' && (
-                  <NutrientItem>
-                    <NutrientName>Fat:</NutrientName>
-                    <NutrientValue>{meal.nutrients.fat}</NutrientValue>
-                  </NutrientItem>
-                )}
-                <DeleteButton>
-                  <BasketIcon />
-                </DeleteButton>
-              </NutrientList>
-            ) : (
-              <AddMealButton onClick={() => openModal(meal.title)}>
-                <PlusIcon />
-                Record your meal
-              </AddMealButton>
-            )}
-          </DiaryBlockItem>
-        ))}
-      </DiaryBlockList>
-      {isModalOpen && (
-        <RecordDiaryModal onClose={closeModal} selectedMeal={selectedMeal} />
-      )}
-    </DiaryBlockContainer>
+              </DiaryBlockItem>
+            ))}
+        </DiaryBlockList>
+        {isModalOpen && (
+          <RecordDiaryModal onClose={closeModal} selectedMeal={selectedMeal} />
+        )}
+      </DiaryBlockContainer>
     </>
   );
 };

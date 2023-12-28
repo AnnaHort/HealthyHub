@@ -11,15 +11,14 @@ import {
   Title,
 } from './Food.styled';
 
-import { 
+import {
   getCarbonohidratesAmount,
   getCarbonohidratesLeft,
   getFatAmount,
   getFatLeft,
   getProteinAmount,
-  getProteinLeft
-} from "../../../redux/userStatsDay/selectors";
-
+  getProteinLeft,
+} from '../../../redux/userStatsDay/selectors';
 
 const carbBcg = 'rgba(255, 196, 247, 1)';
 const proteinBcg = 'rgba(255, 243, 183, 1)';
@@ -33,7 +32,7 @@ export const FoodInfo = ({ dailyCalories, amountCalories }) => {
   const proteinAmount = useSelector(getFatAmount);
   const fat = useSelector(getProteinLeft);
   const fatAmount = useSelector(getProteinAmount);
-  
+
   return (
     <div>
       <Title>Food</Title>
