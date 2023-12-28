@@ -70,7 +70,7 @@ export const addFood = createAsyncThunk(
       const state = thunkAPI.getState();
       const persistToken = state.authReducer.token;
       if (!persistToken) {
-        return thunkAPI.rejectWithValue('No token');
+        return thunkAPI.rejectWithValue('Unable to fetch user');
       }
       setAuth(persistToken);
       const response = await axios.post('api/stats/food-intake', credentials);

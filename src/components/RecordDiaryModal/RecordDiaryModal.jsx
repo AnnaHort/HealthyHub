@@ -1,56 +1,49 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Formik, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import { fetchUserStatsDay } from '../../redux/userStatsDay/operations';
 
-import { useState } from 'react';
-import {
-  AddButton,
-  AddText,
-  BtnCancel,
-  BtnConfirm,
-  ButtonContainer,
-  Container,
-  Description,
-  FatAndCalories,
-  DiaryForm,
-  Img,
-  ImgDescriptionContainer,
-  InputCalories,
-  InputCarbonoh,
-  InputContainer,
-  InputFat,
-  InputProduct,
-  InputProtein,
-  ScrollableContainer,
-  Title,
-} from './RecordDiaryModal.styled';
+import { Formik, ErrorMessage, Field } from 'formik';
+import * as Yup from 'yup';
+import { v4 as uuidv4 } from 'uuid';
 
 import { addFood } from '../../redux/userStatsDay/operations';
-import { fetchUserStatsDay } from '../../redux/userStatsDay/operations';
 
 import { Backdrop } from '../MainPage/AddWaterModal/AddWaterModal.styled';
 
+import {
+  Container,
+  ScrollableContainer,
+  InputContainer,
+  InputProduct,
+  InputCarbonoh,
+  InputProtein,
+  InputFat,
+  InputCalories,
+  Title,
+  DiaryForm,
+  Description,
+  ImgDescriptionContainer,
+  ErrorText,
+  AddButton,
+  AddText,
+  BtnConfirm,
+  BtnCancel,
+  ButtonContainer,
+  DelButton,
+} from './RecordDiaryModal.styled';
+
+import { ReactComponent as BreakfastImg } from '../../img/Diary/breakfast.svg';
+import { ReactComponent as LunchImg } from '../../img/Diary/lunch.svg';
+import { ReactComponent as DinnerImg } from '../../img/Diary/dinner.svg';
+import { ReactComponent as SnackImg } from '../../img/Diary/snack.svg';
 import { ReactComponent as Trash } from '../../img/MainPages/trash.svg';
 import { ReactComponent as Add } from '../../img/RecordDiaryModal/add_green.svg';
 
-const initialValues = {
-  mealEntries: [
-    {
-      product: '',
-      carbonoh: '',
-      protein: '',
-      fat: '',
-      calories: '',
-    },
-  ],
-};
-
-const DiarySchema = Yup.object().shape({
-  mealEntries: Yup.array().of(
-    Yup.object().shape({
-      product: Yup.string().required('Please Enter product name'),
-      carbonoh: Yup.number()
+const validationSchema = Yup.object({
+  fields: Yup.array().of(
+    Yup.object({
+      dishName: Yup.string().required('Please Enter product name'),
+      carbonohidrates: Yup.number()
         .min(0, 'You cannot enter less than 0')
         .required('Please enter Carboh.'),
       protein: Yup.number()
@@ -65,28 +58,40 @@ const DiarySchema = Yup.object().shape({
     })
   ),
 });
+
 const RecordDiaryModal = ({ onClose, selectedMeal }) => {
   const dispatch = useDispatch();
-  const [mealEntries, setMealEntries] = useState([
-    {
-      product: '',
-      carbonoh: '',
-      protein: '',
-      fat: '',
-      calories: '',
-    },
-  ]);
 
-  const handleInputChange = (e, index) => {
-    const { name, value } = e.target;
-    const fieldName = name.split('.').pop();
-    const updatedEntries = [...mealEntries];
-    updatedEntries[index] = {
-      ...updatedEntries[index],
-      [fieldName]: value,
-    };
-    setMealEntries(updatedEntries);
+  const typeMeal = selectedMeal.toLowerCase();
+  const initialValues = {
+    fields: [
+      {
+        ident: uuidv4(),
+        mealType: `${typeMeal}`,
+        date: `${formatDate(new Date())}`,
+        dishName: '',
+        carbonohidrates: '',
+        protein: '',
+        fat: '',
+        calories: '',
+      },
+    ],
   };
+
+  const [formData, setFormData] = useState({
+    fields: [
+      {
+        ident: uuidv4(),
+        mealType: `${typeMeal}`,
+        date: `${formatDate(new Date())}`,
+        dishName: '',
+        carbonohidrates: '',
+        protein: '',
+        fat: '',
+        calories: '',
+      },
+    ],
+  });
 
   function formatDate(date) {
     let dd = date.getDate();
@@ -101,148 +106,209 @@ const RecordDiaryModal = ({ onClose, selectedMeal }) => {
     return yyyy + '-' + mm + '-' + dd;
   }
 
-  const handleSubmit = (values, { resetForm }) => {
-    const formattedDate = formatDate(new Date());
-    const dataToSend = {
-      dishName: values.mealEntries[0].product,
-      mealType: selectedMeal.title,
-      calories: values.mealEntries[0].calories,
-      date: formattedDate,
-      carbonohidrates: values.mealEntries[0].carbonoh,
-      fat: values.mealEntries[0].fat,
-      protein: values.mealEntries[0].protein,
-    };
-
-    console.log(dataToSend);
-    dispatch(addFood(dataToSend));
-    dispatch(fetchUserStatsDay());
-
-    resetForm();
-  };
-
-  const handleAddMore = () => {
-    // Додає новий блок інпутів до масиву mealEntries
-    setMealEntries((prevEntries) => [
-      ...prevEntries,
-      {
-        product: '',
-        carbonoh: '',
-        protein: '',
-        fat: '',
-        calories: '',
-      },
-    ]);
-  };
-
-  const handleDelete = (index) => {
-    // Видалення блоку інпутів за вказаним індексом
-    setMealEntries((prevEntries) => [
-      ...prevEntries.slice(0, index),
-      ...prevEntries.slice(index + 1),
-    ]);
-  };
-
-  const handleCloseModal = (e) => {
-    (e.code === 'Escape' || e.currentTarget === e.target) && onClose();
+  const handleAddMore = (e) => {
+    e.preventDefault();
+    setFormData({
+      fields: [
+        ...formData.fields,
+        {
+          ident: uuidv4(),
+          mealType: `${typeMeal}`,
+          date: `${formatDate(new Date())}`,
+          dishName: '',
+          carbonohidrates: '',
+          protein: '',
+          fat: '',
+          calories: '',
+        },
+      ],
+    });
   };
 
   useEffect(() => {
-    window.addEventListener('keydown', handleCloseModal);
-    return () => {
-      window.removeEventListener('keydown', handleCloseModal);
+    const handleKeyDown = (event) => {
+      if (event.code === 'Escape') {
+        onClose();
+      }
     };
-  });
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
+
+  const handleOverlayClick = (event) => {
+    if (event.currentTarget === event.target) {
+      onClose();
+    }
+  };
+
+  const handleChange = (ident, fieldId, newValue) => {
+    const updatedFields = formData.fields.map((field) =>
+      field.ident === ident ? { ...field, [fieldId]: newValue } : field
+    );
+    setFormData({ fields: updatedFields });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    formData.fields.map((field) => {
+      const { ident, ...rest } = field;
+      dispatch(addFood(rest));
+    });
+
+    dispatch(fetchUserStatsDay());
+    onClose();
+  };
+
+  const handleDelete = (index) => {
+    let updatedFields = formData.fields.filter(
+      (field) => field.ident !== index
+    );
+    setFormData({ fields: updatedFields });
+  };
 
   return (
-    <Backdrop onClick={handleCloseModal}>
+    <Backdrop onClick={handleOverlayClick}>
       <Container>
         <Title>Record your meal</Title>
-        <ImgDescriptionContainer>
-          {selectedMeal.image && (
-            <Img src={selectedMeal.image} alt={selectedMeal.title} />
-          )}
-          <Description>{selectedMeal.title}</Description>
-        </ImgDescriptionContainer>
+        {typeMeal === 'breakfast' && (
+          <ImgDescriptionContainer>
+            <BreakfastImg />
+            <Description>Breakfast</Description>
+          </ImgDescriptionContainer>
+        )}
+        {typeMeal === 'lunch' && (
+          <ImgDescriptionContainer>
+            <LunchImg />
+            <Description>Lunch</Description>
+          </ImgDescriptionContainer>
+        )}
+        {typeMeal === 'dinner' && (
+          <ImgDescriptionContainer>
+            <DinnerImg />
+            <Description>Dinner</Description>
+          </ImgDescriptionContainer>
+        )}
+        {typeMeal === 'snack' && (
+          <ImgDescriptionContainer>
+            <SnackImg />
+            <Description>Snack</Description>
+          </ImgDescriptionContainer>
+        )}
         <Formik
           initialValues={initialValues}
-          validationSchema={DiarySchema}
+          validationSchema={validationSchema}
           onSubmit={handleSubmit}
-          validateOnChange={true}
+          validateOnBlur={true}
+          validateOnChange={false}
         >
-          {({ isValid }) => {
+          {({ errors, touched, isValid }) => {
             return (
-              <DiaryForm onSubmit={handleSubmit} autoComplete="off">
+              <DiaryForm onSubmit={handleSubmit}>
                 <ScrollableContainer>
-                  {mealEntries.map((entry, index) => (
-                    <InputContainer key={index}>
-                      <InputProduct
-                        type="text"
-                        name={`mealEntries[${index}].product`}
+                  {formData.fields.map((field) => (
+                    <InputContainer key={field.ident}>
+                      <Field
+                        as={InputProduct}
+                        name={`${field.ident}.dishName`}
+                        type="string"
+                        value={field.dishName}
+                        onChange={(e) =>
+                          handleChange(field.ident, 'dishName', e.target.value)
+                        }
                         placeholder="The name of the product or dish"
-                        value={entry.product}
-                        onChange={(e) => handleInputChange(e, index)}
+                        borderstyle={
+                          errors.dishName && touched.dishName
+                            ? '1px solid red'
+                            : ''
+                        }
                       />
-                      <ErrorMessage
-                        name={`mealEntries[${index}].product`}
-                        component="div"
-                        style={{ color: '#e74a3b', display: 'block' }}
-                      />
-
-                      <InputCarbonoh
+                      <ErrorMessage name={`${field.ident}.dishName`}>
+                        {(msg) => <ErrorText>{msg}</ErrorText>}
+                      </ErrorMessage>
+                      <Field
+                        as={InputCarbonoh}
+                        name={`${field.ident}.carbonohidrates`}
                         type="number"
-                        name={`mealEntries[${index}].carbonoh`}
-                        placeholder="Carbonoh"
-                        value={entry.carbonoh}
-                        onChange={(e) => handleInputChange(e, index)}
+                        value={field.carbonohidrates}
+                        min={0}
+                        onChange={(e) =>
+                          handleChange(
+                            field.ident,
+                            'carbonohidrates',
+                            e.target.value
+                          )
+                        }
+                        placeholder="Carbonohidrates."
+                        borderstyle={
+                          errors.carbonohidrates && touched.carbonohidrates
+                            ? '1px solid red'
+                            : ''
+                        }
                       />
-                      <ErrorMessage
-                        name={`mealEntries[${index}].carbonoh`}
-                        component="div"
-                        style={{
-                          color: '#e74a3b',
-                          display: isValid ? 'none' : 'block',
-                        }}
-                      />
-                      <InputProtein
+                      <ErrorMessage name={`${field.ident}.carbonohidrates`}>
+                        {(msg) => <ErrorText>{msg}</ErrorText>}
+                      </ErrorMessage>
+                      <Field
+                        as={InputProtein}
+                        name={`${field.ident}.protein`}
                         type="number"
-                        name={`mealEntries[${index}].protein`}
+                        value={field.protein}
+                        min={0}
+                        onChange={(e) =>
+                          handleChange(field.ident, 'protein', e.target.value)
+                        }
                         placeholder="Protein"
-                        value={entry.protein}
-                        onChange={(e) => handleInputChange(e, index)}
+                        borderstyle={
+                          errors.protein && touched.protein
+                            ? '1px solid red'
+                            : ''
+                        }
                       />
-                      <ErrorMessage
-                        name={`mealEntries[${index}].protein`}
-                        component="div"
-                        style={{ color: '#e74a3b' }}
+                      <ErrorMessage name={`${field.ident}.protein`}>
+                        {(msg) => <ErrorText>{msg}</ErrorText>}
+                      </ErrorMessage>
+                      <Field
+                        as={InputFat}
+                        name={`${field.ident}.fat`}
+                        type="number"
+                        value={field.fat}
+                        min={0}
+                        onChange={(e) =>
+                          handleChange(field.ident, 'fat', e.target.value)
+                        }
+                        placeholder="Fat"
+                        borderstyle={
+                          errors.fat && touched.fat ? '1px solid red' : ''
+                        }
                       />
-                      <FatAndCalories>
-                        <InputFat
-                          type="number"
-                          name={`mealEntries[${index}].fat`}
-                          placeholder="Fat"
-                          value={entry.fat}
-                          onChange={(e) => handleInputChange(e, index)}
-                        />
-                        <ErrorMessage
-                          name={`mealEntries[${index}].fat`}
-                          component="div"
-                          style={{ color: '#e74a3b' }}
-                        />
-                        <InputCalories
-                          type="number"
-                          name={`mealEntries[${index}].calories`}
-                          placeholder="Calories"
-                          value={entry.calories}
-                          autoComplete="off"
-                          onChange={(e) => handleInputChange(e, index)}
-                        />
-                        <ErrorMessage
-                          name={`mealEntries[${index}].calories`}
-                          component="div"
-                          style={{ color: '#e74a3b' }}
-                        />
-                        <Trash onClick={() => handleDelete(index)} />
-                      </FatAndCalories>
+                      <ErrorMessage name={`${field.ident}.fat`}>
+                        {(msg) => <ErrorText>{msg}</ErrorText>}
+                      </ErrorMessage>
+                      <Field
+                        as={InputCalories}
+                        name={`${field.ident}.calories`}
+                        type="number"
+                        value={field.calories}
+                        min={0}
+                        onChange={(e) =>
+                          handleChange(field.ident, 'calories', e.target.value)
+                        }
+                        placeholder="Calories"
+                        borderstyle={
+                          errors.calories && touched.calories
+                            ? '1px solid red'
+                            : ''
+                        }
+                      />
+                      <ErrorMessage name={`${field.ident}.calories`}>
+                        {(msg) => <ErrorText>{msg}</ErrorText>}
+                      </ErrorMessage>
+                      <DelButton>
+                        <Trash onClick={() => handleDelete(field.ident)} />
+                      </DelButton>
                     </InputContainer>
                   ))}
                   <AddButton type="button" onClick={handleAddMore}>

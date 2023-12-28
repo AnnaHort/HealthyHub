@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   DiaryBlockContainer,
   DiaryBlockTitleWrapper,
@@ -27,12 +27,12 @@ import { ReactComponent as BasketIcon } from '../../../img/Diary/basket.svg';
 
 const DiaryBlock = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); 
-   const [selectedMeal, setSelectedMeal] = useState({});
+   const [selectedMeal, setSelectedMeal] = useState("");
 
 
-  const openModal = (mealTitle, mealImage) => {
+  const openModal = (mealTitle) => {
     setIsModalOpen(true);
-    setSelectedMeal({ title: mealTitle, image: mealImage });
+    setSelectedMeal(mealTitle);
   };
 
   const closeModal = () => {
@@ -81,6 +81,7 @@ const DiaryBlock = () => {
   ];
 
   return (
+    <>
     <DiaryBlockContainer>
       <DiaryBlockTitleWrapper>
         <DiaryBlockTitle>Diary</DiaryBlockTitle>
@@ -123,7 +124,7 @@ const DiaryBlock = () => {
                 </DeleteButton>
               </NutrientList>
             ) : (
-              <AddMealButton onClick={() => openModal(meal.title, meal.image)}>
+              <AddMealButton onClick={() => openModal(meal.title)}>
                 <PlusIcon />
                 Record your meal
               </AddMealButton>
@@ -135,6 +136,7 @@ const DiaryBlock = () => {
         <RecordDiaryModal onClose={closeModal} selectedMeal={selectedMeal} />
       )}
     </DiaryBlockContainer>
+    </>
   );
 };
 
