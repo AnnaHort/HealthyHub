@@ -24,7 +24,7 @@ const RecommendedFoodPage = lazy(() => import('./components/RecommendedFoodPage/
 const SignUpPage = lazy(() => import('./pages/SignUpPage/SignUpPage'));
 
 
-import selectIsLoggedIn, { selectIsLoading } from './redux/auth/authSelectors';
+import { selectIsLoading } from './redux/auth/authSelectors';
 import { selectIsLoadingDashboard } from './redux/dashboardPage/dashboardSelector';
 import { getIsLoadingRecommendedFood } from './redux/recommendedFood/selector';
 import { selectIsLoadingUpdate } from './redux/updateUser/updateSelectors';
@@ -34,7 +34,7 @@ import { fetchCurentUser } from './redux/auth/authOperations';
 
 function App() {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
   const LoadingAuth = useSelector(selectIsLoading);
   const LoadingDashboard = useSelector(selectIsLoadingDashboard);
   const LoadingRecFood = useSelector(getIsLoadingRecommendedFood);
