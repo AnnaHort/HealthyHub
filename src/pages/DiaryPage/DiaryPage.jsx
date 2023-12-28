@@ -16,19 +16,26 @@ import {
   DishListContainer,
   DishNameContainer,
   DiaryBoxContainer,
+  DeleteButton,
 } from './DiaryPage.styled';
+
+import RecordDiaryModal from '../../components/RecordDiaryModal/RecordDiaryModal';
 
 import BreakfastImg from '../../img/Diary/breakfast.svg';
 import LunchImg from '../../img/Diary/lunch.svg';
 import DiaryBack from '../../img/Diary/arrow-back.svg';
 import DinnerImg from '../../img/Diary/dinner.svg';
 import SnackImg from '../../img/Diary/snack.svg';
+import { ReactComponent as Trash } from '../../img/MainPages/trash.svg';
 
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchUserStatsDay } from '/src/redux/userStatsDay/operations.js';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { delFoodId } from '../../redux/userStatsDay/operations';
+import { fetchCurentUser } from '../../redux/auth/authOperations';
 
 const getMealTypeImage = (mealType) => {
   switch (mealType) {
@@ -52,6 +59,9 @@ const getSumByField = (data, field) => {
 const DiaryPage = () => {
   const [foodData, setFoodData] = useState();
   const dispatch = useDispatch();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedMeal, setSelectedMeal] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -78,10 +88,32 @@ const DiaryPage = () => {
     }, {});
   };
 
+
   // Групуємо дані за типом прийому їжі
   const groupedData = groupByMealType(foodData);
 
   const allMealTypes = ['snack', 'dinner', 'lunch', 'breakfast'];
+
+  const openModal = (mealTitle) => {
+    setIsModalOpen(true);
+    setSelectedMeal(mealTitle);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleDeleteFoodId = (id) => {
+    try{
+    dispatch(delFoodId(id));
+    } catch (error) {
+      console.log(error);
+    } finally {
+      dispatch(fetchUserStatsDay());
+      dispatch(fetchCurentUser());
+
+    }
+  }
 
   return (
     <>
@@ -124,7 +156,6 @@ const DiaryPage = () => {
                 )}
               </DiaryBox>
             </DiaryBoxContainer>
-
             <RecordContainer>
               <DishListContainer>
                 {groupedData[mealType] && groupedData[mealType].length > 0
@@ -147,16 +178,26 @@ const DiaryPage = () => {
                             <MobileSpan>Fat.</MobileSpan>
                             {item.fat}
                           </DishDetails>
+                          <DeleteButton
+                          onClick={() => handleDeleteFoodId(item._id)}
+                        >
+                          <Trash />
+                        </DeleteButton>
                         </AboutDishContainer>
                       </FoodInfoContainer>
                     ))
                   : null}
               </DishListContainer>
 
-              <DearyButton>+ Record your meal</DearyButton>
+              <DearyButton onClick={() => openModal(mealType)}>
+                + Record your meal
+              </DearyButton>
             </RecordContainer>
           </div>
         ))}
+        {isModalOpen && (
+          <RecordDiaryModal onClose={closeModal} selectedMeal={selectedMeal} />
+        )}
       </DiaryContainer>
     </>
   );

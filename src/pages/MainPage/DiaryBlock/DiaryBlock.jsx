@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { getUserStatsFoodSevising } from '../../../redux/userStatsDay/selectors';
+import { delFood } from '../../../redux/userStatsDay/operations';
+import { fetchUserStatsDay } from '../../../redux/userStatsDay/operations';
 
 import {
   DiaryBlockContainer,
@@ -28,8 +30,10 @@ import { ReactComponent as DinnerImg } from '../../../img/Diary/dinner.svg';
 import { ReactComponent as SnackImg } from '../../../img/Diary/snack.svg';
 import { ReactComponent as PlusIcon } from '../../../img/Diary/plus.svg';
 import { ReactComponent as BasketIcon } from '../../../img/Diary/basket.svg';
+import { fetchCurentUser } from '../../../redux/auth/authOperations';
 
 const DiaryBlock = () => {
+  const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMeal, setSelectedMeal] = useState('');
   const [foodSetvisingForMealType, setFoodSetvisingForMealType] = useState([]);
@@ -109,6 +113,12 @@ const DiaryBlock = () => {
     }
   }, [foodSetvising]);
 
+  const handleDeleteMeal = (type) => {
+    dispatch(delFood(type));
+    dispatch(fetchUserStatsDay());
+    dispatch(fetchCurentUser());
+  }
+
   return (
     <>
       <DiaryBlockContainer>
@@ -149,7 +159,7 @@ const DiaryBlock = () => {
                         <NutrientValue>{meal.nutrients.fat}</NutrientValue>
                       </NutrientItem>
                     )}
-                    <DeleteButton>
+                    <DeleteButton onClick={() => handleDeleteMeal(meal.type)}>
                       <BasketIcon />
                     </DeleteButton>
                   </NutrientList>

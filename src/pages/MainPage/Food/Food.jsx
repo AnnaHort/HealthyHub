@@ -37,6 +37,7 @@ export const FoodInfo = ({ dailyCalories, amountCalories }) => {
   const fatAmount = useSelector(getFatAmount);
   const userMacroelements = useSelector(selectUserMacroelements);
 
+
   useEffect(() => {
     if (userMacroelements !== undefined) {
       setMacroelements(userMacroelements);
@@ -52,7 +53,7 @@ export const FoodInfo = ({ dailyCalories, amountCalories }) => {
         <CaloriesChart>
           <CircleChart
             dailyCalories={dailyCalories}
-            amountCalories={amountCalories}
+            inputValue={amountCalories}
             chartBcg={caloriesChartBcg}
           />
           <ChartInfoWrap>

@@ -246,3 +246,7 @@ export const DishDetails = styled.p`
     width: 80px;
   }
 `;
+export const DeleteButton = styled.button`
+  background-color: transparent;
+  border: none;
+`;
