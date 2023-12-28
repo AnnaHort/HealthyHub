@@ -50,15 +50,21 @@ export const AddWaterModal = ({ handleModal }) => {
   }
 
   const handleSubmit = (values, { resetForm }) => {
-    const { waterIntake } = values;
-    dispatch(
-      addWater({ amount: `${waterIntake}`, date: `${formatDate(new Date())}` })
-    );
-    
-    dispatch(fetchUserStatsDay());
-
-    resetForm();
-    handleModal();
+    try {
+      const { waterIntake } = values;
+      dispatch(
+        addWater({
+          amount: `${waterIntake}`,
+          date: `${formatDate(new Date())}`,
+        })
+      );
+    } catch (error) {
+      console.error('Data error', error.message);
+    } finally {
+      dispatch(fetchUserStatsDay());
+      resetForm();
+      handleModal();
+    }
   };
 
   return (

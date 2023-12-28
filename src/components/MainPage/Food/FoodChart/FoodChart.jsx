@@ -50,13 +50,12 @@ export const CircleChart = ({ dailyCalories, amountCalories, chartBcg }) => {
     amountCalories = dailyCalories;
     chartBcg = 'red';
   }
-  const emptyValue = dailyCalories - amountCalories;
 
   const data = {
     datasets: [
       {
         label: [],
-        data: [amountCalories, emptyValue],
+        data: [dailyCalories, amountCalories],
         backgroundColor: [chartBcg, 'transparent'],
         borderColor: ['rgba(255, 99, 132, 1)'],
         borderWidth: 0,

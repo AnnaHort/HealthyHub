@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import { CircleChart } from '../../../components/MainPage/Food/FoodChart';
 import { FoodCard } from '../../../components/MainPage/Food/FoodCard';
 import {
@@ -13,25 +14,36 @@ import {
 
 import {
   getCarbonohidratesAmount,
-  getCarbonohidratesLeft,
   getFatAmount,
-  getFatLeft,
   getProteinAmount,
-  getProteinLeft,
 } from '../../../redux/userStatsDay/selectors';
 
-const carbBcg = 'rgba(255, 196, 247, 1)';
-const proteinBcg = 'rgba(255, 243, 183, 1)';
-const fatBcg = 'rgba(182, 182, 182, 1)';
+import { selectUserMacroelements } from '../../../redux/auth/authSelectors';
+
+const carbBcg = '#FFC4F7';
+const proteinBcg = '#FFF3B7';
+const fatBcg = '#B6B6B6';
 const caloriesChartBcg = '#45FFBC';
 
 export const FoodInfo = ({ dailyCalories, amountCalories }) => {
-  const carbs = useSelector(getCarbonohidratesLeft);
+  const [macroelements, setMacroelements] = useState({
+    carbonohidrates: 0,
+    protein: 0,
+    fat: 0,
+  });
+
   const carbsAmount = useSelector(getCarbonohidratesAmount);
-  const protein = useSelector(getFatLeft);
-  const proteinAmount = useSelector(getFatAmount);
-  const fat = useSelector(getProteinLeft);
-  const fatAmount = useSelector(getProteinAmount);
+  const proteinAmount = useSelector(getProteinAmount);
+  const fatAmount = useSelector(getFatAmount);
+  const userMacroelements = useSelector(selectUserMacroelements);
+
+  useEffect(() => {
+    if (userMacroelements !== undefined) {
+      setMacroelements(userMacroelements);
+    }
+  }, [userMacroelements]);
+
+  const { carbonohidrates, protein, fat } = macroelements;
 
   return (
     <div>
@@ -52,7 +64,7 @@ export const FoodInfo = ({ dailyCalories, amountCalories }) => {
           <FoodCard
             title={'Carbonohidrates'}
             chartBcg={carbBcg}
-            elementGoal={carbs}
+            elementGoal={carbonohidrates}
             elementValue={carbsAmount}
           />
           <FoodCard
