@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { toast } from 'react-toastify';
 
 import {
@@ -34,11 +34,13 @@ import {
 
 import { fetchUserStatsDay } from '../../redux/userStatsDay/operations';
 import { fetchCurentUser } from '../../redux/auth/authOperations';
-
+import {selectUserGoals} from "../../redux/updateUser/updateSelectors.js"
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 export const TargetSelectionModal = ({ onCloseButtonClick }) => {
-  const [goal, setGoal] = useState('');
+  const currentGoal = useSelector(selectUserGoals);
+  console.log(currentGoal)
+  const [goal, setGoal] = useState(currentGoal || '');
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
