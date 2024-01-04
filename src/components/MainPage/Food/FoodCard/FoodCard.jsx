@@ -10,7 +10,7 @@ import {
   Percentage,
 } from './FoodCard.styled';
 
-export const FoodCard = (props) => {
+export const FoodCard = props => {
   const { title, chartBcg, elementGoal, elementValue } = props;
 
   let left = elementGoal - elementValue;
