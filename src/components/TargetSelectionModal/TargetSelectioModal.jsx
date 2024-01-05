@@ -1,3 +1,8 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector} from 'react-redux';
+import { toast } from 'react-toastify';
+
 import {
   Form,
   List,
@@ -20,23 +25,22 @@ import { ReactComponent as CloseCircle } from '../../img/Header/close-circle.svg
 import LooseFatMen from '../../Emoji/LoseFatMen.svg';
 import MaintakeGirl from '../../Emoji/MaintakeGirl.svg';
 import GainMuscle from '../../Emoji/GainMuscle.svg';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
-// import { selectUpdateUserStatus } from '../../redux/updateUser/updateSelectors';
+
 import {
   setUpdateUserFalse,
-  updateUser,
+  updateUserGoal,
+  updateUser
 } from '../../redux/updateUser/updateOperations';
-import { useEffect, useState } from 'react';
 
+import { fetchUserStatsDay } from '../../redux/userStatsDay/operations';
+import { fetchCurentUser } from '../../redux/auth/authOperations';
+import {selectUserGoals} from "../../redux/updateUser/updateSelectors.js"
 axios.defaults.baseURL = 'https://healthhub-backend.onrender.com';
 
 export const TargetSelectionModal = ({ onCloseButtonClick }) => {
-  const [goal, setGoal] = useState('');
-  // const [userData, setUserData] = useState();
-
-  // const userUpdate = useSelector(selectUpdateUserStatus);
+  const currentGoal = useSelector(selectUserGoals);
+  console.log(currentGoal)
+  const [goal, setGoal] = useState(currentGoal || '');
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
@@ -47,7 +51,8 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
     };
 
     try {
-      const response = await axios.put('/api/user/update', newUserData);
+      const response = await axios.put('/api/user/goal', newUserData);
+      dispatch(updateUserGoal(newUserData));
       dispatch(updateUser(newUserData));
       dispatch(setUpdateUserFalse());
       toast.success(response.data.message, { autoClose: 2000 });
@@ -56,22 +61,11 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
     } catch (error) {
       console.error('Data error', error.message);
       toast.error('Error updating user information');
+    } finally {
+      dispatch(fetchUserStatsDay());
+      dispatch(fetchCurentUser());
     }
   };
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get('api/user/current');
-  //       console.log(response.data.goal);
-  //       setGoal(response.data.goal);
-  //       setUserData(response.data);
-  //     } catch (error) {
-  //       console.error('Data error', error.message);
-  //     }
-  //   };
-  //   fetchData();
-  // }, [userUpdate]);
 
   const handleCloseModal = (e) => {
     (e.code === 'Escape' || e.currentTarget === e.target) &&
@@ -85,9 +79,6 @@ export const TargetSelectionModal = ({ onCloseButtonClick }) => {
     };
   });
 
-  // if (!userData) {
-  //   return <div>Loading...</div>;
-  // }
   return (
     <Backdrop onClick={handleCloseModal}>
       <ModalLayout>

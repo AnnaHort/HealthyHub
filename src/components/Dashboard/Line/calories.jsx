@@ -91,7 +91,6 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
   // хранилище данных
   const [chartData, setChartData] = useState([]);
   const [averageFood, setAverageFood] = useState(0);
-
   // отслеживание наличия данных
   const [hasData, setHasData] = useState(true);
 
@@ -103,11 +102,11 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
       setChartData([]);
       return;
     }
-
     const renderDays = () => {
       const formatDate = new Date(2023, selectedMonth, 0);
       const daysInMonth = formatDate.getDate();
       // создание массива длинной в колличество дней в месяце
+
       const days = Array.from({ length: daysInMonth }, (_, index) => 0);
 
       try {
@@ -143,7 +142,6 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
   const formatDate = new Date(2023, selectedMonth, 0).getDate();
   // создаём новый массив для лэйбла от 1 до колличества дней в месяце
   const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
-
   // вычисление среднего колличесвта употребляемых каллорий
  useEffect(() => {
    if (!data || data.length === 0 || chartData.length === 0) {
@@ -188,6 +186,7 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
    // Обновление hasData в зависимости от наличия данных
    setHasData(filteredData.length > 0);
  }, [data, chartData, selectedMonth]);
+
 
   // Функция для преобразования названия месяца в числовой формат
   function getMonthNumber(monthName) {
