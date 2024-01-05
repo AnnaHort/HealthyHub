@@ -96,7 +96,6 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
   const [hasData, setHasData] = useState(true);
 
   useEffect(() => {
-    console.log('Entering useEffect for rendering days...');
     // проверка есть ли дата массивом, и меет ли какие-то данные, если нет, то график устанавливается в ноль
     if (!data || !Array.isArray(data) || data.length === 0) {
       console.error(`Invalid or missing 'data' array`);
@@ -108,7 +107,7 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
     const renderDays = () => {
       const formatDate = new Date(2023, selectedMonth, 0);
       const daysInMonth = formatDate.getDate();
-      // создвние массива длинной в колличество дней в месяце
+      // создание массива длинной в колличество дней в месяце
       const days = Array.from({ length: daysInMonth }, (_, index) => 0);
 
       try {
@@ -147,9 +146,7 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
 
   // вычисление среднего колличесвта употребляемых каллорий
  useEffect(() => {
-   console.log('Entering useEffect for calculating average water...');
    if (!data || data.length === 0 || chartData.length === 0) {
-     console.error(`No data available for the current month`);
      setHasData(false);
      setAverageFood(0);
      return;
