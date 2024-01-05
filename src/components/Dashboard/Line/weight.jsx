@@ -162,7 +162,6 @@ const WeightCharts = ({ data, selectedMonths }) => {
   const [hasData, setHasData] = useState(true);
 
   useEffect(() => {
-    console.log('Entering useEffect for rendering days...');
     // проверка есть ли дата массивом, и меет ли какие-то данные
     if (!data || !Array.isArray(data) || data === 0) {
       console.error(`Invalid or missing 'data' array`);
@@ -207,16 +206,9 @@ const WeightCharts = ({ data, selectedMonths }) => {
     renderDays();
   }, [data, selectedMonths]);
 
-  // // содержит колличество дней в текущем месяце
-  // const formatDate = new Date(2024, selectedMonths, 0).getDate();
-  // // создаём новый массив для лэйбла от 1 до колличества дней в месяце
-  // const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
-
   // вычисление среднего колличесвта употребляемых каллорий
   useEffect(() => {
-    console.log('Entering useEffect for calculating average weght...');
     if (!data || data.length === 0 || chartData.length === 0) {
-      console.error(`No data available for the current month`);
       setHasData(false);
       setAverageWeight(0);
       return;
