@@ -94,7 +94,6 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
   const [hasData, setHasData] = useState(true);
 
   useEffect(() => {
-    console.log('Entering useEffect for rendering days...');
     // проверка есть ли дата массивом, и меет ли какие-то данные, если нет, то график устанавливается в ноль
     if (!data || !Array.isArray(data) || data.length === 0) {
       console.error(`Invalid or missing 'data' array`);
@@ -102,11 +101,11 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
       setChartData([]);
       return;
     }
-
-    const renderDays = async () => {
+    const renderDays = () => {
       const formatDate = new Date(2023, selectedMonth, 0);
       const daysInMonth = formatDate.getDate();
-      // создвние массива длинной в колличество дней в месяце
+      // создание массива длинной в колличество дней в месяце
+
       const days = Array.from({ length: daysInMonth }, (_, index) => 0);
 
       try {
@@ -142,57 +141,51 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
   const formatDate = new Date(2023, selectedMonth, 0).getDate();
   // создаём новый массив для лэйбла от 1 до колличества дней в месяце
   const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
+  // вычисление среднего колличесвта употребляемых каллорий
+ useEffect(() => {
+   if (!data || data.length === 0 || chartData.length === 0) {
+     setHasData(false);
+     setAverageFood(0);
+     return;
+   }
 
-  useEffect(() => {
-    console.log('Entering useEffect for calculating average food...');
-    if (!data || data.length === 0 || chartData.length === 0) {
-      console.error(`No data available for the current month`);
-      setHasData(false);
-      setAverageFood(0);
-      return;
-    }
+   // Получаем текущую дату
+   const currentDate = new Date();
+   const filteredData = data.filter((item) => {
+     if (!item.data) {
+       console.error(`Missing 'data' property in day object`);
+       return false;
+     }
 
+     const [day, month] = item.data.split(', ');
+     const itemDate = new Date(2023, getMonthNumber(month), day);
 
-    // Получаем текущую дату
-    const currentDate = new Date();
-    const filteredData = data.filter((item) => {
-      if (!item.data) {
-        console.error(`Missing 'data' property in day object`);
-        return false;
-    
-      }
+     return (
+       itemDate.getMonth() === currentDate.getMonth() &&
+       itemDate.getFullYear() === currentDate.getFullYear()
+     );
+   });
 
-      const [day, month] = item.data.split(', ');
-      const itemDate = new Date(2023, getMonthNumber(month), day);
+   if (chartData.length > 0) {
+     // Вычисляем среднее количество воды для текущего месяца
+     const filteredChartData = chartData.filter((calories) => !isNaN(calories));
+     if (filteredChartData.length > 0) {
+       const total = filteredChartData.reduce(
+         (acc, calories) => acc + calories,
+         0
+       );
+       const calculatedAveragecalories = total / filteredChartData.length;
+       setAverageFood(Math.floor(calculatedAveragecalories));
+     } else {
+       // если данных нет, среднее значение устанавливаем в 0
+       setAverageFood(0);
+     }
+   }
 
-      return (
-        itemDate.getMonth() === currentDate.getMonth() &&
-        itemDate.getFullYear() === currentDate.getFullYear()
-      );
-    });
+   // Обновление hasData в зависимости от наличия данных
+   setHasData(filteredData.length > 0);
+ }, [data, chartData, selectedMonth]);
 
-
-    if (chartData.length > 0) {
-      // Вычисляем среднее количество воды для текущего месяца
-      const filteredChartData = chartData.filter(
-        (calories) => !isNaN(calories)
-      );
-      if (filteredChartData.length > 0) {
-        const total = filteredChartData.reduce(
-          (acc, calories) => acc + calories,
-          0
-        );
-        const calculatedAveragecalories = total / filteredChartData.length;
-        setAverageFood(Math.floor(calculatedAveragecalories));
-      } else {
-        // если данных нет, среднее значение устанавливаем в 0
-        setAverageFood(0);
-      }
-    }
-
-    // Обновление hasData в зависимости от наличия данных
-    setHasData(filteredData.length > 0);
-  }, [data, chartData, selectedMonth]);
 
   // Функция для преобразования названия месяца в числовой формат
   function getMonthNumber(monthName) {
