@@ -154,145 +154,152 @@ const AverageValueStyled = styled('p')({
 });
 
 const WeightCharts = ({ data, selectedMonths }) => {
-  // хранилище данных
-  const [chartData, setChartData] = useState([]);
-  const [averageWeight, setAverageWeight] = useState(0);
+//   // хранилище данных
+//   const [chartData, setChartData] = useState([]);
+//   const [averageWeight, setAverageWeight] = useState(0);
 
-  // отслеживание наличия данных
-  const [hasData, setHasData] = useState(true);
+//   // отслеживание наличия данных
+//   const [hasData, setHasData] = useState(true);
 
-  useEffect(() => {
-    // проверка есть ли дата массивом, и меет ли какие-то данные
-    if (!data || !Array.isArray(data) || data === 0) {
-      console.error(`Invalid or missing 'data' array`);
-      setHasData(false);
-      setChartData([]);
-      return;
-    }
+//   useEffect(() => {
+//     // проверка есть ли дата массивом, и меет ли какие-то данные
+//     if (!data || !Array.isArray(data) || data === 0) {
+//       console.error(`Invalid or missing 'data' array`);
+//       setHasData(false);
+//       setChartData([]);
+//       return;
+//     }
 
-    const renderDays = () => {
-      const formatDate = new Date(2024, selectedMonths, 0);
-      const daysInMonth = formatDate.getDate();
+//     const renderDays = () => {
+//       const formatDate = new Date(2024, selectedMonths, 0);
+//       const daysInMonth = formatDate.getDate();
 
-      // создание массива длинной в колличество дней в месяце
-      const days = Array.from({ length: daysInMonth }, 0);
+//       // создание массива длинной в колличество дней в месяце
+//       const days = Array.from({ length: daysInMonth }, () => 0);
 
-      try {
-        // выполняем итерацию по каждому эл.[]
-        data.forEach((day) => {
-          if (day.data) {
-            const daysIndex = Number(day.data.split(',')[0]) - 1;
-            // проверяем что индекс в диапазоне текущих дней в месяце
-            if (daysIndex >= 0 && daysIndex < daysInMonth) {
-              days[daysIndex] = day.weight || 0;
-              // если выходит за переделы диапазона
-            } else {
-              console.error(`Invalid day index: ${daysIndex}`);
-            }
-            // если обьект не содержит свойство дата
-          } else {
-            console.error(`Missing 'data' property in day object`);
-          }
-        });
-        setChartData(days);
-        setHasData(true);
-      } catch (error) {
-        console.error(`Error during rendering days: ${error}`);
-        setHasData(false);
-        setChartData([]);
-      }
-    };
-    // вызов при каждом изменении
-    renderDays();
-  }, [data, selectedMonths]);
+//       try {
+//         // выполняем итерацию по каждому эл.[]
+//         data.forEach((day) => {
+//           console.log('Day:', day);
+//           if (day.data) {
+//             const daysIndex = Number(day.data.split(',')[0]) - 1;
+//             // проверяем что индекс в диапазоне текущих дней в месяце
+//             if (daysIndex >= 0 && daysIndex < daysInMonth) {
+//               days[daysIndex] = day.weight || 0;
+//               // если выходит за переделы диапазона
+//             } else {
+//               console.error(`Invalid day index: ${daysIndex}`);
+//             }
+//             // если обьект не содержит свойство дата
+//           } else {
+//             console.error(`Missing 'data' property in day object`);
+//           }
+//         });
+//         console.log('ChartData:', days);
+//         setChartData(days);
+//         setHasData(true);
+//       } catch (error) {
+//         console.error(`Error during rendering days: ${error}`);
+//         setHasData(false);
+//         setChartData([]);
+//       }
+//     };
+//     // вызов при каждом изменении
+//     renderDays();
+//   }, [data, selectedMonths]);
 
-  // вычисление среднего колличесвта употребляемых каллорий
-  useEffect(() => {
-    if (!data || data.length === 0 || chartData.length === 0) {
-      setHasData(false);
-      setAverageWeight(0);
-      return;
-    }
-    // Получаем текущую дату
-    const currentDate = new Date();
-    const filterData = data.filter((item) => {
-      if (!item.data) {
-        console.error(`Missing 'data' property in day object`);
-        return;
-      }
+//   // вычисление среднего колличесвта употребляемых каллорий
+//   useEffect(() => {
+//     if (!data || data.length === 0 || chartData.length === 0) {
+//       console.error('No data or chartData provided.');
+//       setHasData(false);
+//       setAverageWeight(0);
+//       return;
+//     }
+//     // Получаем текущую дату
+//     const currentDate = new Date();
+//  const filterData = data.filter((item) => {
+//    if (!item.data) {
+//      console.error(`Missing 'data' property in day object:`, item);
+//      return false;
+//    }
 
-      const [day, month] = item.data.split(', ');
-      const itemDate = new Date(2024, getMonthNumber(month), day);
-      return (
-        itemDate.getMonth() === currentDate.getMonth() &&
-        itemDate.getFullYear() === currentDate.getFullYear()
-      );
-    });
+//    const [day, month] = item.data.split(', ');
+//    const itemDate = new Date(2024, getMonthNumber(month), day);
+//    return (
+//      itemDate.getMonth() === currentDate.getMonth() &&
+//      itemDate.getFullYear() === currentDate.getFullYear()
+//    );
+//  });
 
-    if (chartData.length > 0) {
-      const filteredChartData = chartData.filter((weight) => !isNaN(weight));
-      if (filteredChartData.length > 0) {
-        const totalWeigth = filteredChartData.reduce((acc, weight) => {
-          return acc + weight;
-        }, 0);
-        const calculatedAveragecalories =
-          totalWeigth / filteredChartData.length;
-        setAverageWeight(Math.floor(calculatedAveragecalories));
-      } else {
-        // если данных нет, среднее значение устанавливаем в 0
-        setAverageWeight(0);
-      }
-    }
-    // Обновление hasData в зависимости от наличия данных
-    setHasData(filterData.length > 0);
-  }, [data, chartData, selectedMonths]);
+//     if (chartData.length > 0) {
+//       const filteredChartData = chartData.filter((weight) => !isNaN(weight));
+//       if (filteredChartData.length > 0) {
+//         const totalWeigth = filteredChartData.reduce((acc, weight) => {
+//           return acc + weight;
+//         }, 0);
 
-  // Функция для преобразования названия месяца в числовой формат
-  function getMonthNumber(monthName) {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
-    return months.indexOf(monthName);
-  }
+//         const calculatedAveragecalories =
+//           totalWeigth / filteredChartData.length;
+//         if (!isNaN(calculatedAveragecalories)) {
+//           setAverageWeight(Math.floor(calculatedAveragecalories));
+//         } else {
+//           setAverageWeight(0);
+//         }
+//       } else {
+//         // если данных нет, среднее значение устанавливаем в 0
+//         setAverageWeight(0);
+//       }
+//     }
+//     // Обновление hasData в зависимости от наличия данных
+//     setHasData(filterData.length > 0);
+//   }, [data, chartData, selectedMonths]);
+
+//   // Функция для преобразования названия месяца в числовой формат
+//   function getMonthNumber(monthName) {
+//     const months = [
+//       'January',
+//       'February',
+//       'March',
+//       'April',
+//       'May',
+//       'June',
+//       'July',
+//       'August',
+//       'September',
+//       'October',
+//       'November',
+//       'December',
+//     ];
+//     return months.indexOf(monthName);
+//   }
 
   return (
     <div>
       <WeightTitleContainer>
         <WeightTitleStyled>Weight</WeightTitleStyled>
         <AverageValueStyled>
-          {hasData ? `Average value: ${averageWeight}` : 'No data available'}
+          {/* {hasData
+            ? `Average value: ${isNaN(averageWeight) ? 0 : averageWeight}`
+            : 'No data available'} */}
         </AverageValueStyled>
       </WeightTitleContainer>
       <StyledTableContainer component={Paper}>
         <StyledTable>
           <TableHead>
             <TableRow>
-              {data.map((dayData, index) => (
-                <TableCell key={index} align="center">
-                  {dayData.data && dayData.data.split(',')[0]}
-                </TableCell>
-              ))}
+              <TableCell align="center"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell align="center">{data[0].weight || 0}</TableCell>
-              {data.map((dayData, index) => (
-                <TableCell key={index} align="center">
-                  {dayData.weight || 0}
-                </TableCell>
-              ))}
+              {/* {data[0].weight || 0} */}
+              <TableCell align="center"></TableCell>
+              {/* {data.map((dayData, index) => ( */}
+              <TableCell align="center">
+                {/* {dayData.weight || 0} */}
+              </TableCell>
+              {/* ))} */}
             </TableRow>
           </TableBody>
         </StyledTable>
