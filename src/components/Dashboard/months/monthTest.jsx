@@ -1,64 +1,21 @@
-import { Formik, useFormikContext } from 'formik';
-
+import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
-  StyledFormControl,
-  StyledInputLabel,
-  StyledSelect,
-  StyledMenuItem,
-} from './months.styled';
+  ContainerSelect,
+  BtnWrapper,
+  WrapperBtnAndIcon,
+  SvgSelectLeft,
+  UseSelect,
+  ButtonSelect,
+  SvgSelectDown,
+  WrapperSelect,
+  LabelSelect,
+  InputSelect,
+  TextSelect,
+} from './months.styled'; // Подставьте ваши стили
 
-const MonthsDropdown = ({ setMonth, monthNames }) => {
-  const formik = useFormikContext();
-
-  return (
-    <StyledFormControl>
-      <StyledInputLabel id="selectedMonthLabel">Months</StyledInputLabel>
-      <StyledSelect
-        labelId="selectedMonthLabel"
-        id="selectedMonths"
-        name="selectedMonths"
-        value={formik.values.selectedMonths}
-        onChange={(e) => {
-          const selectedValue = e.target.value;
-          formik.setFieldValue('selectedMonths', selectedValue);
-          const selectedIndex = monthNames.indexOf(selectedValue);
-          setMonth(selectedIndex + 1);
-        }}
-        label="Months"
-        MenuProps={{
-          PaperProps: {
-            sx: {
-              bgcolor: 'var(--color-primary-black-2)',
-              minWidth: '212px',
-              height: '144px',
-
-              boxShadow: '0px 4px 14px 0px rgba(227, 255, 168, 0.2)',
-              '&::-webkit-scrollbar': {
-                display: 'none',
-              },
-              scrollbarWidth: 'none',
-              '& .MuiMenuItem-root': {},
-            },
-          },
-        }}
-      >
-        {monthNames.map((month) => (
-          <StyledMenuItem key={month} value={month}>
-            {month}
-          </StyledMenuItem>
-        ))}
-      </StyledSelect>
-    </StyledFormControl>
-  );
-};
-
-const MonthsDashboard = ({ selectedMonths, setMonth }) => {
-  const getCurrentMonth = () => {
-    const now = new Date();
-    return now.getMonth();
-  };
-
-  const monthNames = [
+const MonthsDashboard = ({ selectedMonth, setMonth }) => {
+  const months = [
     'January',
     'February',
     'March',
@@ -73,17 +30,57 @@ const MonthsDashboard = ({ selectedMonths, setMonth }) => {
     'December',
   ];
 
+  const navigate = useNavigate();
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const wrapperRef = useRef(null);
+
+  const handleMonthSelect = (selected) => {
+    setMonth(selected);
+    setIsDropdownOpen(false);
+  };
+
+  const handleButtonClick = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
-    <Formik
-      initialValues={{
-        selectedMonths: selectedMonths || getCurrentMonth(),
-      }}
-      onSubmit={(values) => {
-        console.log('Months:', values.selectedMonths);
-      }}
-    >
-      <MonthsDropdown setMonth={setMonth} monthNames={monthNames} />
-    </Formik>
+    <ContainerSelect>
+      <BtnWrapper ref={wrapperRef}>
+        <WrapperBtnAndIcon>
+          <SvgSelectLeft onClick={() => navigate('/main')}>
+            <UseSelect />
+          </SvgSelectLeft>
+          <ButtonSelect onClick={handleButtonClick}>
+            Months{' '}
+            <SvgSelectDown $isdropdownopen={isDropdownOpen}>
+              <UseSelect />
+            </SvgSelectDown>
+            {isDropdownOpen && (
+              <WrapperSelect>
+                {months.map((month) => (
+                  <LabelSelect
+                    key={month}
+                    value={month}
+                    className="radio-label"
+                    onClick={() => handleMonthSelect(month)}
+                  >
+                    <InputSelect
+                      name="month"
+                      type="radio"
+                      value={month}
+                      checked={selectedMonth === month}
+                    />
+                    {month}
+                  </LabelSelect>
+                ))}
+              </WrapperSelect>
+            )}
+          </ButtonSelect>
+        </WrapperBtnAndIcon>
+        <TextSelect>{selectedMonth}</TextSelect>
+      </BtnWrapper>
+    </ContainerSelect>
   );
 };
 

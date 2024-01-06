@@ -1,61 +1,71 @@
-import { Formik, ErrorMessage } from 'formik';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Container,
-  DashboardForm,
-  LabelDashboard,
-  FieldStyled,
-  OptionStyled,
+  ButtonBack,
+  DropdownButton,
+  UseSelect,
+  SvgSelectDown,
+  DropdownList,
+  DropdownListItem,
+  SelectedMonthDisplay,
 } from './months.styled';
+import Icons from '../../../img/dashboard/symbol-defs.svg';
 
-const MonthsDashboard = ({ selectedMonths, setMonth }) => {
+const MonthsDashboard = ({ selectedMonth, setMonth }) => {
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
 
-  const getLastYearMonths = () => {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
-    return months;
+  const navigate = useNavigate();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleMonthSelect = (idx) => {
+    setMonth(idx + 1);
+    setIsDropdownOpen(false);
   };
 
   return (
     <Container>
-      <Formik
-        initialValues={{
-          selectedMonths: selectedMonths,
-        }}
-      >
-        <DashboardForm>
-          <LabelDashboard htmlFor="selectedMonth">Months</LabelDashboard>
-          <FieldStyled
-            as="select"
-            name="selectedMonths"
-            // отрисовываем текущее состояние
-            value={selectedMonths}
-            onChange={(e) => {
-              // передаём порядковый номер месяца
-               setMonth(Number(e.target.value));
-            }}
-          >
-            {getLastYearMonths().map((month, idx) => (
-              // отрисовываем числовое значение value
-              <OptionStyled key={month} value={idx + 1}>
-                {month}
-              </OptionStyled>
-            ))}
-          </FieldStyled>
-          <ErrorMessage name="height" component="div" />
-        </DashboardForm>
-      </Formik>
+      <ButtonBack onClick={() => navigate('/main')}>
+        <UseSelect xlinkHref={`${Icons}#icon-arrow-right`} />
+      </ButtonBack>
+      <DropdownButton onClick={handleButtonClick}>
+        Months
+        <SvgSelectDown $isDropdownopen={isDropdownOpen}>
+          <UseSelect xlinkHref={`${Icons}#icon-arrow-down`} />
+        </SvgSelectDown>
+      </DropdownButton>
+      {isDropdownOpen && (
+        <DropdownList>
+          {months.map((month, idx) => (
+            <DropdownListItem
+              key={month}
+              onClick={() => handleMonthSelect(idx)}
+            >
+              {month}
+            </DropdownListItem>
+          ))}
+        </DropdownList>
+      )}
+      <SelectedMonthDisplay>
+        Selected Month: {selectedMonth}
+      </SelectedMonthDisplay>
     </Container>
   );
 };

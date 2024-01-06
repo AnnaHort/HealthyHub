@@ -8,7 +8,6 @@ import Paper from '@mui/material/Paper';
 import { styled } from '@mui/system';
 
 const StyledTableContainer = styled(TableContainer)({
-  marginLeft: '10px',
   marginBottom: '68px',
   overflowX: 'auto',
 
