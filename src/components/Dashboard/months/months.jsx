@@ -45,36 +45,33 @@ const MonthsDashboard = ({ selectedMonth, setMonth }) => {
   return (
     <Container>
       <WrapperBackAndSelect>
-            <ButtonBack onClick={() => navigate('/main')}>
-        <UseSelect xlinkHref={`${Icons}#icon-arrow-right`} />
-      </ButtonBack>
-      <WrapperSelect>
-        <DropdownButton onClick={handleButtonClick}>
-        Months
-        <SvgSelectDown $isDropdownopen={isDropdownOpen}>
-          <UseSelect xlinkHref={`${Icons}#icon-arrow-down`} />
-        </SvgSelectDown>
-      </DropdownButton>
-      {isDropdownOpen && (
-        <DropdownList>
-          {months.map((month, idx) => (
-            <DropdownListItem
-              key={month}
-              onClick={() => handleMonthSelect(idx)}
-            >
-              {month}
-            </DropdownListItem>
-          ))}
-        </DropdownList>
-      )}
+        <ButtonBack onClick={() => navigate('/main')}>
+          <UseSelect xlinkHref={`${Icons}#icon-arrow-right`} />
+        </ButtonBack>
+        <WrapperSelect>
+          <DropdownButton onClick={handleButtonClick}>
+            Months
+            <SvgSelectDown $isDropdownopen={isDropdownOpen}>
+              <UseSelect xlinkHref={`${Icons}#icon-arrow-down`} />
+            </SvgSelectDown>
+          </DropdownButton>
+          {isDropdownOpen && (
+            <DropdownList>
+              {months.map((month, idx) => (
+                <DropdownListItem
+                  key={month}
+                  onClick={() => handleMonthSelect(idx)}
+                >
+                  {month}
+                </DropdownListItem>
+              ))}
+            </DropdownList>
+          )}
         </WrapperSelect>
         <SelectedMonthDisplay>
-        Selected Month: {selectedMonth}
-      </SelectedMonthDisplay>
+          Selected Month: {selectedMonth}
+        </SelectedMonthDisplay>
       </WrapperBackAndSelect>
-  
-      
-     
     </Container>
   );
 };
