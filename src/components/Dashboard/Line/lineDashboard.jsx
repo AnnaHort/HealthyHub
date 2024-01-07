@@ -81,7 +81,7 @@ const LineDashboard = () => {
   return (
     <div>
       <MonthsDashboard
-        selectedMonths={selectedMonth}
+        selectedMonth={selectedMonth}
         setMonth={setSelectedMonth}
       />
       <DashboardContainer>

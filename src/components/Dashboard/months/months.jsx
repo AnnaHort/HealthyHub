@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import {
   Container,
   WrapperBackAndSelect,
+  UseSelectBack,
   ButtonBack,
   WrapperSelect,
   DropdownButton,
-  UseSelect,
+  UseSelectDown,
   SvgSelectDown,
   DropdownList,
   DropdownListItem,
@@ -46,13 +47,13 @@ const MonthsDashboard = ({ selectedMonth, setMonth }) => {
     <Container>
       <WrapperBackAndSelect>
         <ButtonBack onClick={() => navigate('/main')}>
-          <UseSelect xlinkHref={`${Icons}#icon-arrow-right`} />
+          <UseSelectBack xlinkHref={`${Icons}#icon-arrow-right`} />
         </ButtonBack>
         <WrapperSelect>
           <DropdownButton onClick={handleButtonClick}>
             Months
-            <SvgSelectDown $isDropdownopen={isDropdownOpen}>
-              <UseSelect xlinkHref={`${Icons}#icon-arrow-down`} />
+            <SvgSelectDown $isDropdownOpen={isDropdownOpen}>
+              <UseSelectDown xlinkHref={`${Icons}#icon-arrow-down`} />
             </SvgSelectDown>
           </DropdownButton>
           {isDropdownOpen && (
@@ -68,10 +69,8 @@ const MonthsDashboard = ({ selectedMonth, setMonth }) => {
             </DropdownList>
           )}
         </WrapperSelect>
-        <SelectedMonthDisplay>
-          Selected Month: {selectedMonth}
-        </SelectedMonthDisplay>
       </WrapperBackAndSelect>
+      <SelectedMonthDisplay>{months[selectedMonth - 1]}</SelectedMonthDisplay>
     </Container>
   );
 };

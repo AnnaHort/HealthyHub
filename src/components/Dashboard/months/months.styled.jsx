@@ -1,21 +1,27 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
-export const WrapperBackAndSelect = styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-top: 23px;
 `;
 
-export const ButtonBack = styled.svg`
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
- 
+export const WrapperBackAndSelect = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
+export const ButtonBack = styled.svg`
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+`;
+
+export const UseSelectBack = styled.use``;
+
 export const WrapperSelect = styled.div`
-position: relative;
+  position: relative;
 `;
 
 export const DropdownButton = styled.button`
@@ -26,20 +32,34 @@ export const DropdownButton = styled.button`
   padding: 0;
   width: 120px;
   border: none;
+  font-family: Poppins;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.25;
+
+  @media (min-width: 834px) {
+    font-size: 30px;
+  }
+  @media (min-width: 1440px) {
+  }
 `;
 
 export const SvgSelectDown = styled.svg`
   position: absolute;
-  top: 35%;
+  top: 15%;
   width: 24px;
   height: 24px;
   margin-left: 10px;
+  margin-right: 10px;
+  fill: ${({ $isDropdownOpen }) => ($isDropdownOpen ? 'red' : 'blue')};
+  transform-origin: center center;
+  transform: ${({ $isDropdownOpen }) =>
+    $isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
 `;
 
-export const UseSelect = styled.use``;
+export const UseSelectDown = styled.use`
+  fill: ${({ $isDropdownOpen }) => ($isDropdownOpen ? 'red' : 'blue')};
+`;
 
 export const DropdownList = styled.ul`
   position: absolute;
@@ -89,5 +109,16 @@ export const DropdownListItem = styled.li`
 `;
 
 export const SelectedMonthDisplay = styled.p`
-  color: var(--color-primary-grey);
+  color: var(--color-primary-white);
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+
+  @media (min-width: 834px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @media (min-width: 1440px) {
+  }
 `;
