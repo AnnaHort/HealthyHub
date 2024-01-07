@@ -103,7 +103,7 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
       return;
     }
     const renderDays = () => {
-      const formatDate = new Date(2023, selectedMonth, 0);
+      const formatDate = new Date(2024, selectedMonth, 0);
       const daysInMonth = formatDate.getDate();
       // создание массива длинной в колличество дней в месяце
 
@@ -139,7 +139,7 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
   }, [data, selectedMonth]);
 
   // содержит колличество дней в текущем месяце
-  const formatDate = new Date(2023, selectedMonth, 0).getDate();
+  const formatDate = new Date(2024, selectedMonth, 0).getDate();
   // создаём новый массив для лэйбла от 1 до колличества дней в месяце
   const labels = Array.from({ length: formatDate }, (_, index) => index + 1);
   // вычисление среднего колличесвта употребляемых каллорий
@@ -159,7 +159,7 @@ const CaloriesDashboard = ({ data, selectedMonth }) => {
      }
 
      const [day, month] = item.data.split(', ');
-     const itemDate = new Date(2023, getMonthNumber(month), day);
+     const itemDate = new Date(2024, getMonthNumber(month), day);
 
      return (
        itemDate.getMonth() === currentDate.getMonth() &&
