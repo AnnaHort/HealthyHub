@@ -24,7 +24,6 @@ import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
 const Container = styled.div`
-  margin-left: 10px;
   margin-bottom: 40px;
   overflow-x: auto;
 

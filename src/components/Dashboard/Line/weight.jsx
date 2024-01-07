@@ -9,7 +9,6 @@ import { styled } from '@mui/system';
 import { useEffect, useState } from 'react';
 
 const StyledTableContainer = styled(TableContainer)({
-  marginLeft: '10px',
   marginBottom: '68px',
   overflowX: 'auto',
 

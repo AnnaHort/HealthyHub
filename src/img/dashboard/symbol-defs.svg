@@ -4,8 +4,11 @@
 <path fill="none" stroke="#b6b6b6" style="stroke: var(--color1, #b6b6b6)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M12.76 7.906l-8.093 8.093 8.093 8.093"></path>
 <path fill="none" stroke="#b6b6b6" style="stroke: var(--color1, #b6b6b6)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M27.333 16h-22.44"></path>
 </symbol>
-<symbol id="icon-arrow-down" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M26.56 20.066l-8.693-8.693c-1.027-1.027-2.707-1.027-3.733 0l-8.693 8.693"></path>
+<symbol id="icon-arrow-down" viewBox="0 0 24 24">
+ <path d="M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z" fill="#b6b6b6"/>
 </symbol>
 </defs>
 </svg>
+
+
+
