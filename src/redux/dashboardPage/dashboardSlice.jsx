@@ -25,7 +25,6 @@ const monthsInfoSlice = createSlice({
         state.isLoading = false;
         state.food = action.payload.food;
         state.water = action.payload.water;
-        state.weight = action.payload.weight;
       })
       .addCase(fetchUserWeight.fulfilled, (state, action) => {
         state.isLoading = false;
