@@ -1,4 +1,4 @@
-import{u as i,L as t}from"./index-c49791f3.js";const a=i.p`
+import{u as i,L as t}from"./index-cd977fdc.js";const a=i.p`
   color: var(--color-primary-grey);
   font-family: Poppins;
   font-size: 18px;
